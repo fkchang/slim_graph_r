@@ -1,0 +1,16 @@
+{
+  "type": "flowchart",
+  "title": "From draft to published",
+  "style": "ruby",
+  "nodes": [
+    {"id": "draft"},
+    {"id": "review", "label": "Ready to publish?", "kind": "decision", "emphasis": true},
+    {"id": "publish"},
+    {"id": "revise"}
+  ],
+  "edges": [
+    {"from": "draft", "to": "review"},
+    {"from": "review", "to": "publish", "label": "Approved"},
+    {"from": "review", "to": "revise", "label": "Needs changes"}
+  ]
+}

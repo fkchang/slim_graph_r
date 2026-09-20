@@ -1,0 +1,29 @@
+{
+  "type": "kanban",
+  "title": "Platform work",
+  "columns": [
+    {
+      "id": "backlog",
+      "label": "Backlog",
+      "cards": [
+        { "id": "api", "label": "API contract" }
+      ]
+    },
+    {
+      "id": "build",
+      "label": "In progress",
+      "wip_limit": 1,
+      "cards": [
+        { "id": "cache", "label": "Cache migration", "state": "blocked", "focal": true },
+        { "id": "docs", "label": "Release notes", "ticket": "AVA-216", "state": "waiting" }
+      ]
+    },
+    {
+      "id": "done",
+      "label": "Done",
+      "cards": [
+        { "id": "lint", "label": "Lint cleanup", "owner": "nadia", "state": "done" }
+      ]
+    }
+  ]
+}

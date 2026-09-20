@@ -1,0 +1,15 @@
+{
+  "type": "wardley",
+  "title": "Assistant value chain",
+  "components": [
+    {"id": "assistant", "label": "AI assistant", "evolution": "genesis", "visibility": 0.82},
+    {"id": "orchestration", "label": "Agent orchestration", "evolution": "custom_built", "visibility": 0.58},
+    {"id": "model_api", "label": "Model API", "evolution": "product", "visibility": 0.36, "evolving_to": "commodity"},
+    {"id": "compute", "label": "Compute", "evolution": "commodity", "visibility": 0.14}
+  ],
+  "dependencies": [
+    {"from": "assistant", "to": "orchestration"},
+    {"from": "orchestration", "to": "model_api"},
+    {"from": "model_api", "to": "compute"}
+  ]
+}

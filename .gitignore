@@ -1,0 +1,35 @@
+/.bundle/
+/vendor/bundle/
+/pkg/
+/tmp/
+/coverage/
+/.yardoc/
+/doc/
+/.ruby-lsp/
+/.rspec_status
+*.rbc
+*.log
+
+# Local/editor state
+.DS_Store
+*.swp
+*.swo
+*~
+.env
+.env.*
+!.env.example
+
+# Generated review and orchestration output
+/.impeccable/
+/conduct/
+/artifacts/
+
+# Render commands in the guides write disposable output at the repository root.
+/*.svg
+/*.html
+/render
+
+# Built packages and library-only dependency locks
+*.gem
+/gemfiles/*.lock
+/Gemfile.lock

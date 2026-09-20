@@ -1,0 +1,42 @@
+{
+  "type": "it_state",
+  "title": "Current IT Landscape",
+  "subtitle": "Data pipeline before the platform",
+  "eyebrow": "NatStat / Before the platform",
+  "phases": [
+    {
+      "id": "collection",
+      "label": "COLLECTION",
+      "systems": [
+        { "id": "survey", "label": "Survey Solutions", "detail": "CAPI / PostgreSQL" },
+        { "id": "registry", "label": "Civil Registry", "detail": "External / CRVS data", "state": "external" }
+      ]
+    },
+    {
+      "id": "processing",
+      "label": "PROCESSING",
+      "systems": [
+        { "id": "drive", "label": "Shared Drive", "detail": "No version control", "state": "pain_point" },
+        { "id": "analysts", "label": "Analyst Machines", "detail": "SPSS / SAS / Stata / Excel" }
+      ]
+    },
+    {
+      "id": "dissemination",
+      "label": "DISSEMINATION",
+      "systems": [
+        { "id": "portal", "label": "Legacy Portal", "detail": "Manual bottleneck", "state": "pain_point" },
+        { "id": "website", "label": "NatStat Website", "detail": "Public / static pages" }
+      ]
+    }
+  ],
+  "handoffs": [
+    { "from": "survey", "to": "drive", "label": "CSV", "style": "link" },
+    { "from": "registry", "to": "drive", "label": "EXCEL", "style": "link", "dashed": true },
+    { "from": "drive", "to": "analysts", "label": "COPY", "dashed": true },
+    { "from": "analysts", "to": "portal", "label": "EXCEL", "style": "link" },
+    { "from": "portal", "to": "website", "label": "WEB" }
+  ],
+  "crosscuts": [
+    { "id": "identity", "label": "Identity Manager", "detail": "Active Directory / LDAP / SSO" }
+  ]
+}

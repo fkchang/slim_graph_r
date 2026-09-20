@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 480" role="img" aria-labelledby="title desc">
+  <title id="title">Publishing</title>
+  <desc id="desc">Draft leads to Ready? Yes leads to Publish; No leads to Revise.</desc>
+  <style>
+    text { font: 14px Arial, sans-serif; fill: #2d3142 }
+    .title { font: 30px Georgia, serif }
+    .node { fill: #f5f5f5; stroke: #2d3142; stroke-width: 1 }
+    .edge { fill: none; stroke: #4f5d75; stroke-width: 1.2; marker-end: url(#arrow) }
+    .label { font-size: 12px; fill: #4f5d75 }
+  </style>
+  <defs><marker id="arrow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="8" markerHeight="8" orient="auto"><path d="M1 1 L7 4 L1 7" fill="none" stroke="#4f5d75"/></marker></defs>
+  <rect width="640" height="480" fill="#f5f5f5"/>
+  <text class="title" x="40" y="48">Publishing</text>
+  <path class="edge" d="M320 172 V232"/>
+  <path class="edge" d="M312 304 V324 Q312 332 304 332 H176 Q168 332 168 340 V364"/>
+  <path class="edge" d="M328 304 V324 Q328 332 336 332 H464 Q472 332 472 340 V364"/>
+  <rect class="node" x="232" y="100" width="176" height="72" rx="6"/>
+  <text x="252" y="142">Draft</text>
+  <rect x="232" y="232" width="176" height="72" rx="6" fill="#f8e7df" stroke="#b7461b"/>
+  <text x="252" y="274">Ready?</text>
+  <rect class="node" x="80" y="364" width="176" height="72" rx="6"/>
+  <text x="100" y="406">Publish</text>
+  <rect class="node" x="384" y="364" width="176" height="72" rx="6"/>
+  <text x="404" y="406">Revise</text>
+  <text class="label" x="204" y="324">Yes</text>
+  <text class="label" x="396" y="324">No</text>
+</svg>

@@ -1,0 +1,10 @@
+{
+  "type": "fishbone",
+  "title": "Checkout latency investigation · 調査",
+  "effect": {"label": "Checkout p99 latency above 2 s"},
+  "categories": [
+    {"id": "data", "label": "Data", "side": "above", "factors": ["Missing index", "Replica lag"]},
+    {"id": "deployment", "label": "Deployment", "side": "below", "factors": ["Cold workers"]},
+    {"id": "observability", "label": "Observability", "side": "above", "factors": ["No query breakdown"]}
+  ]
+}

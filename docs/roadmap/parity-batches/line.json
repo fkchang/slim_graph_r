@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "name": "line-v0",
+  "viewport": {
+    "width": 1440,
+    "height": 1000,
+    "device_scale_factor": 1
+  },
+  "browser": "chromium",
+  "cases": [
+    {
+      "baseline_case_id": "line:minimal-light",
+      "local_fixture": "line-weekly-signups",
+      "local_variant": "minimal-light",
+      "local_render": "captured"
+    },
+    {
+      "baseline_case_id": "line:minimal-dark",
+      "local_fixture": "line-weekly-signups",
+      "local_variant": "minimal-dark",
+      "local_render": "captured"
+    },
+    {
+      "baseline_case_id": "line:full-editorial",
+      "local_fixture": "line-weekly-signups",
+      "local_variant": "full-editorial",
+      "local_render": "captured"
+    }
+  ]
+}

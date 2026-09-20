@@ -1,0 +1,27 @@
+{
+  "type": "dp_security_matrix",
+  "title": "Recorded platform access · 0.19 · 権限表",
+  "style": "editorial",
+  "theme": "light",
+  "roles": [
+    {"id":"admins", "label":"Data administrators", "code":"DL-DataAdmins"},
+    {"id":"engineers", "label":"Data engineers", "code":"DL-DataEngineers"},
+    {"id":"consumers", "label":"Data consumers"}
+  ],
+  "components": [
+    {"id":"raw", "label":"Raw store", "hint":"S3"},
+    {"id":"aggregate", "label":"Aggregate catalog", "hint":"SQL"},
+    {"id":"reports", "label":"Published reports", "hint":"BI"}
+  ],
+  "permissions": [
+    {"component":"raw", "role":"admins", "level":"admin"},
+    {"component":"raw", "role":"engineers", "level":"write"},
+    {"component":"raw", "role":"consumers", "level":"deny"},
+    {"component":"aggregate", "role":"admins", "level":"admin"},
+    {"component":"aggregate", "role":"engineers", "level":"write"},
+    {"component":"aggregate", "role":"consumers", "label":"Select only", "level":"read", "note":"published aggregate", "focal":true},
+    {"component":"reports", "role":"admins", "level":"read"},
+    {"component":"reports", "role":"engineers", "level":"read"},
+    {"component":"reports", "role":"consumers", "level":"read"}
+  ]
+}

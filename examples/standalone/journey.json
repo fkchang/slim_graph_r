@@ -1,0 +1,11 @@
+{
+  "type": "journey",
+  "title": "Trial to paid",
+  "persona": "Independent analyst",
+  "stages": [
+    {"id": "discover", "label": "Discover", "action": "Compare plans", "touchpoint": "Website", "sentiment": "high"},
+    {"id": "try", "label": "Try", "action": "Create a project", "touchpoint": "App", "sentiment": "medium_high"},
+    {"id": "limit", "label": "Hit the limit", "action": "Upload a second project", "touchpoint": "App", "sentiment": "low", "pains": ["Usage limit is unclear"]},
+    {"id": "upgrade", "label": "Upgrade", "action": "Choose a plan", "touchpoint": "Checkout", "sentiment": "neutral"}
+  ]
+}

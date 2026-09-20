@@ -1,0 +1,3335 @@
+{
+  "upstream_revision": "dcd9317ed9ec7477b20005544f36e3313664d815",
+  "baseline_types": 39,
+  "partial_types": 39,
+  "missing_types": 0,
+  "verified_types": 0,
+  "baseline_variants": [
+    "minimal-light",
+    "minimal-dark",
+    "full-editorial"
+  ],
+  "types": [
+    {
+      "type": "architecture",
+      "name": "Architecture",
+      "wave": "Foundation",
+      "status": "partial",
+      "source": "https://github.com/cathrynlavery/diagram-design/blob/dcd9317ed9ec7477b20005544f36e3313664d815/skills/diagram-design/references/type-architecture.md",
+      "verified_variants": [],
+      "implemented_capabilities": [
+        "separate parallel routes",
+        "8px label clearance with crossing halo",
+        "ordinary crossing hops"
+      ],
+      "evidence": [
+        "spec/layout_spec.rb",
+        "spec/flowchart_spec.rb"
+      ],
+      "baseline_case_status": {
+        "minimal-light": {
+          "classification": "supported-unverified",
+          "source_anchor": "tmp/upstream-types/type-architecture.md:75",
+          "evidence": [
+            "spec/layout_spec.rb",
+            "spec/flowchart_spec.rb",
+            "artifacts/parity/v0/architecture/summary.json"
+          ],
+          "gap": "The exact semantic fixture renders with SlimGraphR's minimal light profile; browser capture and human visual review remain pending.",
+          "priority": "P0",
+          "risk": "high"
+        },
+        "minimal-dark": {
+          "classification": "supported-unverified",
+          "source_anchor": "tmp/upstream-types/type-architecture.md:75",
+          "evidence": [
+            "spec/layout_spec.rb",
+            "spec/flowchart_spec.rb",
+            "artifacts/parity/v0/architecture/summary.json"
+          ],
+          "gap": "The exact semantic fixture renders with SlimGraphR's minimal dark profile; browser capture and human visual review remain pending.",
+          "priority": "P1",
+          "risk": "high"
+        },
+        "full-editorial": {
+          "classification": "supported-unverified",
+          "source_anchor": "tmp/upstream-types/type-architecture.md:75",
+          "evidence": [
+            "spec/layout_spec.rb",
+            "spec/flowchart_spec.rb",
+            "artifacts/parity/v0/architecture/summary.json"
+          ],
+          "gap": "Browser evidence captures this local presentation; human visual review and the remaining parity gates are pending.",
+          "priority": "P0",
+          "risk": "high"
+        }
+      },
+      "upstream_variants": [],
+      "deliberate_differences": [
+        {
+          "summary": "Generic groups and the shared semantic palette replace upstream-specific zone roles.",
+          "evidence": [
+            "spec/layout_spec.rb",
+            "spec/flowchart_spec.rb"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "flowchart",
+      "name": "Flowchart",
+      "wave": "Foundation",
+      "status": "partial",
+      "source": "https://github.com/cathrynlavery/diagram-design/blob/dcd9317ed9ec7477b20005544f36e3313664d815/skills/diagram-design/references/type-flowchart.md",
+      "verified_variants": [],
+      "implemented_capabilities": [
+        "start/finish terminators",
+        "text-sized decision diamonds",
+        "labeled exits, at most three",
+        "explicit two/three-input merge junctions",
+        "simple conventional Yes/No placement",
+        "shape-boundary attachment",
+        "separate parallel routes",
+        "8px label clearance with crossing halo",
+        "ordinary crossing hops"
+      ],
+      "evidence": [
+        "spec/flowchart_spec.rb",
+        "examples/standalone/flowchart.rb",
+        "examples/rendered/flowchart.svg"
+      ],
+      "baseline_case_status": {
+        "minimal-light": {
+          "classification": "supported-unverified",
+          "source_anchor": "tmp/upstream-types/type-flowchart.md:20",
+          "evidence": [
+            "spec/flowchart_spec.rb",
+            "examples/standalone/flowchart.rb",
+            "examples/rendered/flowchart.svg",
+            "artifacts/parity/v0/flowchart/summary.json"
+          ],
+          "gap": "The exact semantic fixture renders with SlimGraphR's minimal light profile; browser capture and human visual review remain pending.",
+          "priority": "P0",
+          "risk": "high"
+        },
+        "minimal-dark": {
+          "classification": "supported-unverified",
+          "source_anchor": "tmp/upstream-types/type-flowchart.md:20",
+          "evidence": [
+            "spec/flowchart_spec.rb",
+            "examples/standalone/flowchart.rb",
+            "examples/rendered/flowchart.svg",
+            "artifacts/parity/v0/flowchart/summary.json"
+          ],
+          "gap": "The exact semantic fixture renders with SlimGraphR's minimal dark profile; browser capture and human visual review remain pending.",
+          "priority": "P1",
+          "risk": "high"
+        },
+        "full-editorial": {
+          "classification": "supported-unverified",
+          "source_anchor": "tmp/upstream-types/type-flowchart.md:20",
+          "evidence": [
+            "spec/flowchart_spec.rb",
+            "examples/standalone/flowchart.rb",
+            "examples/rendered/flowchart.svg",
+            "artifacts/parity/v0/flowchart/summary.json"
+          ],
+          "gap": "Browser evidence captures this local presentation; human visual review and the remaining parity gates are pending.",
+          "priority": "P0",
+          "risk": "high"
+        }
+      },
+      "upstream_variants": [],
+      "deliberate_differences": [
+        {
+          "summary": "Shared emphasis and node kinds retain semantic color in addition to shape.",
+          "evidence": [
+            "spec/flowchart_spec.rb",
+            "examples/standalone/flowchart.rb",
+            "examples/rendered/flowchart.svg"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "sequence",
+      "name": "Sequence",
+      "wave": "Foundation",
+      "status": "partial",
+      "source": "https://github.com/cathrynlavery/diagram-design/blob/dcd9317ed9ec7477b20005544f36e3313664d815/skills/diagram-design/references/type-sequence.md",
+      "verified_variants": [],
+      "implemented_capabilities": [
+        "scoped and nested activations",
+        "disjoint sibling scopes",
+        "alt with two guarded branches",
+        "opt and descriptive loop frames",
+        "call/return/async/success markers",
+        "labels between lifelines and beside self calls",
+        "Ruby and strict JSON control structure",
+        "accessible scope and guard descriptions"
+      ],
+      "evidence": [
+        "spec/sequence_spec.rb",
+        "spec/integration/sequence_spec.rb",
+        "examples/standalone/sequence_frames.rb",
+        "examples/standalone/sequence_frames.json",
+        "examples/stream_weaver/sequences.rb"
+      ],
+      "baseline_case_status": {
+        "minimal-light": {
+          "classification": "supported-unverified",
+          "source_anchor": "tmp/upstream-types/type-sequence.md:124",
+          "evidence": [
+            "spec/sequence_spec.rb",
+            "spec/integration/sequence_spec.rb",
+            "examples/standalone/sequence_frames.rb",
+            "examples/standalone/sequence_frames.json",
+            "examples/stream_weaver/sequences.rb",
+            "artifacts/parity/v0/sequence/summary.json"
+          ],
+          "gap": "The exact semantic fixture renders with SlimGraphR's minimal light profile; browser capture and human visual review remain pending.",
+          "priority": "P0",
+          "risk": "high"
+        },
+        "minimal-dark": {
+          "classification": "supported-unverified",
+          "source_anchor": "tmp/upstream-types/type-sequence.md:124",
+          "evidence": [
+            "spec/sequence_spec.rb",
+            "spec/integration/sequence_spec.rb",
+            "examples/standalone/sequence_frames.rb",
+            "examples/standalone/sequence_frames.json",
+            "examples/stream_weaver/sequences.rb",
+            "artifacts/parity/v0/sequence/summary.json"
+          ],
+          "gap": "The exact semantic fixture renders with SlimGraphR's minimal dark profile; browser capture and human visual review remain pending.",
+          "priority": "P1",
+          "risk": "high"
+        },
+        "full-editorial": {
+          "classification": "supported-unverified",
+          "source_anchor": "tmp/upstream-types/type-sequence.md:124",
+          "evidence": [
+            "spec/sequence_spec.rb",
+            "spec/integration/sequence_spec.rb",
+            "examples/standalone/sequence_frames.rb",
+            "examples/standalone/sequence_frames.json",
+            "examples/stream_weaver/sequences.rb",
+            "artifacts/parity/v0/sequence/summary.json"
+          ],
+          "gap": "Browser evidence captures this local presentation; human visual review and the remaining parity gates are pending.",
+          "priority": "P0",
+          "risk": "high"
+        }
+      },
+      "upstream_variants": [
+        {
+          "id": "oauth-alt-refresh",
+          "name": "OAuth bearer call with alt refresh",
+          "classification": "supported-unverified",
+          "source_anchor": "tmp/upstream-types/type-sequence.md:124-130",
+          "evidence": [
+            "docs/sequence.md",
+            "lib/slim_graph_r/sequence_definition.rb"
+          ],
+          "gap": "No exact OAuth fixture or browser/semantic gate.",
+          "priority": "P1",
+          "risk": "medium"
+        }
+      ],
+      "deliberate_differences": [
+        {
+          "summary": "par, critical, break, ref, create/destroy, and duration bars remain outside the bounded slice.",
+          "evidence": [
+            "spec/sequence_spec.rb",
+            "spec/integration/sequence_spec.rb",
+            "examples/standalone/sequence_frames.rb",
+            "examples/standalone/sequence_frames.json",
+            "examples/stream_weaver/sequences.rb"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "timeline",
+      "name": "Timeline",
+      "wave": "Foundation",
+      "status": "partial",
+      "source": "https://github.com/cathrynlavery/diagram-design/blob/dcd9317ed9ec7477b20005544f36e3313664d815/skills/diagram-design/references/type-timeline.md",
+      "verified_variants": [],
+      "implemented_capabilities": [
+        "strict complete Gregorian calendar dates",
+        "exact elapsed-day positions with stable chronological sorting",
+        "same-day event grouping without content loss",
+        "readable ticks and measured callouts with routed leaders",
+        "explicit errors for indistinguishable dates",
+        "explicit ordered mode for caption-like dates",
+        "Ruby, JSON and accessible export support"
+      ],
+      "evidence": [
+        "spec/timeline_spec.rb",
+        "spec/integration/timeline_spec.rb",
+        "examples/standalone/timeline_cases.rb",
+        "examples/stream_weaver/timelines.rb",
+        "examples/rendered/timeline_cases.svg"
+      ],
+      "baseline_case_status": {
+        "minimal-light": {
+          "classification": "supported-unverified",
+          "source_anchor": "tmp/upstream-types/type-timeline.md:17",
+          "evidence": [
+            "spec/timeline_spec.rb",
+            "spec/integration/timeline_spec.rb",
+            "examples/standalone/timeline_cases.rb",
+            "examples/stream_weaver/timelines.rb",
+            "examples/rendered/timeline_cases.svg",
+            "artifacts/parity/v0/timeline/summary.json"
+          ],
+          "gap": "The exact semantic fixture renders with SlimGraphR's minimal light profile; browser capture and human visual review remain pending.",
+          "priority": "P0",
+          "risk": "high"
+        },
+        "minimal-dark": {
+          "classification": "supported-unverified",
+          "source_anchor": "tmp/upstream-types/type-timeline.md:17",
+          "evidence": [
+            "spec/timeline_spec.rb",
+            "spec/integration/timeline_spec.rb",
+            "examples/standalone/timeline_cases.rb",
+            "examples/stream_weaver/timelines.rb",
+            "examples/rendered/timeline_cases.svg",
+            "artifacts/parity/v0/timeline/summary.json"
+          ],
+          "gap": "The exact semantic fixture renders with SlimGraphR's minimal dark profile; browser capture and human visual review remain pending.",
+          "priority": "P1",
+          "risk": "high"
+        },
+        "full-editorial": {
+          "classification": "supported-unverified",
+          "source_anchor": "tmp/upstream-types/type-timeline.md:17",
+          "evidence": [
+            "spec/timeline_spec.rb",
+            "spec/integration/timeline_spec.rb",
+            "examples/standalone/timeline_cases.rb",
+            "examples/stream_weaver/timelines.rb",
+            "examples/rendered/timeline_cases.svg",
+            "artifacts/parity/v0/timeline/summary.json"
+          ],
+          "gap": "Browser evidence captures this local presentation; human visual review and the remaining parity gates are pending.",
+          "priority": "P0",
+          "risk": "high"
+        }
+      },
+      "upstream_variants": [],
+      "deliberate_differences": [
+        {
+          "summary": "Ordered scale is a captioned non-time extension; broken axes, time-of-day, and custom domains are excluded.",
+          "evidence": [
+            "spec/timeline_spec.rb",
+            "spec/integration/timeline_spec.rb",
+            "examples/standalone/timeline_cases.rb",
+            "examples/stream_weaver/timelines.rb",
+            "examples/rendered/timeline_cases.svg"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "org-chart",
+      "name": "Org Chart / Responsibility Map",
+      "wave": "Foundation",
+      "status": "partial",
+      "source": "https://github.com/cathrynlavery/diagram-design/blob/dcd9317ed9ec7477b20005544f36e3313664d815/skills/diagram-design/references/type-org-chart.md",
+      "verified_variants": [],
+      "implemented_capabilities": [
+        "dedicated ownership fields for invocation, scope, detail, and unavailable state",
+        "strict Ruby and JSON parity with accessible descriptions",
+        "bounded forest validation with separate escalation and approval footer rules",
+        "orthogonal reporting connectors and faithful-layout errors"
+      ],
+      "evidence": [
+        "spec/org_chart_spec.rb",
+        "examples/standalone/org_ownership.rb",
+        "examples/standalone/org_ownership.json",
+        "docs/org-charts.md"
+      ],
+      "baseline_case_status": {
+        "minimal-light": {
+          "classification": "supported-unverified",
+          "source_anchor": "tmp/upstream-types/type-org-chart.md:41",
+          "evidence": [
+            "spec/org_chart_spec.rb",
+            "examples/standalone/org_ownership.rb",
+            "examples/standalone/org_ownership.json",
+            "docs/org-charts.md",
+            "artifacts/parity/v0/org-chart/summary.json"
+          ],
+          "gap": "The exact semantic fixture renders with SlimGraphR minimal light profile; browser capture and human visual review remain pending.",
+          "priority": "P0",
+          "risk": "high"
+        },
+        "minimal-dark": {
+          "classification": "supported-unverified",
+          "source_anchor": "tmp/upstream-types/type-org-chart.md:41",
+          "evidence": [
+            "spec/org_chart_spec.rb",
+            "examples/standalone/org_ownership.rb",
+            "examples/standalone/org_ownership.json",
+            "docs/org-charts.md",
+            "artifacts/parity/v0/org-chart/summary.json"
+          ],
+          "gap": "The exact semantic fixture renders with SlimGraphR minimal dark profile; browser capture and human visual review remain pending.",
+          "priority": "P1",
+          "risk": "high"
+        },
+        "full-editorial": {
+          "classification": "supported-unverified",
+          "source_anchor": "tmp/upstream-types/type-org-chart.md:41",
+          "evidence": [
+            "spec/org_chart_spec.rb",
+            "examples/standalone/org_ownership.rb",
+            "examples/standalone/org_ownership.json",
+            "docs/org-charts.md",
+            "artifacts/parity/v0/org-chart/summary.json"
+          ],
+          "gap": "Exact local HTML preserves the setup-gap footer, approval gate, and backend-name mismatch; coordinator browser geometry and visual review remain.",
+          "priority": "P0",
+          "risk": "high"
+        }
+      },
+      "upstream_variants": [],
+      "deliberate_differences": [
+        {
+          "summary": "Reporting connectors are independently routed and the shared kind palette replaces an org-only taxonomy.",
+          "evidence": [
+            "spec/org_chart_spec.rb",
+            "examples/standalone/org_ownership.rb",
+            "examples/standalone/org_ownership.json",
+            "docs/org-charts.md"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "state",
+      "name": "State Machine",
+      "wave": "Topology and hierarchy",
+      "status": "partial",
+      "source": "https://github.com/cathrynlavery/diagram-design/blob/dcd9317ed9ec7477b20005544f36e3313664d815/skills/diagram-design/references/type-state.md",
+      "verified_variants": [],
+      "implemented_capabilities": [
+        "dedicated immutable state and transition model",
+        "strict Ruby and JSON parity",
+        "initial and final markers",
+        "event/guard/action transition labels",
+        "bounded lifecycle and cycle validation",
+        "curved right/down routes and accessible descriptions"
+      ],
+      "evidence": [
+        "spec/state_spec.rb",
+        "examples/standalone/state_machine.rb",
+        "examples/standalone/state_machine.json",
+        "examples/stream_weaver/state_machines.rb",
+        "docs/state-machines.md"
+      ],
+      "baseline_case_status": {
+        "minimal-light": {
+          "classification": "supported-unverified",
+          "source_anchor": "tmp/upstream-types/type-state.md:18",
+          "evidence": [
+            "spec/state_spec.rb",
+            "examples/standalone/state_machine.rb",
+            "examples/standalone/state_machine.json",
+            "examples/stream_weaver/state_machines.rb",
+            "docs/state-machines.md",
+            "artifacts/parity/v0/state/summary.json"
+          ],
+          "gap": "The exact semantic fixture renders with SlimGraphR minimal light profile; browser capture and human visual review remain pending.",
+          "priority": "P0",
+          "risk": "high"
+        },
+        "minimal-dark": {
+          "classification": "supported-unverified",
+          "source_anchor": "tmp/upstream-types/type-state.md:18",
+          "evidence": [
+            "spec/state_spec.rb",
+            "examples/standalone/state_machine.rb",
+            "examples/standalone/state_machine.json",
+            "examples/stream_weaver/state_machines.rb",
+            "docs/state-machines.md",
+            "artifacts/parity/v0/state/summary.json"
+          ],
+          "gap": "The exact semantic fixture renders with SlimGraphR minimal dark profile; browser capture and human visual review remain pending.",
+          "priority": "P1",
+          "risk": "high"
+        },
+        "full-editorial": {
+          "classification": "supported-unverified",
+          "source_anchor": "tmp/upstream-types/type-state.md:18",
+          "evidence": [
+            "spec/state_spec.rb",
+            "examples/standalone/state_machine.rb",
+            "examples/standalone/state_machine.json",
+            "examples/stream_weaver/state_machines.rb",
+            "docs/state-machines.md",
+            "artifacts/parity/v0/state/summary.json"
+          ],
+          "gap": "The exact semantic fixture renders with SlimGraphR's editorial profile; browser capture and human visual review remain pending.",
+          "priority": "P0",
+          "risk": "high"
+        }
+      },
+      "upstream_variants": [],
+      "deliberate_differences": []
+    },
+    {
+      "type": "dependency",
+      "name": "Dependency Graph",
+      "wave": "Topology and hierarchy",
+      "status": "partial",
+      "source": "https://github.com/cathrynlavery/diagram-design/blob/dcd9317ed9ec7477b20005544f36e3313664d815/skills/diagram-design/references/type-dependency.md",
+      "verified_variants": [],
+      "implemented_capabilities": [
+        "dependent-to-requirement arrows",
+        "strict Ruby and JSON parity",
+        "ranked down layout with fixed 160x56 boxes",
+        "computed fan-in badge on every node",
+        "internal, external, and leaf treatments",
+        "one validated real cycle with outside accent lane",
+        "faithful-layout errors"
+      ],
+      "evidence": [
+        "spec/dependency_spec.rb",
+        "docs/dependencies.md"
+      ],
+      "baseline_case_status": {
+        "minimal-light": {
+          "classification": "supported-unverified",
+          "source_anchor": "tmp/upstream-types/type-dependency.md:40",
+          "evidence": [
+            "spec/dependency_spec.rb",
+            "docs/dependencies.md",
+            "artifacts/parity/v0/dependency/summary.json"
+          ],
+          "gap": "The exact semantic fixture renders with SlimGraphR minimal light profile; browser capture and human visual review remain pending.",
+          "priority": "P0",
+          "risk": "high"
+        },
+        "minimal-dark": {
+          "classification": "supported-unverified",
+          "source_anchor": "tmp/upstream-types/type-dependency.md:40",
+          "evidence": [
+            "spec/dependency_spec.rb",
+            "docs/dependencies.md",
+            "artifacts/parity/v0/dependency/summary.json"
+          ],
+          "gap": "The exact semantic fixture renders with SlimGraphR minimal dark profile; browser capture and human visual review remain pending.",
+          "priority": "P1",
+          "risk": "high"
+        },
+        "full-editorial": {
+          "classification": "supported-unverified",
+          "source_anchor": "tmp/upstream-types/type-dependency.md:40",
+          "evidence": [
+            "spec/dependency_spec.rb",
+            "docs/dependencies.md",
+            "artifacts/parity/v0/dependency/summary.json"
+          ],
+          "gap": "The exact pinned semantic fixture renders every authored node and relationship; browser geometry and human visual review remain pending.",
+          "priority": "P0",
+          "risk": "high"
+        }
+      },
+      "upstream_variants": [],
+      "deliberate_differences": [
+        {
+          "summary": "Tree-shaped input is routed to Tree, and marked cycles are deliberately bounded.",
+          "evidence": [
+            "spec/dependency_spec.rb",
+            "docs/dependencies.md"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "deployment",
+      "name": "Deployment",
+      "wave": "Topology and hierarchy",
+      "status": "partial",
+      "source": "https://github.com/cathrynlavery/diagram-design/blob/dcd9317ed9ec7477b20005544f36e3313664d815/skills/diagram-design/references/type-deployment.md",
+      "verified_variants": [],
+      "implemented_capabilities": [
+        "three-level zone/infrastructure/artifact containment",
+        "typed infrastructure constructors with replica badges",
+        "versioned artifact chips",
+        "protocol/port paths with internal/cross-zone/async treatments",
+        "strict Ruby and JSON parity",
+        "faithful-layout errors"
+      ],
+      "evidence": [
+        "docs/deployments.md"
+      ],
+      "baseline_case_status": {
+        "minimal-light": {
+          "classification": "supported-unverified",
+          "source_anchor": "tmp/upstream-types/type-deployment.md:41",
+          "evidence": [
+            "docs/deployments.md",
+            "artifacts/parity/v0/deployment/summary.json"
+          ],
+          "gap": "The exact semantic fixture renders with SlimGraphR minimal light profile; browser capture and human visual review remain pending.",
+          "priority": "P0",
+          "risk": "high"
+        },
+        "minimal-dark": {
+          "classification": "supported-unverified",
+          "source_anchor": "tmp/upstream-types/type-deployment.md:41",
+          "evidence": [
+            "docs/deployments.md",
+            "artifacts/parity/v0/deployment/summary.json"
+          ],
+          "gap": "The exact semantic fixture renders with SlimGraphR minimal dark profile; browser capture and human visual review remain pending.",
+          "priority": "P1",
+          "risk": "high"
+        },
+        "full-editorial": {
+          "classification": "supported-unverified",
+          "source_anchor": "tmp/upstream-types/type-deployment.md:41",
+          "evidence": [
+            "docs/deployments.md",
+            "artifacts/parity/v0/deployment/summary.json"
+          ],
+          "gap": "Browser evidence captures this local presentation; human visual review and the remaining parity gates are pending.",
+          "priority": "P0",
+          "risk": "high"
+        }
+      },
+      "upstream_variants": [],
+      "deliberate_differences": []
+    },
+    {
+      "type": "it-state",
+      "name": "IT current-state",
+      "wave": "Topology and hierarchy",
+      "status": "partial",
+      "source": "https://github.com/cathrynlavery/diagram-design/blob/dcd9317ed9ec7477b20005544f36e3313664d815/skills/diagram-design/references/type-it-state.md",
+      "verified_variants": [],
+      "implemented_capabilities": [
+        "horizontal phase and system model",
+        "standard, external, and pain-point system states",
+        "neutral, link, accent, and dashed handoffs",
+        "external-endpoint backward handoff validation",
+        "crosscut footer services without graph endpoints",
+        "strict Ruby and JSON parity",
+        "curated used-semantics legend",
+        "faithful-layout errors"
+      ],
+      "evidence": [
+        "docs/it-current-state.md"
+      ],
+      "baseline_case_status": {
+        "minimal-light": {
+          "classification": "missing",
+          "source_anchor": "tmp/upstream-types/type-it-state.md:394",
+          "evidence": [
+            "docs/it-current-state.md",
+            "artifacts/parity/v0/it-state/summary.json"
+          ],
+          "gap": "Browser evidence records this presentation as unavailable: SlimGraphR has no minimal profile; do not substitute editorial.",
+          "priority": "P0",
+          "risk": "high"
+        },
+        "minimal-dark": {
+          "classification": "missing",
+          "source_anchor": "tmp/upstream-types/type-it-state.md:394",
+          "evidence": [
+            "docs/it-current-state.md",
+            "artifacts/parity/v0/it-state/summary.json"
+          ],
+          "gap": "Browser evidence records this presentation as unavailable: SlimGraphR has no minimal profile; do not substitute editorial.",
+          "priority": "P1",
+          "risk": "high"
+        },
+        "full-editorial": {
+          "classification": "deliberate-different",
+          "source_anchor": "tmp/upstream-types/type-it-state.md:394",
+          "evidence": [
+            "docs/it-current-state.md",
+            "artifacts/parity/v0/it-state/summary.json"
+          ],
+          "gap": "The documented local contract intentionally excludes this pinned presentation: Pinned composition requires unsupported icons, per-component colors, and complete footer semantics.",
+          "priority": "P1",
+          "risk": "high"
+        }
+      },
+      "upstream_variants": [
+        {
+          "id": "vertical-orientation",
+          "name": "Vertical orientation",
+          "classification": "supported-unverified",
+          "source_anchor": "tmp/upstream-types/type-it-state.md:11-18,84-123",
+          "evidence": [
+            "docs/it-current-state.md"
+          ],
+          "gap": "The bounded local layout is horizontal only.",
+          "priority": "P1",
+          "risk": "high"
+        }
+      ],
+      "deliberate_differences": [
+        {
+          "summary": "The current slice is horizontal and omits custom colors, icons, authored legends, and full editorial framing.",
+          "evidence": [
+            "docs/it-current-state.md"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "high-level",
+      "name": "High-Level",
+      "wave": "Topology and hierarchy",
+      "status": "partial",
+      "source": "https://github.com/cathrynlavery/diagram-design/blob/dcd9317ed9ec7477b20005544f36e3313664d815/skills/diagram-design/references/type-high-level.md",
+      "verified_variants": [],
+      "implemented_capabilities": [
+        "dedicated source and component phase model",
+        "strict Ruby and JSON parity",
+        "forward interphase data links",
+        "one explicit focal component",
+        "orchestration targets with concern pairing",
+        "crosscuts with distinct automatic paired concerns",
+        "source type retained in accessible output",
+        "faithful-layout errors"
+      ],
+      "evidence": [
+        "spec/high_level_spec.rb",
+        "examples/standalone/high_level.rb",
+        "examples/standalone/high_level.json",
+        "examples/stream_weaver/high_levels.rb",
+        "docs/high-level.md"
+      ],
+      "baseline_case_status": {
+        "minimal-light": {
+          "classification": "missing",
+          "source_anchor": "tmp/upstream-types/type-high-level.md:451",
+          "evidence": [
+            "spec/high_level_spec.rb",
+            "examples/standalone/high_level.rb",
+            "examples/standalone/high_level.json",
+            "examples/stream_weaver/high_levels.rb",
+            "docs/high-level.md",
+            "artifacts/parity/v0/high-level/summary.json"
+          ],
+          "gap": "Browser evidence records this presentation as unavailable: SlimGraphR has no minimal profile; do not substitute editorial.",
+          "priority": "P0",
+          "risk": "high"
+        },
+        "minimal-dark": {
+          "classification": "missing",
+          "source_anchor": "tmp/upstream-types/type-high-level.md:451",
+          "evidence": [
+            "spec/high_level_spec.rb",
+            "examples/standalone/high_level.rb",
+            "examples/standalone/high_level.json",
+            "examples/stream_weaver/high_levels.rb",
+            "docs/high-level.md",
+            "artifacts/parity/v0/high-level/summary.json"
+          ],
+          "gap": "Browser evidence records this presentation as unavailable: SlimGraphR has no minimal profile; do not substitute editorial.",
+          "priority": "P1",
+          "risk": "high"
+        },
+        "full-editorial": {
+          "classification": "deliberate-different",
+          "source_anchor": "tmp/upstream-types/type-high-level.md:451",
+          "evidence": [
+            "spec/high_level_spec.rb",
+            "examples/standalone/high_level.rb",
+            "examples/standalone/high_level.json",
+            "examples/stream_weaver/high_levels.rb",
+            "docs/high-level.md",
+            "artifacts/parity/v0/high-level/summary.json"
+          ],
+          "gap": "The documented local contract intentionally excludes this pinned presentation: Pinned composition requires unsupported icon catalog, vertical concern chevrons, and source-to-component semantics.",
+          "priority": "P1",
+          "risk": "high"
+        }
+      },
+      "upstream_variants": [
+        {
+          "id": "vertical-chevrons",
+          "name": "Right-strip vertical chevrons",
+          "classification": "supported-unverified",
+          "source_anchor": "tmp/upstream-types/type-high-level.md:211-239,370-392,456",
+          "evidence": [
+            "spec/high_level_spec.rb",
+            "docs/high-level.md"
+          ],
+          "gap": "Local crosscuts auto-pair; the exact upstream vertical fixture is not gated.",
+          "priority": "P0",
+          "risk": "high"
+        },
+        {
+          "id": "unclustered-datalake",
+          "name": "Unclustered datalake",
+          "classification": "missing",
+          "source_anchor": "tmp/upstream-types/type-high-level.md:451-461",
+          "evidence": [
+            "docs/high-level.md"
+          ],
+          "gap": "Unclustered layout is outside the bounded local contract.",
+          "priority": "P1",
+          "risk": "medium"
+        }
+      ],
+      "deliberate_differences": [
+        {
+          "summary": "Crosscuts auto-pair; unclustered, custom-color, icon, and editorial-card inputs are excluded.",
+          "evidence": [
+            "spec/high_level_spec.rb",
+            "examples/standalone/high_level.rb",
+            "examples/standalone/high_level.json",
+            "examples/stream_weaver/high_levels.rb",
+            "docs/high-level.md"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "tree",
+      "name": "Tree / Hierarchy",
+      "wave": "Topology and hierarchy",
+      "status": "partial",
+      "source": "https://github.com/cathrynlavery/diagram-design/blob/dcd9317ed9ec7477b20005544f36e3313664d815/skills/diagram-design/references/type-tree.md",
+      "verified_variants": [],
+      "implemented_capabilities": [
+        "nested root and child DSL",
+        "optional zero-or-one focal node",
+        "orthogonal sibling buses in down/right layouts",
+        "strict recursive Ruby and JSON parity",
+        "bounded depth and breadth",
+        "accessible hierarchy descriptions",
+        "faithful-layout errors"
+      ],
+      "evidence": [
+        "spec/tree_spec.rb",
+        "examples/standalone/tree.rb",
+        "examples/standalone/tree.json",
+        "examples/stream_weaver/hierarchy_family.rb",
+        "docs/trees.md"
+      ],
+      "baseline_case_status": {
+        "minimal-light": {
+          "classification": "missing",
+          "source_anchor": "tmp/upstream-types/type-tree.md:21",
+          "evidence": [
+            "spec/tree_spec.rb",
+            "examples/standalone/tree.rb",
+            "examples/standalone/tree.json",
+            "examples/stream_weaver/hierarchy_family.rb",
+            "docs/trees.md",
+            "artifacts/parity/v0/tree/summary.json"
+          ],
+          "gap": "Browser evidence records this presentation as unavailable: SlimGraphR has no minimal profile; do not substitute editorial.",
+          "priority": "P0",
+          "risk": "high"
+        },
+        "minimal-dark": {
+          "classification": "missing",
+          "source_anchor": "tmp/upstream-types/type-tree.md:21",
+          "evidence": [
+            "spec/tree_spec.rb",
+            "examples/standalone/tree.rb",
+            "examples/standalone/tree.json",
+            "examples/stream_weaver/hierarchy_family.rb",
+            "docs/trees.md",
+            "artifacts/parity/v0/tree/summary.json"
+          ],
+          "gap": "Browser evidence records this presentation as unavailable: SlimGraphR has no minimal profile; do not substitute editorial.",
+          "priority": "P1",
+          "risk": "high"
+        },
+        "full-editorial": {
+          "classification": "deliberate-different",
+          "source_anchor": "tmp/upstream-types/type-tree.md:21",
+          "evidence": [
+            "spec/tree_spec.rb",
+            "examples/standalone/tree.rb",
+            "examples/standalone/tree.json",
+            "examples/stream_weaver/hierarchy_family.rb",
+            "docs/trees.md",
+            "artifacts/parity/v0/tree/summary.json"
+          ],
+          "gap": "The captured local presentation intentionally follows the documented bounded contract rather than the pinned editorial composition; human visual review remains pending.",
+          "priority": "P1",
+          "risk": "high"
+        }
+      },
+      "upstream_variants": [],
+      "deliberate_differences": [
+        {
+          "summary": "Built-in leaf treatment replaces alternate leaf indicators; cards and icons are deferred.",
+          "evidence": [
+            "spec/tree_spec.rb",
+            "examples/standalone/tree.rb",
+            "examples/standalone/tree.json",
+            "examples/stream_weaver/hierarchy_family.rb",
+            "docs/trees.md"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "nested",
+      "name": "Nested Containment",
+      "wave": "Topology and hierarchy",
+      "status": "partial",
+      "source": "https://github.com/cathrynlavery/diagram-design/blob/dcd9317ed9ec7477b20005544f36e3313664d815/skills/diagram-design/references/type-nested.md",
+      "verified_variants": [],
+      "implemented_capabilities": [
+        "one uninterrupted 3-5 scope chain",
+        "regular containment insets and masked labels",
+        "automatic innermost focal treatment",
+        "strict recursive Ruby and JSON parity",
+        "accessible containment descriptions",
+        "faithful-layout errors"
+      ],
+      "evidence": [
+        "spec/nested_spec.rb",
+        "examples/standalone/nested.rb",
+        "examples/standalone/nested.json",
+        "examples/stream_weaver/hierarchy_family.rb",
+        "docs/nested-containment.md"
+      ],
+      "baseline_case_status": {
+        "minimal-light": {
+          "classification": "missing",
+          "source_anchor": "tmp/upstream-types/type-nested.md:19",
+          "evidence": [
+            "spec/nested_spec.rb",
+            "examples/standalone/nested.rb",
+            "examples/standalone/nested.json",
+            "examples/stream_weaver/hierarchy_family.rb",
+            "docs/nested-containment.md",
+            "artifacts/parity/v0/nested/summary.json"
+          ],
+          "gap": "Browser evidence records this presentation as unavailable: SlimGraphR has no minimal profile; do not substitute editorial.",
+          "priority": "P0",
+          "risk": "high"
+        },
+        "minimal-dark": {
+          "classification": "missing",
+          "source_anchor": "tmp/upstream-types/type-nested.md:19",
+          "evidence": [
+            "spec/nested_spec.rb",
+            "examples/standalone/nested.rb",
+            "examples/standalone/nested.json",
+            "examples/stream_weaver/hierarchy_family.rb",
+            "docs/nested-containment.md",
+            "artifacts/parity/v0/nested/summary.json"
+          ],
+          "gap": "Browser evidence records this presentation as unavailable: SlimGraphR has no minimal profile; do not substitute editorial.",
+          "priority": "P1",
+          "risk": "high"
+        },
+        "full-editorial": {
+          "classification": "deliberate-different",
+          "source_anchor": "tmp/upstream-types/type-nested.md:19",
+          "evidence": [
+            "spec/nested_spec.rb",
+            "examples/standalone/nested.rb",
+            "examples/standalone/nested.json",
+            "examples/stream_weaver/hierarchy_family.rb",
+            "docs/nested-containment.md",
+            "artifacts/parity/v0/nested/summary.json"
+          ],
+          "gap": "The documented local contract intentionally excludes this pinned presentation: SlimGraphR nested containment has scope rings and labels only; it cannot represent the pinned inner CLAUDE.md document, its inherits-every-level-above statement, or the meaning-bearing callouts without a containment content and annotation model.",
+          "priority": "P1",
+          "risk": "high"
+        }
+      },
+      "upstream_variants": [],
+      "deliberate_differences": [
+        {
+          "summary": "The model is one bounded chain; sibling content, file glyphs, and free callouts are deferred.",
+          "evidence": [
+            "spec/nested_spec.rb",
+            "examples/standalone/nested.rb",
+            "examples/standalone/nested.json",
+            "examples/stream_weaver/hierarchy_family.rb",
+            "docs/nested-containment.md"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "layers",
+      "name": "Layer Stack",
+      "wave": "Topology and hierarchy",
+      "status": "partial",
+      "source": "https://github.com/cathrynlavery/diagram-design/blob/dcd9317ed9ec7477b20005544f36e3313664d815/skills/diagram-design/references/type-layers.md",
+      "verified_variants": [],
+      "implemented_capabilities": [
+        "4-6 equal ordered bands",
+        "axis and up/down indicator metadata",
+        "one focal layer",
+        "contiguous numeric or unique semantic indices",
+        "strict Ruby and JSON parity",
+        "accessible layer descriptions",
+        "faithful-layout errors"
+      ],
+      "evidence": [
+        "spec/layers_spec.rb",
+        "examples/standalone/layers.rb",
+        "examples/standalone/layers.json",
+        "examples/stream_weaver/hierarchy_family.rb",
+        "docs/layer-stacks.md"
+      ],
+      "baseline_case_status": {
+        "minimal-light": {
+          "classification": "missing",
+          "source_anchor": "tmp/upstream-types/type-layers.md:23",
+          "evidence": [
+            "spec/layers_spec.rb",
+            "examples/standalone/layers.rb",
+            "examples/standalone/layers.json",
+            "examples/stream_weaver/hierarchy_family.rb",
+            "docs/layer-stacks.md",
+            "artifacts/parity/v0/layers/summary.json"
+          ],
+          "gap": "Browser evidence records this presentation as unavailable: SlimGraphR has no minimal profile; do not substitute editorial.",
+          "priority": "P0",
+          "risk": "high"
+        },
+        "minimal-dark": {
+          "classification": "missing",
+          "source_anchor": "tmp/upstream-types/type-layers.md:23",
+          "evidence": [
+            "spec/layers_spec.rb",
+            "examples/standalone/layers.rb",
+            "examples/standalone/layers.json",
+            "examples/stream_weaver/hierarchy_family.rb",
+            "docs/layer-stacks.md",
+            "artifacts/parity/v0/layers/summary.json"
+          ],
+          "gap": "Browser evidence records this presentation as unavailable: SlimGraphR has no minimal profile; do not substitute editorial.",
+          "priority": "P1",
+          "risk": "high"
+        },
+        "full-editorial": {
+          "classification": "deliberate-different",
+          "source_anchor": "tmp/upstream-types/type-layers.md:23",
+          "evidence": [
+            "spec/layers_spec.rb",
+            "examples/standalone/layers.rb",
+            "examples/standalone/layers.json",
+            "examples/stream_weaver/hierarchy_family.rb",
+            "docs/layer-stacks.md",
+            "artifacts/parity/v0/layers/summary.json"
+          ],
+          "gap": "The documented local contract intentionally excludes this pinned presentation: Pinned example requires unsupported direction indicator and editorial row annotations.",
+          "priority": "P1",
+          "risk": "high"
+        }
+      },
+      "upstream_variants": [],
+      "deliberate_differences": [
+        {
+          "summary": "Equal-height bands preserve a bounded stack; variable heights, gradients, and icons are deferred.",
+          "evidence": [
+            "spec/layers_spec.rb",
+            "examples/standalone/layers.rb",
+            "examples/standalone/layers.json",
+            "examples/stream_weaver/hierarchy_family.rb",
+            "docs/layer-stacks.md"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "pyramid",
+      "name": "Pyramid / Funnel",
+      "wave": "Topology and hierarchy",
+      "status": "partial",
+      "source": "https://github.com/cathrynlavery/diagram-design/blob/dcd9317ed9ec7477b20005544f36e3313664d815/skills/diagram-design/references/type-pyramid.md",
+      "verified_variants": [],
+      "implemented_capabilities": [
+        "ordinal hierarchy and measured funnel modes",
+        "pyramid/funnel orientation and shared defaults",
+        "exact proportional boundaries with plateau and zero-tail fidelity",
+        "outside leaders for narrow measured labels",
+        "strict Ruby and JSON parity",
+        "accessible descriptions and faithful-layout errors"
+      ],
+      "evidence": [
+        "spec/pyramid_spec.rb",
+        "examples/standalone/pyramid.rb",
+        "examples/standalone/pyramid.json",
+        "examples/stream_weaver/pyramids_medallions.rb",
+        "docs/pyramids.md"
+      ],
+      "baseline_case_status": {
+        "minimal-light": {
+          "classification": "missing",
+          "source_anchor": "tmp/upstream-types/type-pyramid.md:30",
+          "evidence": [
+            "spec/pyramid_spec.rb",
+            "examples/standalone/pyramid.rb",
+            "examples/standalone/pyramid.json",
+            "examples/stream_weaver/pyramids_medallions.rb",
+            "docs/pyramids.md",
+            "artifacts/parity/v0/pyramid/summary.json"
+          ],
+          "gap": "Browser evidence records this presentation as unavailable: SlimGraphR has no minimal profile; do not substitute editorial.",
+          "priority": "P0",
+          "risk": "high"
+        },
+        "minimal-dark": {
+          "classification": "missing",
+          "source_anchor": "tmp/upstream-types/type-pyramid.md:30",
+          "evidence": [
+            "spec/pyramid_spec.rb",
+            "examples/standalone/pyramid.rb",
+            "examples/standalone/pyramid.json",
+            "examples/stream_weaver/pyramids_medallions.rb",
+            "docs/pyramids.md",
+            "artifacts/parity/v0/pyramid/summary.json"
+          ],
+          "gap": "Browser evidence records this presentation as unavailable: SlimGraphR has no minimal profile; do not substitute editorial.",
+          "priority": "P1",
+          "risk": "high"
+        },
+        "full-editorial": {
+          "classification": "deliberate-different",
+          "source_anchor": "tmp/upstream-types/type-pyramid.md:30",
+          "evidence": [
+            "spec/pyramid_spec.rb",
+            "examples/standalone/pyramid.rb",
+            "examples/standalone/pyramid.json",
+            "examples/stream_weaver/pyramids_medallions.rb",
+            "docs/pyramids.md",
+            "artifacts/parity/v0/pyramid/summary.json"
+          ],
+          "gap": "The documented local contract intentionally excludes this pinned presentation: Pinned example requires unsupported side drop-off annotations and honest funnel counts.",
+          "priority": "P1",
+          "risk": "high"
+        }
+      },
+      "upstream_variants": [
+        {
+          "id": "funnel-orientation",
+          "name": "Funnel orientation",
+          "classification": "supported-unverified",
+          "source_anchor": "tmp/upstream-types/type-pyramid.md:5-22",
+          "evidence": [
+            "spec/pyramid_spec.rb",
+            "docs/pyramids.md"
+          ],
+          "gap": "No exact upstream funnel fixture has passed the browser/semantic gate.",
+          "priority": "P0",
+          "risk": "high"
+        }
+      ],
+      "deliberate_differences": [
+        {
+          "summary": "Outside leaders preserve measured widths; axes, drop-off decoration, gradients, shadows, and icons are deferred.",
+          "evidence": [
+            "spec/pyramid_spec.rb",
+            "examples/standalone/pyramid.rb",
+            "examples/standalone/pyramid.json",
+            "examples/stream_weaver/pyramids_medallions.rb",
+            "docs/pyramids.md"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "medallion",
+      "name": "Medallion",
+      "wave": "Topology and hierarchy",
+      "status": "partial",
+      "source": "https://github.com/cathrynlavery/diagram-design/blob/dcd9317ed9ec7477b20005544f36e3313664d815/skills/diagram-design/references/type-medallion.md",
+      "verified_variants": [],
+      "implemented_capabilities": [
+        "3-6 fixed storage tier cards",
+        "one focal tier and optional final archive",
+        "adjacent cubic promotion arcs with precedence styling",
+        "semantic concern palette capped at two elements",
+        "zero-to-two measured write paths",
+        "strict Ruby and JSON parity",
+        "accessible descriptions and faithful-layout errors"
+      ],
+      "evidence": [
+        "spec/medallion_spec.rb",
+        "examples/standalone/medallion.rb",
+        "examples/standalone/medallion.json",
+        "examples/stream_weaver/pyramids_medallions.rb",
+        "docs/medallions.md"
+      ],
+      "baseline_case_status": {
+        "minimal-light": {
+          "classification": "missing",
+          "source_anchor": "tmp/upstream-types/type-medallion.md:346",
+          "evidence": [
+            "spec/medallion_spec.rb",
+            "examples/standalone/medallion.rb",
+            "examples/standalone/medallion.json",
+            "examples/stream_weaver/pyramids_medallions.rb",
+            "docs/medallions.md",
+            "artifacts/parity/v0/medallion/summary.json"
+          ],
+          "gap": "Browser evidence records this presentation as unavailable: SlimGraphR has no minimal profile; do not substitute editorial.",
+          "priority": "P0",
+          "risk": "high"
+        },
+        "minimal-dark": {
+          "classification": "missing",
+          "source_anchor": "tmp/upstream-types/type-medallion.md:346",
+          "evidence": [
+            "spec/medallion_spec.rb",
+            "examples/standalone/medallion.rb",
+            "examples/standalone/medallion.json",
+            "examples/stream_weaver/pyramids_medallions.rb",
+            "docs/medallions.md",
+            "artifacts/parity/v0/medallion/summary.json"
+          ],
+          "gap": "Browser evidence records this presentation as unavailable: SlimGraphR has no minimal profile; do not substitute editorial.",
+          "priority": "P1",
+          "risk": "high"
+        },
+        "full-editorial": {
+          "classification": "deliberate-different",
+          "source_anchor": "tmp/upstream-types/type-medallion.md:346",
+          "evidence": [
+            "spec/medallion_spec.rb",
+            "examples/standalone/medallion.rb",
+            "examples/standalone/medallion.json",
+            "examples/stream_weaver/pyramids_medallions.rb",
+            "docs/medallions.md",
+            "artifacts/parity/v0/medallion/summary.json"
+          ],
+          "gap": "The documented local contract intentionally excludes this pinned presentation: Pinned example requires unsupported field cards, wrapped values, and promotion path semantics.",
+          "priority": "P1",
+          "risk": "high"
+        }
+      },
+      "upstream_variants": [
+        {
+          "id": "upstream-style-taxonomy",
+          "name": "outer/default/focal/cold style taxonomy",
+          "classification": "deliberate-different",
+          "source_anchor": "tmp/upstream-types/type-medallion.md:142-218,284-315",
+          "evidence": [
+            "docs/medallions.md",
+            "spec/medallion_spec.rb"
+          ],
+          "gap": "Local semantic concerns and archive/focal precedence replace arbitrary upstream styles and colors.",
+          "priority": "P1",
+          "risk": "high"
+        }
+      ],
+      "deliberate_differences": [
+        {
+          "summary": "Semantic concern colors and explicit precedence replace arbitrary upstream colors and field grammar.",
+          "evidence": [
+            "spec/medallion_spec.rb",
+            "examples/standalone/medallion.rb",
+            "examples/standalone/medallion.json",
+            "examples/stream_weaver/pyramids_medallions.rb",
+            "docs/medallions.md"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "swimlane",
+      "name": "Swimlane",
+      "wave": "Workflows and platforms",
+      "status": "partial",
+      "source": "https://github.com/cathrynlavery/diagram-design/blob/dcd9317ed9ec7477b20005544f36e3313664d815/skills/diagram-design/references/type-swimlane.md",
+      "verified_variants": [],
+      "implemented_capabilities": [
+        "dedicated horizontal actor lanes",
+        "contiguous numbered stages",
+        "one activity per lane/stage cell",
+        "strict Ruby and JSON parity",
+        "optional focal handoff",
+        "faithful-layout errors"
+      ],
+      "evidence": [
+        "spec/workflow_spec.rb",
+        "examples/standalone/swimlane.rb",
+        "examples/standalone/swimlane.json",
+        "examples/stream_weaver/workflows.rb",
+        "docs/swimlanes.md"
+      ],
+      "baseline_case_status": {
+        "minimal-light": {
+          "classification": "supported-unverified",
+          "source_anchor": "tmp/upstream-types/type-swimlane.md:17",
+          "evidence": [
+            "spec/workflow_spec.rb",
+            "examples/standalone/swimlane.rb",
+            "examples/standalone/swimlane.json",
+            "examples/stream_weaver/workflows.rb",
+            "docs/swimlanes.md",
+            "artifacts/parity/v0/swimlane/summary.json"
+          ],
+          "gap": "The exact semantic fixture renders with SlimGraphR minimal light profile; browser capture and human visual review remain pending.",
+          "priority": "P0",
+          "risk": "high"
+        },
+        "minimal-dark": {
+          "classification": "supported-unverified",
+          "source_anchor": "tmp/upstream-types/type-swimlane.md:17",
+          "evidence": [
+            "spec/workflow_spec.rb",
+            "examples/standalone/swimlane.rb",
+            "examples/standalone/swimlane.json",
+            "examples/stream_weaver/workflows.rb",
+            "docs/swimlanes.md",
+            "artifacts/parity/v0/swimlane/summary.json"
+          ],
+          "gap": "The exact semantic fixture renders with SlimGraphR minimal dark profile; browser capture and human visual review remain pending.",
+          "priority": "P1",
+          "risk": "high"
+        },
+        "full-editorial": {
+          "classification": "supported-unverified",
+          "source_anchor": "tmp/upstream-types/type-swimlane.md:17",
+          "evidence": [
+            "spec/workflow_spec.rb",
+            "examples/standalone/swimlane.rb",
+            "examples/standalone/swimlane.json",
+            "examples/stream_weaver/workflows.rb",
+            "docs/swimlanes.md",
+            "artifacts/parity/v0/swimlane/summary.json"
+          ],
+          "gap": "The exact pinned semantic fixture renders every authored node and relationship; browser geometry and human visual review remain pending.",
+          "priority": "P1",
+          "risk": "high"
+        }
+      },
+      "upstream_variants": [],
+      "deliberate_differences": [
+        {
+          "summary": "A fixed horizontal grid replaces vertical lanes and uneven per-lane step counts.",
+          "evidence": [
+            "spec/workflow_spec.rb",
+            "examples/standalone/swimlane.rb",
+            "examples/standalone/swimlane.json",
+            "examples/stream_weaver/workflows.rb",
+            "docs/swimlanes.md"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "process",
+      "name": "Process",
+      "wave": "Workflows and platforms",
+      "status": "partial",
+      "source": "https://github.com/cathrynlavery/diagram-design/blob/dcd9317ed9ec7477b20005544f36e3313664d815/skills/diagram-design/references/type-process.md",
+      "verified_variants": [],
+      "implemented_capabilities": [
+        "keyed horizontal actor lanes",
+        "tool and payload operation cards",
+        "independent focal stage and operation",
+        "24 ordinary handoffs and one return trigger",
+        "strict Ruby and JSON parity",
+        "faithful-layout errors"
+      ],
+      "evidence": [
+        "spec/workflow_spec.rb",
+        "examples/standalone/process.rb",
+        "examples/standalone/process.json",
+        "examples/stream_weaver/workflows.rb",
+        "docs/processes.md"
+      ],
+      "baseline_case_status": {
+        "minimal-light": {
+          "classification": "supported-unverified",
+          "source_anchor": "tmp/upstream-types/type-process.md:488",
+          "evidence": [
+            "spec/workflow_spec.rb",
+            "examples/standalone/process.rb",
+            "examples/standalone/process.json",
+            "examples/stream_weaver/workflows.rb",
+            "docs/processes.md",
+            "artifacts/parity/v0/process/summary.json"
+          ],
+          "gap": "The exact semantic fixture renders with SlimGraphR minimal light profile; browser capture and human visual review remain pending.",
+          "priority": "P0",
+          "risk": "high"
+        },
+        "minimal-dark": {
+          "classification": "supported-unverified",
+          "source_anchor": "tmp/upstream-types/type-process.md:488",
+          "evidence": [
+            "spec/workflow_spec.rb",
+            "examples/standalone/process.rb",
+            "examples/standalone/process.json",
+            "examples/stream_weaver/workflows.rb",
+            "docs/processes.md",
+            "artifacts/parity/v0/process/summary.json"
+          ],
+          "gap": "The exact semantic fixture renders with SlimGraphR minimal dark profile; browser capture and human visual review remain pending.",
+          "priority": "P1",
+          "risk": "high"
+        },
+        "full-editorial": {
+          "classification": "supported-unverified",
+          "source_anchor": "tmp/upstream-types/type-process.md:488",
+          "evidence": [
+            "spec/workflow_spec.rb",
+            "examples/standalone/process.rb",
+            "examples/standalone/process.json",
+            "examples/stream_weaver/workflows.rb",
+            "docs/processes.md",
+            "artifacts/parity/v0/process/summary.json"
+          ],
+          "gap": "Browser evidence captures this local presentation; human visual review and the remaining parity gates are pending.",
+          "priority": "P1",
+          "risk": "high"
+        }
+      },
+      "upstream_variants": [
+        {
+          "id": "extended-6x11",
+          "name": "Extended 6-lane by 11-step worked case",
+          "classification": "missing",
+          "source_anchor": "tmp/upstream-types/type-process.md:391-456",
+          "evidence": [
+            "docs/processes.md"
+          ],
+          "gap": "A stress case rather than a separate public variant; it exceeds local bounds and uses custom colors.",
+          "priority": "P2",
+          "risk": "high"
+        }
+      ],
+      "deliberate_differences": []
+    },
+    {
+      "type": "gantt",
+      "name": "Gantt Chart",
+      "wave": "Workflows and platforms",
+      "status": "partial",
+      "source": "https://github.com/cathrynlavery/diagram-design/blob/dcd9317ed9ec7477b20005544f36e3313664d815/skills/diagram-design/references/type-gantt.md",
+      "verified_variants": [],
+      "implemented_capabilities": [
+        "static calendar plan with phases, tasks, milestones, and markers",
+        "complete Gregorian dates and exact half-open task intervals",
+        "declaration-order rows, phase/global point tracks, and sparse year-aware ticks",
+        "strict Ruby and JSON parity",
+        "accessible descriptions and faithful-layout errors"
+      ],
+      "evidence": [
+        "spec/planning_boards_spec.rb",
+        "examples/standalone/gantt.rb",
+        "examples/standalone/gantt.json",
+        "docs/gantt.md"
+      ],
+      "baseline_case_status": {
+        "minimal-light": {
+          "classification": "supported-unverified",
+          "source_anchor": "tmp/upstream-types/type-gantt.md:41",
+          "evidence": [
+            "spec/planning_boards_spec.rb",
+            "examples/standalone/gantt.rb",
+            "examples/standalone/gantt.json",
+            "docs/gantt.md",
+            "artifacts/parity/v0/gantt/summary.json"
+          ],
+          "gap": "The exact semantic fixture renders with SlimGraphR minimal light profile; browser capture and human visual review remain pending.",
+          "priority": "P0",
+          "risk": "high"
+        },
+        "minimal-dark": {
+          "classification": "supported-unverified",
+          "source_anchor": "tmp/upstream-types/type-gantt.md:41",
+          "evidence": [
+            "spec/planning_boards_spec.rb",
+            "examples/standalone/gantt.rb",
+            "examples/standalone/gantt.json",
+            "docs/gantt.md",
+            "artifacts/parity/v0/gantt/summary.json"
+          ],
+          "gap": "The exact semantic fixture renders with SlimGraphR minimal dark profile; browser capture and human visual review remain pending.",
+          "priority": "P1",
+          "risk": "high"
+        },
+        "full-editorial": {
+          "classification": "supported-unverified",
+          "source_anchor": "tmp/upstream-types/type-gantt.md:41",
+          "evidence": [
+            "spec/planning_boards_spec.rb",
+            "examples/standalone/gantt.rb",
+            "examples/standalone/gantt.json",
+            "docs/gantt.md",
+            "artifacts/parity/v0/gantt/summary.json"
+          ],
+          "gap": "Browser evidence captures this local presentation; human visual review and the remaining parity gates are pending.",
+          "priority": "P1",
+          "risk": "high"
+        }
+      },
+      "upstream_variants": [],
+      "deliberate_differences": []
+    },
+    {
+      "type": "kanban",
+      "name": "Kanban Board",
+      "wave": "Workflows and platforms",
+      "status": "partial",
+      "source": "https://github.com/cathrynlavery/diagram-design/blob/dcd9317ed9ec7477b20005544f36e3313664d815/skills/diagram-design/references/type-kanban.md",
+      "verified_variants": [],
+      "implemented_capabilities": [
+        "static ordered columns and cards",
+        "neutral, blocked, waiting, and done card states with optional metadata",
+        "derived counts, honest WIP limits and violation treatment",
+        "strict Ruby and JSON parity",
+        "accessible descriptions and faithful-layout errors"
+      ],
+      "evidence": [
+        "spec/planning_boards_spec.rb",
+        "examples/standalone/kanban.rb",
+        "examples/standalone/kanban.json",
+        "docs/kanban.md"
+      ],
+      "baseline_case_status": {
+        "minimal-light": {
+          "classification": "supported-unverified",
+          "source_anchor": "tmp/upstream-types/type-kanban.md:45",
+          "evidence": [
+            "spec/planning_boards_spec.rb",
+            "examples/standalone/kanban.rb",
+            "examples/standalone/kanban.json",
+            "docs/kanban.md",
+            "artifacts/parity/v0/kanban/summary.json"
+          ],
+          "gap": "The exact semantic fixture renders with SlimGraphR minimal light profile; browser capture and human visual review remain pending.",
+          "priority": "P0",
+          "risk": "high"
+        },
+        "minimal-dark": {
+          "classification": "supported-unverified",
+          "source_anchor": "tmp/upstream-types/type-kanban.md:45",
+          "evidence": [
+            "spec/planning_boards_spec.rb",
+            "examples/standalone/kanban.rb",
+            "examples/standalone/kanban.json",
+            "docs/kanban.md",
+            "artifacts/parity/v0/kanban/summary.json"
+          ],
+          "gap": "The exact semantic fixture renders with SlimGraphR minimal dark profile; browser capture and human visual review remain pending.",
+          "priority": "P1",
+          "risk": "high"
+        },
+        "full-editorial": {
+          "classification": "supported-unverified",
+          "source_anchor": "tmp/upstream-types/type-kanban.md:45",
+          "evidence": [
+            "spec/planning_boards_spec.rb",
+            "examples/standalone/kanban.rb",
+            "examples/standalone/kanban.json",
+            "docs/kanban.md",
+            "artifacts/parity/v0/kanban/summary.json"
+          ],
+          "gap": "Browser evidence captures this local presentation; human visual review and the remaining parity gates are pending.",
+          "priority": "P1",
+          "risk": "high"
+        }
+      },
+      "upstream_variants": [],
+      "deliberate_differences": [
+        {
+          "summary": "Kanban is a static authored census with no inferred state, analytics, or dynamic board behavior.",
+          "evidence": [
+            "spec/planning_boards_spec.rb",
+            "examples/standalone/kanban.rb",
+            "examples/standalone/kanban.json",
+            "docs/kanban.md"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "journey",
+      "name": "User Journey Map",
+      "wave": "Workflows and platforms",
+      "status": "partial",
+      "source": "https://github.com/cathrynlavery/diagram-design/blob/dcd9317ed9ec7477b20005544f36e3313664d815/skills/diagram-design/references/type-journey.md",
+      "verified_variants": [],
+      "implemented_capabilities": [
+        "single-persona ordinal sentiment stages",
+        "unique trough and trough-only pain markers",
+        "strict Ruby and JSON parity",
+        "accessible descriptions and faithful-layout errors"
+      ],
+      "evidence": [
+        "spec/journey_spec.rb",
+        "spec/integration/journey_spec.rb",
+        "examples/standalone/journey.rb",
+        "examples/standalone/journey.json",
+        "examples/stream_weaver/journey_family.rb",
+        "docs/journeys.md"
+      ],
+      "baseline_case_status": {
+        "minimal-light": {
+          "classification": "supported-unverified",
+          "source_anchor": "tmp/upstream-types/type-journey.md:49",
+          "evidence": [
+            "spec/journey_spec.rb",
+            "spec/integration/journey_spec.rb",
+            "examples/standalone/journey.rb",
+            "examples/standalone/journey.json",
+            "examples/stream_weaver/journey_family.rb",
+            "docs/journeys.md",
+            "artifacts/parity/v0/journey/summary.json"
+          ],
+          "gap": "The exact semantic fixture renders with SlimGraphR minimal light profile; browser capture and human visual review remain pending.",
+          "priority": "P0",
+          "risk": "high"
+        },
+        "minimal-dark": {
+          "classification": "supported-unverified",
+          "source_anchor": "tmp/upstream-types/type-journey.md:49",
+          "evidence": [
+            "spec/journey_spec.rb",
+            "spec/integration/journey_spec.rb",
+            "examples/standalone/journey.rb",
+            "examples/standalone/journey.json",
+            "examples/stream_weaver/journey_family.rb",
+            "docs/journeys.md",
+            "artifacts/parity/v0/journey/summary.json"
+          ],
+          "gap": "The exact semantic fixture renders with SlimGraphR minimal dark profile; browser capture and human visual review remain pending.",
+          "priority": "P1",
+          "risk": "high"
+        },
+        "full-editorial": {
+          "classification": "supported-unverified",
+          "source_anchor": "tmp/upstream-types/type-journey.md:49",
+          "evidence": [
+            "spec/journey_spec.rb",
+            "spec/integration/journey_spec.rb",
+            "examples/standalone/journey.rb",
+            "examples/standalone/journey.json",
+            "examples/stream_weaver/journey_family.rb",
+            "docs/journeys.md",
+            "artifacts/parity/v0/journey/summary.json"
+          ],
+          "gap": "The exact fixture now renders with a measured expanded pain-marker cell; browser capture remains awaiting the coordinator gate.",
+          "priority": "P1",
+          "risk": "high"
+        }
+      },
+      "upstream_variants": [],
+      "deliberate_differences": [
+        {
+          "summary": "Sentiment is explicit ordinal data, never a continuous score or time axis.",
+          "evidence": [
+            "spec/journey_spec.rb",
+            "spec/integration/journey_spec.rb",
+            "examples/standalone/journey.rb",
+            "examples/standalone/journey.json",
+            "examples/stream_weaver/journey_family.rb",
+            "docs/journeys.md"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "story-map",
+      "name": "User Story Map",
+      "wave": "Workflows and platforms",
+      "status": "partial",
+      "source": "https://github.com/cathrynlavery/diagram-design/blob/dcd9317ed9ec7477b20005544f36e3313664d815/skills/diagram-design/references/type-story-map.md",
+      "verified_variants": [],
+      "implemented_capabilities": [
+        "ordered narrative activities and steps",
+        "release bands with one non-final cut",
+        "authored ticket/estimate metadata and one risk story",
+        "strict Ruby and JSON parity",
+        "accessible descriptions and faithful-layout errors"
+      ],
+      "evidence": [
+        "spec/journey_spec.rb",
+        "spec/integration/journey_spec.rb",
+        "examples/standalone/story_map.rb",
+        "examples/standalone/story_map.json",
+        "examples/stream_weaver/journey_family.rb",
+        "docs/story-maps.md"
+      ],
+      "baseline_case_status": {
+        "minimal-light": {
+          "classification": "supported-unverified",
+          "source_anchor": "tmp/upstream-types/type-story-map.md:42",
+          "evidence": [
+            "spec/journey_spec.rb",
+            "spec/integration/journey_spec.rb",
+            "examples/standalone/story_map.rb",
+            "examples/standalone/story_map.json",
+            "examples/stream_weaver/journey_family.rb",
+            "docs/story-maps.md",
+            "artifacts/parity/v0/story-map/summary.json"
+          ],
+          "gap": "The exact semantic fixture renders with SlimGraphR minimal light profile; browser capture and human visual review remain pending.",
+          "priority": "P0",
+          "risk": "high"
+        },
+        "minimal-dark": {
+          "classification": "supported-unverified",
+          "source_anchor": "tmp/upstream-types/type-story-map.md:42",
+          "evidence": [
+            "spec/journey_spec.rb",
+            "spec/integration/journey_spec.rb",
+            "examples/standalone/story_map.rb",
+            "examples/standalone/story_map.json",
+            "examples/stream_weaver/journey_family.rb",
+            "docs/story-maps.md",
+            "artifacts/parity/v0/story-map/summary.json"
+          ],
+          "gap": "The exact semantic fixture renders with SlimGraphR minimal dark profile; browser capture and human visual review remain pending.",
+          "priority": "P1",
+          "risk": "high"
+        },
+        "full-editorial": {
+          "classification": "supported-unverified",
+          "source_anchor": "tmp/upstream-types/type-story-map.md:42",
+          "evidence": [
+            "spec/journey_spec.rb",
+            "spec/integration/journey_spec.rb",
+            "examples/standalone/story_map.rb",
+            "examples/standalone/story_map.json",
+            "examples/stream_weaver/journey_family.rb",
+            "docs/story-maps.md",
+            "artifacts/parity/v0/story-map/summary.json"
+          ],
+          "gap": "Browser evidence captures this local presentation; human visual review and the remaining parity gates are pending.",
+          "priority": "P1",
+          "risk": "high"
+        }
+      },
+      "upstream_variants": [],
+      "deliberate_differences": [
+        {
+          "summary": "Release cuts and risk are authored; state, priority, sentiment, and calendar meaning are not inferred.",
+          "evidence": [
+            "spec/journey_spec.rb",
+            "spec/integration/journey_spec.rb",
+            "examples/standalone/story_map.rb",
+            "examples/standalone/story_map.json",
+            "examples/stream_weaver/journey_family.rb",
+            "docs/story-maps.md"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "data-flow",
+      "name": "Data Flow",
+      "wave": "Workflows and platforms",
+      "status": "partial",
+      "source": "https://github.com/cathrynlavery/diagram-design/blob/dcd9317ed9ec7477b20005544f36e3313664d815/skills/diagram-design/references/type-data-flow.md",
+      "verified_variants": [],
+      "implemented_capabilities": [
+        "dedicated immutable role, step, transfer, and handoff model",
+        "strict Ruby and JSON parity",
+        "declared payloads and explicit handoff kinds",
+        "linked focal step, transfer, and handoff claim",
+        "fixed role/stage grid with orthogonal routes",
+        "accessible descriptions and faithful-layout errors"
+      ],
+      "evidence": [
+        "spec/data_flow_spec.rb",
+        "examples/standalone/data_flow.rb",
+        "examples/standalone/data_flow.json",
+        "examples/stream_weaver/data_flows.rb",
+        "docs/data-flows.md"
+      ],
+      "baseline_case_status": {
+        "minimal-light": {
+          "classification": "supported-unverified",
+          "source_anchor": "tmp/upstream-types/type-data-flow.md:367",
+          "evidence": [
+            "spec/data_flow_spec.rb",
+            "examples/standalone/data_flow.rb",
+            "examples/standalone/data_flow.json",
+            "examples/stream_weaver/data_flows.rb",
+            "docs/data-flows.md",
+            "artifacts/parity/v0/data-flow/summary.json"
+          ],
+          "gap": "The exact semantic fixture renders with SlimGraphR minimal light profile; browser capture and human visual review remain pending.",
+          "priority": "P0",
+          "risk": "high"
+        },
+        "minimal-dark": {
+          "classification": "supported-unverified",
+          "source_anchor": "tmp/upstream-types/type-data-flow.md:367",
+          "evidence": [
+            "spec/data_flow_spec.rb",
+            "examples/standalone/data_flow.rb",
+            "examples/standalone/data_flow.json",
+            "examples/stream_weaver/data_flows.rb",
+            "docs/data-flows.md",
+            "artifacts/parity/v0/data-flow/summary.json"
+          ],
+          "gap": "The exact semantic fixture renders with SlimGraphR minimal dark profile; browser capture and human visual review remain pending.",
+          "priority": "P1",
+          "risk": "high"
+        },
+        "full-editorial": {
+          "classification": "supported-unverified",
+          "source_anchor": "tmp/upstream-types/type-data-flow.md:367",
+          "evidence": [
+            "spec/data_flow_spec.rb",
+            "examples/standalone/data_flow.rb",
+            "examples/standalone/data_flow.json",
+            "examples/stream_weaver/data_flows.rb",
+            "docs/data-flows.md",
+            "artifacts/parity/v0/data-flow/summary.json"
+          ],
+          "gap": "The exact semantic fixture renders with SlimGraphR's editorial profile; browser capture and human visual review remain pending.",
+          "priority": "P1",
+          "risk": "high"
+        }
+      },
+      "upstream_variants": [],
+      "deliberate_differences": [
+        {
+          "summary": "Payload conversions, lineage, arbitrary labels/colors/coordinates, and inferred routes are excluded.",
+          "evidence": [
+            "spec/data_flow_spec.rb",
+            "examples/standalone/data_flow.rb",
+            "examples/standalone/data_flow.json",
+            "examples/stream_weaver/data_flows.rb",
+            "docs/data-flows.md"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "dp-integration",
+      "name": "DP integration",
+      "wave": "Workflows and platforms",
+      "status": "partial",
+      "source": "https://github.com/cathrynlavery/diagram-design/blob/dcd9317ed9ec7477b20005544f36e3313664d815/skills/diagram-design/references/type-dp-integration.md",
+      "verified_variants": [],
+      "implemented_capabilities": [
+        "dedicated immutable platform-zone model",
+        "strict Ruby and JSON parity",
+        "explicit integration wire kinds and protocols",
+        "layer-wide services attached to the platform boundary",
+        "measured geometry and accessible descriptions"
+      ],
+      "evidence": [
+        "spec/dp_integration_spec.rb",
+        "examples/standalone/dp_integration.rb",
+        "examples/standalone/dp_integration.json",
+        "docs/platform-integrations.md"
+      ],
+      "baseline_case_status": {
+        "minimal-light": {
+          "classification": "supported-unverified",
+          "source_anchor": "tmp/upstream-types/type-dp-integration.md:403",
+          "evidence": [
+            "spec/dp_integration_spec.rb",
+            "examples/standalone/dp_integration.rb",
+            "examples/standalone/dp_integration.json",
+            "docs/platform-integrations.md",
+            "artifacts/parity/v0/dp-integration/summary.json"
+          ],
+          "gap": "The exact semantic fixture renders with SlimGraphR minimal light profile; browser capture and human visual review remain pending.",
+          "priority": "P0",
+          "risk": "high"
+        },
+        "minimal-dark": {
+          "classification": "supported-unverified",
+          "source_anchor": "tmp/upstream-types/type-dp-integration.md:403",
+          "evidence": [
+            "spec/dp_integration_spec.rb",
+            "examples/standalone/dp_integration.rb",
+            "examples/standalone/dp_integration.json",
+            "docs/platform-integrations.md",
+            "artifacts/parity/v0/dp-integration/summary.json"
+          ],
+          "gap": "The exact semantic fixture renders with SlimGraphR minimal dark profile; browser capture and human visual review remain pending.",
+          "priority": "P1",
+          "risk": "high"
+        },
+        "full-editorial": {
+          "classification": "supported-unverified",
+          "source_anchor": "tmp/upstream-types/type-dp-integration.md:403",
+          "evidence": [
+            "spec/dp_integration_spec.rb",
+            "examples/standalone/dp_integration.rb",
+            "examples/standalone/dp_integration.json",
+            "docs/platform-integrations.md",
+            "artifacts/parity/v0/dp-integration/summary.json"
+          ],
+          "gap": "The exact fixture now renders with measured cards, endpoint lanes, and protocol corridors; browser capture remains awaiting the coordinator gate.",
+          "priority": "P1",
+          "risk": "high"
+        }
+      },
+      "upstream_variants": [],
+      "deliberate_differences": [
+        {
+          "summary": "Labels replace a required upstream icon library; arbitrary decorative paths and full framing are deferred.",
+          "evidence": [
+            "spec/dp_integration_spec.rb",
+            "examples/standalone/dp_integration.rb",
+            "examples/standalone/dp_integration.json",
+            "docs/platform-integrations.md"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "dp-security-matrix",
+      "name": "DP security matrix",
+      "wave": "Workflows and platforms",
+      "status": "partial",
+      "source": "https://github.com/cathrynlavery/diagram-design/blob/dcd9317ed9ec7477b20005544f36e3313664d815/skills/diagram-design/references/type-dp-security-matrix.md",
+      "verified_variants": [],
+      "implemented_capabilities": [
+        "dedicated immutable role, component, and permission model",
+        "strict Ruby and JSON parity with a complete explicit grid",
+        "distinct authored admin, write, read, deny, and unknown levels",
+        "connector-free measured table and used-level legend",
+        "optional codes, hints, one focal note, and accessible descriptions"
+      ],
+      "evidence": [
+        "spec/dp_security_matrix_spec.rb",
+        "spec/integration/dp_security_matrix_spec.rb",
+        "examples/standalone/dp_security_matrix.rb",
+        "examples/standalone/dp_security_matrix.json",
+        "examples/stream_weaver/dp_security_matrices.rb",
+        "docs/access-matrices.md"
+      ],
+      "baseline_case_status": {
+        "minimal-light": {
+          "classification": "supported-unverified",
+          "source_anchor": "tmp/upstream-types/type-dp-security-matrix.md:292",
+          "evidence": [
+            "spec/dp_security_matrix_spec.rb",
+            "spec/integration/dp_security_matrix_spec.rb",
+            "examples/standalone/dp_security_matrix.rb",
+            "examples/standalone/dp_security_matrix.json",
+            "examples/stream_weaver/dp_security_matrices.rb",
+            "docs/access-matrices.md",
+            "artifacts/parity/v0/dp-security-matrix/summary.json"
+          ],
+          "gap": "The exact semantic fixture renders with SlimGraphR minimal light profile; browser capture and human visual review remain pending.",
+          "priority": "P0",
+          "risk": "high"
+        },
+        "minimal-dark": {
+          "classification": "supported-unverified",
+          "source_anchor": "tmp/upstream-types/type-dp-security-matrix.md:292",
+          "evidence": [
+            "spec/dp_security_matrix_spec.rb",
+            "spec/integration/dp_security_matrix_spec.rb",
+            "examples/standalone/dp_security_matrix.rb",
+            "examples/standalone/dp_security_matrix.json",
+            "examples/stream_weaver/dp_security_matrices.rb",
+            "docs/access-matrices.md",
+            "artifacts/parity/v0/dp-security-matrix/summary.json"
+          ],
+          "gap": "The exact semantic fixture renders with SlimGraphR minimal dark profile; browser capture and human visual review remain pending.",
+          "priority": "P1",
+          "risk": "high"
+        },
+        "full-editorial": {
+          "classification": "supported-unverified",
+          "source_anchor": "tmp/upstream-types/type-dp-security-matrix.md:292",
+          "evidence": [
+            "spec/dp_security_matrix_spec.rb",
+            "spec/integration/dp_security_matrix_spec.rb",
+            "examples/standalone/dp_security_matrix.rb",
+            "examples/standalone/dp_security_matrix.json",
+            "examples/stream_weaver/dp_security_matrices.rb",
+            "docs/access-matrices.md",
+            "artifacts/parity/v0/dp-security-matrix/summary.json"
+          ],
+          "gap": "Browser evidence captures this local presentation; human visual review and the remaining parity gates are pending.",
+          "priority": "P1",
+          "risk": "high"
+        }
+      },
+      "upstream_variants": [],
+      "deliberate_differences": [
+        {
+          "summary": "Explicit unknown is distinct from denial; arbitrary color overrides and decorative variants are deferred.",
+          "evidence": [
+            "spec/dp_security_matrix_spec.rb",
+            "spec/integration/dp_security_matrix_spec.rb",
+            "examples/standalone/dp_security_matrix.rb",
+            "examples/standalone/dp_security_matrix.json",
+            "examples/stream_weaver/dp_security_matrices.rb",
+            "docs/access-matrices.md"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "er",
+      "name": "ER / Data Model",
+      "wave": "Models and strategy",
+      "status": "partial",
+      "source": "https://github.com/cathrynlavery/diagram-design/blob/dcd9317ed9ec7477b20005544f36e3313664d815/skills/diagram-design/references/type-er.md",
+      "verified_variants": [],
+      "implemented_capabilities": [
+        "dedicated immutable entity, field, and relationship model",
+        "strict Ruby and JSON parity",
+        "entity-scoped field identities and explicit key classifications",
+        "natural-height entity cards",
+        "neutral orthogonal relationships with distinct ports",
+        "exact authored endpoint cardinalities and masked labels",
+        "accessible descriptions and faithful-layout errors"
+      ],
+      "evidence": [
+        "spec/er_spec.rb",
+        "examples/standalone/entity_relationships.rb",
+        "examples/standalone/entity_relationships.json",
+        "examples/stream_weaver/entity_relationships.rb",
+        "docs/entity-relationships.md"
+      ],
+      "baseline_case_status": {
+        "minimal-light": {
+          "classification": "supported-unverified",
+          "source_anchor": "tmp/upstream-types/type-er.md:22",
+          "evidence": [
+            "spec/er_spec.rb",
+            "examples/standalone/entity_relationships.rb",
+            "examples/standalone/entity_relationships.json",
+            "examples/stream_weaver/entity_relationships.rb",
+            "docs/entity-relationships.md",
+            "artifacts/parity/v0/er/summary.json"
+          ],
+          "gap": "The exact semantic fixture renders with SlimGraphR minimal light profile; browser capture and human visual review remain pending.",
+          "priority": "P0",
+          "risk": "high"
+        },
+        "minimal-dark": {
+          "classification": "supported-unverified",
+          "source_anchor": "tmp/upstream-types/type-er.md:22",
+          "evidence": [
+            "spec/er_spec.rb",
+            "examples/standalone/entity_relationships.rb",
+            "examples/standalone/entity_relationships.json",
+            "examples/stream_weaver/entity_relationships.rb",
+            "docs/entity-relationships.md",
+            "artifacts/parity/v0/er/summary.json"
+          ],
+          "gap": "The exact semantic fixture renders with SlimGraphR minimal dark profile; browser capture and human visual review remain pending.",
+          "priority": "P1",
+          "risk": "high"
+        },
+        "full-editorial": {
+          "classification": "supported-unverified",
+          "source_anchor": "tmp/upstream-types/type-er.md:22",
+          "evidence": [
+            "spec/er_spec.rb",
+            "examples/standalone/entity_relationships.rb",
+            "examples/standalone/entity_relationships.json",
+            "examples/stream_weaver/entity_relationships.rb",
+            "docs/entity-relationships.md",
+            "artifacts/parity/v0/er/summary.json"
+          ],
+          "gap": "Exact local HTML preserves field type/qualifier values and aggregate-root/join-table kinds; coordinator browser geometry and visual review remain.",
+          "priority": "P0",
+          "risk": "high"
+        }
+      },
+      "upstream_variants": [],
+      "deliberate_differences": [
+        {
+          "summary": "Physical SQL and schema facts are routed to Database Schema.",
+          "evidence": [
+            "spec/er_spec.rb",
+            "examples/standalone/entity_relationships.rb",
+            "examples/standalone/entity_relationships.json",
+            "examples/stream_weaver/entity_relationships.rb",
+            "docs/entity-relationships.md"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "db-schema",
+      "name": "Database Schema",
+      "wave": "Models and strategy",
+      "status": "partial",
+      "source": "https://github.com/cathrynlavery/diagram-design/blob/dcd9317ed9ec7477b20005544f36e3313664d815/skills/diagram-design/references/type-db-schema.md",
+      "verified_variants": [],
+      "implemented_capabilities": [
+        "dedicated immutable table, column, and foreign-key model",
+        "strict Ruby and JSON parity",
+        "table-scoped columns with literal SQL types, constraints, schemas, and indexes",
+        "fixed 24px rows with exact named foreign-key endpoints",
+        "symmetric in-row ports and rounded orthogonal routes",
+        "explicit deletion actions and dependent-table cascade treatment",
+        "accessible descriptions and faithful-layout errors"
+      ],
+      "evidence": [
+        "spec/db_schema_spec.rb",
+        "examples/standalone/database_schema.rb",
+        "examples/standalone/database_schema.json",
+        "examples/stream_weaver/database_schemas.rb",
+        "docs/database-schemas.md"
+      ],
+      "baseline_case_status": {
+        "minimal-light": {
+          "classification": "supported-unverified",
+          "source_anchor": "tmp/upstream-types/type-db-schema.md:44",
+          "evidence": [
+            "spec/db_schema_spec.rb",
+            "examples/standalone/database_schema.rb",
+            "examples/standalone/database_schema.json",
+            "examples/stream_weaver/database_schemas.rb",
+            "docs/database-schemas.md",
+            "artifacts/parity/v0/db-schema/summary.json"
+          ],
+          "gap": "The exact semantic fixture renders with SlimGraphR minimal light profile; browser capture and human visual review remain pending.",
+          "priority": "P0",
+          "risk": "high"
+        },
+        "minimal-dark": {
+          "classification": "supported-unverified",
+          "source_anchor": "tmp/upstream-types/type-db-schema.md:44",
+          "evidence": [
+            "spec/db_schema_spec.rb",
+            "examples/standalone/database_schema.rb",
+            "examples/standalone/database_schema.json",
+            "examples/stream_weaver/database_schemas.rb",
+            "docs/database-schemas.md",
+            "artifacts/parity/v0/db-schema/summary.json"
+          ],
+          "gap": "The exact semantic fixture renders with SlimGraphR minimal dark profile; browser capture and human visual review remain pending.",
+          "priority": "P1",
+          "risk": "high"
+        },
+        "full-editorial": {
+          "classification": "supported-unverified",
+          "source_anchor": "tmp/upstream-types/type-db-schema.md:44",
+          "evidence": [
+            "spec/db_schema_spec.rb",
+            "examples/standalone/database_schema.rb",
+            "examples/standalone/database_schema.json",
+            "examples/stream_weaver/database_schemas.rb",
+            "docs/database-schemas.md",
+            "artifacts/parity/v0/db-schema/summary.json"
+          ],
+          "gap": "Exact local HTML preserves the public.products `+ 3 more columns` overflow row; coordinator browser geometry and visual review remain.",
+          "priority": "P0",
+          "risk": "high"
+        }
+      },
+      "upstream_variants": [],
+      "deliberate_differences": []
+    },
+    {
+      "type": "uml-class",
+      "name": "UML Class Diagram",
+      "wave": "Models and strategy",
+      "status": "partial",
+      "source": "https://github.com/cathrynlavery/diagram-design/blob/dcd9317ed9ec7477b20005544f36e3313664d815/skills/diagram-design/references/type-uml-class.md",
+      "verified_variants": [],
+      "implemented_capabilities": [
+        "dedicated immutable class, member, and relation model",
+        "strict Ruby and JSON parity",
+        "natural attribute and operation compartments",
+        "six explicit relation kinds and complete legend",
+        "target triangles and declared-owner diamonds",
+        "plain association lines with exact endpoint multiplicities",
+        "dependency-only open arrows and dashed semantic treatments",
+        "1.5x readable output scale, accessible descriptions, and faithful-layout errors"
+      ],
+      "evidence": [
+        "spec/uml_class_spec.rb",
+        "examples/standalone/uml_class.rb",
+        "examples/standalone/uml_class.json",
+        "examples/stream_weaver/uml_classes.rb",
+        "docs/uml-classes.md"
+      ],
+      "baseline_case_status": {
+        "minimal-light": {
+          "classification": "supported-unverified",
+          "source_anchor": "tmp/upstream-types/type-uml-class.md:61",
+          "evidence": [
+            "spec/uml_class_spec.rb",
+            "examples/standalone/uml_class.rb",
+            "examples/standalone/uml_class.json",
+            "examples/stream_weaver/uml_classes.rb",
+            "docs/uml-classes.md",
+            "artifacts/parity/v0/uml-class/summary.json"
+          ],
+          "gap": "The exact semantic fixture renders with SlimGraphR minimal light profile; browser capture and human visual review remain pending.",
+          "priority": "P0",
+          "risk": "high"
+        },
+        "minimal-dark": {
+          "classification": "supported-unverified",
+          "source_anchor": "tmp/upstream-types/type-uml-class.md:61",
+          "evidence": [
+            "spec/uml_class_spec.rb",
+            "examples/standalone/uml_class.rb",
+            "examples/standalone/uml_class.json",
+            "examples/stream_weaver/uml_classes.rb",
+            "docs/uml-classes.md",
+            "artifacts/parity/v0/uml-class/summary.json"
+          ],
+          "gap": "The exact semantic fixture renders with SlimGraphR minimal dark profile; browser capture and human visual review remain pending.",
+          "priority": "P1",
+          "risk": "high"
+        },
+        "full-editorial": {
+          "classification": "supported-unverified",
+          "source_anchor": "tmp/upstream-types/type-uml-class.md:61",
+          "evidence": [
+            "spec/uml_class_spec.rb",
+            "examples/standalone/uml_class.rb",
+            "examples/standalone/uml_class.json",
+            "examples/stream_weaver/uml_classes.rb",
+            "docs/uml-classes.md",
+            "artifacts/parity/v0/uml-class/summary.json"
+          ],
+          "gap": "The exact semantic fixture renders with SlimGraphR's editorial profile; browser capture and human visual review remain pending.",
+          "priority": "P0",
+          "risk": "high"
+        }
+      },
+      "upstream_variants": [],
+      "deliberate_differences": [
+        {
+          "summary": "Other UML families are routed to their dedicated diagram types.",
+          "evidence": [
+            "spec/uml_class_spec.rb",
+            "examples/standalone/uml_class.rb",
+            "examples/standalone/uml_class.json",
+            "examples/stream_weaver/uml_classes.rb",
+            "docs/uml-classes.md"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "quadrant",
+      "name": "Quadrant",
+      "wave": "Models and strategy",
+      "status": "partial",
+      "source": "https://github.com/cathrynlavery/diagram-design/blob/dcd9317ed9ec7477b20005544f36e3313664d815/skills/diagram-design/references/type-quadrant.md",
+      "verified_variants": [],
+      "implemented_capabilities": [
+        "dedicated immutable axis and item model",
+        "strict Ruby and JSON parity",
+        "literal measured low/high endpoint phrases",
+        "exact linear mapping of authored finite x/y positions",
+        "same-quadrant label placement with protected geometry",
+        "one optional author-selected focal discussion point",
+        "1.5x readable output scale, qualitative caption, accessible descriptions, and faithful-layout errors"
+      ],
+      "evidence": [
+        "spec/quadrant_spec.rb",
+        "examples/standalone/quadrant.rb",
+        "examples/standalone/quadrant.json",
+        "examples/stream_weaver/quadrants.rb",
+        "docs/quadrants.md"
+      ],
+      "baseline_case_status": {
+        "minimal-light": {
+          "classification": "supported-unverified",
+          "source_anchor": "tmp/upstream-types/type-quadrant.md:18",
+          "evidence": [
+            "spec/quadrant_spec.rb",
+            "examples/standalone/quadrant.rb",
+            "examples/standalone/quadrant.json",
+            "examples/stream_weaver/quadrants.rb",
+            "docs/quadrants.md",
+            "artifacts/parity/v0/quadrant/summary.json"
+          ],
+          "gap": "The exact semantic fixture renders with SlimGraphR minimal light profile; browser capture and human visual review remain pending.",
+          "priority": "P0",
+          "risk": "high"
+        },
+        "minimal-dark": {
+          "classification": "supported-unverified",
+          "source_anchor": "tmp/upstream-types/type-quadrant.md:18",
+          "evidence": [
+            "spec/quadrant_spec.rb",
+            "examples/standalone/quadrant.rb",
+            "examples/standalone/quadrant.json",
+            "examples/stream_weaver/quadrants.rb",
+            "docs/quadrants.md",
+            "artifacts/parity/v0/quadrant/summary.json"
+          ],
+          "gap": "The exact semantic fixture renders with SlimGraphR minimal dark profile; browser capture and human visual review remain pending.",
+          "priority": "P1",
+          "risk": "high"
+        },
+        "full-editorial": {
+          "classification": "supported-unverified",
+          "source_anchor": "tmp/upstream-types/type-quadrant.md:18",
+          "evidence": [
+            "spec/quadrant_spec.rb",
+            "examples/standalone/quadrant.rb",
+            "examples/standalone/quadrant.json",
+            "examples/stream_weaver/quadrants.rb",
+            "docs/quadrants.md",
+            "artifacts/parity/v0/quadrant/summary.json"
+          ],
+          "gap": "The exact semantic fixture renders with literal authored region labels; browser capture is complete and human visual review remains pending.",
+          "priority": "P0",
+          "risk": "high"
+        }
+      },
+      "upstream_variants": [
+        {
+          "id": "consultant-scenario-matrix",
+          "name": "Consultant 2x2 scenario matrix",
+          "classification": "deliberate-different",
+          "source_anchor": "tmp/upstream-types/type-quadrant.md:26-74",
+          "evidence": [
+            "docs/quadrants.md"
+          ],
+          "gap": "The point quadrant is implemented; scenario cells and descriptions are explicitly deferred.",
+          "priority": "P2",
+          "risk": "medium"
+        }
+      ],
+      "deliberate_differences": [
+        {
+          "summary": "The current contract is a qualitative point quadrant, not a consultant scenario-cell matrix.",
+          "evidence": [
+            "spec/quadrant_spec.rb",
+            "examples/standalone/quadrant.rb",
+            "examples/standalone/quadrant.json",
+            "examples/stream_weaver/quadrants.rb",
+            "docs/quadrants.md"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "venn",
+      "name": "Venn / Set Overlap",
+      "wave": "Models and strategy",
+      "status": "partial",
+      "source": "https://github.com/cathrynlavery/diagram-design/blob/dcd9317ed9ec7477b20005544f36e3313664d815/skills/diagram-design/references/type-venn.md",
+      "verified_variants": [],
+      "implemented_capabilities": [
+        "dedicated immutable set and intersection records",
+        "strict Ruby and JSON parity",
+        "complete named two-set or three-set topology",
+        "fixed equal-circle templates with no quantity claim",
+        "external set labels and fixed clear overlap regions",
+        "one optional authored focal overlap with clipped tint",
+        "accessible descriptions and faithful-layout errors"
+      ],
+      "evidence": [
+        "spec/venn_spec.rb",
+        "examples/standalone/venn.rb",
+        "examples/standalone/venn.json",
+        "examples/stream_weaver/venns.rb",
+        "docs/venn.md"
+      ],
+      "baseline_case_status": {
+        "minimal-light": {
+          "classification": "supported-unverified",
+          "source_anchor": "tmp/upstream-types/type-venn.md:23",
+          "evidence": [
+            "spec/venn_spec.rb",
+            "examples/standalone/venn.rb",
+            "examples/standalone/venn.json",
+            "examples/stream_weaver/venns.rb",
+            "docs/venn.md",
+            "artifacts/parity/v0/venn/summary.json"
+          ],
+          "gap": "The exact semantic fixture renders with SlimGraphR minimal light profile; browser capture and human visual review remain pending.",
+          "priority": "P0",
+          "risk": "high"
+        },
+        "minimal-dark": {
+          "classification": "supported-unverified",
+          "source_anchor": "tmp/upstream-types/type-venn.md:23",
+          "evidence": [
+            "spec/venn_spec.rb",
+            "examples/standalone/venn.rb",
+            "examples/standalone/venn.json",
+            "examples/stream_weaver/venns.rb",
+            "docs/venn.md",
+            "artifacts/parity/v0/venn/summary.json"
+          ],
+          "gap": "The exact semantic fixture renders with SlimGraphR minimal dark profile; browser capture and human visual review remain pending.",
+          "priority": "P1",
+          "risk": "high"
+        },
+        "full-editorial": {
+          "classification": "supported-unverified",
+          "source_anchor": "tmp/upstream-types/type-venn.md:23",
+          "evidence": [
+            "spec/venn_spec.rb",
+            "examples/standalone/venn.rb",
+            "examples/standalone/venn.json",
+            "examples/stream_weaver/venns.rb",
+            "docs/venn.md",
+            "artifacts/parity/v0/venn/summary.json"
+          ],
+          "gap": "The exact semantic fixture renders with SlimGraphR's editorial profile; browser capture and human visual review remain pending.",
+          "priority": "P1",
+          "risk": "high"
+        }
+      },
+      "upstream_variants": [],
+      "deliberate_differences": [
+        {
+          "summary": "Exactly two or three sets are allowed; larger membership problems are routed to a matrix.",
+          "evidence": [
+            "spec/venn_spec.rb",
+            "examples/standalone/venn.rb",
+            "examples/standalone/venn.json",
+            "examples/stream_weaver/venns.rb",
+            "docs/venn.md"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "loop",
+      "name": "Loop",
+      "wave": "Models and strategy",
+      "status": "partial",
+      "source": "https://github.com/cathrynlavery/diagram-design/blob/dcd9317ed9ec7477b20005544f36e3313664d815/skills/diagram-design/references/type-loop.md",
+      "verified_variants": [],
+      "implemented_capabilities": [
+        "dedicated immutable hub, station, cycle, and write-back records",
+        "strict Ruby and JSON parity",
+        "mandatory authored clockwise cycle with explicit closure",
+        "exactly one declared station-to-hub write-back per station",
+        "measured same-radius arcs and edge-clipped radial spokes",
+        "one optional author-selected focal station",
+        "accessible descriptions and faithful-layout errors"
+      ],
+      "evidence": [
+        "spec/loop_spec.rb",
+        "examples/standalone/loop.rb",
+        "examples/standalone/loop.json",
+        "examples/stream_weaver/loops.rb",
+        "docs/loops.md"
+      ],
+      "baseline_case_status": {
+        "minimal-light": {
+          "classification": "supported-unverified",
+          "source_anchor": "tmp/upstream-types/type-loop.md:219",
+          "evidence": [
+            "spec/loop_spec.rb",
+            "examples/standalone/loop.rb",
+            "examples/standalone/loop.json",
+            "examples/stream_weaver/loops.rb",
+            "docs/loops.md",
+            "artifacts/parity/v0/loop/summary.json"
+          ],
+          "gap": "The exact semantic fixture renders with SlimGraphR minimal light profile; browser capture and human visual review remain pending.",
+          "priority": "P0",
+          "risk": "high"
+        },
+        "minimal-dark": {
+          "classification": "supported-unverified",
+          "source_anchor": "tmp/upstream-types/type-loop.md:219",
+          "evidence": [
+            "spec/loop_spec.rb",
+            "examples/standalone/loop.rb",
+            "examples/standalone/loop.json",
+            "examples/stream_weaver/loops.rb",
+            "docs/loops.md",
+            "artifacts/parity/v0/loop/summary.json"
+          ],
+          "gap": "The exact semantic fixture renders with SlimGraphR minimal dark profile; browser capture and human visual review remain pending.",
+          "priority": "P1",
+          "risk": "high"
+        },
+        "full-editorial": {
+          "classification": "supported-unverified",
+          "source_anchor": "tmp/upstream-types/type-loop.md:219",
+          "evidence": [
+            "spec/loop_spec.rb",
+            "examples/standalone/loop.rb",
+            "examples/standalone/loop.json",
+            "examples/stream_weaver/loops.rb",
+            "docs/loops.md",
+            "artifacts/parity/v0/loop/summary.json"
+          ],
+          "gap": "The exact fixture now renders with measured 164px station cards; browser capture remains awaiting the coordinator gate.",
+          "priority": "P1",
+          "risk": "high"
+        }
+      },
+      "upstream_variants": [],
+      "deliberate_differences": [
+        {
+          "summary": "Only one clockwise cycle and one hub are allowed; branching, skips, and custom geometry are excluded.",
+          "evidence": [
+            "spec/loop_spec.rb",
+            "examples/standalone/loop.rb",
+            "examples/standalone/loop.json",
+            "examples/stream_weaver/loops.rb",
+            "docs/loops.md"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "fishbone",
+      "name": "Fishbone / Ishikawa",
+      "wave": "Models and strategy",
+      "status": "partial",
+      "source": "https://github.com/cathrynlavery/diagram-design/blob/dcd9317ed9ec7477b20005544f36e3313664d815/skills/diagram-design/references/type-fishbone.md",
+      "verified_variants": [],
+      "implemented_capabilities": [
+        "dedicated immutable effect and category records with ordered factors",
+        "strict Ruby and JSON parity",
+        "explicit investigated-lead semantics without causal inference",
+        "measured 200px effect head with exact 60-degree category bones",
+        "32px horizontal factor ticks and coordinated third-lower expansion",
+        "accessible descriptions and faithful-layout errors"
+      ],
+      "evidence": [
+        "spec/fishbone_spec.rb",
+        "examples/standalone/fishbone.rb",
+        "examples/standalone/fishbone.json",
+        "examples/stream_weaver/fishbones.rb",
+        "docs/fishbones.md"
+      ],
+      "baseline_case_status": {
+        "minimal-light": {
+          "classification": "supported-unverified",
+          "source_anchor": "tmp/upstream-types/type-fishbone.md:71",
+          "evidence": [
+            "spec/fishbone_spec.rb",
+            "examples/standalone/fishbone.rb",
+            "examples/standalone/fishbone.json",
+            "examples/stream_weaver/fishbones.rb",
+            "docs/fishbones.md",
+            "artifacts/parity/v0/fishbone/summary.json"
+          ],
+          "gap": "The exact semantic fixture renders with SlimGraphR minimal light profile; browser capture and human visual review remain pending.",
+          "priority": "P0",
+          "risk": "high"
+        },
+        "minimal-dark": {
+          "classification": "supported-unverified",
+          "source_anchor": "tmp/upstream-types/type-fishbone.md:71",
+          "evidence": [
+            "spec/fishbone_spec.rb",
+            "examples/standalone/fishbone.rb",
+            "examples/standalone/fishbone.json",
+            "examples/stream_weaver/fishbones.rb",
+            "docs/fishbones.md",
+            "artifacts/parity/v0/fishbone/summary.json"
+          ],
+          "gap": "The exact semantic fixture renders with SlimGraphR minimal dark profile; browser capture and human visual review remain pending.",
+          "priority": "P1",
+          "risk": "high"
+        },
+        "full-editorial": {
+          "classification": "supported-unverified",
+          "source_anchor": "tmp/upstream-types/type-fishbone.md:71",
+          "evidence": [
+            "spec/fishbone_spec.rb",
+            "examples/standalone/fishbone.rb",
+            "examples/standalone/fishbone.json",
+            "examples/stream_weaver/fishbones.rb",
+            "docs/fishbones.md",
+            "artifacts/parity/v0/fishbone/summary.json"
+          ],
+          "gap": "The exact semantic fixture renders with one authored confirmed root category; browser capture is complete and human visual review remains pending.",
+          "priority": "P1",
+          "risk": "high"
+        }
+      },
+      "upstream_variants": [],
+      "deliberate_differences": [
+        {
+          "summary": "Factors are investigated leads; confirmed-root, confidence, probability, blame, and focal claims are rejected.",
+          "evidence": [
+            "spec/fishbone_spec.rb",
+            "examples/standalone/fishbone.rb",
+            "examples/standalone/fishbone.json",
+            "examples/stream_weaver/fishbones.rb",
+            "docs/fishbones.md"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "wardley",
+      "name": "Wardley Map",
+      "wave": "Models and strategy",
+      "status": "partial",
+      "source": "https://github.com/cathrynlavery/diagram-design/blob/dcd9317ed9ec7477b20005544f36e3313664d815/skills/diagram-design/references/type-wardley.md",
+      "verified_variants": [],
+      "implemented_capabilities": [
+        "dedicated immutable component and dependency records",
+        "strict Ruby and JSON identity",
+        "four qualitative evolution bands with explicit visibility",
+        "straight muted value-chain dependencies without arrowheads",
+        "strictly adjacent rightward movement arrows",
+        "fixed qualitative-position caption and accessible descriptions",
+        "12px logical text floor and faithful-layout errors"
+      ],
+      "evidence": [
+        "spec/wardley_spec.rb",
+        "examples/standalone/wardley.rb",
+        "examples/standalone/wardley.json",
+        "examples/stream_weaver/wardleys.rb",
+        "docs/wardley-maps.md"
+      ],
+      "baseline_case_status": {
+        "minimal-light": {
+          "classification": "supported-unverified",
+          "source_anchor": "tmp/upstream-types/type-wardley.md:35",
+          "evidence": [
+            "spec/wardley_spec.rb",
+            "examples/standalone/wardley.rb",
+            "examples/standalone/wardley.json",
+            "examples/stream_weaver/wardleys.rb",
+            "docs/wardley-maps.md",
+            "artifacts/parity/v0/wardley/summary.json"
+          ],
+          "gap": "The exact semantic fixture renders with SlimGraphR minimal light profile; browser capture and human visual review remain pending.",
+          "priority": "P0",
+          "risk": "high"
+        },
+        "minimal-dark": {
+          "classification": "supported-unverified",
+          "source_anchor": "tmp/upstream-types/type-wardley.md:35",
+          "evidence": [
+            "spec/wardley_spec.rb",
+            "examples/standalone/wardley.rb",
+            "examples/standalone/wardley.json",
+            "examples/stream_weaver/wardleys.rb",
+            "docs/wardley-maps.md",
+            "artifacts/parity/v0/wardley/summary.json"
+          ],
+          "gap": "The exact semantic fixture renders with SlimGraphR minimal dark profile; browser capture and human visual review remain pending.",
+          "priority": "P1",
+          "risk": "high"
+        },
+        "full-editorial": {
+          "classification": "supported-unverified",
+          "source_anchor": "tmp/upstream-types/type-wardley.md:35",
+          "evidence": [
+            "spec/wardley_spec.rb",
+            "examples/standalone/wardley.rb",
+            "examples/standalone/wardley.json",
+            "examples/stream_weaver/wardleys.rb",
+            "docs/wardley-maps.md",
+            "artifacts/parity/v0/wardley/summary.json"
+          ],
+          "gap": "The exact pinned semantic fixture renders every authored node and relationship; browser geometry and human visual review remain pending.",
+          "priority": "P1",
+          "risk": "high"
+        }
+      },
+      "upstream_variants": [],
+      "deliberate_differences": [
+        {
+          "summary": "Positions remain qualitative; numeric scores, inferred dependencies, and runtime architecture semantics are excluded.",
+          "evidence": [
+            "spec/wardley_spec.rb",
+            "examples/standalone/wardley.rb",
+            "examples/standalone/wardley.json",
+            "examples/stream_weaver/wardleys.rb",
+            "docs/wardley-maps.md"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "bar",
+      "name": "Bar / Column Chart",
+      "wave": "Quantitative charts",
+      "status": "partial",
+      "source": "https://github.com/cathrynlavery/diagram-design/blob/dcd9317ed9ec7477b20005544f36e3313664d815/skills/diagram-design/references/type-bar.md",
+      "verified_variants": [],
+      "implemented_capabilities": [
+        "immutable BigDecimal values and strict Ruby/JSON validation",
+        "signed vertical and horizontal bars from exact zero",
+        "zero labels without fabricated rectangles",
+        "explicit or deterministic auto reference domains",
+        "plain half-even labels and accessible scale metadata"
+      ],
+      "evidence": [
+        "spec/quantitative_spec.rb",
+        "docs/bar-charts.md",
+        "examples/standalone/bar.rb",
+        "examples/standalone/bar.json"
+      ],
+      "baseline_case_status": {
+        "minimal-light": {
+          "classification": "supported-unverified",
+          "source_anchor": "tmp/upstream-types/type-bar.md:102",
+          "evidence": [
+            "spec/quantitative_spec.rb",
+            "docs/bar-charts.md",
+            "examples/standalone/bar.rb",
+            "examples/standalone/bar.json",
+            "artifacts/parity/v0/bar/summary.json"
+          ],
+          "gap": "The exact semantic fixture renders with SlimGraphR minimal light profile; browser capture and human visual review remain pending.",
+          "priority": "P0",
+          "risk": "high"
+        },
+        "minimal-dark": {
+          "classification": "supported-unverified",
+          "source_anchor": "tmp/upstream-types/type-bar.md:102",
+          "evidence": [
+            "spec/quantitative_spec.rb",
+            "docs/bar-charts.md",
+            "examples/standalone/bar.rb",
+            "examples/standalone/bar.json",
+            "artifacts/parity/v0/bar/summary.json"
+          ],
+          "gap": "The exact semantic fixture renders with SlimGraphR minimal dark profile; browser capture and human visual review remain pending.",
+          "priority": "P0",
+          "risk": "high"
+        },
+        "full-editorial": {
+          "classification": "supported-unverified",
+          "source_anchor": "tmp/upstream-types/type-bar.md:102",
+          "evidence": [
+            "spec/quantitative_spec.rb",
+            "docs/bar-charts.md",
+            "examples/standalone/bar.rb",
+            "examples/standalone/bar.json",
+            "artifacts/parity/v0/bar/summary.json"
+          ],
+          "gap": "Browser evidence captures this local presentation; human visual review and the remaining parity gates are pending.",
+          "priority": "P1",
+          "risk": "high"
+        }
+      },
+      "upstream_variants": [
+        {
+          "id": "horizontal",
+          "name": "Horizontal orientation",
+          "classification": "supported-unverified",
+          "source_anchor": "tmp/upstream-types/type-bar.md:5-16",
+          "evidence": [
+            "lib/slim_graph_r/quantitative.rb",
+            "spec/quantitative_spec.rb"
+          ],
+          "gap": "No exact long-label upstream fixture has passed the browser gate.",
+          "priority": "P1",
+          "risk": "medium"
+        },
+        {
+          "id": "grouped",
+          "name": "Grouped bars",
+          "classification": "missing",
+          "source_anchor": "tmp/upstream-types/type-bar.md:39-42",
+          "evidence": [
+            "lib/slim_graph_r/quantitative.rb"
+          ],
+          "gap": "The local category model holds one value, not grouped series.",
+          "priority": "P1",
+          "risk": "high"
+        },
+        {
+          "id": "stacked",
+          "name": "Stacked bars",
+          "classification": "missing",
+          "source_anchor": "tmp/upstream-types/type-bar.md:39-42",
+          "evidence": [
+            "lib/slim_graph_r/quantitative.rb",
+            "docs/bar-charts.md"
+          ],
+          "gap": "There is no segment/stack model or renderer.",
+          "priority": "P1",
+          "risk": "high"
+        },
+        {
+          "id": "dumbbell",
+          "name": "Dumbbell",
+          "classification": "missing",
+          "source_anchor": "tmp/upstream-types/type-bar.md:45-100",
+          "evidence": [
+            "lib/slim_graph_r/quantitative.rb"
+          ],
+          "gap": "The one-value category model cannot express paired endpoints and gaps.",
+          "priority": "P1",
+          "risk": "high"
+        }
+      ]
+    },
+    {
+      "type": "line",
+      "name": "Line Chart",
+      "wave": "Quantitative charts",
+      "status": "partial",
+      "source": "https://github.com/cathrynlavery/diagram-design/blob/dcd9317ed9ec7477b20005544f36e3313664d815/skills/diagram-design/references/type-line.md",
+      "verified_variants": [],
+      "implemented_capabilities": [
+        "elapsed-day spacing for strict Gregorian dates",
+        "equal explicit ordinal spacing with visible warning",
+        "explicit gaps that disconnect straight segments",
+        "one shared finite linear y scale and unit",
+        "deterministic constant auto reference domains"
+      ],
+      "evidence": [
+        "spec/quantitative_spec.rb",
+        "docs/line-charts.md",
+        "examples/standalone/line.rb",
+        "examples/standalone/line.json"
+      ],
+      "baseline_case_status": {
+        "minimal-light": {
+          "classification": "supported-unverified",
+          "source_anchor": "tmp/upstream-types/type-line.md:249",
+          "evidence": [
+            "spec/quantitative_spec.rb",
+            "docs/line-charts.md",
+            "examples/standalone/line.rb",
+            "examples/standalone/line.json",
+            "artifacts/parity/v0/line/summary.json"
+          ],
+          "gap": "The exact semantic fixture renders with SlimGraphR minimal light profile; browser capture and human visual review remain pending.",
+          "priority": "P0",
+          "risk": "high"
+        },
+        "minimal-dark": {
+          "classification": "supported-unverified",
+          "source_anchor": "tmp/upstream-types/type-line.md:249",
+          "evidence": [
+            "spec/quantitative_spec.rb",
+            "docs/line-charts.md",
+            "examples/standalone/line.rb",
+            "examples/standalone/line.json",
+            "artifacts/parity/v0/line/summary.json"
+          ],
+          "gap": "The exact semantic fixture renders with SlimGraphR minimal dark profile; browser capture and human visual review remain pending.",
+          "priority": "P0",
+          "risk": "high"
+        },
+        "full-editorial": {
+          "classification": "supported-unverified",
+          "source_anchor": "tmp/upstream-types/type-line.md:249",
+          "evidence": [
+            "spec/quantitative_spec.rb",
+            "docs/line-charts.md",
+            "examples/standalone/line.rb",
+            "examples/standalone/line.json",
+            "artifacts/parity/v0/line/summary.json"
+          ],
+          "gap": "Browser evidence captures this local presentation; human visual review and the remaining parity gates are pending.",
+          "priority": "P1",
+          "risk": "high"
+        }
+      },
+      "upstream_variants": [
+        {
+          "id": "slopegraph",
+          "name": "Slopegraph",
+          "classification": "missing",
+          "source_anchor": "tmp/upstream-types/type-line.md:46-142,254",
+          "evidence": [
+            "lib/slim_graph_r/quantitative.rb",
+            "docs/line-charts.md"
+          ],
+          "gap": "There is no two-state endpoint-binding model.",
+          "priority": "P1",
+          "risk": "high"
+        },
+        {
+          "id": "ridgeline",
+          "name": "Ridgeline",
+          "classification": "missing",
+          "source_anchor": "tmp/upstream-types/type-line.md:143-205,257",
+          "evidence": [
+            "lib/slim_graph_r/quantitative.rb",
+            "docs/line-charts.md"
+          ],
+          "gap": "There is no distribution/bin model.",
+          "priority": "P2",
+          "risk": "high"
+        },
+        {
+          "id": "bump-chart",
+          "name": "Bump chart",
+          "classification": "missing",
+          "source_anchor": "tmp/upstream-types/type-line.md:207-247,260",
+          "evidence": [
+            "lib/slim_graph_r/quantitative.rb",
+            "docs/line-charts.md"
+          ],
+          "gap": "There is no rank-snapshot model.",
+          "priority": "P1",
+          "risk": "high"
+        }
+      ],
+      "deliberate_differences": [
+        {
+          "summary": "Area fill is rejected because polygon area has no declared meaning.",
+          "evidence": [
+            "spec/quantitative_spec.rb",
+            "docs/line-charts.md",
+            "examples/standalone/line.rb",
+            "examples/standalone/line.json"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "scatter",
+      "name": "Scatter Plot",
+      "wave": "Quantitative charts",
+      "status": "partial",
+      "source": "https://github.com/cathrynlavery/diagram-design/blob/dcd9317ed9ec7477b20005544f36e3313664d815/skills/diagram-design/references/type-scatter.md",
+      "verified_variants": [],
+      "implemented_capabilities": [
+        "required explicit finite x and y scales and units",
+        "exact negative and zero two-variable positions",
+        "one optional focal point and three measured annotations",
+        "position-only encoding without trend, jitter, or third variable",
+        "strict Ruby/JSON identity and accessible scale metadata"
+      ],
+      "evidence": [
+        "spec/quantitative_spec.rb",
+        "docs/scatter-plots.md",
+        "examples/standalone/scatter.rb",
+        "examples/standalone/scatter.json"
+      ],
+      "baseline_case_status": {
+        "minimal-light": {
+          "classification": "supported-unverified",
+          "source_anchor": "tmp/upstream-types/type-scatter.md:187",
+          "evidence": [
+            "spec/quantitative_spec.rb",
+            "docs/scatter-plots.md",
+            "examples/standalone/scatter.rb",
+            "examples/standalone/scatter.json",
+            "artifacts/parity/v0/scatter/summary.json"
+          ],
+          "gap": "The exact semantic fixture renders with SlimGraphR minimal light profile; browser capture and human visual review remain pending.",
+          "priority": "P0",
+          "risk": "high"
+        },
+        "minimal-dark": {
+          "classification": "supported-unverified",
+          "source_anchor": "tmp/upstream-types/type-scatter.md:187",
+          "evidence": [
+            "spec/quantitative_spec.rb",
+            "docs/scatter-plots.md",
+            "examples/standalone/scatter.rb",
+            "examples/standalone/scatter.json",
+            "artifacts/parity/v0/scatter/summary.json"
+          ],
+          "gap": "The exact semantic fixture renders with SlimGraphR minimal dark profile; browser capture and human visual review remain pending.",
+          "priority": "P0",
+          "risk": "high"
+        },
+        "full-editorial": {
+          "classification": "supported-unverified",
+          "source_anchor": "tmp/upstream-types/type-scatter.md:187",
+          "evidence": [
+            "spec/quantitative_spec.rb",
+            "docs/scatter-plots.md",
+            "examples/standalone/scatter.rb",
+            "examples/standalone/scatter.json",
+            "artifacts/parity/v0/scatter/summary.json"
+          ],
+          "gap": "The exact semantic fixture renders with eleven explicit anonymous marks and one named focal point; browser capture is complete and human visual review remains pending.",
+          "priority": "P1",
+          "risk": "high"
+        }
+      },
+      "upstream_variants": [
+        {
+          "id": "bubble",
+          "name": "Bubble",
+          "classification": "supported-unverified",
+          "source_anchor": "tmp/upstream-types/type-scatter.md:35-113,192",
+          "evidence": [
+            "lib/slim_graph_r/quantitative.rb"
+          ],
+          "gap": "The local point model stores x and y only.",
+          "priority": "P1",
+          "risk": "high"
+        },
+        {
+          "id": "beeswarm",
+          "name": "Beeswarm",
+          "classification": "missing",
+          "source_anchor": "tmp/upstream-types/type-scatter.md:114-185,195",
+          "evidence": [
+            "lib/slim_graph_r/quantitative.rb",
+            "docs/scatter-plots.md"
+          ],
+          "gap": "There is no one-value swarm model or packing layout.",
+          "priority": "P1",
+          "risk": "high"
+        }
+      ],
+      "deliberate_differences": [
+        {
+          "summary": "Trend lines and quadrant dividers are rejected unless their statistical meaning is explicitly modeled.",
+          "evidence": [
+            "spec/quantitative_spec.rb",
+            "docs/scatter-plots.md",
+            "examples/standalone/scatter.rb",
+            "examples/standalone/scatter.json"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "radar",
+      "name": "Radar / Spider",
+      "wave": "Quantitative charts",
+      "status": "partial",
+      "source": "https://github.com/cathrynlavery/diagram-design/blob/dcd9317ed9ec7477b20005544f36e3313664d815/skills/diagram-design/references/type-radar.md",
+      "verified_variants": [],
+      "baseline_case_status": {
+        "minimal-light": {
+          "classification": "supported-unverified",
+          "source_anchor": "tmp/upstream-types/type-radar.md:76",
+          "evidence": [
+            "spec/radial_spec.rb",
+            "examples/standalone/radar.rb",
+            "examples/standalone/radar.json",
+            "examples/stream_weaver/radial.rb",
+            "docs/radar-charts.md",
+            "artifacts/parity/v0/radar/summary.json"
+          ],
+          "gap": "The exact semantic fixture renders with SlimGraphR minimal light profile; browser capture and human visual review remain pending.",
+          "priority": "P0",
+          "risk": "high"
+        },
+        "minimal-dark": {
+          "classification": "supported-unverified",
+          "source_anchor": "tmp/upstream-types/type-radar.md:76",
+          "evidence": [
+            "spec/radial_spec.rb",
+            "examples/standalone/radar.rb",
+            "examples/standalone/radar.json",
+            "examples/stream_weaver/radial.rb",
+            "docs/radar-charts.md",
+            "artifacts/parity/v0/radar/summary.json"
+          ],
+          "gap": "The exact semantic fixture renders with SlimGraphR minimal dark profile; browser capture and human visual review remain pending.",
+          "priority": "P0",
+          "risk": "high"
+        },
+        "full-editorial": {
+          "classification": "supported-unverified",
+          "source_anchor": "tmp/upstream-types/type-radar.md:76",
+          "evidence": [
+            "spec/radial_spec.rb",
+            "examples/standalone/radar.rb",
+            "examples/standalone/radar.json",
+            "examples/stream_weaver/radial.rb",
+            "docs/radar-charts.md",
+            "artifacts/parity/v0/radar/summary.json"
+          ],
+          "gap": "Browser evidence captures this local presentation; human visual review and the remaining parity gates are pending.",
+          "priority": "P1",
+          "risk": "high"
+        }
+      },
+      "upstream_variants": [],
+      "deliberate_differences": [
+        {
+          "summary": "Polygons are outline-only with dash redundancy; filled polygon area is not treated as data.",
+          "evidence": [
+            "spec/radial_spec.rb",
+            "examples/standalone/radar.rb",
+            "examples/standalone/radar.json",
+            "examples/stream_weaver/radial.rb",
+            "docs/radar-charts.md"
+          ]
+        }
+      ],
+      "implemented_capabilities": [
+        "dedicated immutable criteria and series with strict Ruby/JSON parity",
+        "three to five regular axes with five polygon rings",
+        "one focal series with outline and dash redundancy",
+        "explicit shared scale, metadata, and faithful-layout errors"
+      ],
+      "evidence": [
+        "spec/radial_spec.rb",
+        "examples/standalone/radar.rb",
+        "examples/standalone/radar.json",
+        "examples/stream_weaver/radial.rb",
+        "docs/radar-charts.md"
+      ]
+    },
+    {
+      "type": "polar",
+      "name": "Polar Chart",
+      "wave": "Quantitative charts",
+      "status": "partial",
+      "source": "https://github.com/cathrynlavery/diagram-design/blob/dcd9317ed9ec7477b20005544f36e3313664d815/skills/diagram-design/references/type-polar.md",
+      "verified_variants": [],
+      "baseline_case_status": {
+        "minimal-light": {
+          "classification": "supported-unverified",
+          "source_anchor": "tmp/upstream-types/type-polar.md:132",
+          "evidence": [
+            "spec/radial_spec.rb",
+            "examples/standalone/polar.rb",
+            "examples/standalone/polar.json",
+            "examples/stream_weaver/radial.rb",
+            "docs/polar-charts.md",
+            "artifacts/parity/v0/polar/summary.json"
+          ],
+          "gap": "The exact semantic fixture renders with SlimGraphR minimal light profile; browser capture and human visual review remain pending.",
+          "priority": "P0",
+          "risk": "high"
+        },
+        "minimal-dark": {
+          "classification": "supported-unverified",
+          "source_anchor": "tmp/upstream-types/type-polar.md:132",
+          "evidence": [
+            "spec/radial_spec.rb",
+            "examples/standalone/polar.rb",
+            "examples/standalone/polar.json",
+            "examples/stream_weaver/radial.rb",
+            "docs/polar-charts.md",
+            "artifacts/parity/v0/polar/summary.json"
+          ],
+          "gap": "The exact semantic fixture renders with SlimGraphR minimal dark profile; browser capture and human visual review remain pending.",
+          "priority": "P0",
+          "risk": "high"
+        },
+        "full-editorial": {
+          "classification": "supported-unverified",
+          "source_anchor": "tmp/upstream-types/type-polar.md:132",
+          "evidence": [
+            "spec/radial_spec.rb",
+            "examples/standalone/polar.rb",
+            "examples/standalone/polar.json",
+            "examples/stream_weaver/radial.rb",
+            "docs/polar-charts.md",
+            "artifacts/parity/v0/polar/summary.json"
+          ],
+          "gap": "Browser evidence captures this local presentation; human visual review and the remaining parity gates are pending.",
+          "priority": "P1",
+          "risk": "high"
+        }
+      },
+      "upstream_variants": [],
+      "deliberate_differences": [
+        {
+          "summary": "Encoding is radius-only; sectors, wedges, and donut hubs are rejected.",
+          "evidence": [
+            "spec/radial_spec.rb",
+            "examples/standalone/polar.rb",
+            "examples/standalone/polar.json",
+            "examples/stream_weaver/radial.rb",
+            "docs/polar-charts.md"
+          ]
+        }
+      ],
+      "implemented_capabilities": [
+        "dedicated immutable ordered categories with strict Ruby/JSON parity",
+        "radius-only quantitative encoding on equal-angle spokes and five rings",
+        "zero omission without data loss and one optional focal category",
+        "explicit shared scale, metadata, and faithful-layout errors"
+      ],
+      "evidence": [
+        "spec/radial_spec.rb",
+        "examples/standalone/polar.rb",
+        "examples/standalone/polar.json",
+        "examples/stream_weaver/radial.rb",
+        "docs/polar-charts.md"
+      ]
+    },
+    {
+      "type": "treemap",
+      "name": "Treemap",
+      "wave": "Quantitative charts",
+      "status": "partial",
+      "source": "https://github.com/cathrynlavery/diagram-design/blob/dcd9317ed9ec7477b20005544f36e3313664d815/skills/diagram-design/references/type-treemap.md",
+      "verified_variants": [],
+      "implemented_capabilities": [
+        "dedicated immutable item model and strict Ruby/JSON parity",
+        "unsnapped squarified partition with exact positive shares",
+        "zero retained as data with no cell and tiny positive external legends",
+        "focal border decoration, metadata, and accessible descriptions"
+      ],
+      "evidence": [
+        "spec/area_conservation_spec.rb",
+        "examples/standalone/treemap.rb",
+        "examples/standalone/treemap.json",
+        "examples/stream_weaver/area_conservation.rb",
+        "docs/treemaps.md"
+      ],
+      "baseline_case_status": {
+        "minimal-light": {
+          "classification": "supported-unverified",
+          "source_anchor": "tmp/upstream-types/type-treemap.md:62",
+          "evidence": [
+            "spec/area_conservation_spec.rb",
+            "examples/standalone/treemap.rb",
+            "examples/standalone/treemap.json",
+            "examples/stream_weaver/area_conservation.rb",
+            "docs/treemaps.md",
+            "artifacts/parity/v0/treemap/summary.json"
+          ],
+          "gap": "The exact semantic fixture renders with SlimGraphR minimal light profile; browser capture and human visual review remain pending.",
+          "priority": "P0",
+          "risk": "high"
+        },
+        "minimal-dark": {
+          "classification": "supported-unverified",
+          "source_anchor": "tmp/upstream-types/type-treemap.md:62",
+          "evidence": [
+            "spec/area_conservation_spec.rb",
+            "examples/standalone/treemap.rb",
+            "examples/standalone/treemap.json",
+            "examples/stream_weaver/area_conservation.rb",
+            "docs/treemaps.md",
+            "artifacts/parity/v0/treemap/summary.json"
+          ],
+          "gap": "The exact semantic fixture renders with SlimGraphR minimal dark profile; browser capture and human visual review remain pending.",
+          "priority": "P0",
+          "risk": "high"
+        },
+        "full-editorial": {
+          "classification": "supported-unverified",
+          "source_anchor": "tmp/upstream-types/type-treemap.md:62",
+          "evidence": [
+            "spec/area_conservation_spec.rb",
+            "examples/standalone/treemap.rb",
+            "examples/standalone/treemap.json",
+            "examples/stream_weaver/area_conservation.rb",
+            "docs/treemaps.md",
+            "artifacts/parity/v0/treemap/summary.json"
+          ],
+          "gap": "Browser evidence captures this local presentation; human visual review and the remaining parity gates are pending.",
+          "priority": "P1",
+          "risk": "high"
+        }
+      },
+      "upstream_variants": [],
+      "deliberate_differences": [
+        {
+          "summary": "Areas remain exact and unsnapped; zero/tiny items are disclosed and Other is never invented.",
+          "evidence": [
+            "spec/area_conservation_spec.rb",
+            "examples/standalone/treemap.rb",
+            "examples/standalone/treemap.json",
+            "examples/stream_weaver/area_conservation.rb",
+            "docs/treemaps.md"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "sankey",
+      "name": "Sankey / Flow-Quantity",
+      "wave": "Quantitative charts",
+      "status": "partial",
+      "source": "https://github.com/cathrynlavery/diagram-design/blob/dcd9317ed9ec7477b20005544f36e3313664d815/skills/diagram-design/references/type-sankey.md",
+      "verified_variants": [],
+      "implemented_capabilities": [
+        "dedicated immutable stage, node, and flow model with strict Ruby/JSON parity",
+        "exact three-stage node and stage conservation",
+        "one pixels-per-unit scale for node heights and fractional ribbon thicknesses",
+        "disjoint edge offsets, horizontal attachment, metadata, and subpixel failure"
+      ],
+      "evidence": [
+        "spec/area_conservation_spec.rb",
+        "examples/standalone/sankey.rb",
+        "examples/standalone/sankey.json",
+        "examples/stream_weaver/area_conservation.rb",
+        "docs/sankeys.md"
+      ],
+      "baseline_case_status": {
+        "minimal-light": {
+          "classification": "supported-unverified",
+          "source_anchor": "tmp/upstream-types/type-sankey.md:68",
+          "evidence": [
+            "spec/area_conservation_spec.rb",
+            "examples/standalone/sankey.rb",
+            "examples/standalone/sankey.json",
+            "examples/stream_weaver/area_conservation.rb",
+            "docs/sankeys.md",
+            "artifacts/parity/v0/sankey/summary.json"
+          ],
+          "gap": "The exact semantic fixture renders with SlimGraphR minimal light profile; browser capture and human visual review remain pending.",
+          "priority": "P0",
+          "risk": "high"
+        },
+        "minimal-dark": {
+          "classification": "supported-unverified",
+          "source_anchor": "tmp/upstream-types/type-sankey.md:68",
+          "evidence": [
+            "spec/area_conservation_spec.rb",
+            "examples/standalone/sankey.rb",
+            "examples/standalone/sankey.json",
+            "examples/stream_weaver/area_conservation.rb",
+            "docs/sankeys.md",
+            "artifacts/parity/v0/sankey/summary.json"
+          ],
+          "gap": "The exact semantic fixture renders with SlimGraphR minimal dark profile; browser capture and human visual review remain pending.",
+          "priority": "P0",
+          "risk": "high"
+        },
+        "full-editorial": {
+          "classification": "supported-unverified",
+          "source_anchor": "tmp/upstream-types/type-sankey.md:68",
+          "evidence": [
+            "spec/area_conservation_spec.rb",
+            "examples/standalone/sankey.rb",
+            "examples/standalone/sankey.json",
+            "examples/stream_weaver/area_conservation.rb",
+            "docs/sankeys.md",
+            "artifacts/parity/v0/sankey/summary.json"
+          ],
+          "gap": "The exact semantic fixture renders with its authored focal rerun ribbons; browser capture is complete and human visual review remains pending.",
+          "priority": "P1",
+          "risk": "high"
+        }
+      },
+      "upstream_variants": [],
+      "deliberate_differences": [
+        {
+          "summary": "Flow conservation remains exact at fractional scale; tiny flows are not rounded or folded into invented Other.",
+          "evidence": [
+            "spec/area_conservation_spec.rb",
+            "examples/standalone/sankey.rb",
+            "examples/standalone/sankey.json",
+            "examples/stream_weaver/area_conservation.rb",
+            "docs/sankeys.md"
+          ]
+        }
+      ]
+    }
+  ],
+  "audit": {
+    "schema_version": 1,
+    "document": "docs/roadmap/variant-gap-audit.md",
+    "version": "0.30.0",
+    "method": "Pinned mechanical inventory reconciled with five semantic family audits.",
+    "baseline_case_counts": {
+      "total": 117,
+      "supported-unverified": 96,
+      "deliberate-different": 7,
+      "missing": 14,
+      "verified": 0
+    },
+    "named_variant_counts": {
+      "canonical_candidates": 17,
+      "supported-unverified": 4,
+      "deliberate-different": 2,
+      "missing": 11,
+      "verified": 0
+    },
+    "verification_gate": "An exact pinned fixture, browser geometry and visual review, semantic assertions, accessibility description, and evidence record are required before verification.",
+    "inventory_note": "Ambiguous headings and worked-example prose are retained as audit signals and are not counted as distinct contract variants."
+  }
+}

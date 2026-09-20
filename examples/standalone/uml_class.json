@@ -1,0 +1,13 @@
+{
+  "type": "uml_class",
+  "title": "Checkout objects",
+  "classes": [
+    {"id":"payable","label":"Payable","kind":"interface","operations":["+ authorize(amount: Money): Receipt"]},
+    {"id":"payment","label":"Payment","kind":"abstract_class","focal":true,"attributes":["- reference: String"],"operations":["+ capture(): Receipt"]},
+    {"id":"card_payment","label":"CardPayment","kind":"class","attributes":["- token: String"],"operations":["+ authorize(amount: Money): Receipt"]}
+  ],
+  "relations": [
+    {"from":"card_payment","to":"payment","kind":"inheritance"},
+    {"from":"card_payment","to":"payable","kind":"realization"}
+  ]
+}

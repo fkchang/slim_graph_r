@@ -1,0 +1,12 @@
+{
+  "type": "quadrant",
+  "title": "Platform priorities · 優先順位",
+  "horizontal_axis": {"low":"EASY","high":"HARD"},
+  "vertical_axis": {"low":"LOW IMPACT","high":"HIGH IMPACT"},
+  "items": [
+    {"id":"cache","label":"Cache migration","x":0.72,"y":0.66,"focal":true},
+    {"id":"audit","label":"Audit trail","x":-0.58,"y":0.34},
+    {"id":"cleanup","label":"Lint cleanup","x":-0.42,"y":-0.46},
+    {"id":"docs","label":"Documentation","x":0.35,"y":-0.62}
+  ]
+}

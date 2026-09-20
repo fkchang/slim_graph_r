@@ -1,0 +1,20 @@
+{
+  "type": "gantt",
+  "title": "0.15 plan",
+  "phases": [
+    {
+      "id": "foundation",
+      "label": "Foundation",
+      "tasks": [
+        { "id": "calendar", "label": "Calendar scale", "start": "2026-01-05", "finish": "2026-01-16", "focal": true },
+        { "id": "board", "label": "Board model", "start": "2026-01-12", "finish": "2026-01-23" }
+      ]
+    }
+  ],
+  "milestones": [
+    { "id": "cutover", "label": "Cutover", "on": "2026-01-23", "phase": "foundation" }
+  ],
+  "markers": [
+    { "id": "review", "label": "Review", "on": "2026-01-16" }
+  ]
+}

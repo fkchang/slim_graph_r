@@ -1,0 +1,52 @@
+{
+  "type": "high_level",
+  "title": "National data platform",
+  "cluster": "Kubernetes",
+  "phases": [
+    {
+      "id": "sources",
+      "label": "Data sources",
+      "sources": [
+        { "id": "postgres", "label": "PostgreSQL", "type": "db", "detail": "Registry" },
+        { "id": "drop", "label": "SFTP drop", "type": "ftp" }
+      ]
+    },
+    {
+      "id": "ingest",
+      "label": "Ingestion",
+      "components": [
+        { "id": "nifi", "label": "NiFi", "role": "COLL" }
+      ]
+    },
+    {
+      "id": "storage",
+      "label": "Storage",
+      "components": [
+        { "id": "minio", "label": "MinIO", "role": "STORE", "focal": true },
+        { "id": "trino", "label": "Trino", "role": "VIRT" }
+      ]
+    },
+    {
+      "id": "consume",
+      "label": "Visualization",
+      "components": [
+        { "id": "superset", "label": "Superset", "role": "DASH" }
+      ]
+    }
+  ],
+  "connections": [
+    { "from": "postgres", "to": "nifi" },
+    { "from": "drop", "to": "nifi" },
+    { "from": "nifi", "to": "minio" },
+    { "from": "minio", "to": "superset" }
+  ],
+  "orchestration": {
+    "id": "airflow",
+    "label": "Airflow",
+    "detail": "Apache Airflow",
+    "targets": ["nifi", "minio", "superset"]
+  },
+  "crosscuts": [
+    { "id": "identity", "label": "Identity", "detail": "LDAP · OIDC", "concern": "Security" }
+  ]
+}

@@ -1,0 +1,55 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require 'optparse'
+require 'json'
+require 'fileutils'
+
+ROOT = File.expand_path('..', __dir__)
+$LOAD_PATH.unshift(File.join(ROOT, 'lib'))
+
+options = {}
+OptionParser.new do |parser|
+  parser.banner = 'Usage: bin/render-parity-fixture FIXTURE --variant VARIANT --output PATH'
+  parser.on('--registry PATH', 'Fixture registry JSON path') { |value| options[:registry] = value }
+  parser.on('--variant NAME', 'Pinned baseline variant') { |value| options[:variant] = value }
+  parser.on('--output PATH', 'HTML output path') { |value| options[:output] = value }
+end.parse!
+
+fixture = ARGV.shift
+abort 'A fixture name is required' unless fixture
+abort '--variant is required' unless options[:variant]
+abort '--output is required' unless options[:output]
+
+registry_path = File.expand_path(options.fetch(:registry, File.join(ROOT, 'docs/roadmap/parity-harness-fixtures.json')))
+abort "Parity fixture registry is missing: #{registry_path}" unless File.file?(registry_path)
+
+begin
+  registry = JSON.parse(File.read(registry_path, encoding: 'UTF-8'))
+rescue JSON::ParserError => error
+  abort "Parity fixture registry is invalid JSON: #{error.message}"
+end
+
+definition = registry.fetch('fixtures').find { |entry| entry['id'] == fixture }
+abort "Unknown parity fixture: #{fixture}" unless definition
+variant = definition.fetch('variants')[options[:variant]]
+abort "Unknown parity fixture variant #{options[:variant].inspect} for #{fixture}" unless variant
+
+if variant.fetch('status') == 'unavailable'
+  abort "#{fixture} #{options[:variant]} is unavailable: #{variant.fetch('reason')}"
+end
+abort "#{fixture} #{options[:variant]} has unsupported registry status #{variant['status'].inspect}" unless variant['status'] == 'captured'
+
+required_path = File.expand_path("#{definition.fetch('require')}.rb", ROOT)
+abort "Parity fixture require escapes the repository: #{definition['require']}" unless required_path.start_with?("#{ROOT}/")
+abort "Parity fixture source is missing: #{definition['require']}" unless File.file?(required_path)
+require required_path
+
+factory_parts = definition.fetch('factory').split('.')
+method_name = factory_parts.pop
+receiver = factory_parts.reduce(Object) { |scope, name| scope.const_get(name) }
+arguments = variant.fetch('arguments', {}).transform_keys(&:to_sym)
+diagram = receiver.public_send(method_name, **arguments)
+
+FileUtils.mkdir_p(File.dirname(options[:output]))
+File.write(options[:output], diagram.to_html)

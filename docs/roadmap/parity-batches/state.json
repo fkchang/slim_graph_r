@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "name": "state-v0",
+  "viewport": {
+    "width": 1440,
+    "height": 1000,
+    "device_scale_factor": 1
+  },
+  "browser": "chromium",
+  "cases": [
+    {
+      "baseline_case_id": "state:minimal-light",
+      "local_fixture": "state-article-lifecycle",
+      "local_variant": "minimal-light",
+      "local_render": "captured"
+    },
+    {
+      "baseline_case_id": "state:minimal-dark",
+      "local_fixture": "state-article-lifecycle",
+      "local_variant": "minimal-dark",
+      "local_render": "captured"
+    },
+    {
+      "baseline_case_id": "state:full-editorial",
+      "local_fixture": "state-article-lifecycle",
+      "local_variant": "full-editorial",
+      "local_render": "captured"
+    }
+  ]
+}

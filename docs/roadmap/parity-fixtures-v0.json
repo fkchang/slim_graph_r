@@ -1,0 +1,3402 @@
+{
+  "schema": "slim_graph_r/parity-fixtures-v0",
+  "upstream_revision": "dcd9317ed9ec7477b20005544f36e3313664d815",
+  "source_root": "skills/diagram-design/assets",
+  "license": "MIT",
+  "package_policy": "development-and-audit-only; excluded from packaged gem and runtime",
+  "records": [
+    {
+      "type": "architecture",
+      "baseline_case_id": "architecture:minimal-light",
+      "upstream_asset": {
+        "name": "example-architecture.html",
+        "local_path": "vendor/diagram-design/assets/v0-baseline/example-architecture.html",
+        "raw_url": "https://raw.githubusercontent.com/cathrynlavery/diagram-design/dcd9317ed9ec7477b20005544f36e3313664d815/skills/diagram-design/assets/example-architecture.html",
+        "sha256": "03716fdb0a4ad641c30a5267b14a4c573d699f0f31ab3d8a0ba4e2b74ad56177"
+      },
+      "upstream_contract": {
+        "local_path": "tmp/upstream-types/type-architecture.md",
+        "sha256": "cb5672b5c69cbe24a0b18d144f8b2e4507a124ebb0dbc0bc898ceafb27612caa",
+        "anchor": "tmp/upstream-types/type-architecture.md:75"
+      },
+      "audit": {
+        "classification": "supported-unverified",
+        "manifest_status": "supported-unverified",
+        "equivalence_note": "The exact semantic fixture renders with SlimGraphR's minimal light profile; browser capture and human visual review remain pending."
+      },
+      "local_semantic_fixture": {
+        "path": "examples/parity/architecture_content_site.rb",
+        "sha256": "6ee92cbc8a5f8e67c03b968d677effa591ebb09a85aae6f180b9542949aa7a12"
+      },
+      "local_render": {
+        "theme": "light",
+        "style": "minimal",
+        "variant": "minimal-light"
+      }
+    },
+    {
+      "type": "architecture",
+      "baseline_case_id": "architecture:minimal-dark",
+      "upstream_asset": {
+        "name": "example-architecture-dark.html",
+        "local_path": "vendor/diagram-design/assets/v0-baseline/example-architecture-dark.html",
+        "raw_url": "https://raw.githubusercontent.com/cathrynlavery/diagram-design/dcd9317ed9ec7477b20005544f36e3313664d815/skills/diagram-design/assets/example-architecture-dark.html",
+        "sha256": "3767f518519dc7b6fc98066cc76c70937446ea9e71e380cf7c6064dc6ed6f5ba"
+      },
+      "upstream_contract": {
+        "local_path": "tmp/upstream-types/type-architecture.md",
+        "sha256": "cb5672b5c69cbe24a0b18d144f8b2e4507a124ebb0dbc0bc898ceafb27612caa",
+        "anchor": "tmp/upstream-types/type-architecture.md:75"
+      },
+      "audit": {
+        "classification": "supported-unverified",
+        "manifest_status": "supported-unverified",
+        "equivalence_note": "The exact semantic fixture renders with SlimGraphR's minimal dark profile; browser capture and human visual review remain pending."
+      },
+      "local_semantic_fixture": {
+        "path": "examples/parity/architecture_content_site.rb",
+        "sha256": "6ee92cbc8a5f8e67c03b968d677effa591ebb09a85aae6f180b9542949aa7a12"
+      },
+      "local_render": {
+        "theme": "dark",
+        "style": "minimal",
+        "variant": "minimal-dark"
+      }
+    },
+    {
+      "type": "architecture",
+      "baseline_case_id": "architecture:full-editorial",
+      "upstream_asset": {
+        "name": "example-architecture-full.html",
+        "local_path": "vendor/diagram-design/assets/v0-baseline/example-architecture-full.html",
+        "raw_url": "https://raw.githubusercontent.com/cathrynlavery/diagram-design/dcd9317ed9ec7477b20005544f36e3313664d815/skills/diagram-design/assets/example-architecture-full.html",
+        "sha256": "84425acb29b181a165e8c07fad268304f77223a92797a7f58679f51c3dd47502"
+      },
+      "upstream_contract": {
+        "local_path": "tmp/upstream-types/type-architecture.md",
+        "sha256": "cb5672b5c69cbe24a0b18d144f8b2e4507a124ebb0dbc0bc898ceafb27612caa",
+        "anchor": "tmp/upstream-types/type-architecture.md:75"
+      },
+      "audit": {
+        "classification": "supported-unverified",
+        "manifest_status": "supported-unverified",
+        "equivalence_note": "Browser evidence captures the local presentation; human visual review and the remaining parity gates are pending."
+      },
+      "local_semantic_fixture": {
+        "path": "examples/standalone/architecture.rb",
+        "sha256": "caca32b8841d891b851eeb70a3572085762a78d0455607c1229000b3ee5447b0"
+      },
+      "local_render": {
+        "theme": "light",
+        "style": "editorial",
+        "variant": "full-editorial"
+      }
+    },
+    {
+      "type": "flowchart",
+      "baseline_case_id": "flowchart:minimal-light",
+      "upstream_asset": {
+        "name": "example-flowchart.html",
+        "local_path": "vendor/diagram-design/assets/v0-baseline/example-flowchart.html",
+        "raw_url": "https://raw.githubusercontent.com/cathrynlavery/diagram-design/dcd9317ed9ec7477b20005544f36e3313664d815/skills/diagram-design/assets/example-flowchart.html",
+        "sha256": "ba0a39df57d5fd4beccebeb51d62028b420371b30793b2658d308df04d571ff3"
+      },
+      "upstream_contract": {
+        "local_path": "tmp/upstream-types/type-flowchart.md",
+        "sha256": "c2af5e2b849255ae4859125db7b101b74bfb9b201204725c1e83fac51a98ebab",
+        "anchor": "tmp/upstream-types/type-flowchart.md:20"
+      },
+      "audit": {
+        "classification": "supported-unverified",
+        "manifest_status": "supported-unverified",
+        "equivalence_note": "The exact semantic fixture renders with SlimGraphR's minimal light profile; browser capture and human visual review remain pending."
+      },
+      "local_semantic_fixture": {
+        "path": "examples/parity/flowchart_skill_decision.rb",
+        "sha256": "2cdadc6c1a6092446675806bc721875fb4553bf5455257203569d7b13d31dbc6"
+      },
+      "local_render": {
+        "theme": "light",
+        "style": "minimal",
+        "variant": "minimal-light"
+      }
+    },
+    {
+      "type": "flowchart",
+      "baseline_case_id": "flowchart:minimal-dark",
+      "upstream_asset": {
+        "name": "example-flowchart-dark.html",
+        "local_path": "vendor/diagram-design/assets/v0-baseline/example-flowchart-dark.html",
+        "raw_url": "https://raw.githubusercontent.com/cathrynlavery/diagram-design/dcd9317ed9ec7477b20005544f36e3313664d815/skills/diagram-design/assets/example-flowchart-dark.html",
+        "sha256": "d61779e1d57f2d5b3b9c01d09f0677251f99acb449ee40e8cb5e3297adaf9de1"
+      },
+      "upstream_contract": {
+        "local_path": "tmp/upstream-types/type-flowchart.md",
+        "sha256": "c2af5e2b849255ae4859125db7b101b74bfb9b201204725c1e83fac51a98ebab",
+        "anchor": "tmp/upstream-types/type-flowchart.md:20"
+      },
+      "audit": {
+        "classification": "supported-unverified",
+        "manifest_status": "supported-unverified",
+        "equivalence_note": "The exact semantic fixture renders with SlimGraphR's minimal dark profile; browser capture and human visual review remain pending."
+      },
+      "local_semantic_fixture": {
+        "path": "examples/parity/flowchart_skill_decision.rb",
+        "sha256": "2cdadc6c1a6092446675806bc721875fb4553bf5455257203569d7b13d31dbc6"
+      },
+      "local_render": {
+        "theme": "dark",
+        "style": "minimal",
+        "variant": "minimal-dark"
+      }
+    },
+    {
+      "type": "flowchart",
+      "baseline_case_id": "flowchart:full-editorial",
+      "upstream_asset": {
+        "name": "example-flowchart-full.html",
+        "local_path": "vendor/diagram-design/assets/v0-baseline/example-flowchart-full.html",
+        "raw_url": "https://raw.githubusercontent.com/cathrynlavery/diagram-design/dcd9317ed9ec7477b20005544f36e3313664d815/skills/diagram-design/assets/example-flowchart-full.html",
+        "sha256": "0386adeb8ef6327a5ae42f6f1f89f59aa1455fa500ef18b3c656a59f010b8192"
+      },
+      "upstream_contract": {
+        "local_path": "tmp/upstream-types/type-flowchart.md",
+        "sha256": "c2af5e2b849255ae4859125db7b101b74bfb9b201204725c1e83fac51a98ebab",
+        "anchor": "tmp/upstream-types/type-flowchart.md:20"
+      },
+      "audit": {
+        "classification": "supported-unverified",
+        "manifest_status": "supported-unverified",
+        "equivalence_note": "Browser evidence captures the local presentation; human visual review and the remaining parity gates are pending."
+      },
+      "local_semantic_fixture": {
+        "path": "examples/standalone/flowchart.rb",
+        "sha256": "b3c9d6c90fb950f891addc58946053e2cef9fc7a8e033ff08a787542f91e9d00"
+      },
+      "local_render": {
+        "theme": "light",
+        "style": "editorial",
+        "variant": "full-editorial"
+      }
+    },
+    {
+      "type": "sequence",
+      "baseline_case_id": "sequence:minimal-light",
+      "upstream_asset": {
+        "name": "example-sequence.html",
+        "local_path": "vendor/diagram-design/assets/v0-baseline/example-sequence.html",
+        "raw_url": "https://raw.githubusercontent.com/cathrynlavery/diagram-design/dcd9317ed9ec7477b20005544f36e3313664d815/skills/diagram-design/assets/example-sequence.html",
+        "sha256": "12dcedc98c28d15f7a455f1266c8d8bd93bebe1ed8f352d89bc20703eaa00fad"
+      },
+      "upstream_contract": {
+        "local_path": "tmp/upstream-types/type-sequence.md",
+        "sha256": "21c3ef9a491068e871aae99f035883d3c982255df97db1effaf0c3301f562865",
+        "anchor": "tmp/upstream-types/type-sequence.md:124"
+      },
+      "audit": {
+        "classification": "supported-unverified",
+        "manifest_status": "supported-unverified",
+        "equivalence_note": "The exact semantic fixture renders with SlimGraphR's minimal light profile; browser capture and human visual review remain pending."
+      },
+      "local_semantic_fixture": {
+        "path": "examples/parity/sequence_article_request.rb",
+        "sha256": "727e70f3bcfd6f95438b6019f507ebe3881745666d2ef27acb751219b9df856e"
+      },
+      "local_render": {
+        "theme": "light",
+        "style": "minimal",
+        "variant": "minimal-light"
+      }
+    },
+    {
+      "type": "sequence",
+      "baseline_case_id": "sequence:minimal-dark",
+      "upstream_asset": {
+        "name": "example-sequence-dark.html",
+        "local_path": "vendor/diagram-design/assets/v0-baseline/example-sequence-dark.html",
+        "raw_url": "https://raw.githubusercontent.com/cathrynlavery/diagram-design/dcd9317ed9ec7477b20005544f36e3313664d815/skills/diagram-design/assets/example-sequence-dark.html",
+        "sha256": "667d448a51a817fb334d3fae0c6f2ed2ab8a2219e42bb29d97c9e012c2d96a8a"
+      },
+      "upstream_contract": {
+        "local_path": "tmp/upstream-types/type-sequence.md",
+        "sha256": "21c3ef9a491068e871aae99f035883d3c982255df97db1effaf0c3301f562865",
+        "anchor": "tmp/upstream-types/type-sequence.md:124"
+      },
+      "audit": {
+        "classification": "supported-unverified",
+        "manifest_status": "supported-unverified",
+        "equivalence_note": "The exact semantic fixture renders with SlimGraphR's minimal dark profile; browser capture and human visual review remain pending."
+      },
+      "local_semantic_fixture": {
+        "path": "examples/parity/sequence_article_request.rb",
+        "sha256": "727e70f3bcfd6f95438b6019f507ebe3881745666d2ef27acb751219b9df856e"
+      },
+      "local_render": {
+        "theme": "dark",
+        "style": "minimal",
+        "variant": "minimal-dark"
+      }
+    },
+    {
+      "type": "sequence",
+      "baseline_case_id": "sequence:full-editorial",
+      "upstream_asset": {
+        "name": "example-sequence-full.html",
+        "local_path": "vendor/diagram-design/assets/v0-baseline/example-sequence-full.html",
+        "raw_url": "https://raw.githubusercontent.com/cathrynlavery/diagram-design/dcd9317ed9ec7477b20005544f36e3313664d815/skills/diagram-design/assets/example-sequence-full.html",
+        "sha256": "e165d6e2fe2fa56538820ab6efa56a7ea79f29d75775bac47ee865483d512c1c"
+      },
+      "upstream_contract": {
+        "local_path": "tmp/upstream-types/type-sequence.md",
+        "sha256": "21c3ef9a491068e871aae99f035883d3c982255df97db1effaf0c3301f562865",
+        "anchor": "tmp/upstream-types/type-sequence.md:124"
+      },
+      "audit": {
+        "classification": "supported-unverified",
+        "manifest_status": "supported-unverified",
+        "equivalence_note": "Browser evidence captures the local presentation; human visual review and the remaining parity gates are pending."
+      },
+      "local_semantic_fixture": {
+        "path": "examples/standalone/sequence.rb",
+        "sha256": "18b69dfa7af63e91a650b40332f885ca861628fb67b1e89008b0b438486b92a6"
+      },
+      "local_render": {
+        "theme": "light",
+        "style": "editorial",
+        "variant": "full-editorial"
+      }
+    },
+    {
+      "type": "timeline",
+      "baseline_case_id": "timeline:minimal-light",
+      "upstream_asset": {
+        "name": "example-timeline.html",
+        "local_path": "vendor/diagram-design/assets/v0-baseline/example-timeline.html",
+        "raw_url": "https://raw.githubusercontent.com/cathrynlavery/diagram-design/dcd9317ed9ec7477b20005544f36e3313664d815/skills/diagram-design/assets/example-timeline.html",
+        "sha256": "1a58e3824eb2bb89ff6e57439b61c38d6e4c08b187143436f50108d8e60bfc45"
+      },
+      "upstream_contract": {
+        "local_path": "tmp/upstream-types/type-timeline.md",
+        "sha256": "9102e61347b17b303eafad52d4f8941d507faf889d9316ed0325e5e0f0ba01ca",
+        "anchor": "tmp/upstream-types/type-timeline.md:17"
+      },
+      "audit": {
+        "classification": "supported-unverified",
+        "manifest_status": "supported-unverified",
+        "equivalence_note": "The exact semantic fixture renders with SlimGraphR's minimal light profile; browser capture and human visual review remain pending."
+      },
+      "local_semantic_fixture": {
+        "path": "examples/parity/timeline_product_launch.rb",
+        "sha256": "d15c4de1b816312610a825f904f8a1936c85f13e754ab107c5749835d0e8970c"
+      },
+      "local_render": {
+        "theme": "light",
+        "style": "minimal",
+        "variant": "minimal-light"
+      }
+    },
+    {
+      "type": "timeline",
+      "baseline_case_id": "timeline:minimal-dark",
+      "upstream_asset": {
+        "name": "example-timeline-dark.html",
+        "local_path": "vendor/diagram-design/assets/v0-baseline/example-timeline-dark.html",
+        "raw_url": "https://raw.githubusercontent.com/cathrynlavery/diagram-design/dcd9317ed9ec7477b20005544f36e3313664d815/skills/diagram-design/assets/example-timeline-dark.html",
+        "sha256": "64bcbb52a88e989b642dee6ef9ca2c47000407430b240760911a062a8e6735a7"
+      },
+      "upstream_contract": {
+        "local_path": "tmp/upstream-types/type-timeline.md",
+        "sha256": "9102e61347b17b303eafad52d4f8941d507faf889d9316ed0325e5e0f0ba01ca",
+        "anchor": "tmp/upstream-types/type-timeline.md:17"
+      },
+      "audit": {
+        "classification": "supported-unverified",
+        "manifest_status": "supported-unverified",
+        "equivalence_note": "The exact semantic fixture renders with SlimGraphR's minimal dark profile; browser capture and human visual review remain pending."
+      },
+      "local_semantic_fixture": {
+        "path": "examples/parity/timeline_product_launch.rb",
+        "sha256": "d15c4de1b816312610a825f904f8a1936c85f13e754ab107c5749835d0e8970c"
+      },
+      "local_render": {
+        "theme": "dark",
+        "style": "minimal",
+        "variant": "minimal-dark"
+      }
+    },
+    {
+      "type": "timeline",
+      "baseline_case_id": "timeline:full-editorial",
+      "upstream_asset": {
+        "name": "example-timeline-full.html",
+        "local_path": "vendor/diagram-design/assets/v0-baseline/example-timeline-full.html",
+        "raw_url": "https://raw.githubusercontent.com/cathrynlavery/diagram-design/dcd9317ed9ec7477b20005544f36e3313664d815/skills/diagram-design/assets/example-timeline-full.html",
+        "sha256": "4e9195b6c3eb9d9ff4ee0bb9a19ac166c7098465d80ccf7148af73df4cdcd7f1"
+      },
+      "upstream_contract": {
+        "local_path": "tmp/upstream-types/type-timeline.md",
+        "sha256": "9102e61347b17b303eafad52d4f8941d507faf889d9316ed0325e5e0f0ba01ca",
+        "anchor": "tmp/upstream-types/type-timeline.md:17"
+      },
+      "audit": {
+        "classification": "supported-unverified",
+        "manifest_status": "supported-unverified",
+        "equivalence_note": "Browser evidence captures the local presentation; human visual review and the remaining parity gates are pending."
+      },
+      "local_semantic_fixture": {
+        "path": "examples/standalone/timeline.rb",
+        "sha256": "870e5214946a1a261e0b24f9e6388eafb5866b9495e6e0f62de107c5f0928e90"
+      },
+      "local_render": {
+        "theme": "light",
+        "style": "editorial",
+        "variant": "full-editorial"
+      }
+    },
+    {
+      "type": "org-chart",
+      "baseline_case_id": "org-chart:minimal-light",
+      "upstream_asset": {
+        "name": "example-org-chart.html",
+        "local_path": "vendor/diagram-design/assets/v0-baseline/example-org-chart.html",
+        "raw_url": "https://raw.githubusercontent.com/cathrynlavery/diagram-design/dcd9317ed9ec7477b20005544f36e3313664d815/skills/diagram-design/assets/example-org-chart.html",
+        "sha256": "8c4e95ee52d597f28743673ea11f01ecfcf1a230d6f3dfb6d5ad641b770af46c"
+      },
+      "upstream_contract": {
+        "local_path": "tmp/upstream-types/type-org-chart.md",
+        "sha256": "9905c67d6cf884f4537b9f86f893e6a90b4dc4134ff8bf8ce6187d151efbd6ab",
+        "anchor": "tmp/upstream-types/type-org-chart.md:41"
+      },
+      "audit": {
+        "classification": "supported-unverified",
+        "manifest_status": "supported-unverified",
+        "equivalence_note": "The exact semantic fixture renders with SlimGraphR minimal light profile; browser capture and human visual review remain pending."
+      },
+      "local_semantic_fixture": {
+        "path": "examples/parity/org_chart_agent_team.rb",
+        "sha256": "6777f4fa58640f06442e740693303ed155cd11cd317193c23a5150004617e56e"
+      },
+      "local_render": {
+        "theme": "light",
+        "style": "minimal",
+        "variant": "minimal-light"
+      }
+    },
+    {
+      "type": "org-chart",
+      "baseline_case_id": "org-chart:minimal-dark",
+      "upstream_asset": {
+        "name": "example-org-chart-dark.html",
+        "local_path": "vendor/diagram-design/assets/v0-baseline/example-org-chart-dark.html",
+        "raw_url": "https://raw.githubusercontent.com/cathrynlavery/diagram-design/dcd9317ed9ec7477b20005544f36e3313664d815/skills/diagram-design/assets/example-org-chart-dark.html",
+        "sha256": "fd0233be926462fd539b3a953a8abc012fb1f6248b71b658a0a3d194fd4f45e6"
+      },
+      "upstream_contract": {
+        "local_path": "tmp/upstream-types/type-org-chart.md",
+        "sha256": "9905c67d6cf884f4537b9f86f893e6a90b4dc4134ff8bf8ce6187d151efbd6ab",
+        "anchor": "tmp/upstream-types/type-org-chart.md:41"
+      },
+      "audit": {
+        "classification": "supported-unverified",
+        "manifest_status": "supported-unverified",
+        "equivalence_note": "The exact semantic fixture renders with SlimGraphR minimal dark profile; browser capture and human visual review remain pending."
+      },
+      "local_semantic_fixture": {
+        "path": "examples/parity/org_chart_agent_team.rb",
+        "sha256": "6777f4fa58640f06442e740693303ed155cd11cd317193c23a5150004617e56e"
+      },
+      "local_render": {
+        "theme": "dark",
+        "style": "minimal",
+        "variant": "minimal-dark"
+      }
+    },
+    {
+      "type": "org-chart",
+      "baseline_case_id": "org-chart:full-editorial",
+      "upstream_asset": {
+        "name": "example-org-chart-full.html",
+        "local_path": "vendor/diagram-design/assets/v0-baseline/example-org-chart-full.html",
+        "raw_url": "https://raw.githubusercontent.com/cathrynlavery/diagram-design/dcd9317ed9ec7477b20005544f36e3313664d815/skills/diagram-design/assets/example-org-chart-full.html",
+        "sha256": "a1b5d313f47e6cb26240edd5d696e4dc944b6996bbe92f0be7c0b90836d2631f"
+      },
+      "upstream_contract": {
+        "local_path": "tmp/upstream-types/type-org-chart.md",
+        "sha256": "9905c67d6cf884f4537b9f86f893e6a90b4dc4134ff8bf8ce6187d151efbd6ab",
+        "anchor": "tmp/upstream-types/type-org-chart.md:41"
+      },
+      "audit": {
+        "classification": "supported-unverified",
+        "manifest_status": "supported-unverified",
+        "equivalence_note": "The exact editorial fixture preserves the pinned visible setup-gap footer, approval gate, and backend-name mismatch. Local HTML is rendered and awaits the coordinator browser geometry and visual gate."
+      },
+      "local_semantic_fixture": {
+        "path": "examples/parity/org_chart_agent_team.rb",
+        "sha256": "6777f4fa58640f06442e740693303ed155cd11cd317193c23a5150004617e56e"
+      },
+      "local_render": {
+        "theme": "light",
+        "style": "editorial",
+        "variant": "full-editorial"
+      }
+    },
+    {
+      "type": "state",
+      "baseline_case_id": "state:minimal-light",
+      "upstream_asset": {
+        "name": "example-state.html",
+        "local_path": "vendor/diagram-design/assets/v0-baseline/example-state.html",
+        "raw_url": "https://raw.githubusercontent.com/cathrynlavery/diagram-design/dcd9317ed9ec7477b20005544f36e3313664d815/skills/diagram-design/assets/example-state.html",
+        "sha256": "75521144ce5aaf477096f355e86ae2d3301eb136391a6bd0702a844a8fe7ce30"
+      },
+      "upstream_contract": {
+        "local_path": "tmp/upstream-types/type-state.md",
+        "sha256": "7fed5690161e6f75d510cf89d1e989885b2d900fdadca5116e7f5b49ad8529a5",
+        "anchor": "tmp/upstream-types/type-state.md:18"
+      },
+      "audit": {
+        "classification": "supported-unverified",
+        "manifest_status": "supported-unverified",
+        "equivalence_note": "The exact semantic fixture renders with SlimGraphR minimal light profile; browser capture and human visual review remain pending."
+      },
+      "local_semantic_fixture": {
+        "path": "examples/parity/state_article_lifecycle.rb",
+        "sha256": "6bf4bf8f9d03fb92c5389bb01d870c494cf5ee128ba7202a8694fe5483cb9d53"
+      },
+      "local_render": {
+        "theme": "light",
+        "style": "minimal",
+        "variant": "minimal-light"
+      }
+    },
+    {
+      "type": "state",
+      "baseline_case_id": "state:minimal-dark",
+      "upstream_asset": {
+        "name": "example-state-dark.html",
+        "local_path": "vendor/diagram-design/assets/v0-baseline/example-state-dark.html",
+        "raw_url": "https://raw.githubusercontent.com/cathrynlavery/diagram-design/dcd9317ed9ec7477b20005544f36e3313664d815/skills/diagram-design/assets/example-state-dark.html",
+        "sha256": "d5a29f22ee80fef6fe6f857e767fb0bf4afca8bc8f8cbb478f33286d76f88706"
+      },
+      "upstream_contract": {
+        "local_path": "tmp/upstream-types/type-state.md",
+        "sha256": "7fed5690161e6f75d510cf89d1e989885b2d900fdadca5116e7f5b49ad8529a5",
+        "anchor": "tmp/upstream-types/type-state.md:18"
+      },
+      "audit": {
+        "classification": "supported-unverified",
+        "manifest_status": "supported-unverified",
+        "equivalence_note": "The exact semantic fixture renders with SlimGraphR minimal dark profile; browser capture and human visual review remain pending."
+      },
+      "local_semantic_fixture": {
+        "path": "examples/parity/state_article_lifecycle.rb",
+        "sha256": "6bf4bf8f9d03fb92c5389bb01d870c494cf5ee128ba7202a8694fe5483cb9d53"
+      },
+      "local_render": {
+        "theme": "dark",
+        "style": "minimal",
+        "variant": "minimal-dark"
+      }
+    },
+    {
+      "type": "state",
+      "baseline_case_id": "state:full-editorial",
+      "upstream_asset": {
+        "name": "example-state-full.html",
+        "local_path": "vendor/diagram-design/assets/v0-baseline/example-state-full.html",
+        "raw_url": "https://raw.githubusercontent.com/cathrynlavery/diagram-design/dcd9317ed9ec7477b20005544f36e3313664d815/skills/diagram-design/assets/example-state-full.html",
+        "sha256": "bdcd07a2f12fb3ae0afe34b8f3d9fc455a7fbe02f671b97a7163d35726894017"
+      },
+      "upstream_contract": {
+        "local_path": "tmp/upstream-types/type-state.md",
+        "sha256": "7fed5690161e6f75d510cf89d1e989885b2d900fdadca5116e7f5b49ad8529a5",
+        "anchor": "tmp/upstream-types/type-state.md:18"
+      },
+      "audit": {
+        "classification": "supported-unverified",
+        "manifest_status": "supported-unverified",
+        "equivalence_note": "The exact semantic fixture renders with SlimGraphR's editorial profile; browser capture and human visual review remain pending."
+      },
+      "local_semantic_fixture": {
+        "path": "examples/parity/state_article_lifecycle.rb",
+        "sha256": "6bf4bf8f9d03fb92c5389bb01d870c494cf5ee128ba7202a8694fe5483cb9d53"
+      },
+      "local_render": {
+        "theme": "light",
+        "style": "editorial",
+        "variant": "full-editorial"
+      }
+    },
+    {
+      "type": "dependency",
+      "baseline_case_id": "dependency:minimal-light",
+      "upstream_asset": {
+        "name": "example-dependency.html",
+        "local_path": "vendor/diagram-design/assets/v0-baseline/example-dependency.html",
+        "raw_url": "https://raw.githubusercontent.com/cathrynlavery/diagram-design/dcd9317ed9ec7477b20005544f36e3313664d815/skills/diagram-design/assets/example-dependency.html",
+        "sha256": "973f7b5f5ac1746bb018e9ea8de9f6853b5f14ff41173e64abcf9855ea5f353b"
+      },
+      "upstream_contract": {
+        "local_path": "tmp/upstream-types/type-dependency.md",
+        "sha256": "b6262d5337b3184aeb83f503627a665a9108b62a42e5ef2d6549c4167220fa6c",
+        "anchor": "tmp/upstream-types/type-dependency.md:40"
+      },
+      "audit": {
+        "classification": "supported-unverified",
+        "manifest_status": "supported-unverified",
+        "equivalence_note": "The exact semantic fixture renders with SlimGraphR minimal light profile; browser capture and human visual review remain pending."
+      },
+      "local_semantic_fixture": {
+        "path": "examples/parity/dependency_typescript_monorepo.rb",
+        "sha256": "1c7671eed7bcc8210ec2dfff7f450c6754907d80c419d67782f08537039d96b2"
+      },
+      "local_render": {
+        "theme": "light",
+        "style": "minimal",
+        "variant": "minimal-light"
+      }
+    },
+    {
+      "type": "dependency",
+      "baseline_case_id": "dependency:minimal-dark",
+      "upstream_asset": {
+        "name": "example-dependency-dark.html",
+        "local_path": "vendor/diagram-design/assets/v0-baseline/example-dependency-dark.html",
+        "raw_url": "https://raw.githubusercontent.com/cathrynlavery/diagram-design/dcd9317ed9ec7477b20005544f36e3313664d815/skills/diagram-design/assets/example-dependency-dark.html",
+        "sha256": "7eb7c3d1e90d9dbb49a97f9490184ff1768930847fe86a112f0262513691c035"
+      },
+      "upstream_contract": {
+        "local_path": "tmp/upstream-types/type-dependency.md",
+        "sha256": "b6262d5337b3184aeb83f503627a665a9108b62a42e5ef2d6549c4167220fa6c",
+        "anchor": "tmp/upstream-types/type-dependency.md:40"
+      },
+      "audit": {
+        "classification": "supported-unverified",
+        "manifest_status": "supported-unverified",
+        "equivalence_note": "The exact semantic fixture renders with SlimGraphR minimal dark profile; browser capture and human visual review remain pending."
+      },
+      "local_semantic_fixture": {
+        "path": "examples/parity/dependency_typescript_monorepo.rb",
+        "sha256": "1c7671eed7bcc8210ec2dfff7f450c6754907d80c419d67782f08537039d96b2"
+      },
+      "local_render": {
+        "theme": "dark",
+        "style": "minimal",
+        "variant": "minimal-dark"
+      }
+    },
+    {
+      "type": "dependency",
+      "baseline_case_id": "dependency:full-editorial",
+      "upstream_asset": {
+        "name": "example-dependency-full.html",
+        "local_path": "vendor/diagram-design/assets/v0-baseline/example-dependency-full.html",
+        "raw_url": "https://raw.githubusercontent.com/cathrynlavery/diagram-design/dcd9317ed9ec7477b20005544f36e3313664d815/skills/diagram-design/assets/example-dependency-full.html",
+        "sha256": "5844a5bfa0eb30e5c7c8d5d23d4a3230ed5fe051e6ca84daf34a5ecb7185ef5b"
+      },
+      "upstream_contract": {
+        "local_path": "tmp/upstream-types/type-dependency.md",
+        "sha256": "b6262d5337b3184aeb83f503627a665a9108b62a42e5ef2d6549c4167220fa6c",
+        "anchor": "tmp/upstream-types/type-dependency.md:40"
+      },
+      "audit": {
+        "classification": "supported-unverified",
+        "manifest_status": "supported-unverified",
+        "equivalence_note": "The exact pinned semantic fixture renders every authored node and relationship; browser geometry and human visual review remain pending."
+      },
+      "local_semantic_fixture": {
+        "path": "examples/parity/dependency_typescript_monorepo.rb",
+        "sha256": "1c7671eed7bcc8210ec2dfff7f450c6754907d80c419d67782f08537039d96b2"
+      },
+      "local_render": {
+        "theme": "light",
+        "style": "editorial",
+        "variant": "full-editorial"
+      }
+    },
+    {
+      "type": "deployment",
+      "baseline_case_id": "deployment:minimal-light",
+      "upstream_asset": {
+        "name": "example-deployment.html",
+        "local_path": "vendor/diagram-design/assets/v0-baseline/example-deployment.html",
+        "raw_url": "https://raw.githubusercontent.com/cathrynlavery/diagram-design/dcd9317ed9ec7477b20005544f36e3313664d815/skills/diagram-design/assets/example-deployment.html",
+        "sha256": "6e28f0eee98dd728bfa6b5210b1885caf2b39992fdd06a680e37bbc8863e89b2"
+      },
+      "upstream_contract": {
+        "local_path": "tmp/upstream-types/type-deployment.md",
+        "sha256": "d3d33ff53bb8bdb7b15bcc3b23d1009ee68b40638588dd054d0ab993fb480fd5",
+        "anchor": "tmp/upstream-types/type-deployment.md:41"
+      },
+      "audit": {
+        "classification": "supported-unverified",
+        "manifest_status": "supported-unverified",
+        "equivalence_note": "The exact semantic fixture renders with SlimGraphR minimal light profile; browser capture and human visual review remain pending."
+      },
+      "local_semantic_fixture": {
+        "path": "examples/parity/deployment_checkout_service.rb",
+        "sha256": "0e12aa390026a3ff0d8844c99daf3aad3e0b96fb541f005c45a30b8424f8cdc5"
+      },
+      "local_render": {
+        "theme": "light",
+        "style": "minimal",
+        "variant": "minimal-light"
+      }
+    },
+    {
+      "type": "deployment",
+      "baseline_case_id": "deployment:minimal-dark",
+      "upstream_asset": {
+        "name": "example-deployment-dark.html",
+        "local_path": "vendor/diagram-design/assets/v0-baseline/example-deployment-dark.html",
+        "raw_url": "https://raw.githubusercontent.com/cathrynlavery/diagram-design/dcd9317ed9ec7477b20005544f36e3313664d815/skills/diagram-design/assets/example-deployment-dark.html",
+        "sha256": "7688eec54dde8950375d2bb724438bce6dce18714ed2f99a0a60ffaacb17190a"
+      },
+      "upstream_contract": {
+        "local_path": "tmp/upstream-types/type-deployment.md",
+        "sha256": "d3d33ff53bb8bdb7b15bcc3b23d1009ee68b40638588dd054d0ab993fb480fd5",
+        "anchor": "tmp/upstream-types/type-deployment.md:41"
+      },
+      "audit": {
+        "classification": "supported-unverified",
+        "manifest_status": "supported-unverified",
+        "equivalence_note": "The exact semantic fixture renders with SlimGraphR minimal dark profile; browser capture and human visual review remain pending."
+      },
+      "local_semantic_fixture": {
+        "path": "examples/parity/deployment_checkout_service.rb",
+        "sha256": "0e12aa390026a3ff0d8844c99daf3aad3e0b96fb541f005c45a30b8424f8cdc5"
+      },
+      "local_render": {
+        "theme": "dark",
+        "style": "minimal",
+        "variant": "minimal-dark"
+      }
+    },
+    {
+      "type": "deployment",
+      "baseline_case_id": "deployment:full-editorial",
+      "upstream_asset": {
+        "name": "example-deployment-full.html",
+        "local_path": "vendor/diagram-design/assets/v0-baseline/example-deployment-full.html",
+        "raw_url": "https://raw.githubusercontent.com/cathrynlavery/diagram-design/dcd9317ed9ec7477b20005544f36e3313664d815/skills/diagram-design/assets/example-deployment-full.html",
+        "sha256": "6f6ae188e2c2874a7b6f28943575eff72773950a9ac15dac8b7b3209cfd88cc5"
+      },
+      "upstream_contract": {
+        "local_path": "tmp/upstream-types/type-deployment.md",
+        "sha256": "d3d33ff53bb8bdb7b15bcc3b23d1009ee68b40638588dd054d0ab993fb480fd5",
+        "anchor": "tmp/upstream-types/type-deployment.md:41"
+      },
+      "audit": {
+        "classification": "supported-unverified",
+        "manifest_status": "supported-unverified",
+        "equivalence_note": "Browser evidence captures the local presentation; human visual review and the remaining parity gates are pending."
+      },
+      "local_semantic_fixture": {
+        "path": "examples/parity/deployment_checkout_service.rb",
+        "sha256": "0e12aa390026a3ff0d8844c99daf3aad3e0b96fb541f005c45a30b8424f8cdc5"
+      },
+      "local_render": {
+        "theme": "light",
+        "style": "editorial",
+        "variant": "full-editorial"
+      }
+    },
+    {
+      "type": "it-state",
+      "baseline_case_id": "it-state:minimal-light",
+      "upstream_asset": {
+        "name": "example-it-state.html",
+        "local_path": "vendor/diagram-design/assets/v0-baseline/example-it-state.html",
+        "raw_url": "https://raw.githubusercontent.com/cathrynlavery/diagram-design/dcd9317ed9ec7477b20005544f36e3313664d815/skills/diagram-design/assets/example-it-state.html",
+        "sha256": "59103bffa775b744828643e361b71f4b80e5ef8a0042abe9ce65c81e3d5dd21e"
+      },
+      "upstream_contract": {
+        "local_path": "tmp/upstream-types/type-it-state.md",
+        "sha256": "744e18db2ddf29e501af903ef79deafb1500f546611137d27cd14fe8ccbb77db",
+        "anchor": "tmp/upstream-types/type-it-state.md:394"
+      },
+      "audit": {
+        "classification": "missing",
+        "manifest_status": "missing",
+        "equivalence_note": "Browser evidence records the local presentation as unavailable: SlimGraphR has no minimal profile; do not substitute editorial."
+      },
+      "local_semantic_fixture": {
+        "path": "examples/parity/it_state_northwind.rb",
+        "sha256": "b269e9193cff07f1f0dbb4f8ef7dabb441d17676c1d7a8654dc311ac567b01dc"
+      },
+      "local_render": {
+        "theme": "light",
+        "style": "minimal",
+        "variant": "minimal-light"
+      }
+    },
+    {
+      "type": "it-state",
+      "baseline_case_id": "it-state:minimal-dark",
+      "upstream_asset": {
+        "name": "example-it-state-dark.html",
+        "local_path": "vendor/diagram-design/assets/v0-baseline/example-it-state-dark.html",
+        "raw_url": "https://raw.githubusercontent.com/cathrynlavery/diagram-design/dcd9317ed9ec7477b20005544f36e3313664d815/skills/diagram-design/assets/example-it-state-dark.html",
+        "sha256": "21363f1e08eadbf4c88940f845dd36f462a60e191064d4d9781dd68c9daad4b5"
+      },
+      "upstream_contract": {
+        "local_path": "tmp/upstream-types/type-it-state.md",
+        "sha256": "744e18db2ddf29e501af903ef79deafb1500f546611137d27cd14fe8ccbb77db",
+        "anchor": "tmp/upstream-types/type-it-state.md:394"
+      },
+      "audit": {
+        "classification": "missing",
+        "manifest_status": "missing",
+        "equivalence_note": "Browser evidence records the local presentation as unavailable: SlimGraphR has no minimal profile; do not substitute editorial."
+      },
+      "local_semantic_fixture": {
+        "path": "examples/parity/it_state_northwind.rb",
+        "sha256": "b269e9193cff07f1f0dbb4f8ef7dabb441d17676c1d7a8654dc311ac567b01dc"
+      },
+      "local_render": {
+        "theme": "dark",
+        "style": "minimal",
+        "variant": "minimal-dark"
+      }
+    },
+    {
+      "type": "it-state",
+      "baseline_case_id": "it-state:full-editorial",
+      "upstream_asset": {
+        "name": "example-it-state-full.html",
+        "local_path": "vendor/diagram-design/assets/v0-baseline/example-it-state-full.html",
+        "raw_url": "https://raw.githubusercontent.com/cathrynlavery/diagram-design/dcd9317ed9ec7477b20005544f36e3313664d815/skills/diagram-design/assets/example-it-state-full.html",
+        "sha256": "ed7b2271c358c6046a49c03498384a86fdceda98a1632b235047ee9da9a7b1a0"
+      },
+      "upstream_contract": {
+        "local_path": "tmp/upstream-types/type-it-state.md",
+        "sha256": "744e18db2ddf29e501af903ef79deafb1500f546611137d27cd14fe8ccbb77db",
+        "anchor": "tmp/upstream-types/type-it-state.md:394"
+      },
+      "audit": {
+        "classification": "deliberate-different",
+        "manifest_status": "deliberate-different",
+        "equivalence_note": "The documented local contract intentionally differs from the pinned editorial composition; browser evidence records that bounded result without claiming parity."
+      },
+      "local_semantic_fixture": {
+        "path": "examples/parity/it_state_northwind.rb",
+        "sha256": "b269e9193cff07f1f0dbb4f8ef7dabb441d17676c1d7a8654dc311ac567b01dc"
+      },
+      "local_render": {
+        "theme": "light",
+        "style": "editorial",
+        "variant": "full-editorial"
+      }
+    },
+    {
+      "type": "high-level",
+      "baseline_case_id": "high-level:minimal-light",
+      "upstream_asset": {
+        "name": "example-high-level.html",
+        "local_path": "vendor/diagram-design/assets/v0-baseline/example-high-level.html",
+        "raw_url": "https://raw.githubusercontent.com/cathrynlavery/diagram-design/dcd9317ed9ec7477b20005544f36e3313664d815/skills/diagram-design/assets/example-high-level.html",
+        "sha256": "33789942cb06be5228ffa6e450602d1f7c9344b7d263fa2674b7ba5e6dd7e788"
+      },
+      "upstream_contract": {
+        "local_path": "tmp/upstream-types/type-high-level.md",
+        "sha256": "86e9e681189b013752edc512a8efb651e67aba52e9ddfbfe46d1fc117f1d5248",
+        "anchor": "tmp/upstream-types/type-high-level.md:451"
+      },
+      "audit": {
+        "classification": "missing",
+        "manifest_status": "missing",
+        "equivalence_note": "Browser evidence records the local presentation as unavailable: SlimGraphR has no minimal profile; do not substitute editorial."
+      },
+      "local_semantic_fixture": {
+        "path": "examples/parity/high_level_data_stack.rb",
+        "sha256": "ac7a22ac0b37f25c21448eea8bba3afbb9ef0302f3ed4e13d962f9a940dd11dd"
+      },
+      "local_render": {
+        "theme": "light",
+        "style": "minimal",
+        "variant": "minimal-light"
+      }
+    },
+    {
+      "type": "high-level",
+      "baseline_case_id": "high-level:minimal-dark",
+      "upstream_asset": {
+        "name": "example-high-level-dark.html",
+        "local_path": "vendor/diagram-design/assets/v0-baseline/example-high-level-dark.html",
+        "raw_url": "https://raw.githubusercontent.com/cathrynlavery/diagram-design/dcd9317ed9ec7477b20005544f36e3313664d815/skills/diagram-design/assets/example-high-level-dark.html",
+        "sha256": "49a52a62a30781de7d6ee051cddf9837884a84bb1ce1891eb4dadb4bb82348ae"
+      },
+      "upstream_contract": {
+        "local_path": "tmp/upstream-types/type-high-level.md",
+        "sha256": "86e9e681189b013752edc512a8efb651e67aba52e9ddfbfe46d1fc117f1d5248",
+        "anchor": "tmp/upstream-types/type-high-level.md:451"
+      },
+      "audit": {
+        "classification": "missing",
+        "manifest_status": "missing",
+        "equivalence_note": "Browser evidence records the local presentation as unavailable: SlimGraphR has no minimal profile; do not substitute editorial."
+      },
+      "local_semantic_fixture": {
+        "path": "examples/parity/high_level_data_stack.rb",
+        "sha256": "ac7a22ac0b37f25c21448eea8bba3afbb9ef0302f3ed4e13d962f9a940dd11dd"
+      },
+      "local_render": {
+        "theme": "dark",
+        "style": "minimal",
+        "variant": "minimal-dark"
+      }
+    },
+    {
+      "type": "high-level",
+      "baseline_case_id": "high-level:full-editorial",
+      "upstream_asset": {
+        "name": "example-high-level-full.html",
+        "local_path": "vendor/diagram-design/assets/v0-baseline/example-high-level-full.html",
+        "raw_url": "https://raw.githubusercontent.com/cathrynlavery/diagram-design/dcd9317ed9ec7477b20005544f36e3313664d815/skills/diagram-design/assets/example-high-level-full.html",
+        "sha256": "d25bde14ab1ac1d9bf47b1613f864517ce3d88553043192abbc856f69bd0f7b6"
+      },
+      "upstream_contract": {
+        "local_path": "tmp/upstream-types/type-high-level.md",
+        "sha256": "86e9e681189b013752edc512a8efb651e67aba52e9ddfbfe46d1fc117f1d5248",
+        "anchor": "tmp/upstream-types/type-high-level.md:451"
+      },
+      "audit": {
+        "classification": "deliberate-different",
+        "manifest_status": "deliberate-different",
+        "equivalence_note": "The documented local contract intentionally differs from the pinned editorial composition; browser evidence records that bounded result without claiming parity."
+      },
+      "local_semantic_fixture": {
+        "path": "examples/parity/high_level_data_stack.rb",
+        "sha256": "ac7a22ac0b37f25c21448eea8bba3afbb9ef0302f3ed4e13d962f9a940dd11dd"
+      },
+      "local_render": {
+        "theme": "light",
+        "style": "editorial",
+        "variant": "full-editorial"
+      }
+    },
+    {
+      "type": "tree",
+      "baseline_case_id": "tree:minimal-light",
+      "upstream_asset": {
+        "name": "example-tree.html",
+        "local_path": "vendor/diagram-design/assets/v0-baseline/example-tree.html",
+        "raw_url": "https://raw.githubusercontent.com/cathrynlavery/diagram-design/dcd9317ed9ec7477b20005544f36e3313664d815/skills/diagram-design/assets/example-tree.html",
+        "sha256": "5de9151661ad9e1b21809d58494390472cdd82ca1ef1ddcde88b6f14e667afcd"
+      },
+      "upstream_contract": {
+        "local_path": "tmp/upstream-types/type-tree.md",
+        "sha256": "e45c0bb3c4667f57eb8592b01325c7860859d2a9569a0441f62ead0bd7d70a0d",
+        "anchor": "tmp/upstream-types/type-tree.md:21"
+      },
+      "audit": {
+        "classification": "missing",
+        "manifest_status": "missing",
+        "equivalence_note": "Browser evidence records the local presentation as unavailable: SlimGraphR has no minimal profile; do not substitute editorial."
+      },
+      "local_semantic_fixture": {
+        "path": "examples/parity/tree_skill_taxonomy.rb",
+        "sha256": "d8d5a4e4692624271ceea77a8b130664ddff2b982ed65ec41f4c7a47427cbb8a"
+      },
+      "local_render": {
+        "theme": "light",
+        "style": "minimal",
+        "variant": "minimal-light"
+      }
+    },
+    {
+      "type": "tree",
+      "baseline_case_id": "tree:minimal-dark",
+      "upstream_asset": {
+        "name": "example-tree-dark.html",
+        "local_path": "vendor/diagram-design/assets/v0-baseline/example-tree-dark.html",
+        "raw_url": "https://raw.githubusercontent.com/cathrynlavery/diagram-design/dcd9317ed9ec7477b20005544f36e3313664d815/skills/diagram-design/assets/example-tree-dark.html",
+        "sha256": "43aa056d0761d323cad0bd6205de3083fe7413af4e10639cad5e92c8ed41beac"
+      },
+      "upstream_contract": {
+        "local_path": "tmp/upstream-types/type-tree.md",
+        "sha256": "e45c0bb3c4667f57eb8592b01325c7860859d2a9569a0441f62ead0bd7d70a0d",
+        "anchor": "tmp/upstream-types/type-tree.md:21"
+      },
+      "audit": {
+        "classification": "missing",
+        "manifest_status": "missing",
+        "equivalence_note": "Browser evidence records the local presentation as unavailable: SlimGraphR has no minimal profile; do not substitute editorial."
+      },
+      "local_semantic_fixture": {
+        "path": "examples/parity/tree_skill_taxonomy.rb",
+        "sha256": "d8d5a4e4692624271ceea77a8b130664ddff2b982ed65ec41f4c7a47427cbb8a"
+      },
+      "local_render": {
+        "theme": "dark",
+        "style": "minimal",
+        "variant": "minimal-dark"
+      }
+    },
+    {
+      "type": "tree",
+      "baseline_case_id": "tree:full-editorial",
+      "upstream_asset": {
+        "name": "example-tree-full.html",
+        "local_path": "vendor/diagram-design/assets/v0-baseline/example-tree-full.html",
+        "raw_url": "https://raw.githubusercontent.com/cathrynlavery/diagram-design/dcd9317ed9ec7477b20005544f36e3313664d815/skills/diagram-design/assets/example-tree-full.html",
+        "sha256": "988fda69a8fc3f043b263c254389adc282394d2a468163dde70fa8b56fc6392b"
+      },
+      "upstream_contract": {
+        "local_path": "tmp/upstream-types/type-tree.md",
+        "sha256": "e45c0bb3c4667f57eb8592b01325c7860859d2a9569a0441f62ead0bd7d70a0d",
+        "anchor": "tmp/upstream-types/type-tree.md:21"
+      },
+      "audit": {
+        "classification": "deliberate-different",
+        "manifest_status": "deliberate-different",
+        "equivalence_note": "The documented local contract intentionally differs from the pinned editorial composition; browser evidence records that bounded result without claiming parity."
+      },
+      "local_semantic_fixture": {
+        "path": "examples/parity/tree_skill_taxonomy.rb",
+        "sha256": "d8d5a4e4692624271ceea77a8b130664ddff2b982ed65ec41f4c7a47427cbb8a"
+      },
+      "local_render": {
+        "theme": "light",
+        "style": "editorial",
+        "variant": "full-editorial"
+      }
+    },
+    {
+      "type": "nested",
+      "baseline_case_id": "nested:minimal-light",
+      "upstream_asset": {
+        "name": "example-nested.html",
+        "local_path": "vendor/diagram-design/assets/v0-baseline/example-nested.html",
+        "raw_url": "https://raw.githubusercontent.com/cathrynlavery/diagram-design/dcd9317ed9ec7477b20005544f36e3313664d815/skills/diagram-design/assets/example-nested.html",
+        "sha256": "17648e5a26604bf678d7cd256ec0d84a54f7f2c6920fb56c030226e6ffc6557a"
+      },
+      "upstream_contract": {
+        "local_path": "tmp/upstream-types/type-nested.md",
+        "sha256": "e8c61323d96cd085e52750e90a989f9ad321600da6814b8926502b4484aced31",
+        "anchor": "tmp/upstream-types/type-nested.md:19"
+      },
+      "audit": {
+        "classification": "missing",
+        "manifest_status": "missing",
+        "equivalence_note": "Browser evidence records the local presentation as unavailable: SlimGraphR has no minimal profile; do not substitute editorial."
+      },
+      "local_semantic_fixture": {
+        "path": "examples/parity/nested_claude_hierarchy.rb",
+        "sha256": "a2319b893b963e47b6b717627f2a8c750c66b41fe0401357c8204d26947f9561"
+      },
+      "local_render": {
+        "theme": "light",
+        "style": "minimal",
+        "variant": "minimal-light"
+      }
+    },
+    {
+      "type": "nested",
+      "baseline_case_id": "nested:minimal-dark",
+      "upstream_asset": {
+        "name": "example-nested-dark.html",
+        "local_path": "vendor/diagram-design/assets/v0-baseline/example-nested-dark.html",
+        "raw_url": "https://raw.githubusercontent.com/cathrynlavery/diagram-design/dcd9317ed9ec7477b20005544f36e3313664d815/skills/diagram-design/assets/example-nested-dark.html",
+        "sha256": "1ff6c0e0dc7f9b321607a4de691a0ac1f5a99cef5b9d2dc0c6e9a75a13473f37"
+      },
+      "upstream_contract": {
+        "local_path": "tmp/upstream-types/type-nested.md",
+        "sha256": "e8c61323d96cd085e52750e90a989f9ad321600da6814b8926502b4484aced31",
+        "anchor": "tmp/upstream-types/type-nested.md:19"
+      },
+      "audit": {
+        "classification": "missing",
+        "manifest_status": "missing",
+        "equivalence_note": "Browser evidence records the local presentation as unavailable: SlimGraphR has no minimal profile; do not substitute editorial."
+      },
+      "local_semantic_fixture": {
+        "path": "examples/parity/nested_claude_hierarchy.rb",
+        "sha256": "a2319b893b963e47b6b717627f2a8c750c66b41fe0401357c8204d26947f9561"
+      },
+      "local_render": {
+        "theme": "dark",
+        "style": "minimal",
+        "variant": "minimal-dark"
+      }
+    },
+    {
+      "type": "nested",
+      "baseline_case_id": "nested:full-editorial",
+      "upstream_asset": {
+        "name": "example-nested-full.html",
+        "local_path": "vendor/diagram-design/assets/v0-baseline/example-nested-full.html",
+        "raw_url": "https://raw.githubusercontent.com/cathrynlavery/diagram-design/dcd9317ed9ec7477b20005544f36e3313664d815/skills/diagram-design/assets/example-nested-full.html",
+        "sha256": "0efbb94f914d4edde8107df357f0869de0047011562dfc96856c3537c4e1648b"
+      },
+      "upstream_contract": {
+        "local_path": "tmp/upstream-types/type-nested.md",
+        "sha256": "e8c61323d96cd085e52750e90a989f9ad321600da6814b8926502b4484aced31",
+        "anchor": "tmp/upstream-types/type-nested.md:19"
+      },
+      "audit": {
+        "classification": "deliberate-different",
+        "manifest_status": "deliberate-different",
+        "equivalence_note": "The documented local contract intentionally differs from the pinned editorial composition; browser evidence records that bounded result without claiming parity."
+      },
+      "local_semantic_fixture": {
+        "path": "examples/parity/nested_claude_hierarchy.rb",
+        "sha256": "a2319b893b963e47b6b717627f2a8c750c66b41fe0401357c8204d26947f9561"
+      },
+      "local_render": {
+        "theme": "light",
+        "style": "editorial",
+        "variant": "full-editorial"
+      }
+    },
+    {
+      "type": "layers",
+      "baseline_case_id": "layers:minimal-light",
+      "upstream_asset": {
+        "name": "example-layers.html",
+        "local_path": "vendor/diagram-design/assets/v0-baseline/example-layers.html",
+        "raw_url": "https://raw.githubusercontent.com/cathrynlavery/diagram-design/dcd9317ed9ec7477b20005544f36e3313664d815/skills/diagram-design/assets/example-layers.html",
+        "sha256": "196f3cd9866d64da9e04323f258534b1a51d1116140c0db2c8e330adb516a809"
+      },
+      "upstream_contract": {
+        "local_path": "tmp/upstream-types/type-layers.md",
+        "sha256": "393a65464f1189a2244c989a7448a8be5446d5932c907bbdba57d10997729534",
+        "anchor": "tmp/upstream-types/type-layers.md:23"
+      },
+      "audit": {
+        "classification": "missing",
+        "manifest_status": "missing",
+        "equivalence_note": "Browser evidence records the local presentation as unavailable: SlimGraphR has no minimal profile; do not substitute editorial."
+      },
+      "local_semantic_fixture": {
+        "path": "examples/parity/layers_osi_stack.rb",
+        "sha256": "bfbcb3a80662ff7aad8264c7aa08818d078d1220ee20d70420df4a3a615c3018"
+      },
+      "local_render": {
+        "theme": "light",
+        "style": "minimal",
+        "variant": "minimal-light"
+      }
+    },
+    {
+      "type": "layers",
+      "baseline_case_id": "layers:minimal-dark",
+      "upstream_asset": {
+        "name": "example-layers-dark.html",
+        "local_path": "vendor/diagram-design/assets/v0-baseline/example-layers-dark.html",
+        "raw_url": "https://raw.githubusercontent.com/cathrynlavery/diagram-design/dcd9317ed9ec7477b20005544f36e3313664d815/skills/diagram-design/assets/example-layers-dark.html",
+        "sha256": "412df7b0710cf14cd95c1e806e708241bda6b3bc8e1f142107adf857ed6aa7d1"
+      },
+      "upstream_contract": {
+        "local_path": "tmp/upstream-types/type-layers.md",
+        "sha256": "393a65464f1189a2244c989a7448a8be5446d5932c907bbdba57d10997729534",
+        "anchor": "tmp/upstream-types/type-layers.md:23"
+      },
+      "audit": {
+        "classification": "missing",
+        "manifest_status": "missing",
+        "equivalence_note": "Browser evidence records the local presentation as unavailable: SlimGraphR has no minimal profile; do not substitute editorial."
+      },
+      "local_semantic_fixture": {
+        "path": "examples/parity/layers_osi_stack.rb",
+        "sha256": "bfbcb3a80662ff7aad8264c7aa08818d078d1220ee20d70420df4a3a615c3018"
+      },
+      "local_render": {
+        "theme": "dark",
+        "style": "minimal",
+        "variant": "minimal-dark"
+      }
+    },
+    {
+      "type": "layers",
+      "baseline_case_id": "layers:full-editorial",
+      "upstream_asset": {
+        "name": "example-layers-full.html",
+        "local_path": "vendor/diagram-design/assets/v0-baseline/example-layers-full.html",
+        "raw_url": "https://raw.githubusercontent.com/cathrynlavery/diagram-design/dcd9317ed9ec7477b20005544f36e3313664d815/skills/diagram-design/assets/example-layers-full.html",
+        "sha256": "0719489be758a08ad66f2de27d120103c41a51982408e78faffac6b9409c9fbc"
+      },
+      "upstream_contract": {
+        "local_path": "tmp/upstream-types/type-layers.md",
+        "sha256": "393a65464f1189a2244c989a7448a8be5446d5932c907bbdba57d10997729534",
+        "anchor": "tmp/upstream-types/type-layers.md:23"
+      },
+      "audit": {
+        "classification": "deliberate-different",
+        "manifest_status": "deliberate-different",
+        "equivalence_note": "The documented local contract intentionally differs from the pinned editorial composition; browser evidence records that bounded result without claiming parity."
+      },
+      "local_semantic_fixture": {
+        "path": "examples/parity/layers_osi_stack.rb",
+        "sha256": "bfbcb3a80662ff7aad8264c7aa08818d078d1220ee20d70420df4a3a615c3018"
+      },
+      "local_render": {
+        "theme": "light",
+        "style": "editorial",
+        "variant": "full-editorial"
+      }
+    },
+    {
+      "type": "pyramid",
+      "baseline_case_id": "pyramid:minimal-light",
+      "upstream_asset": {
+        "name": "example-pyramid.html",
+        "local_path": "vendor/diagram-design/assets/v0-baseline/example-pyramid.html",
+        "raw_url": "https://raw.githubusercontent.com/cathrynlavery/diagram-design/dcd9317ed9ec7477b20005544f36e3313664d815/skills/diagram-design/assets/example-pyramid.html",
+        "sha256": "d12cf7c4c921f3bbd66026af9ed947ff23acdcf414a4309b59c173377d9bdd80"
+      },
+      "upstream_contract": {
+        "local_path": "tmp/upstream-types/type-pyramid.md",
+        "sha256": "a07536682478832fbf552aaa066dc827eaa1a072c538766387c8b900ae7add38",
+        "anchor": "tmp/upstream-types/type-pyramid.md:30"
+      },
+      "audit": {
+        "classification": "missing",
+        "manifest_status": "missing",
+        "equivalence_note": "Browser evidence records the local presentation as unavailable: SlimGraphR has no minimal profile; do not substitute editorial."
+      },
+      "local_semantic_fixture": {
+        "path": "examples/parity/pyramid_conversion_funnel.rb",
+        "sha256": "68deeb6a0e5cd859a0c60cbbaf56811be632807a3b04392b37972c2c50729902"
+      },
+      "local_render": {
+        "theme": "light",
+        "style": "minimal",
+        "variant": "minimal-light"
+      }
+    },
+    {
+      "type": "pyramid",
+      "baseline_case_id": "pyramid:minimal-dark",
+      "upstream_asset": {
+        "name": "example-pyramid-dark.html",
+        "local_path": "vendor/diagram-design/assets/v0-baseline/example-pyramid-dark.html",
+        "raw_url": "https://raw.githubusercontent.com/cathrynlavery/diagram-design/dcd9317ed9ec7477b20005544f36e3313664d815/skills/diagram-design/assets/example-pyramid-dark.html",
+        "sha256": "831bc6531d0b3b0eba1b348722a0b3e4d5548f287f5380ddb7e26d3f5edcb80c"
+      },
+      "upstream_contract": {
+        "local_path": "tmp/upstream-types/type-pyramid.md",
+        "sha256": "a07536682478832fbf552aaa066dc827eaa1a072c538766387c8b900ae7add38",
+        "anchor": "tmp/upstream-types/type-pyramid.md:30"
+      },
+      "audit": {
+        "classification": "missing",
+        "manifest_status": "missing",
+        "equivalence_note": "Browser evidence records the local presentation as unavailable: SlimGraphR has no minimal profile; do not substitute editorial."
+      },
+      "local_semantic_fixture": {
+        "path": "examples/parity/pyramid_conversion_funnel.rb",
+        "sha256": "68deeb6a0e5cd859a0c60cbbaf56811be632807a3b04392b37972c2c50729902"
+      },
+      "local_render": {
+        "theme": "dark",
+        "style": "minimal",
+        "variant": "minimal-dark"
+      }
+    },
+    {
+      "type": "pyramid",
+      "baseline_case_id": "pyramid:full-editorial",
+      "upstream_asset": {
+        "name": "example-pyramid-full.html",
+        "local_path": "vendor/diagram-design/assets/v0-baseline/example-pyramid-full.html",
+        "raw_url": "https://raw.githubusercontent.com/cathrynlavery/diagram-design/dcd9317ed9ec7477b20005544f36e3313664d815/skills/diagram-design/assets/example-pyramid-full.html",
+        "sha256": "15306216ab2647d81038cafbb32139fd8e33cff6c1f2407fabbfb9dceb2c2c6e"
+      },
+      "upstream_contract": {
+        "local_path": "tmp/upstream-types/type-pyramid.md",
+        "sha256": "a07536682478832fbf552aaa066dc827eaa1a072c538766387c8b900ae7add38",
+        "anchor": "tmp/upstream-types/type-pyramid.md:30"
+      },
+      "audit": {
+        "classification": "deliberate-different",
+        "manifest_status": "deliberate-different",
+        "equivalence_note": "The documented local contract intentionally differs from the pinned editorial composition; browser evidence records that bounded result without claiming parity."
+      },
+      "local_semantic_fixture": {
+        "path": "examples/parity/pyramid_conversion_funnel.rb",
+        "sha256": "68deeb6a0e5cd859a0c60cbbaf56811be632807a3b04392b37972c2c50729902"
+      },
+      "local_render": {
+        "theme": "light",
+        "style": "editorial",
+        "variant": "full-editorial"
+      }
+    },
+    {
+      "type": "medallion",
+      "baseline_case_id": "medallion:minimal-light",
+      "upstream_asset": {
+        "name": "example-medallion.html",
+        "local_path": "vendor/diagram-design/assets/v0-baseline/example-medallion.html",
+        "raw_url": "https://raw.githubusercontent.com/cathrynlavery/diagram-design/dcd9317ed9ec7477b20005544f36e3313664d815/skills/diagram-design/assets/example-medallion.html",
+        "sha256": "e88a5b1f1f67a7bf6ad83c5144a7f79973a732f68972ba648ec81968579032eb"
+      },
+      "upstream_contract": {
+        "local_path": "tmp/upstream-types/type-medallion.md",
+        "sha256": "a1af03521adb53431766a559e05c984ee07871fd3cf495cf63146999f56f6f42",
+        "anchor": "tmp/upstream-types/type-medallion.md:346"
+      },
+      "audit": {
+        "classification": "missing",
+        "manifest_status": "missing",
+        "equivalence_note": "Browser evidence records the local presentation as unavailable: SlimGraphR has no minimal profile; do not substitute editorial."
+      },
+      "local_semantic_fixture": {
+        "path": "examples/parity/medallion_survey_architecture.rb",
+        "sha256": "9a165836724509ad40e31adcdb296815ae6d334d792f97287d85b601a5ebf989"
+      },
+      "local_render": {
+        "theme": "light",
+        "style": "minimal",
+        "variant": "minimal-light"
+      }
+    },
+    {
+      "type": "medallion",
+      "baseline_case_id": "medallion:minimal-dark",
+      "upstream_asset": {
+        "name": "example-medallion-dark.html",
+        "local_path": "vendor/diagram-design/assets/v0-baseline/example-medallion-dark.html",
+        "raw_url": "https://raw.githubusercontent.com/cathrynlavery/diagram-design/dcd9317ed9ec7477b20005544f36e3313664d815/skills/diagram-design/assets/example-medallion-dark.html",
+        "sha256": "65740eb4e2b1286636fc749bdb528dbab7e03948d104c368667ab1ccf85a46f2"
+      },
+      "upstream_contract": {
+        "local_path": "tmp/upstream-types/type-medallion.md",
+        "sha256": "a1af03521adb53431766a559e05c984ee07871fd3cf495cf63146999f56f6f42",
+        "anchor": "tmp/upstream-types/type-medallion.md:346"
+      },
+      "audit": {
+        "classification": "missing",
+        "manifest_status": "missing",
+        "equivalence_note": "Browser evidence records the local presentation as unavailable: SlimGraphR has no minimal profile; do not substitute editorial."
+      },
+      "local_semantic_fixture": {
+        "path": "examples/parity/medallion_survey_architecture.rb",
+        "sha256": "9a165836724509ad40e31adcdb296815ae6d334d792f97287d85b601a5ebf989"
+      },
+      "local_render": {
+        "theme": "dark",
+        "style": "minimal",
+        "variant": "minimal-dark"
+      }
+    },
+    {
+      "type": "medallion",
+      "baseline_case_id": "medallion:full-editorial",
+      "upstream_asset": {
+        "name": "example-medallion-full.html",
+        "local_path": "vendor/diagram-design/assets/v0-baseline/example-medallion-full.html",
+        "raw_url": "https://raw.githubusercontent.com/cathrynlavery/diagram-design/dcd9317ed9ec7477b20005544f36e3313664d815/skills/diagram-design/assets/example-medallion-full.html",
+        "sha256": "f6ceacd25be82850f65689b07d52b4c9b0e633604e909b13e77ad6468895a688"
+      },
+      "upstream_contract": {
+        "local_path": "tmp/upstream-types/type-medallion.md",
+        "sha256": "a1af03521adb53431766a559e05c984ee07871fd3cf495cf63146999f56f6f42",
+        "anchor": "tmp/upstream-types/type-medallion.md:346"
+      },
+      "audit": {
+        "classification": "deliberate-different",
+        "manifest_status": "deliberate-different",
+        "equivalence_note": "The documented local contract intentionally differs from the pinned editorial composition; browser evidence records that bounded result without claiming parity."
+      },
+      "local_semantic_fixture": {
+        "path": "examples/parity/medallion_survey_architecture.rb",
+        "sha256": "9a165836724509ad40e31adcdb296815ae6d334d792f97287d85b601a5ebf989"
+      },
+      "local_render": {
+        "theme": "light",
+        "style": "editorial",
+        "variant": "full-editorial"
+      }
+    },
+    {
+      "type": "swimlane",
+      "baseline_case_id": "swimlane:minimal-light",
+      "upstream_asset": {
+        "name": "example-swimlane.html",
+        "local_path": "vendor/diagram-design/assets/v0-baseline/example-swimlane.html",
+        "raw_url": "https://raw.githubusercontent.com/cathrynlavery/diagram-design/dcd9317ed9ec7477b20005544f36e3313664d815/skills/diagram-design/assets/example-swimlane.html",
+        "sha256": "75fc463ad3282dd0faaa4328c6b07f7e853184eeb1edcff2add8f7ed1876ab3b"
+      },
+      "upstream_contract": {
+        "local_path": "tmp/upstream-types/type-swimlane.md",
+        "sha256": "4b689b9dd72078dc76fd2fbb1eb6c0bf0304fee667ae7cd56fab5f19b535f250",
+        "anchor": "tmp/upstream-types/type-swimlane.md:17"
+      },
+      "audit": {
+        "classification": "supported-unverified",
+        "manifest_status": "supported-unverified",
+        "equivalence_note": "The exact semantic fixture renders with SlimGraphR minimal light profile; browser capture and human visual review remain pending."
+      },
+      "local_semantic_fixture": {
+        "path": "examples/parity/swimlane_release_workflow.rb",
+        "sha256": "775d48e8d275277088ea0ada89f81df09cf786d1fb13beabcb348fe8ad06e282"
+      },
+      "local_render": {
+        "theme": "light",
+        "style": "minimal",
+        "variant": "minimal-light"
+      }
+    },
+    {
+      "type": "swimlane",
+      "baseline_case_id": "swimlane:minimal-dark",
+      "upstream_asset": {
+        "name": "example-swimlane-dark.html",
+        "local_path": "vendor/diagram-design/assets/v0-baseline/example-swimlane-dark.html",
+        "raw_url": "https://raw.githubusercontent.com/cathrynlavery/diagram-design/dcd9317ed9ec7477b20005544f36e3313664d815/skills/diagram-design/assets/example-swimlane-dark.html",
+        "sha256": "1b45aa776b6e9b71249cb244b0ae0ca9ccc341d316d324364a0fad3d51e60d00"
+      },
+      "upstream_contract": {
+        "local_path": "tmp/upstream-types/type-swimlane.md",
+        "sha256": "4b689b9dd72078dc76fd2fbb1eb6c0bf0304fee667ae7cd56fab5f19b535f250",
+        "anchor": "tmp/upstream-types/type-swimlane.md:17"
+      },
+      "audit": {
+        "classification": "supported-unverified",
+        "manifest_status": "supported-unverified",
+        "equivalence_note": "The exact semantic fixture renders with SlimGraphR minimal dark profile; browser capture and human visual review remain pending."
+      },
+      "local_semantic_fixture": {
+        "path": "examples/parity/swimlane_release_workflow.rb",
+        "sha256": "775d48e8d275277088ea0ada89f81df09cf786d1fb13beabcb348fe8ad06e282"
+      },
+      "local_render": {
+        "theme": "dark",
+        "style": "minimal",
+        "variant": "minimal-dark"
+      }
+    },
+    {
+      "type": "swimlane",
+      "baseline_case_id": "swimlane:full-editorial",
+      "upstream_asset": {
+        "name": "example-swimlane-full.html",
+        "local_path": "vendor/diagram-design/assets/v0-baseline/example-swimlane-full.html",
+        "raw_url": "https://raw.githubusercontent.com/cathrynlavery/diagram-design/dcd9317ed9ec7477b20005544f36e3313664d815/skills/diagram-design/assets/example-swimlane-full.html",
+        "sha256": "5c26540db8c18a1b33e32b90b1cf640d6482804b01d45fa87547c2a73a625852"
+      },
+      "upstream_contract": {
+        "local_path": "tmp/upstream-types/type-swimlane.md",
+        "sha256": "4b689b9dd72078dc76fd2fbb1eb6c0bf0304fee667ae7cd56fab5f19b535f250",
+        "anchor": "tmp/upstream-types/type-swimlane.md:17"
+      },
+      "audit": {
+        "classification": "supported-unverified",
+        "manifest_status": "supported-unverified",
+        "equivalence_note": "The exact pinned semantic fixture renders every authored node and relationship; browser geometry and human visual review remain pending."
+      },
+      "local_semantic_fixture": {
+        "path": "examples/parity/swimlane_release_workflow.rb",
+        "sha256": "775d48e8d275277088ea0ada89f81df09cf786d1fb13beabcb348fe8ad06e282"
+      },
+      "local_render": {
+        "theme": "light",
+        "style": "editorial",
+        "variant": "full-editorial"
+      }
+    },
+    {
+      "type": "process",
+      "baseline_case_id": "process:minimal-light",
+      "upstream_asset": {
+        "name": "example-process.html",
+        "local_path": "vendor/diagram-design/assets/v0-baseline/example-process.html",
+        "raw_url": "https://raw.githubusercontent.com/cathrynlavery/diagram-design/dcd9317ed9ec7477b20005544f36e3313664d815/skills/diagram-design/assets/example-process.html",
+        "sha256": "50ca0b9e6a3e9f5ba8102ff3c6fb87b6a66b1d59f272777b72a97639d4fe2375"
+      },
+      "upstream_contract": {
+        "local_path": "tmp/upstream-types/type-process.md",
+        "sha256": "8b149deb5393d5b6eaefdd525ef65143caf763283f3b668ce301bd3b0b808815",
+        "anchor": "tmp/upstream-types/type-process.md:488"
+      },
+      "audit": {
+        "classification": "supported-unverified",
+        "manifest_status": "supported-unverified",
+        "equivalence_note": "The exact semantic fixture renders with SlimGraphR minimal light profile; browser capture and human visual review remain pending."
+      },
+      "local_semantic_fixture": {
+        "path": "examples/parity/process_survey_build.rb",
+        "sha256": "5ba9f9a902df48a73c889e0ea30a795fa1e37b2c79a33eed56aeccda1dd0427c"
+      },
+      "local_render": {
+        "theme": "light",
+        "style": "minimal",
+        "variant": "minimal-light"
+      }
+    },
+    {
+      "type": "process",
+      "baseline_case_id": "process:minimal-dark",
+      "upstream_asset": {
+        "name": "example-process-dark.html",
+        "local_path": "vendor/diagram-design/assets/v0-baseline/example-process-dark.html",
+        "raw_url": "https://raw.githubusercontent.com/cathrynlavery/diagram-design/dcd9317ed9ec7477b20005544f36e3313664d815/skills/diagram-design/assets/example-process-dark.html",
+        "sha256": "5e6ac1365d2e473568ba736975495b9c3509004fb6fca571dedefa8e6cdc5c8e"
+      },
+      "upstream_contract": {
+        "local_path": "tmp/upstream-types/type-process.md",
+        "sha256": "8b149deb5393d5b6eaefdd525ef65143caf763283f3b668ce301bd3b0b808815",
+        "anchor": "tmp/upstream-types/type-process.md:488"
+      },
+      "audit": {
+        "classification": "supported-unverified",
+        "manifest_status": "supported-unverified",
+        "equivalence_note": "The exact semantic fixture renders with SlimGraphR minimal dark profile; browser capture and human visual review remain pending."
+      },
+      "local_semantic_fixture": {
+        "path": "examples/parity/process_survey_build.rb",
+        "sha256": "5ba9f9a902df48a73c889e0ea30a795fa1e37b2c79a33eed56aeccda1dd0427c"
+      },
+      "local_render": {
+        "theme": "dark",
+        "style": "minimal",
+        "variant": "minimal-dark"
+      }
+    },
+    {
+      "type": "process",
+      "baseline_case_id": "process:full-editorial",
+      "upstream_asset": {
+        "name": "example-process-full.html",
+        "local_path": "vendor/diagram-design/assets/v0-baseline/example-process-full.html",
+        "raw_url": "https://raw.githubusercontent.com/cathrynlavery/diagram-design/dcd9317ed9ec7477b20005544f36e3313664d815/skills/diagram-design/assets/example-process-full.html",
+        "sha256": "d0c0e6df7ae42fa92a1015421fa1cef211847c4037026de2c70d77a5e164a4cc"
+      },
+      "upstream_contract": {
+        "local_path": "tmp/upstream-types/type-process.md",
+        "sha256": "8b149deb5393d5b6eaefdd525ef65143caf763283f3b668ce301bd3b0b808815",
+        "anchor": "tmp/upstream-types/type-process.md:488"
+      },
+      "audit": {
+        "classification": "supported-unverified",
+        "manifest_status": "supported-unverified",
+        "equivalence_note": "Browser evidence captures the local presentation; human visual review and the remaining parity gates are pending."
+      },
+      "local_semantic_fixture": {
+        "path": "examples/parity/process_survey_build.rb",
+        "sha256": "5ba9f9a902df48a73c889e0ea30a795fa1e37b2c79a33eed56aeccda1dd0427c"
+      },
+      "local_render": {
+        "theme": "light",
+        "style": "editorial",
+        "variant": "full-editorial"
+      }
+    },
+    {
+      "type": "gantt",
+      "baseline_case_id": "gantt:minimal-light",
+      "upstream_asset": {
+        "name": "example-gantt.html",
+        "local_path": "vendor/diagram-design/assets/v0-baseline/example-gantt.html",
+        "raw_url": "https://raw.githubusercontent.com/cathrynlavery/diagram-design/dcd9317ed9ec7477b20005544f36e3313664d815/skills/diagram-design/assets/example-gantt.html",
+        "sha256": "607745921006b312ab710c3166036aebeb31a2b7cd40df36713a850a28cb73f3"
+      },
+      "upstream_contract": {
+        "local_path": "tmp/upstream-types/type-gantt.md",
+        "sha256": "83a84cdd4b2880debd9e602f1d27ffc54197a6c783eb46228711641956f858ee",
+        "anchor": "tmp/upstream-types/type-gantt.md:41"
+      },
+      "audit": {
+        "classification": "supported-unverified",
+        "manifest_status": "supported-unverified",
+        "equivalence_note": "The exact semantic fixture renders with SlimGraphR minimal light profile; browser capture and human visual review remain pending."
+      },
+      "local_semantic_fixture": {
+        "path": "examples/parity/gantt_platform_launch.rb",
+        "sha256": "fadc22e24b2f252b91c9c8368946e2d2efada89bff070f80fec9e798024472a2"
+      },
+      "local_render": {
+        "theme": "light",
+        "style": "minimal",
+        "variant": "minimal-light"
+      }
+    },
+    {
+      "type": "gantt",
+      "baseline_case_id": "gantt:minimal-dark",
+      "upstream_asset": {
+        "name": "example-gantt-dark.html",
+        "local_path": "vendor/diagram-design/assets/v0-baseline/example-gantt-dark.html",
+        "raw_url": "https://raw.githubusercontent.com/cathrynlavery/diagram-design/dcd9317ed9ec7477b20005544f36e3313664d815/skills/diagram-design/assets/example-gantt-dark.html",
+        "sha256": "81016c2956b4cf51d0c2e2b0302ea53c535f3f59a21eae8d4b1a596c448ddb2b"
+      },
+      "upstream_contract": {
+        "local_path": "tmp/upstream-types/type-gantt.md",
+        "sha256": "83a84cdd4b2880debd9e602f1d27ffc54197a6c783eb46228711641956f858ee",
+        "anchor": "tmp/upstream-types/type-gantt.md:41"
+      },
+      "audit": {
+        "classification": "supported-unverified",
+        "manifest_status": "supported-unverified",
+        "equivalence_note": "The exact semantic fixture renders with SlimGraphR minimal dark profile; browser capture and human visual review remain pending."
+      },
+      "local_semantic_fixture": {
+        "path": "examples/parity/gantt_platform_launch.rb",
+        "sha256": "fadc22e24b2f252b91c9c8368946e2d2efada89bff070f80fec9e798024472a2"
+      },
+      "local_render": {
+        "theme": "dark",
+        "style": "minimal",
+        "variant": "minimal-dark"
+      }
+    },
+    {
+      "type": "gantt",
+      "baseline_case_id": "gantt:full-editorial",
+      "upstream_asset": {
+        "name": "example-gantt-full.html",
+        "local_path": "vendor/diagram-design/assets/v0-baseline/example-gantt-full.html",
+        "raw_url": "https://raw.githubusercontent.com/cathrynlavery/diagram-design/dcd9317ed9ec7477b20005544f36e3313664d815/skills/diagram-design/assets/example-gantt-full.html",
+        "sha256": "aab29f4296a7500417c899a445bb7df5f6b785135960e66c5fdfbead27ca475f"
+      },
+      "upstream_contract": {
+        "local_path": "tmp/upstream-types/type-gantt.md",
+        "sha256": "83a84cdd4b2880debd9e602f1d27ffc54197a6c783eb46228711641956f858ee",
+        "anchor": "tmp/upstream-types/type-gantt.md:41"
+      },
+      "audit": {
+        "classification": "supported-unverified",
+        "manifest_status": "supported-unverified",
+        "equivalence_note": "Browser evidence captures the local presentation; human visual review and the remaining parity gates are pending."
+      },
+      "local_semantic_fixture": {
+        "path": "examples/parity/gantt_platform_launch.rb",
+        "sha256": "fadc22e24b2f252b91c9c8368946e2d2efada89bff070f80fec9e798024472a2"
+      },
+      "local_render": {
+        "theme": "light",
+        "style": "editorial",
+        "variant": "full-editorial"
+      }
+    },
+    {
+      "type": "kanban",
+      "baseline_case_id": "kanban:minimal-light",
+      "upstream_asset": {
+        "name": "example-kanban.html",
+        "local_path": "vendor/diagram-design/assets/v0-baseline/example-kanban.html",
+        "raw_url": "https://raw.githubusercontent.com/cathrynlavery/diagram-design/dcd9317ed9ec7477b20005544f36e3313664d815/skills/diagram-design/assets/example-kanban.html",
+        "sha256": "3b19fb185019e0e341496de095bb1d92bd1fe4705c1502562ef47cb88329b2bb"
+      },
+      "upstream_contract": {
+        "local_path": "tmp/upstream-types/type-kanban.md",
+        "sha256": "e64138a2629db2bf1de6aa4f4979088777a08c1426ef122c57f200aae20fc7eb",
+        "anchor": "tmp/upstream-types/type-kanban.md:45"
+      },
+      "audit": {
+        "classification": "supported-unverified",
+        "manifest_status": "supported-unverified",
+        "equivalence_note": "The exact semantic fixture renders with SlimGraphR minimal light profile; browser capture and human visual review remain pending."
+      },
+      "local_semantic_fixture": {
+        "path": "examples/parity/kanban_platform_team.rb",
+        "sha256": "fc990a139b54bc9e47bd6f743ea0a1875ed5a3caa2c41864130bf41cd669f832"
+      },
+      "local_render": {
+        "theme": "light",
+        "style": "minimal",
+        "variant": "minimal-light"
+      }
+    },
+    {
+      "type": "kanban",
+      "baseline_case_id": "kanban:minimal-dark",
+      "upstream_asset": {
+        "name": "example-kanban-dark.html",
+        "local_path": "vendor/diagram-design/assets/v0-baseline/example-kanban-dark.html",
+        "raw_url": "https://raw.githubusercontent.com/cathrynlavery/diagram-design/dcd9317ed9ec7477b20005544f36e3313664d815/skills/diagram-design/assets/example-kanban-dark.html",
+        "sha256": "30809cae8600a1852131362df275d9ab1c6aeedc65d3855caed264d48e19f5dc"
+      },
+      "upstream_contract": {
+        "local_path": "tmp/upstream-types/type-kanban.md",
+        "sha256": "e64138a2629db2bf1de6aa4f4979088777a08c1426ef122c57f200aae20fc7eb",
+        "anchor": "tmp/upstream-types/type-kanban.md:45"
+      },
+      "audit": {
+        "classification": "supported-unverified",
+        "manifest_status": "supported-unverified",
+        "equivalence_note": "The exact semantic fixture renders with SlimGraphR minimal dark profile; browser capture and human visual review remain pending."
+      },
+      "local_semantic_fixture": {
+        "path": "examples/parity/kanban_platform_team.rb",
+        "sha256": "fc990a139b54bc9e47bd6f743ea0a1875ed5a3caa2c41864130bf41cd669f832"
+      },
+      "local_render": {
+        "theme": "dark",
+        "style": "minimal",
+        "variant": "minimal-dark"
+      }
+    },
+    {
+      "type": "kanban",
+      "baseline_case_id": "kanban:full-editorial",
+      "upstream_asset": {
+        "name": "example-kanban-full.html",
+        "local_path": "vendor/diagram-design/assets/v0-baseline/example-kanban-full.html",
+        "raw_url": "https://raw.githubusercontent.com/cathrynlavery/diagram-design/dcd9317ed9ec7477b20005544f36e3313664d815/skills/diagram-design/assets/example-kanban-full.html",
+        "sha256": "a297c9d5da1ea46c6c3c69ffa49525965208cf2ffebb8031a577075d85a390d1"
+      },
+      "upstream_contract": {
+        "local_path": "tmp/upstream-types/type-kanban.md",
+        "sha256": "e64138a2629db2bf1de6aa4f4979088777a08c1426ef122c57f200aae20fc7eb",
+        "anchor": "tmp/upstream-types/type-kanban.md:45"
+      },
+      "audit": {
+        "classification": "supported-unverified",
+        "manifest_status": "supported-unverified",
+        "equivalence_note": "Browser evidence captures the local presentation; human visual review and the remaining parity gates are pending."
+      },
+      "local_semantic_fixture": {
+        "path": "examples/parity/kanban_platform_team.rb",
+        "sha256": "fc990a139b54bc9e47bd6f743ea0a1875ed5a3caa2c41864130bf41cd669f832"
+      },
+      "local_render": {
+        "theme": "light",
+        "style": "editorial",
+        "variant": "full-editorial"
+      }
+    },
+    {
+      "type": "journey",
+      "baseline_case_id": "journey:minimal-light",
+      "upstream_asset": {
+        "name": "example-journey.html",
+        "local_path": "vendor/diagram-design/assets/v0-baseline/example-journey.html",
+        "raw_url": "https://raw.githubusercontent.com/cathrynlavery/diagram-design/dcd9317ed9ec7477b20005544f36e3313664d815/skills/diagram-design/assets/example-journey.html",
+        "sha256": "b01e32ff87d63fddf6d1db47155906dd624acc13327856269114f760afc754f0"
+      },
+      "upstream_contract": {
+        "local_path": "tmp/upstream-types/type-journey.md",
+        "sha256": "135501cef58abd6c716746248a5bfd163e56b68d9f314516bb8f60d26a895256",
+        "anchor": "tmp/upstream-types/type-journey.md:49"
+      },
+      "audit": {
+        "classification": "supported-unverified",
+        "manifest_status": "supported-unverified",
+        "equivalence_note": "The exact semantic fixture renders with SlimGraphR minimal light profile; browser capture and human visual review remain pending."
+      },
+      "local_semantic_fixture": {
+        "path": "examples/parity/journey_trial_paid.rb",
+        "sha256": "7d53b651177b2a212c368c512604d789a4456eaf7a91b447a4ce51da250329a0"
+      },
+      "local_render": {
+        "theme": "light",
+        "style": "minimal",
+        "variant": "minimal-light"
+      }
+    },
+    {
+      "type": "journey",
+      "baseline_case_id": "journey:minimal-dark",
+      "upstream_asset": {
+        "name": "example-journey-dark.html",
+        "local_path": "vendor/diagram-design/assets/v0-baseline/example-journey-dark.html",
+        "raw_url": "https://raw.githubusercontent.com/cathrynlavery/diagram-design/dcd9317ed9ec7477b20005544f36e3313664d815/skills/diagram-design/assets/example-journey-dark.html",
+        "sha256": "c1866ca355d8859d27f6e99d9e2415daf204c313ed4463ae9663ba9e930a9949"
+      },
+      "upstream_contract": {
+        "local_path": "tmp/upstream-types/type-journey.md",
+        "sha256": "135501cef58abd6c716746248a5bfd163e56b68d9f314516bb8f60d26a895256",
+        "anchor": "tmp/upstream-types/type-journey.md:49"
+      },
+      "audit": {
+        "classification": "supported-unverified",
+        "manifest_status": "supported-unverified",
+        "equivalence_note": "The exact semantic fixture renders with SlimGraphR minimal dark profile; browser capture and human visual review remain pending."
+      },
+      "local_semantic_fixture": {
+        "path": "examples/parity/journey_trial_paid.rb",
+        "sha256": "7d53b651177b2a212c368c512604d789a4456eaf7a91b447a4ce51da250329a0"
+      },
+      "local_render": {
+        "theme": "dark",
+        "style": "minimal",
+        "variant": "minimal-dark"
+      }
+    },
+    {
+      "type": "journey",
+      "baseline_case_id": "journey:full-editorial",
+      "upstream_asset": {
+        "name": "example-journey-full.html",
+        "local_path": "vendor/diagram-design/assets/v0-baseline/example-journey-full.html",
+        "raw_url": "https://raw.githubusercontent.com/cathrynlavery/diagram-design/dcd9317ed9ec7477b20005544f36e3313664d815/skills/diagram-design/assets/example-journey-full.html",
+        "sha256": "8a8263ed88d245376cc7dd0ec8068f02701b346a5d3127e9bb999406046af7cc"
+      },
+      "upstream_contract": {
+        "local_path": "tmp/upstream-types/type-journey.md",
+        "sha256": "135501cef58abd6c716746248a5bfd163e56b68d9f314516bb8f60d26a895256",
+        "anchor": "tmp/upstream-types/type-journey.md:49"
+      },
+      "audit": {
+        "classification": "supported-unverified",
+        "manifest_status": "supported-unverified",
+        "equivalence_note": "The exact Journey fixture renders its authored pain marker in a measured 260px stage cell; browser capture remains awaiting the coordinator gate."
+      },
+      "local_semantic_fixture": {
+        "path": "examples/parity/journey_trial_paid.rb",
+        "sha256": "7d53b651177b2a212c368c512604d789a4456eaf7a91b447a4ce51da250329a0"
+      },
+      "local_render": {
+        "theme": "light",
+        "style": "editorial",
+        "variant": "full-editorial"
+      }
+    },
+    {
+      "type": "story-map",
+      "baseline_case_id": "story-map:minimal-light",
+      "upstream_asset": {
+        "name": "example-story-map.html",
+        "local_path": "vendor/diagram-design/assets/v0-baseline/example-story-map.html",
+        "raw_url": "https://raw.githubusercontent.com/cathrynlavery/diagram-design/dcd9317ed9ec7477b20005544f36e3313664d815/skills/diagram-design/assets/example-story-map.html",
+        "sha256": "40f737ca1c2a9f46cd8a3ad1a377faabc1adc546a410ff8395e6622b4e773da1"
+      },
+      "upstream_contract": {
+        "local_path": "tmp/upstream-types/type-story-map.md",
+        "sha256": "ee49c426397c3e5234fb544ea1394f7c8879610fea897da3b636891e3affb4c4",
+        "anchor": "tmp/upstream-types/type-story-map.md:42"
+      },
+      "audit": {
+        "classification": "supported-unverified",
+        "manifest_status": "supported-unverified",
+        "equivalence_note": "The exact semantic fixture renders with SlimGraphR minimal light profile; browser capture and human visual review remain pending."
+      },
+      "local_semantic_fixture": {
+        "path": "examples/parity/story_map_reporting.rb",
+        "sha256": "ddb91831a804b54338a8b381c44dd43018918263a65cb0b368d89ba92749f828"
+      },
+      "local_render": {
+        "theme": "light",
+        "style": "minimal",
+        "variant": "minimal-light"
+      }
+    },
+    {
+      "type": "story-map",
+      "baseline_case_id": "story-map:minimal-dark",
+      "upstream_asset": {
+        "name": "example-story-map-dark.html",
+        "local_path": "vendor/diagram-design/assets/v0-baseline/example-story-map-dark.html",
+        "raw_url": "https://raw.githubusercontent.com/cathrynlavery/diagram-design/dcd9317ed9ec7477b20005544f36e3313664d815/skills/diagram-design/assets/example-story-map-dark.html",
+        "sha256": "0c288216307ff36b43b513445e0e63fa83ed5902695ead17fdd507a470acc6b7"
+      },
+      "upstream_contract": {
+        "local_path": "tmp/upstream-types/type-story-map.md",
+        "sha256": "ee49c426397c3e5234fb544ea1394f7c8879610fea897da3b636891e3affb4c4",
+        "anchor": "tmp/upstream-types/type-story-map.md:42"
+      },
+      "audit": {
+        "classification": "supported-unverified",
+        "manifest_status": "supported-unverified",
+        "equivalence_note": "The exact semantic fixture renders with SlimGraphR minimal dark profile; browser capture and human visual review remain pending."
+      },
+      "local_semantic_fixture": {
+        "path": "examples/parity/story_map_reporting.rb",
+        "sha256": "ddb91831a804b54338a8b381c44dd43018918263a65cb0b368d89ba92749f828"
+      },
+      "local_render": {
+        "theme": "dark",
+        "style": "minimal",
+        "variant": "minimal-dark"
+      }
+    },
+    {
+      "type": "story-map",
+      "baseline_case_id": "story-map:full-editorial",
+      "upstream_asset": {
+        "name": "example-story-map-full.html",
+        "local_path": "vendor/diagram-design/assets/v0-baseline/example-story-map-full.html",
+        "raw_url": "https://raw.githubusercontent.com/cathrynlavery/diagram-design/dcd9317ed9ec7477b20005544f36e3313664d815/skills/diagram-design/assets/example-story-map-full.html",
+        "sha256": "ba97bf483442959c35e8d64cd36d177d94fff76215ca3e3b44901b5e4f586443"
+      },
+      "upstream_contract": {
+        "local_path": "tmp/upstream-types/type-story-map.md",
+        "sha256": "ee49c426397c3e5234fb544ea1394f7c8879610fea897da3b636891e3affb4c4",
+        "anchor": "tmp/upstream-types/type-story-map.md:42"
+      },
+      "audit": {
+        "classification": "supported-unverified",
+        "manifest_status": "supported-unverified",
+        "equivalence_note": "Browser evidence captures the local presentation; human visual review and the remaining parity gates are pending."
+      },
+      "local_semantic_fixture": {
+        "path": "examples/parity/story_map_reporting.rb",
+        "sha256": "ddb91831a804b54338a8b381c44dd43018918263a65cb0b368d89ba92749f828"
+      },
+      "local_render": {
+        "theme": "light",
+        "style": "editorial",
+        "variant": "full-editorial"
+      }
+    },
+    {
+      "type": "data-flow",
+      "baseline_case_id": "data-flow:minimal-light",
+      "upstream_asset": {
+        "name": "example-data-flow.html",
+        "local_path": "vendor/diagram-design/assets/v0-baseline/example-data-flow.html",
+        "raw_url": "https://raw.githubusercontent.com/cathrynlavery/diagram-design/dcd9317ed9ec7477b20005544f36e3313664d815/skills/diagram-design/assets/example-data-flow.html",
+        "sha256": "511788f809b9d674e2f92568955e5fc0c5f5f7a3960eaa0049e136ec93957add"
+      },
+      "upstream_contract": {
+        "local_path": "tmp/upstream-types/type-data-flow.md",
+        "sha256": "ad1cd8358c9360663200f5100a199e57e43a4e6702982752220ad423127941e8",
+        "anchor": "tmp/upstream-types/type-data-flow.md:367"
+      },
+      "audit": {
+        "classification": "supported-unverified",
+        "manifest_status": "supported-unverified",
+        "equivalence_note": "The exact semantic fixture renders with SlimGraphR minimal light profile; browser capture and human visual review remain pending."
+      },
+      "local_semantic_fixture": {
+        "path": "examples/standalone/data_flow.rb",
+        "sha256": "7e8f3afdf32e78c1fe0200d6d49fd1f3cef25347eef3ff5c9279b3cfa71c35d2"
+      },
+      "local_render": {
+        "theme": "light",
+        "style": "minimal",
+        "variant": "minimal-light"
+      }
+    },
+    {
+      "type": "data-flow",
+      "baseline_case_id": "data-flow:minimal-dark",
+      "upstream_asset": {
+        "name": "example-data-flow-dark.html",
+        "local_path": "vendor/diagram-design/assets/v0-baseline/example-data-flow-dark.html",
+        "raw_url": "https://raw.githubusercontent.com/cathrynlavery/diagram-design/dcd9317ed9ec7477b20005544f36e3313664d815/skills/diagram-design/assets/example-data-flow-dark.html",
+        "sha256": "68144451031cc5c6d56dbb15b6532f24efc2bac4e3dfc9c5e9b8177d539777d8"
+      },
+      "upstream_contract": {
+        "local_path": "tmp/upstream-types/type-data-flow.md",
+        "sha256": "ad1cd8358c9360663200f5100a199e57e43a4e6702982752220ad423127941e8",
+        "anchor": "tmp/upstream-types/type-data-flow.md:367"
+      },
+      "audit": {
+        "classification": "supported-unverified",
+        "manifest_status": "supported-unverified",
+        "equivalence_note": "The exact semantic fixture renders with SlimGraphR minimal dark profile; browser capture and human visual review remain pending."
+      },
+      "local_semantic_fixture": {
+        "path": "examples/standalone/data_flow.rb",
+        "sha256": "7e8f3afdf32e78c1fe0200d6d49fd1f3cef25347eef3ff5c9279b3cfa71c35d2"
+      },
+      "local_render": {
+        "theme": "dark",
+        "style": "minimal",
+        "variant": "minimal-dark"
+      }
+    },
+    {
+      "type": "data-flow",
+      "baseline_case_id": "data-flow:full-editorial",
+      "upstream_asset": {
+        "name": "example-data-flow-full.html",
+        "local_path": "vendor/diagram-design/assets/v0-baseline/example-data-flow-full.html",
+        "raw_url": "https://raw.githubusercontent.com/cathrynlavery/diagram-design/dcd9317ed9ec7477b20005544f36e3313664d815/skills/diagram-design/assets/example-data-flow-full.html",
+        "sha256": "bf4db055606bd5f15e64e0da67c8f2023b8cbea6a27a4bca2be24dbe12f6245a"
+      },
+      "upstream_contract": {
+        "local_path": "tmp/upstream-types/type-data-flow.md",
+        "sha256": "ad1cd8358c9360663200f5100a199e57e43a4e6702982752220ad423127941e8",
+        "anchor": "tmp/upstream-types/type-data-flow.md:367"
+      },
+      "audit": {
+        "classification": "supported-unverified",
+        "manifest_status": "supported-unverified",
+        "equivalence_note": "The exact semantic fixture renders with SlimGraphR's editorial profile; browser capture and human visual review remain pending."
+      },
+      "local_semantic_fixture": {
+        "path": "examples/parity/data_flow_reporting.rb",
+        "sha256": "e794466907bd0dba721a85e5dac336eb0aac97df84c40f80a802c10fe61d281c"
+      },
+      "local_render": {
+        "theme": "light",
+        "style": "editorial",
+        "variant": "full-editorial"
+      }
+    },
+    {
+      "type": "dp-integration",
+      "baseline_case_id": "dp-integration:minimal-light",
+      "upstream_asset": {
+        "name": "example-dp-integration.html",
+        "local_path": "vendor/diagram-design/assets/v0-baseline/example-dp-integration.html",
+        "raw_url": "https://raw.githubusercontent.com/cathrynlavery/diagram-design/dcd9317ed9ec7477b20005544f36e3313664d815/skills/diagram-design/assets/example-dp-integration.html",
+        "sha256": "929b6aaefa9a362d4cd18fb1801a57f28d32aa8dd78ba577375a11926ee2cc94"
+      },
+      "upstream_contract": {
+        "local_path": "tmp/upstream-types/type-dp-integration.md",
+        "sha256": "0b85e3b883e97e1a86e50d2e50eb73bc3fb4b70e2e3132e93356956ccc68a64f",
+        "anchor": "tmp/upstream-types/type-dp-integration.md:403"
+      },
+      "audit": {
+        "classification": "supported-unverified",
+        "manifest_status": "supported-unverified",
+        "equivalence_note": "The exact semantic fixture renders with SlimGraphR minimal light profile; browser capture and human visual review remain pending."
+      },
+      "local_semantic_fixture": {
+        "path": "examples/standalone/dp_integration.rb",
+        "sha256": "2c84aeac51fa7abb15090ac16fa7276c004f3463d3a920b60392040e19363480"
+      },
+      "local_render": {
+        "theme": "light",
+        "style": "minimal",
+        "variant": "minimal-light"
+      }
+    },
+    {
+      "type": "dp-integration",
+      "baseline_case_id": "dp-integration:minimal-dark",
+      "upstream_asset": {
+        "name": "example-dp-integration-dark.html",
+        "local_path": "vendor/diagram-design/assets/v0-baseline/example-dp-integration-dark.html",
+        "raw_url": "https://raw.githubusercontent.com/cathrynlavery/diagram-design/dcd9317ed9ec7477b20005544f36e3313664d815/skills/diagram-design/assets/example-dp-integration-dark.html",
+        "sha256": "8cb30572815bfe86e449bb22266768f6dd52d91725faebd276c7e9de24113749"
+      },
+      "upstream_contract": {
+        "local_path": "tmp/upstream-types/type-dp-integration.md",
+        "sha256": "0b85e3b883e97e1a86e50d2e50eb73bc3fb4b70e2e3132e93356956ccc68a64f",
+        "anchor": "tmp/upstream-types/type-dp-integration.md:403"
+      },
+      "audit": {
+        "classification": "supported-unverified",
+        "manifest_status": "supported-unverified",
+        "equivalence_note": "The exact semantic fixture renders with SlimGraphR minimal dark profile; browser capture and human visual review remain pending."
+      },
+      "local_semantic_fixture": {
+        "path": "examples/standalone/dp_integration.rb",
+        "sha256": "2c84aeac51fa7abb15090ac16fa7276c004f3463d3a920b60392040e19363480"
+      },
+      "local_render": {
+        "theme": "dark",
+        "style": "minimal",
+        "variant": "minimal-dark"
+      }
+    },
+    {
+      "type": "dp-integration",
+      "baseline_case_id": "dp-integration:full-editorial",
+      "upstream_asset": {
+        "name": "example-dp-integration-full.html",
+        "local_path": "vendor/diagram-design/assets/v0-baseline/example-dp-integration-full.html",
+        "raw_url": "https://raw.githubusercontent.com/cathrynlavery/diagram-design/dcd9317ed9ec7477b20005544f36e3313664d815/skills/diagram-design/assets/example-dp-integration-full.html",
+        "sha256": "9fc9f12a662ed1bf3e837c11be1b05df03db7a845ea203846a47b247ab6edf99"
+      },
+      "upstream_contract": {
+        "local_path": "tmp/upstream-types/type-dp-integration.md",
+        "sha256": "0b85e3b883e97e1a86e50d2e50eb73bc3fb4b70e2e3132e93356956ccc68a64f",
+        "anchor": "tmp/upstream-types/type-dp-integration.md:403"
+      },
+      "audit": {
+        "classification": "supported-unverified",
+        "manifest_status": "supported-unverified",
+        "equivalence_note": "The exact DP integration fixture renders its literal side-card detail and measured protocol lanes; browser capture remains awaiting the coordinator gate."
+      },
+      "local_semantic_fixture": {
+        "path": "examples/parity/dp_integration_platform.rb",
+        "sha256": "383c1f6c82b94cf2d6b3edb951af5842e438e1b9366cb3f2419cc6efda572c2e"
+      },
+      "local_render": {
+        "theme": "light",
+        "style": "editorial",
+        "variant": "full-editorial"
+      }
+    },
+    {
+      "type": "dp-security-matrix",
+      "baseline_case_id": "dp-security-matrix:minimal-light",
+      "upstream_asset": {
+        "name": "example-dp-security-matrix.html",
+        "local_path": "vendor/diagram-design/assets/v0-baseline/example-dp-security-matrix.html",
+        "raw_url": "https://raw.githubusercontent.com/cathrynlavery/diagram-design/dcd9317ed9ec7477b20005544f36e3313664d815/skills/diagram-design/assets/example-dp-security-matrix.html",
+        "sha256": "88d7a3fb9788300082274924f1f95dfd0a5a8b3bfca3fcd91b424cc8caa50044"
+      },
+      "upstream_contract": {
+        "local_path": "tmp/upstream-types/type-dp-security-matrix.md",
+        "sha256": "209f4870ec19d90eff1ab80ecfe0062f3a5075c3b666b1a3a900a27260ba8832",
+        "anchor": "tmp/upstream-types/type-dp-security-matrix.md:292"
+      },
+      "audit": {
+        "classification": "supported-unverified",
+        "manifest_status": "supported-unverified",
+        "equivalence_note": "The exact semantic fixture renders with SlimGraphR minimal light profile; browser capture and human visual review remain pending."
+      },
+      "local_semantic_fixture": {
+        "path": "examples/parity/dp_security_matrix_platform.rb",
+        "sha256": "f4de95f30681705ef2add1c8036c0649203f3a6ba9c88143ef59f63ffe177db1"
+      },
+      "local_render": {
+        "theme": "light",
+        "style": "minimal",
+        "variant": "minimal-light"
+      }
+    },
+    {
+      "type": "dp-security-matrix",
+      "baseline_case_id": "dp-security-matrix:minimal-dark",
+      "upstream_asset": {
+        "name": "example-dp-security-matrix-dark.html",
+        "local_path": "vendor/diagram-design/assets/v0-baseline/example-dp-security-matrix-dark.html",
+        "raw_url": "https://raw.githubusercontent.com/cathrynlavery/diagram-design/dcd9317ed9ec7477b20005544f36e3313664d815/skills/diagram-design/assets/example-dp-security-matrix-dark.html",
+        "sha256": "ac5515d7fb1e850249aedf6d39deb848cd9edc02068c6944d37a04ca0fcc995e"
+      },
+      "upstream_contract": {
+        "local_path": "tmp/upstream-types/type-dp-security-matrix.md",
+        "sha256": "209f4870ec19d90eff1ab80ecfe0062f3a5075c3b666b1a3a900a27260ba8832",
+        "anchor": "tmp/upstream-types/type-dp-security-matrix.md:292"
+      },
+      "audit": {
+        "classification": "supported-unverified",
+        "manifest_status": "supported-unverified",
+        "equivalence_note": "The exact semantic fixture renders with SlimGraphR minimal dark profile; browser capture and human visual review remain pending."
+      },
+      "local_semantic_fixture": {
+        "path": "examples/parity/dp_security_matrix_platform.rb",
+        "sha256": "f4de95f30681705ef2add1c8036c0649203f3a6ba9c88143ef59f63ffe177db1"
+      },
+      "local_render": {
+        "theme": "dark",
+        "style": "minimal",
+        "variant": "minimal-dark"
+      }
+    },
+    {
+      "type": "dp-security-matrix",
+      "baseline_case_id": "dp-security-matrix:full-editorial",
+      "upstream_asset": {
+        "name": "example-dp-security-matrix-full.html",
+        "local_path": "vendor/diagram-design/assets/v0-baseline/example-dp-security-matrix-full.html",
+        "raw_url": "https://raw.githubusercontent.com/cathrynlavery/diagram-design/dcd9317ed9ec7477b20005544f36e3313664d815/skills/diagram-design/assets/example-dp-security-matrix-full.html",
+        "sha256": "9cd7d120e069a9be73a0f98b94282e8e9906f802c49fb1c57e5553479d8033ee"
+      },
+      "upstream_contract": {
+        "local_path": "tmp/upstream-types/type-dp-security-matrix.md",
+        "sha256": "209f4870ec19d90eff1ab80ecfe0062f3a5075c3b666b1a3a900a27260ba8832",
+        "anchor": "tmp/upstream-types/type-dp-security-matrix.md:292"
+      },
+      "audit": {
+        "classification": "supported-unverified",
+        "manifest_status": "supported-unverified",
+        "equivalence_note": "Browser evidence captures the local presentation; human visual review and the remaining parity gates are pending."
+      },
+      "local_semantic_fixture": {
+        "path": "examples/parity/dp_security_matrix_platform.rb",
+        "sha256": "f4de95f30681705ef2add1c8036c0649203f3a6ba9c88143ef59f63ffe177db1"
+      },
+      "local_render": {
+        "theme": "light",
+        "style": "editorial",
+        "variant": "full-editorial"
+      }
+    },
+    {
+      "type": "er",
+      "baseline_case_id": "er:minimal-light",
+      "upstream_asset": {
+        "name": "example-er.html",
+        "local_path": "vendor/diagram-design/assets/v0-baseline/example-er.html",
+        "raw_url": "https://raw.githubusercontent.com/cathrynlavery/diagram-design/dcd9317ed9ec7477b20005544f36e3313664d815/skills/diagram-design/assets/example-er.html",
+        "sha256": "aee470dcf37af317f14d21cd9420f6bcb1b65f0fb0047483a42b8afc0cab2774"
+      },
+      "upstream_contract": {
+        "local_path": "tmp/upstream-types/type-er.md",
+        "sha256": "0f4a718b202edec593e4555e0353a4080d4be6d98328209db083898f2f01302c",
+        "anchor": "tmp/upstream-types/type-er.md:22"
+      },
+      "audit": {
+        "classification": "supported-unverified",
+        "manifest_status": "supported-unverified",
+        "equivalence_note": "The exact semantic fixture renders with SlimGraphR minimal light profile; browser capture and human visual review remain pending."
+      },
+      "local_semantic_fixture": {
+        "path": "examples/standalone/entity_relationships.rb",
+        "sha256": "5001cc7fb5322c5227a40c52d8d094dd1f205624aa45c00c5cbbba8eefbdf67e"
+      },
+      "local_render": {
+        "theme": "light",
+        "style": "minimal",
+        "variant": "minimal-light"
+      }
+    },
+    {
+      "type": "er",
+      "baseline_case_id": "er:minimal-dark",
+      "upstream_asset": {
+        "name": "example-er-dark.html",
+        "local_path": "vendor/diagram-design/assets/v0-baseline/example-er-dark.html",
+        "raw_url": "https://raw.githubusercontent.com/cathrynlavery/diagram-design/dcd9317ed9ec7477b20005544f36e3313664d815/skills/diagram-design/assets/example-er-dark.html",
+        "sha256": "c007c14d88a48a8ea30b1144dd4ac392ee7891a2278262e2a6f6836b43aa7fdf"
+      },
+      "upstream_contract": {
+        "local_path": "tmp/upstream-types/type-er.md",
+        "sha256": "0f4a718b202edec593e4555e0353a4080d4be6d98328209db083898f2f01302c",
+        "anchor": "tmp/upstream-types/type-er.md:22"
+      },
+      "audit": {
+        "classification": "supported-unverified",
+        "manifest_status": "supported-unverified",
+        "equivalence_note": "The exact semantic fixture renders with SlimGraphR minimal dark profile; browser capture and human visual review remain pending."
+      },
+      "local_semantic_fixture": {
+        "path": "examples/standalone/entity_relationships.rb",
+        "sha256": "5001cc7fb5322c5227a40c52d8d094dd1f205624aa45c00c5cbbba8eefbdf67e"
+      },
+      "local_render": {
+        "theme": "dark",
+        "style": "minimal",
+        "variant": "minimal-dark"
+      }
+    },
+    {
+      "type": "er",
+      "baseline_case_id": "er:full-editorial",
+      "upstream_asset": {
+        "name": "example-er-full.html",
+        "local_path": "vendor/diagram-design/assets/v0-baseline/example-er-full.html",
+        "raw_url": "https://raw.githubusercontent.com/cathrynlavery/diagram-design/dcd9317ed9ec7477b20005544f36e3313664d815/skills/diagram-design/assets/example-er-full.html",
+        "sha256": "9f43422370cbd751196fd5b8ab802a177d015f739b39064c58f5e7273f56e1c3"
+      },
+      "upstream_contract": {
+        "local_path": "tmp/upstream-types/type-er.md",
+        "sha256": "0f4a718b202edec593e4555e0353a4080d4be6d98328209db083898f2f01302c",
+        "anchor": "tmp/upstream-types/type-er.md:22"
+      },
+      "audit": {
+        "classification": "supported-unverified",
+        "manifest_status": "supported-unverified",
+        "equivalence_note": "The exact editorial fixture preserves separate field type and qualifier values plus aggregate-root and join-table entity kinds. Local HTML is rendered and awaits the coordinator browser geometry and visual gate."
+      },
+      "local_semantic_fixture": {
+        "path": "examples/parity/er_publishing_domain.rb",
+        "sha256": "a2902b9667d9d7995c66c325b60f80b65237d54dbfee0b09348248bef5868289"
+      },
+      "local_render": {
+        "theme": "light",
+        "style": "editorial",
+        "variant": "full-editorial"
+      }
+    },
+    {
+      "type": "db-schema",
+      "baseline_case_id": "db-schema:minimal-light",
+      "upstream_asset": {
+        "name": "example-db-schema.html",
+        "local_path": "vendor/diagram-design/assets/v0-baseline/example-db-schema.html",
+        "raw_url": "https://raw.githubusercontent.com/cathrynlavery/diagram-design/dcd9317ed9ec7477b20005544f36e3313664d815/skills/diagram-design/assets/example-db-schema.html",
+        "sha256": "58d473906c57670fecee29bc55377df5b433549445962204412ebd2c081b76db"
+      },
+      "upstream_contract": {
+        "local_path": "tmp/upstream-types/type-db-schema.md",
+        "sha256": "433f2ede171453ccbc1e6e8d0be4846fa5fb88bb499e8ba7e6db02d066a06c46",
+        "anchor": "tmp/upstream-types/type-db-schema.md:44"
+      },
+      "audit": {
+        "classification": "supported-unverified",
+        "manifest_status": "supported-unverified",
+        "equivalence_note": "The exact semantic fixture renders with SlimGraphR minimal light profile; browser capture and human visual review remain pending."
+      },
+      "local_semantic_fixture": {
+        "path": "examples/standalone/database_schema.rb",
+        "sha256": "f39dfc4db3c47c234f44faad847d8b28d478217e9f9e61e706246c2e5b9e3863"
+      },
+      "local_render": {
+        "theme": "light",
+        "style": "minimal",
+        "variant": "minimal-light"
+      }
+    },
+    {
+      "type": "db-schema",
+      "baseline_case_id": "db-schema:minimal-dark",
+      "upstream_asset": {
+        "name": "example-db-schema-dark.html",
+        "local_path": "vendor/diagram-design/assets/v0-baseline/example-db-schema-dark.html",
+        "raw_url": "https://raw.githubusercontent.com/cathrynlavery/diagram-design/dcd9317ed9ec7477b20005544f36e3313664d815/skills/diagram-design/assets/example-db-schema-dark.html",
+        "sha256": "40d12080e78a1ce39f5d6858f9e02562b8f4ec0bffe303ab8d4fc473db561024"
+      },
+      "upstream_contract": {
+        "local_path": "tmp/upstream-types/type-db-schema.md",
+        "sha256": "433f2ede171453ccbc1e6e8d0be4846fa5fb88bb499e8ba7e6db02d066a06c46",
+        "anchor": "tmp/upstream-types/type-db-schema.md:44"
+      },
+      "audit": {
+        "classification": "supported-unverified",
+        "manifest_status": "supported-unverified",
+        "equivalence_note": "The exact semantic fixture renders with SlimGraphR minimal dark profile; browser capture and human visual review remain pending."
+      },
+      "local_semantic_fixture": {
+        "path": "examples/standalone/database_schema.rb",
+        "sha256": "f39dfc4db3c47c234f44faad847d8b28d478217e9f9e61e706246c2e5b9e3863"
+      },
+      "local_render": {
+        "theme": "dark",
+        "style": "minimal",
+        "variant": "minimal-dark"
+      }
+    },
+    {
+      "type": "db-schema",
+      "baseline_case_id": "db-schema:full-editorial",
+      "upstream_asset": {
+        "name": "example-db-schema-full.html",
+        "local_path": "vendor/diagram-design/assets/v0-baseline/example-db-schema-full.html",
+        "raw_url": "https://raw.githubusercontent.com/cathrynlavery/diagram-design/dcd9317ed9ec7477b20005544f36e3313664d815/skills/diagram-design/assets/example-db-schema-full.html",
+        "sha256": "a69144b54b23e7e6046234ed31fcc26625147af8a9e0dfeff05f4553c3eba8f6"
+      },
+      "upstream_contract": {
+        "local_path": "tmp/upstream-types/type-db-schema.md",
+        "sha256": "433f2ede171453ccbc1e6e8d0be4846fa5fb88bb499e8ba7e6db02d066a06c46",
+        "anchor": "tmp/upstream-types/type-db-schema.md:44"
+      },
+      "audit": {
+        "classification": "supported-unverified",
+        "manifest_status": "supported-unverified",
+        "equivalence_note": "The exact editorial fixture preserves the meaning-bearing public.products overflow row `+ 3 more columns`. Local HTML is rendered and awaits the coordinator browser geometry and visual gate."
+      },
+      "local_semantic_fixture": {
+        "path": "examples/parity/db_schema_checkout.rb",
+        "sha256": "5af91993faf153b90f157cb853594caa767531de1f0d19beaea171c96607ea49"
+      },
+      "local_render": {
+        "theme": "light",
+        "style": "editorial",
+        "variant": "full-editorial"
+      }
+    },
+    {
+      "type": "uml-class",
+      "baseline_case_id": "uml-class:minimal-light",
+      "upstream_asset": {
+        "name": "example-uml-class.html",
+        "local_path": "vendor/diagram-design/assets/v0-baseline/example-uml-class.html",
+        "raw_url": "https://raw.githubusercontent.com/cathrynlavery/diagram-design/dcd9317ed9ec7477b20005544f36e3313664d815/skills/diagram-design/assets/example-uml-class.html",
+        "sha256": "c6c353f4d53c476fc3530f20d09cdb9d4b47a2bd22d0f3c56c807732534a685d"
+      },
+      "upstream_contract": {
+        "local_path": "tmp/upstream-types/type-uml-class.md",
+        "sha256": "8cc0bc8f77a38da58110287c1b112043be9751389ef45772fe607eae9aa77ecd",
+        "anchor": "tmp/upstream-types/type-uml-class.md:61"
+      },
+      "audit": {
+        "classification": "supported-unverified",
+        "manifest_status": "supported-unverified",
+        "equivalence_note": "The exact semantic fixture renders with SlimGraphR minimal light profile; browser capture and human visual review remain pending."
+      },
+      "local_semantic_fixture": {
+        "path": "examples/standalone/uml_class.rb",
+        "sha256": "298a419a226d20d03ddced568f1dcdd251db8d147a14a9dd5f6900b04f32d557"
+      },
+      "local_render": {
+        "theme": "light",
+        "style": "minimal",
+        "variant": "minimal-light"
+      }
+    },
+    {
+      "type": "uml-class",
+      "baseline_case_id": "uml-class:minimal-dark",
+      "upstream_asset": {
+        "name": "example-uml-class-dark.html",
+        "local_path": "vendor/diagram-design/assets/v0-baseline/example-uml-class-dark.html",
+        "raw_url": "https://raw.githubusercontent.com/cathrynlavery/diagram-design/dcd9317ed9ec7477b20005544f36e3313664d815/skills/diagram-design/assets/example-uml-class-dark.html",
+        "sha256": "eca2e26603714d4df494532a2a712101321a484cc2d1263f7629b8f0e214357d"
+      },
+      "upstream_contract": {
+        "local_path": "tmp/upstream-types/type-uml-class.md",
+        "sha256": "8cc0bc8f77a38da58110287c1b112043be9751389ef45772fe607eae9aa77ecd",
+        "anchor": "tmp/upstream-types/type-uml-class.md:61"
+      },
+      "audit": {
+        "classification": "supported-unverified",
+        "manifest_status": "supported-unverified",
+        "equivalence_note": "The exact semantic fixture renders with SlimGraphR minimal dark profile; browser capture and human visual review remain pending."
+      },
+      "local_semantic_fixture": {
+        "path": "examples/standalone/uml_class.rb",
+        "sha256": "298a419a226d20d03ddced568f1dcdd251db8d147a14a9dd5f6900b04f32d557"
+      },
+      "local_render": {
+        "theme": "dark",
+        "style": "minimal",
+        "variant": "minimal-dark"
+      }
+    },
+    {
+      "type": "uml-class",
+      "baseline_case_id": "uml-class:full-editorial",
+      "upstream_asset": {
+        "name": "example-uml-class-full.html",
+        "local_path": "vendor/diagram-design/assets/v0-baseline/example-uml-class-full.html",
+        "raw_url": "https://raw.githubusercontent.com/cathrynlavery/diagram-design/dcd9317ed9ec7477b20005544f36e3313664d815/skills/diagram-design/assets/example-uml-class-full.html",
+        "sha256": "9c9efff3c44878a9f7cf459ed7a1c7fcdd927cfbfb73ef35ac6b0c0c8d7a7671"
+      },
+      "upstream_contract": {
+        "local_path": "tmp/upstream-types/type-uml-class.md",
+        "sha256": "8cc0bc8f77a38da58110287c1b112043be9751389ef45772fe607eae9aa77ecd",
+        "anchor": "tmp/upstream-types/type-uml-class.md:61"
+      },
+      "audit": {
+        "classification": "supported-unverified",
+        "manifest_status": "supported-unverified",
+        "equivalence_note": "The exact semantic fixture renders with SlimGraphR's editorial profile; browser capture and human visual review remain pending."
+      },
+      "local_semantic_fixture": {
+        "path": "examples/parity/uml_class_payments.rb",
+        "sha256": "515aa87f3d72e9fee3096118ed96677577f5999436504862f8b9a11a66eb3067"
+      },
+      "local_render": {
+        "theme": "light",
+        "style": "editorial",
+        "variant": "full-editorial"
+      }
+    },
+    {
+      "type": "quadrant",
+      "baseline_case_id": "quadrant:minimal-light",
+      "upstream_asset": {
+        "name": "example-quadrant.html",
+        "local_path": "vendor/diagram-design/assets/v0-baseline/example-quadrant.html",
+        "raw_url": "https://raw.githubusercontent.com/cathrynlavery/diagram-design/dcd9317ed9ec7477b20005544f36e3313664d815/skills/diagram-design/assets/example-quadrant.html",
+        "sha256": "a147cc85f78958da824d53d226067bff687f3e35a64601394c3075f55c675648"
+      },
+      "upstream_contract": {
+        "local_path": "tmp/upstream-types/type-quadrant.md",
+        "sha256": "2346caba0370beaf8b33efd5d9a3e24f3d555b7160a3d523d9d07a37ce6c353a",
+        "anchor": "tmp/upstream-types/type-quadrant.md:18"
+      },
+      "audit": {
+        "classification": "supported-unverified",
+        "manifest_status": "supported-unverified",
+        "equivalence_note": "The exact semantic fixture renders with SlimGraphR minimal light profile; browser capture and human visual review remain pending."
+      },
+      "local_semantic_fixture": {
+        "path": "examples/standalone/quadrant.rb",
+        "sha256": "87700d80669a636562e732eb6d8b523d748ed73144e0a611d919651dc167edb1"
+      },
+      "local_render": {
+        "theme": "light",
+        "style": "minimal",
+        "variant": "minimal-light"
+      }
+    },
+    {
+      "type": "quadrant",
+      "baseline_case_id": "quadrant:minimal-dark",
+      "upstream_asset": {
+        "name": "example-quadrant-dark.html",
+        "local_path": "vendor/diagram-design/assets/v0-baseline/example-quadrant-dark.html",
+        "raw_url": "https://raw.githubusercontent.com/cathrynlavery/diagram-design/dcd9317ed9ec7477b20005544f36e3313664d815/skills/diagram-design/assets/example-quadrant-dark.html",
+        "sha256": "ac1edf5d9c1251a51a93eb82db17fc1820811f1934ec59c1272ea7f89c501465"
+      },
+      "upstream_contract": {
+        "local_path": "tmp/upstream-types/type-quadrant.md",
+        "sha256": "2346caba0370beaf8b33efd5d9a3e24f3d555b7160a3d523d9d07a37ce6c353a",
+        "anchor": "tmp/upstream-types/type-quadrant.md:18"
+      },
+      "audit": {
+        "classification": "supported-unverified",
+        "manifest_status": "supported-unverified",
+        "equivalence_note": "The exact semantic fixture renders with SlimGraphR minimal dark profile; browser capture and human visual review remain pending."
+      },
+      "local_semantic_fixture": {
+        "path": "examples/standalone/quadrant.rb",
+        "sha256": "87700d80669a636562e732eb6d8b523d748ed73144e0a611d919651dc167edb1"
+      },
+      "local_render": {
+        "theme": "dark",
+        "style": "minimal",
+        "variant": "minimal-dark"
+      }
+    },
+    {
+      "type": "quadrant",
+      "baseline_case_id": "quadrant:full-editorial",
+      "upstream_asset": {
+        "name": "example-quadrant-full.html",
+        "local_path": "vendor/diagram-design/assets/v0-baseline/example-quadrant-full.html",
+        "raw_url": "https://raw.githubusercontent.com/cathrynlavery/diagram-design/dcd9317ed9ec7477b20005544f36e3313664d815/skills/diagram-design/assets/example-quadrant-full.html",
+        "sha256": "11208b7d6353a4feed795e2c1539153843dcf2c057da414c73958b68e08b439e"
+      },
+      "upstream_contract": {
+        "local_path": "tmp/upstream-types/type-quadrant.md",
+        "sha256": "2346caba0370beaf8b33efd5d9a3e24f3d555b7160a3d523d9d07a37ce6c353a",
+        "anchor": "tmp/upstream-types/type-quadrant.md:18"
+      },
+      "audit": {
+        "classification": "supported-unverified",
+        "manifest_status": "supported-unverified",
+        "equivalence_note": "The exact semantic fixture renders with literal authored region labels; browser capture is complete and human visual review remains pending."
+      },
+      "local_semantic_fixture": {
+        "path": "examples/parity/quadrant_publication_priorities.rb",
+        "sha256": "95f2f5f5f5b755133d357642d29160e2c880c6eb8c6b604fa9f1a052ba91894e"
+      },
+      "local_render": {
+        "theme": "light",
+        "style": "editorial",
+        "variant": "full-editorial"
+      }
+    },
+    {
+      "type": "venn",
+      "baseline_case_id": "venn:minimal-light",
+      "upstream_asset": {
+        "name": "example-venn.html",
+        "local_path": "vendor/diagram-design/assets/v0-baseline/example-venn.html",
+        "raw_url": "https://raw.githubusercontent.com/cathrynlavery/diagram-design/dcd9317ed9ec7477b20005544f36e3313664d815/skills/diagram-design/assets/example-venn.html",
+        "sha256": "86d763a94bc20fb3038cb00b9ef0fedd1e00cd8009df50852eac77d92e3965da"
+      },
+      "upstream_contract": {
+        "local_path": "tmp/upstream-types/type-venn.md",
+        "sha256": "f8d5d4f0506160e0502f932140306b12d25adea1d1f6f319fb38c2345b0c6b42",
+        "anchor": "tmp/upstream-types/type-venn.md:23"
+      },
+      "audit": {
+        "classification": "supported-unverified",
+        "manifest_status": "supported-unverified",
+        "equivalence_note": "The exact semantic fixture renders with SlimGraphR minimal light profile; browser capture and human visual review remain pending."
+      },
+      "local_semantic_fixture": {
+        "path": "examples/standalone/venn.rb",
+        "sha256": "a477a56c42a7b3134feb1fcace43b9142a4ab4320dca1c7d544a8bbb9a47a035"
+      },
+      "local_render": {
+        "theme": "light",
+        "style": "minimal",
+        "variant": "minimal-light"
+      }
+    },
+    {
+      "type": "venn",
+      "baseline_case_id": "venn:minimal-dark",
+      "upstream_asset": {
+        "name": "example-venn-dark.html",
+        "local_path": "vendor/diagram-design/assets/v0-baseline/example-venn-dark.html",
+        "raw_url": "https://raw.githubusercontent.com/cathrynlavery/diagram-design/dcd9317ed9ec7477b20005544f36e3313664d815/skills/diagram-design/assets/example-venn-dark.html",
+        "sha256": "85c6fd7c48e0c4989aebad24862e49d8783386f4cfa3efb27d1e86a724558077"
+      },
+      "upstream_contract": {
+        "local_path": "tmp/upstream-types/type-venn.md",
+        "sha256": "f8d5d4f0506160e0502f932140306b12d25adea1d1f6f319fb38c2345b0c6b42",
+        "anchor": "tmp/upstream-types/type-venn.md:23"
+      },
+      "audit": {
+        "classification": "supported-unverified",
+        "manifest_status": "supported-unverified",
+        "equivalence_note": "The exact semantic fixture renders with SlimGraphR minimal dark profile; browser capture and human visual review remain pending."
+      },
+      "local_semantic_fixture": {
+        "path": "examples/standalone/venn.rb",
+        "sha256": "a477a56c42a7b3134feb1fcace43b9142a4ab4320dca1c7d544a8bbb9a47a035"
+      },
+      "local_render": {
+        "theme": "dark",
+        "style": "minimal",
+        "variant": "minimal-dark"
+      }
+    },
+    {
+      "type": "venn",
+      "baseline_case_id": "venn:full-editorial",
+      "upstream_asset": {
+        "name": "example-venn-full.html",
+        "local_path": "vendor/diagram-design/assets/v0-baseline/example-venn-full.html",
+        "raw_url": "https://raw.githubusercontent.com/cathrynlavery/diagram-design/dcd9317ed9ec7477b20005544f36e3313664d815/skills/diagram-design/assets/example-venn-full.html",
+        "sha256": "1dd7525e58092b6a4bf1463fdf0df2914d717e3abcfdbaf04ed0ba3dd814f310"
+      },
+      "upstream_contract": {
+        "local_path": "tmp/upstream-types/type-venn.md",
+        "sha256": "f8d5d4f0506160e0502f932140306b12d25adea1d1f6f319fb38c2345b0c6b42",
+        "anchor": "tmp/upstream-types/type-venn.md:23"
+      },
+      "audit": {
+        "classification": "supported-unverified",
+        "manifest_status": "supported-unverified",
+        "equivalence_note": "The exact semantic fixture renders with SlimGraphR's editorial profile; browser capture and human visual review remain pending."
+      },
+      "local_semantic_fixture": {
+        "path": "examples/parity/venn_product_fit.rb",
+        "sha256": "96d3a6b08e1c5d99560dfdfe15ce70a8620f356d59dd098fc621347451a28fab"
+      },
+      "local_render": {
+        "theme": "light",
+        "style": "editorial",
+        "variant": "full-editorial"
+      }
+    },
+    {
+      "type": "loop",
+      "baseline_case_id": "loop:minimal-light",
+      "upstream_asset": {
+        "name": "example-loop.html",
+        "local_path": "vendor/diagram-design/assets/v0-baseline/example-loop.html",
+        "raw_url": "https://raw.githubusercontent.com/cathrynlavery/diagram-design/dcd9317ed9ec7477b20005544f36e3313664d815/skills/diagram-design/assets/example-loop.html",
+        "sha256": "b5d0e37b14614ba95d95cdbc5ecdfb84c6c03d7cf664124e029cecb97af340bc"
+      },
+      "upstream_contract": {
+        "local_path": "tmp/upstream-types/type-loop.md",
+        "sha256": "c7e98b8eda1e6d6904920f4d96310745deb0651920e9d531c8f40e54304ab60d",
+        "anchor": "tmp/upstream-types/type-loop.md:219"
+      },
+      "audit": {
+        "classification": "supported-unverified",
+        "manifest_status": "supported-unverified",
+        "equivalence_note": "The exact semantic fixture renders with SlimGraphR minimal light profile; browser capture and human visual review remain pending."
+      },
+      "local_semantic_fixture": {
+        "path": "examples/standalone/loop.rb",
+        "sha256": "6ee8af213de5a0311289d4f17bd48bec92a90f2bbed52bed3964a54fb6822051"
+      },
+      "local_render": {
+        "theme": "light",
+        "style": "minimal",
+        "variant": "minimal-light"
+      }
+    },
+    {
+      "type": "loop",
+      "baseline_case_id": "loop:minimal-dark",
+      "upstream_asset": {
+        "name": "example-loop-dark.html",
+        "local_path": "vendor/diagram-design/assets/v0-baseline/example-loop-dark.html",
+        "raw_url": "https://raw.githubusercontent.com/cathrynlavery/diagram-design/dcd9317ed9ec7477b20005544f36e3313664d815/skills/diagram-design/assets/example-loop-dark.html",
+        "sha256": "cab1f56390bd59c6b13317854c0fe32497967ab4e822c004d30eedc3324d27c0"
+      },
+      "upstream_contract": {
+        "local_path": "tmp/upstream-types/type-loop.md",
+        "sha256": "c7e98b8eda1e6d6904920f4d96310745deb0651920e9d531c8f40e54304ab60d",
+        "anchor": "tmp/upstream-types/type-loop.md:219"
+      },
+      "audit": {
+        "classification": "supported-unverified",
+        "manifest_status": "supported-unverified",
+        "equivalence_note": "The exact semantic fixture renders with SlimGraphR minimal dark profile; browser capture and human visual review remain pending."
+      },
+      "local_semantic_fixture": {
+        "path": "examples/standalone/loop.rb",
+        "sha256": "6ee8af213de5a0311289d4f17bd48bec92a90f2bbed52bed3964a54fb6822051"
+      },
+      "local_render": {
+        "theme": "dark",
+        "style": "minimal",
+        "variant": "minimal-dark"
+      }
+    },
+    {
+      "type": "loop",
+      "baseline_case_id": "loop:full-editorial",
+      "upstream_asset": {
+        "name": "example-loop-full.html",
+        "local_path": "vendor/diagram-design/assets/v0-baseline/example-loop-full.html",
+        "raw_url": "https://raw.githubusercontent.com/cathrynlavery/diagram-design/dcd9317ed9ec7477b20005544f36e3313664d815/skills/diagram-design/assets/example-loop-full.html",
+        "sha256": "c2effa4d65d8713420c2a9261e7eea4f5273f3f87e7e09398bcc6310655bdb4e"
+      },
+      "upstream_contract": {
+        "local_path": "tmp/upstream-types/type-loop.md",
+        "sha256": "c7e98b8eda1e6d6904920f4d96310745deb0651920e9d531c8f40e54304ab60d",
+        "anchor": "tmp/upstream-types/type-loop.md:219"
+      },
+      "audit": {
+        "classification": "supported-unverified",
+        "manifest_status": "supported-unverified",
+        "equivalence_note": "The exact Loop fixture renders its literal Capture sublabel in measured 164px station cards; browser capture remains awaiting the coordinator gate."
+      },
+      "local_semantic_fixture": {
+        "path": "examples/parity/loop_self_improving.rb",
+        "sha256": "d48083065c18ad4b83080f9c908ff268ce169958fae851d4fea47231e607657f"
+      },
+      "local_render": {
+        "theme": "light",
+        "style": "editorial",
+        "variant": "full-editorial"
+      }
+    },
+    {
+      "type": "fishbone",
+      "baseline_case_id": "fishbone:minimal-light",
+      "upstream_asset": {
+        "name": "example-fishbone.html",
+        "local_path": "vendor/diagram-design/assets/v0-baseline/example-fishbone.html",
+        "raw_url": "https://raw.githubusercontent.com/cathrynlavery/diagram-design/dcd9317ed9ec7477b20005544f36e3313664d815/skills/diagram-design/assets/example-fishbone.html",
+        "sha256": "cd7079857240a9f6228804d3492af0add2eb36343798c9e0ef90657f2a246d04"
+      },
+      "upstream_contract": {
+        "local_path": "tmp/upstream-types/type-fishbone.md",
+        "sha256": "d2f1c043fd40f5a20305bcc8b835b852b77a26b77516c3bbd813abf70dfa4f20",
+        "anchor": "tmp/upstream-types/type-fishbone.md:71"
+      },
+      "audit": {
+        "classification": "supported-unverified",
+        "manifest_status": "supported-unverified",
+        "equivalence_note": "The exact semantic fixture renders with SlimGraphR minimal light profile; browser capture and human visual review remain pending."
+      },
+      "local_semantic_fixture": {
+        "path": "examples/standalone/fishbone.rb",
+        "sha256": "abaf873e6552b4e365023451260412a88b55927bc7ff90b77aa52342f1eb00e1"
+      },
+      "local_render": {
+        "theme": "light",
+        "style": "minimal",
+        "variant": "minimal-light"
+      }
+    },
+    {
+      "type": "fishbone",
+      "baseline_case_id": "fishbone:minimal-dark",
+      "upstream_asset": {
+        "name": "example-fishbone-dark.html",
+        "local_path": "vendor/diagram-design/assets/v0-baseline/example-fishbone-dark.html",
+        "raw_url": "https://raw.githubusercontent.com/cathrynlavery/diagram-design/dcd9317ed9ec7477b20005544f36e3313664d815/skills/diagram-design/assets/example-fishbone-dark.html",
+        "sha256": "f884b81b83f7ce40cf85b8aa6c3a55db99b7fb2d38502deff222aaff36d7db47"
+      },
+      "upstream_contract": {
+        "local_path": "tmp/upstream-types/type-fishbone.md",
+        "sha256": "d2f1c043fd40f5a20305bcc8b835b852b77a26b77516c3bbd813abf70dfa4f20",
+        "anchor": "tmp/upstream-types/type-fishbone.md:71"
+      },
+      "audit": {
+        "classification": "supported-unverified",
+        "manifest_status": "supported-unverified",
+        "equivalence_note": "The exact semantic fixture renders with SlimGraphR minimal dark profile; browser capture and human visual review remain pending."
+      },
+      "local_semantic_fixture": {
+        "path": "examples/standalone/fishbone.rb",
+        "sha256": "abaf873e6552b4e365023451260412a88b55927bc7ff90b77aa52342f1eb00e1"
+      },
+      "local_render": {
+        "theme": "dark",
+        "style": "minimal",
+        "variant": "minimal-dark"
+      }
+    },
+    {
+      "type": "fishbone",
+      "baseline_case_id": "fishbone:full-editorial",
+      "upstream_asset": {
+        "name": "example-fishbone-full.html",
+        "local_path": "vendor/diagram-design/assets/v0-baseline/example-fishbone-full.html",
+        "raw_url": "https://raw.githubusercontent.com/cathrynlavery/diagram-design/dcd9317ed9ec7477b20005544f36e3313664d815/skills/diagram-design/assets/example-fishbone-full.html",
+        "sha256": "75bfad970d61909fedbf2ede67c3e88057ab46909d7ea7f2c16d3ad2a029aa2e"
+      },
+      "upstream_contract": {
+        "local_path": "tmp/upstream-types/type-fishbone.md",
+        "sha256": "d2f1c043fd40f5a20305bcc8b835b852b77a26b77516c3bbd813abf70dfa4f20",
+        "anchor": "tmp/upstream-types/type-fishbone.md:71"
+      },
+      "audit": {
+        "classification": "supported-unverified",
+        "manifest_status": "supported-unverified",
+        "equivalence_note": "The exact semantic fixture renders with one authored confirmed root category; browser capture is complete and human visual review remains pending."
+      },
+      "local_semantic_fixture": {
+        "path": "examples/parity/fishbone_checkout_latency.rb",
+        "sha256": "cd3463432fca0e9b57a4a4bb687bb6b0d3796d8b29f45812efae4745062d210f"
+      },
+      "local_render": {
+        "theme": "light",
+        "style": "editorial",
+        "variant": "full-editorial"
+      }
+    },
+    {
+      "type": "wardley",
+      "baseline_case_id": "wardley:minimal-light",
+      "upstream_asset": {
+        "name": "example-wardley.html",
+        "local_path": "vendor/diagram-design/assets/v0-baseline/example-wardley.html",
+        "raw_url": "https://raw.githubusercontent.com/cathrynlavery/diagram-design/dcd9317ed9ec7477b20005544f36e3313664d815/skills/diagram-design/assets/example-wardley.html",
+        "sha256": "b0ffc8f5bde65a8d77d863f22cd6c0d0211490c059dbcb503798851d1413860a"
+      },
+      "upstream_contract": {
+        "local_path": "tmp/upstream-types/type-wardley.md",
+        "sha256": "aa93eb728a022b85f38de69c1d287752f91c487b05c50396ee21e769162900a9",
+        "anchor": "tmp/upstream-types/type-wardley.md:35"
+      },
+      "audit": {
+        "classification": "supported-unverified",
+        "manifest_status": "supported-unverified",
+        "equivalence_note": "The exact semantic fixture renders with SlimGraphR minimal light profile; browser capture and human visual review remain pending."
+      },
+      "local_semantic_fixture": {
+        "path": "examples/parity/wardley_ai_value_chain.rb",
+        "sha256": "d3b65ea5f0398861570a7e11b1740e64fd9376298618a705ba05d542c7394c22"
+      },
+      "local_render": {
+        "theme": "light",
+        "style": "minimal",
+        "variant": "minimal-light"
+      }
+    },
+    {
+      "type": "wardley",
+      "baseline_case_id": "wardley:minimal-dark",
+      "upstream_asset": {
+        "name": "example-wardley-dark.html",
+        "local_path": "vendor/diagram-design/assets/v0-baseline/example-wardley-dark.html",
+        "raw_url": "https://raw.githubusercontent.com/cathrynlavery/diagram-design/dcd9317ed9ec7477b20005544f36e3313664d815/skills/diagram-design/assets/example-wardley-dark.html",
+        "sha256": "80aff4e268d3775541eca4cf1c1cac918f0895637cd79568d4895e84b9f2046b"
+      },
+      "upstream_contract": {
+        "local_path": "tmp/upstream-types/type-wardley.md",
+        "sha256": "aa93eb728a022b85f38de69c1d287752f91c487b05c50396ee21e769162900a9",
+        "anchor": "tmp/upstream-types/type-wardley.md:35"
+      },
+      "audit": {
+        "classification": "supported-unverified",
+        "manifest_status": "supported-unverified",
+        "equivalence_note": "The exact semantic fixture renders with SlimGraphR minimal dark profile; browser capture and human visual review remain pending."
+      },
+      "local_semantic_fixture": {
+        "path": "examples/parity/wardley_ai_value_chain.rb",
+        "sha256": "d3b65ea5f0398861570a7e11b1740e64fd9376298618a705ba05d542c7394c22"
+      },
+      "local_render": {
+        "theme": "dark",
+        "style": "minimal",
+        "variant": "minimal-dark"
+      }
+    },
+    {
+      "type": "wardley",
+      "baseline_case_id": "wardley:full-editorial",
+      "upstream_asset": {
+        "name": "example-wardley-full.html",
+        "local_path": "vendor/diagram-design/assets/v0-baseline/example-wardley-full.html",
+        "raw_url": "https://raw.githubusercontent.com/cathrynlavery/diagram-design/dcd9317ed9ec7477b20005544f36e3313664d815/skills/diagram-design/assets/example-wardley-full.html",
+        "sha256": "8a9d56c9e50b57bb990a172822b01361cd4cb57322675fdde40be364e890210b"
+      },
+      "upstream_contract": {
+        "local_path": "tmp/upstream-types/type-wardley.md",
+        "sha256": "aa93eb728a022b85f38de69c1d287752f91c487b05c50396ee21e769162900a9",
+        "anchor": "tmp/upstream-types/type-wardley.md:35"
+      },
+      "audit": {
+        "classification": "supported-unverified",
+        "manifest_status": "supported-unverified",
+        "equivalence_note": "The exact pinned semantic fixture renders every authored node and relationship; browser geometry and human visual review remain pending."
+      },
+      "local_semantic_fixture": {
+        "path": "examples/parity/wardley_ai_value_chain.rb",
+        "sha256": "d3b65ea5f0398861570a7e11b1740e64fd9376298618a705ba05d542c7394c22"
+      },
+      "local_render": {
+        "theme": "light",
+        "style": "editorial",
+        "variant": "full-editorial"
+      }
+    },
+    {
+      "type": "bar",
+      "baseline_case_id": "bar:minimal-light",
+      "upstream_asset": {
+        "name": "example-bar.html",
+        "local_path": "vendor/diagram-design/assets/v0-baseline/example-bar.html",
+        "raw_url": "https://raw.githubusercontent.com/cathrynlavery/diagram-design/dcd9317ed9ec7477b20005544f36e3313664d815/skills/diagram-design/assets/example-bar.html",
+        "sha256": "1bbd708cdca419c137160056ed9862532a3402ba65d9335bae1be0aef90c7abb"
+      },
+      "upstream_contract": {
+        "local_path": "tmp/upstream-types/type-bar.md",
+        "sha256": "a6ab12ffe6fed07652f47924deefa14e9010f161db26daa90d918db16e353d9d",
+        "anchor": "tmp/upstream-types/type-bar.md:102"
+      },
+      "audit": {
+        "classification": "supported-unverified",
+        "manifest_status": "supported-unverified",
+        "equivalence_note": "The exact semantic fixture renders with SlimGraphR minimal light profile; browser capture and human visual review remain pending."
+      },
+      "local_semantic_fixture": {
+        "path": "examples/parity/bar_sprint_velocity.rb",
+        "sha256": "c23c2826eb5ef535f1723232f6b1b6405f508ff6f92e1a310a3928ea2ffd1d23"
+      },
+      "local_render": {
+        "theme": "light",
+        "style": "minimal",
+        "variant": "minimal-light"
+      }
+    },
+    {
+      "type": "bar",
+      "baseline_case_id": "bar:minimal-dark",
+      "upstream_asset": {
+        "name": "example-bar-dark.html",
+        "local_path": "vendor/diagram-design/assets/v0-baseline/example-bar-dark.html",
+        "raw_url": "https://raw.githubusercontent.com/cathrynlavery/diagram-design/dcd9317ed9ec7477b20005544f36e3313664d815/skills/diagram-design/assets/example-bar-dark.html",
+        "sha256": "fb96534eff0910a006dabca940d71aeb1019076abfbe9a020758747c2e2cbb0a"
+      },
+      "upstream_contract": {
+        "local_path": "tmp/upstream-types/type-bar.md",
+        "sha256": "a6ab12ffe6fed07652f47924deefa14e9010f161db26daa90d918db16e353d9d",
+        "anchor": "tmp/upstream-types/type-bar.md:102"
+      },
+      "audit": {
+        "classification": "supported-unverified",
+        "manifest_status": "supported-unverified",
+        "equivalence_note": "The exact semantic fixture renders with SlimGraphR minimal dark profile; browser capture and human visual review remain pending."
+      },
+      "local_semantic_fixture": {
+        "path": "examples/parity/bar_sprint_velocity.rb",
+        "sha256": "c23c2826eb5ef535f1723232f6b1b6405f508ff6f92e1a310a3928ea2ffd1d23"
+      },
+      "local_render": {
+        "theme": "dark",
+        "style": "minimal",
+        "variant": "minimal-dark"
+      }
+    },
+    {
+      "type": "bar",
+      "baseline_case_id": "bar:full-editorial",
+      "upstream_asset": {
+        "name": "example-bar-full.html",
+        "local_path": "vendor/diagram-design/assets/v0-baseline/example-bar-full.html",
+        "raw_url": "https://raw.githubusercontent.com/cathrynlavery/diagram-design/dcd9317ed9ec7477b20005544f36e3313664d815/skills/diagram-design/assets/example-bar-full.html",
+        "sha256": "0095ec6576fff513fee6a731d6eba7fbd9e4726a3e8f6ac183407c0b69a36f58"
+      },
+      "upstream_contract": {
+        "local_path": "tmp/upstream-types/type-bar.md",
+        "sha256": "a6ab12ffe6fed07652f47924deefa14e9010f161db26daa90d918db16e353d9d",
+        "anchor": "tmp/upstream-types/type-bar.md:102"
+      },
+      "audit": {
+        "classification": "supported-unverified",
+        "manifest_status": "supported-unverified",
+        "equivalence_note": "Browser evidence captures the local presentation; human visual review and the remaining parity gates are pending."
+      },
+      "local_semantic_fixture": {
+        "path": "examples/parity/bar_sprint_velocity.rb",
+        "sha256": "c23c2826eb5ef535f1723232f6b1b6405f508ff6f92e1a310a3928ea2ffd1d23"
+      },
+      "local_render": {
+        "theme": "light",
+        "style": "editorial",
+        "variant": "full-editorial"
+      }
+    },
+    {
+      "type": "line",
+      "baseline_case_id": "line:minimal-light",
+      "upstream_asset": {
+        "name": "example-line.html",
+        "local_path": "vendor/diagram-design/assets/v0-baseline/example-line.html",
+        "raw_url": "https://raw.githubusercontent.com/cathrynlavery/diagram-design/dcd9317ed9ec7477b20005544f36e3313664d815/skills/diagram-design/assets/example-line.html",
+        "sha256": "83f5e305d6ce509b25371db6f6e73fa6f3982b7a8dbe09451091c0a15f3b1d90"
+      },
+      "upstream_contract": {
+        "local_path": "tmp/upstream-types/type-line.md",
+        "sha256": "85a09e3fdd3be20d07181e115434f32462fd738a9a1fa091d880e76c406643df",
+        "anchor": "tmp/upstream-types/type-line.md:249"
+      },
+      "audit": {
+        "classification": "supported-unverified",
+        "manifest_status": "supported-unverified",
+        "equivalence_note": "The exact semantic fixture renders with SlimGraphR minimal light profile; browser capture and human visual review remain pending."
+      },
+      "local_semantic_fixture": {
+        "path": "examples/parity/line_weekly_signups.rb",
+        "sha256": "1153ea4b8b94fe8b4800c92b9ef1e6e65adbfacc394c8663408e1732dbbbddfb"
+      },
+      "local_render": {
+        "theme": "light",
+        "style": "minimal",
+        "variant": "minimal-light"
+      }
+    },
+    {
+      "type": "line",
+      "baseline_case_id": "line:minimal-dark",
+      "upstream_asset": {
+        "name": "example-line-dark.html",
+        "local_path": "vendor/diagram-design/assets/v0-baseline/example-line-dark.html",
+        "raw_url": "https://raw.githubusercontent.com/cathrynlavery/diagram-design/dcd9317ed9ec7477b20005544f36e3313664d815/skills/diagram-design/assets/example-line-dark.html",
+        "sha256": "552abdcac08788dac5ee7fa419ab854c5e09451b69822eb48935712880382a9d"
+      },
+      "upstream_contract": {
+        "local_path": "tmp/upstream-types/type-line.md",
+        "sha256": "85a09e3fdd3be20d07181e115434f32462fd738a9a1fa091d880e76c406643df",
+        "anchor": "tmp/upstream-types/type-line.md:249"
+      },
+      "audit": {
+        "classification": "supported-unverified",
+        "manifest_status": "supported-unverified",
+        "equivalence_note": "The exact semantic fixture renders with SlimGraphR minimal dark profile; browser capture and human visual review remain pending."
+      },
+      "local_semantic_fixture": {
+        "path": "examples/parity/line_weekly_signups.rb",
+        "sha256": "1153ea4b8b94fe8b4800c92b9ef1e6e65adbfacc394c8663408e1732dbbbddfb"
+      },
+      "local_render": {
+        "theme": "dark",
+        "style": "minimal",
+        "variant": "minimal-dark"
+      }
+    },
+    {
+      "type": "line",
+      "baseline_case_id": "line:full-editorial",
+      "upstream_asset": {
+        "name": "example-line-full.html",
+        "local_path": "vendor/diagram-design/assets/v0-baseline/example-line-full.html",
+        "raw_url": "https://raw.githubusercontent.com/cathrynlavery/diagram-design/dcd9317ed9ec7477b20005544f36e3313664d815/skills/diagram-design/assets/example-line-full.html",
+        "sha256": "f3757327ce4d465a58b8aaf7428a1c4b3472f7422e782b32164f765b82dcdf96"
+      },
+      "upstream_contract": {
+        "local_path": "tmp/upstream-types/type-line.md",
+        "sha256": "85a09e3fdd3be20d07181e115434f32462fd738a9a1fa091d880e76c406643df",
+        "anchor": "tmp/upstream-types/type-line.md:249"
+      },
+      "audit": {
+        "classification": "supported-unverified",
+        "manifest_status": "supported-unverified",
+        "equivalence_note": "Browser evidence captures the local presentation; human visual review and the remaining parity gates are pending."
+      },
+      "local_semantic_fixture": {
+        "path": "examples/parity/line_weekly_signups.rb",
+        "sha256": "1153ea4b8b94fe8b4800c92b9ef1e6e65adbfacc394c8663408e1732dbbbddfb"
+      },
+      "local_render": {
+        "theme": "light",
+        "style": "editorial",
+        "variant": "full-editorial"
+      }
+    },
+    {
+      "type": "scatter",
+      "baseline_case_id": "scatter:minimal-light",
+      "upstream_asset": {
+        "name": "example-scatter.html",
+        "local_path": "vendor/diagram-design/assets/v0-baseline/example-scatter.html",
+        "raw_url": "https://raw.githubusercontent.com/cathrynlavery/diagram-design/dcd9317ed9ec7477b20005544f36e3313664d815/skills/diagram-design/assets/example-scatter.html",
+        "sha256": "576e0061f65b1885cf5fccb794c2827b19fbea66cc14e8284f3fa075ef755d06"
+      },
+      "upstream_contract": {
+        "local_path": "tmp/upstream-types/type-scatter.md",
+        "sha256": "b89fc3d4777c5a09a82d889aaf1592ebf6fa7bc71877458c6b39c32778e690e6",
+        "anchor": "tmp/upstream-types/type-scatter.md:187"
+      },
+      "audit": {
+        "classification": "supported-unverified",
+        "manifest_status": "supported-unverified",
+        "equivalence_note": "The exact semantic fixture renders with SlimGraphR minimal light profile; browser capture and human visual review remain pending."
+      },
+      "local_semantic_fixture": {
+        "path": "examples/parity/scatter_deploy_frequency.rb",
+        "sha256": "68a2c6bb231f74ced83d149c2a55e2cfe3da67dfae69e4e218bbbb3e0e34e4a4"
+      },
+      "local_render": {
+        "theme": "light",
+        "style": "minimal",
+        "variant": "minimal-light"
+      }
+    },
+    {
+      "type": "scatter",
+      "baseline_case_id": "scatter:minimal-dark",
+      "upstream_asset": {
+        "name": "example-scatter-dark.html",
+        "local_path": "vendor/diagram-design/assets/v0-baseline/example-scatter-dark.html",
+        "raw_url": "https://raw.githubusercontent.com/cathrynlavery/diagram-design/dcd9317ed9ec7477b20005544f36e3313664d815/skills/diagram-design/assets/example-scatter-dark.html",
+        "sha256": "d1e48f5da1c729879834b797d871eeeff1222fa270ae6a051d02ec40dda42744"
+      },
+      "upstream_contract": {
+        "local_path": "tmp/upstream-types/type-scatter.md",
+        "sha256": "b89fc3d4777c5a09a82d889aaf1592ebf6fa7bc71877458c6b39c32778e690e6",
+        "anchor": "tmp/upstream-types/type-scatter.md:187"
+      },
+      "audit": {
+        "classification": "supported-unverified",
+        "manifest_status": "supported-unverified",
+        "equivalence_note": "The exact semantic fixture renders with SlimGraphR minimal dark profile; browser capture and human visual review remain pending."
+      },
+      "local_semantic_fixture": {
+        "path": "examples/parity/scatter_deploy_frequency.rb",
+        "sha256": "68a2c6bb231f74ced83d149c2a55e2cfe3da67dfae69e4e218bbbb3e0e34e4a4"
+      },
+      "local_render": {
+        "theme": "dark",
+        "style": "minimal",
+        "variant": "minimal-dark"
+      }
+    },
+    {
+      "type": "scatter",
+      "baseline_case_id": "scatter:full-editorial",
+      "upstream_asset": {
+        "name": "example-scatter-full.html",
+        "local_path": "vendor/diagram-design/assets/v0-baseline/example-scatter-full.html",
+        "raw_url": "https://raw.githubusercontent.com/cathrynlavery/diagram-design/dcd9317ed9ec7477b20005544f36e3313664d815/skills/diagram-design/assets/example-scatter-full.html",
+        "sha256": "83e8cb8e6d2e788071b3a843c5746ed980675507e41d99b9a3b11beb07b8e6a6"
+      },
+      "upstream_contract": {
+        "local_path": "tmp/upstream-types/type-scatter.md",
+        "sha256": "b89fc3d4777c5a09a82d889aaf1592ebf6fa7bc71877458c6b39c32778e690e6",
+        "anchor": "tmp/upstream-types/type-scatter.md:187"
+      },
+      "audit": {
+        "classification": "supported-unverified",
+        "manifest_status": "supported-unverified",
+        "equivalence_note": "The exact semantic fixture renders with eleven explicit anonymous marks and one named focal point; browser capture is complete and human visual review remains pending."
+      },
+      "local_semantic_fixture": {
+        "path": "examples/parity/scatter_deploy_frequency.rb",
+        "sha256": "68a2c6bb231f74ced83d149c2a55e2cfe3da67dfae69e4e218bbbb3e0e34e4a4"
+      },
+      "local_render": {
+        "theme": "light",
+        "style": "editorial",
+        "variant": "full-editorial"
+      }
+    },
+    {
+      "type": "radar",
+      "baseline_case_id": "radar:minimal-light",
+      "upstream_asset": {
+        "name": "example-radar.html",
+        "local_path": "vendor/diagram-design/assets/v0-baseline/example-radar.html",
+        "raw_url": "https://raw.githubusercontent.com/cathrynlavery/diagram-design/dcd9317ed9ec7477b20005544f36e3313664d815/skills/diagram-design/assets/example-radar.html",
+        "sha256": "767b6a52116665a75b5895c1bde6d96a6a3277449229ff7e21b33afff9b9fcdf"
+      },
+      "upstream_contract": {
+        "local_path": "tmp/upstream-types/type-radar.md",
+        "sha256": "8379b0313afbfdbb5a641c98f8ac6668419b4add6cea0749a646365fad02c1d3",
+        "anchor": "tmp/upstream-types/type-radar.md:76"
+      },
+      "audit": {
+        "classification": "supported-unverified",
+        "manifest_status": "supported-unverified",
+        "equivalence_note": "The exact semantic fixture renders with SlimGraphR minimal light profile; browser capture and human visual review remain pending."
+      },
+      "local_semantic_fixture": {
+        "path": "examples/parity/radar_storage_backends.rb",
+        "sha256": "0b7417081f0208eb4b21a59bba8a86cc817a0482d00cecff6cf45cf52878830e"
+      },
+      "local_render": {
+        "theme": "light",
+        "style": "minimal",
+        "variant": "minimal-light"
+      }
+    },
+    {
+      "type": "radar",
+      "baseline_case_id": "radar:minimal-dark",
+      "upstream_asset": {
+        "name": "example-radar-dark.html",
+        "local_path": "vendor/diagram-design/assets/v0-baseline/example-radar-dark.html",
+        "raw_url": "https://raw.githubusercontent.com/cathrynlavery/diagram-design/dcd9317ed9ec7477b20005544f36e3313664d815/skills/diagram-design/assets/example-radar-dark.html",
+        "sha256": "e24eabbc722e67b83ac498407247e1c09d162ff19e047944a323d44594a68258"
+      },
+      "upstream_contract": {
+        "local_path": "tmp/upstream-types/type-radar.md",
+        "sha256": "8379b0313afbfdbb5a641c98f8ac6668419b4add6cea0749a646365fad02c1d3",
+        "anchor": "tmp/upstream-types/type-radar.md:76"
+      },
+      "audit": {
+        "classification": "supported-unverified",
+        "manifest_status": "supported-unverified",
+        "equivalence_note": "The exact semantic fixture renders with SlimGraphR minimal dark profile; browser capture and human visual review remain pending."
+      },
+      "local_semantic_fixture": {
+        "path": "examples/parity/radar_storage_backends.rb",
+        "sha256": "0b7417081f0208eb4b21a59bba8a86cc817a0482d00cecff6cf45cf52878830e"
+      },
+      "local_render": {
+        "theme": "dark",
+        "style": "minimal",
+        "variant": "minimal-dark"
+      }
+    },
+    {
+      "type": "radar",
+      "baseline_case_id": "radar:full-editorial",
+      "upstream_asset": {
+        "name": "example-radar-full.html",
+        "local_path": "vendor/diagram-design/assets/v0-baseline/example-radar-full.html",
+        "raw_url": "https://raw.githubusercontent.com/cathrynlavery/diagram-design/dcd9317ed9ec7477b20005544f36e3313664d815/skills/diagram-design/assets/example-radar-full.html",
+        "sha256": "18203b78130ef1200e78afd8e5a574029f560f4064730e2f2661b6d33ff9e1e6"
+      },
+      "upstream_contract": {
+        "local_path": "tmp/upstream-types/type-radar.md",
+        "sha256": "8379b0313afbfdbb5a641c98f8ac6668419b4add6cea0749a646365fad02c1d3",
+        "anchor": "tmp/upstream-types/type-radar.md:76"
+      },
+      "audit": {
+        "classification": "supported-unverified",
+        "manifest_status": "supported-unverified",
+        "equivalence_note": "Browser evidence captures the local presentation; human visual review and the remaining parity gates are pending."
+      },
+      "local_semantic_fixture": {
+        "path": "examples/parity/radar_storage_backends.rb",
+        "sha256": "0b7417081f0208eb4b21a59bba8a86cc817a0482d00cecff6cf45cf52878830e"
+      },
+      "local_render": {
+        "theme": "light",
+        "style": "editorial",
+        "variant": "full-editorial"
+      }
+    },
+    {
+      "type": "polar",
+      "baseline_case_id": "polar:minimal-light",
+      "upstream_asset": {
+        "name": "example-polar.html",
+        "local_path": "vendor/diagram-design/assets/v0-baseline/example-polar.html",
+        "raw_url": "https://raw.githubusercontent.com/cathrynlavery/diagram-design/dcd9317ed9ec7477b20005544f36e3313664d815/skills/diagram-design/assets/example-polar.html",
+        "sha256": "596e2042f18044ef1fa2c2eb849f39fa5c7767b2a17e272617ebd27e10bc86b1"
+      },
+      "upstream_contract": {
+        "local_path": "tmp/upstream-types/type-polar.md",
+        "sha256": "51fd08897a65f4ae2fe0c28b5e3afdd4867633fb960e3107551e49f4f9d1e97c",
+        "anchor": "tmp/upstream-types/type-polar.md:132"
+      },
+      "audit": {
+        "classification": "supported-unverified",
+        "manifest_status": "supported-unverified",
+        "equivalence_note": "The exact semantic fixture renders with SlimGraphR minimal light profile; browser capture and human visual review remain pending."
+      },
+      "local_semantic_fixture": {
+        "path": "examples/parity/polar_request_demand.rb",
+        "sha256": "1a29087a70bb0a133060378f68523c5cbebe2c9a04decac8b3ca4a38004bb00b"
+      },
+      "local_render": {
+        "theme": "light",
+        "style": "minimal",
+        "variant": "minimal-light"
+      }
+    },
+    {
+      "type": "polar",
+      "baseline_case_id": "polar:minimal-dark",
+      "upstream_asset": {
+        "name": "example-polar-dark.html",
+        "local_path": "vendor/diagram-design/assets/v0-baseline/example-polar-dark.html",
+        "raw_url": "https://raw.githubusercontent.com/cathrynlavery/diagram-design/dcd9317ed9ec7477b20005544f36e3313664d815/skills/diagram-design/assets/example-polar-dark.html",
+        "sha256": "7c284696cfed61e832dd4dde814840901967cca64bd54a4cddfff7cbeaddb04e"
+      },
+      "upstream_contract": {
+        "local_path": "tmp/upstream-types/type-polar.md",
+        "sha256": "51fd08897a65f4ae2fe0c28b5e3afdd4867633fb960e3107551e49f4f9d1e97c",
+        "anchor": "tmp/upstream-types/type-polar.md:132"
+      },
+      "audit": {
+        "classification": "supported-unverified",
+        "manifest_status": "supported-unverified",
+        "equivalence_note": "The exact semantic fixture renders with SlimGraphR minimal dark profile; browser capture and human visual review remain pending."
+      },
+      "local_semantic_fixture": {
+        "path": "examples/parity/polar_request_demand.rb",
+        "sha256": "1a29087a70bb0a133060378f68523c5cbebe2c9a04decac8b3ca4a38004bb00b"
+      },
+      "local_render": {
+        "theme": "dark",
+        "style": "minimal",
+        "variant": "minimal-dark"
+      }
+    },
+    {
+      "type": "polar",
+      "baseline_case_id": "polar:full-editorial",
+      "upstream_asset": {
+        "name": "example-polar-full.html",
+        "local_path": "vendor/diagram-design/assets/v0-baseline/example-polar-full.html",
+        "raw_url": "https://raw.githubusercontent.com/cathrynlavery/diagram-design/dcd9317ed9ec7477b20005544f36e3313664d815/skills/diagram-design/assets/example-polar-full.html",
+        "sha256": "bfd2ec50116c00a9312efe7bfa5dadfe2512de7c27873e15bdecaa044c932bf3"
+      },
+      "upstream_contract": {
+        "local_path": "tmp/upstream-types/type-polar.md",
+        "sha256": "51fd08897a65f4ae2fe0c28b5e3afdd4867633fb960e3107551e49f4f9d1e97c",
+        "anchor": "tmp/upstream-types/type-polar.md:132"
+      },
+      "audit": {
+        "classification": "supported-unverified",
+        "manifest_status": "supported-unverified",
+        "equivalence_note": "Browser evidence captures the local presentation; human visual review and the remaining parity gates are pending."
+      },
+      "local_semantic_fixture": {
+        "path": "examples/parity/polar_request_demand.rb",
+        "sha256": "1a29087a70bb0a133060378f68523c5cbebe2c9a04decac8b3ca4a38004bb00b"
+      },
+      "local_render": {
+        "theme": "light",
+        "style": "editorial",
+        "variant": "full-editorial"
+      }
+    },
+    {
+      "type": "treemap",
+      "baseline_case_id": "treemap:minimal-light",
+      "upstream_asset": {
+        "name": "example-treemap.html",
+        "local_path": "vendor/diagram-design/assets/v0-baseline/example-treemap.html",
+        "raw_url": "https://raw.githubusercontent.com/cathrynlavery/diagram-design/dcd9317ed9ec7477b20005544f36e3313664d815/skills/diagram-design/assets/example-treemap.html",
+        "sha256": "95f0dd0e5072bbe327c7a85d1fa71a18cff3ade32240a917c4b672940d151008"
+      },
+      "upstream_contract": {
+        "local_path": "tmp/upstream-types/type-treemap.md",
+        "sha256": "bec1ad60a0a9e0889c03a40e7e2e32082a2deb16be65b8bf251cbaf1e10401ba",
+        "anchor": "tmp/upstream-types/type-treemap.md:62"
+      },
+      "audit": {
+        "classification": "supported-unverified",
+        "manifest_status": "supported-unverified",
+        "equivalence_note": "The exact semantic fixture renders with SlimGraphR minimal light profile; browser capture and human visual review remain pending."
+      },
+      "local_semantic_fixture": {
+        "path": "examples/parity/treemap_world_population.rb",
+        "sha256": "36307fa30cde4b8ee3764df55b9a2bac5469ccf9799aa5c6fb8c7d41002ba4ed"
+      },
+      "local_render": {
+        "theme": "light",
+        "style": "minimal",
+        "variant": "minimal-light"
+      }
+    },
+    {
+      "type": "treemap",
+      "baseline_case_id": "treemap:minimal-dark",
+      "upstream_asset": {
+        "name": "example-treemap-dark.html",
+        "local_path": "vendor/diagram-design/assets/v0-baseline/example-treemap-dark.html",
+        "raw_url": "https://raw.githubusercontent.com/cathrynlavery/diagram-design/dcd9317ed9ec7477b20005544f36e3313664d815/skills/diagram-design/assets/example-treemap-dark.html",
+        "sha256": "43cbbb2ec7c30a71edf5f5436e51dd8369cedb1da80f6e6241b62278ea4e5698"
+      },
+      "upstream_contract": {
+        "local_path": "tmp/upstream-types/type-treemap.md",
+        "sha256": "bec1ad60a0a9e0889c03a40e7e2e32082a2deb16be65b8bf251cbaf1e10401ba",
+        "anchor": "tmp/upstream-types/type-treemap.md:62"
+      },
+      "audit": {
+        "classification": "supported-unverified",
+        "manifest_status": "supported-unverified",
+        "equivalence_note": "The exact semantic fixture renders with SlimGraphR minimal dark profile; browser capture and human visual review remain pending."
+      },
+      "local_semantic_fixture": {
+        "path": "examples/parity/treemap_world_population.rb",
+        "sha256": "36307fa30cde4b8ee3764df55b9a2bac5469ccf9799aa5c6fb8c7d41002ba4ed"
+      },
+      "local_render": {
+        "theme": "dark",
+        "style": "minimal",
+        "variant": "minimal-dark"
+      }
+    },
+    {
+      "type": "treemap",
+      "baseline_case_id": "treemap:full-editorial",
+      "upstream_asset": {
+        "name": "example-treemap-full.html",
+        "local_path": "vendor/diagram-design/assets/v0-baseline/example-treemap-full.html",
+        "raw_url": "https://raw.githubusercontent.com/cathrynlavery/diagram-design/dcd9317ed9ec7477b20005544f36e3313664d815/skills/diagram-design/assets/example-treemap-full.html",
+        "sha256": "c0b0569090b69050b7b70592dd7d0d3ad01a41e84ea80d03433cf5c3b35e52a2"
+      },
+      "upstream_contract": {
+        "local_path": "tmp/upstream-types/type-treemap.md",
+        "sha256": "bec1ad60a0a9e0889c03a40e7e2e32082a2deb16be65b8bf251cbaf1e10401ba",
+        "anchor": "tmp/upstream-types/type-treemap.md:62"
+      },
+      "audit": {
+        "classification": "supported-unverified",
+        "manifest_status": "supported-unverified",
+        "equivalence_note": "Browser evidence captures the local presentation; human visual review and the remaining parity gates are pending."
+      },
+      "local_semantic_fixture": {
+        "path": "examples/parity/treemap_world_population.rb",
+        "sha256": "36307fa30cde4b8ee3764df55b9a2bac5469ccf9799aa5c6fb8c7d41002ba4ed"
+      },
+      "local_render": {
+        "theme": "light",
+        "style": "editorial",
+        "variant": "full-editorial"
+      }
+    },
+    {
+      "type": "sankey",
+      "baseline_case_id": "sankey:minimal-light",
+      "upstream_asset": {
+        "name": "example-sankey.html",
+        "local_path": "vendor/diagram-design/assets/v0-baseline/example-sankey.html",
+        "raw_url": "https://raw.githubusercontent.com/cathrynlavery/diagram-design/dcd9317ed9ec7477b20005544f36e3313664d815/skills/diagram-design/assets/example-sankey.html",
+        "sha256": "f9196488b04763405fe56a56ed201630ce63aa86c96dcf8ba652d3927093707c"
+      },
+      "upstream_contract": {
+        "local_path": "tmp/upstream-types/type-sankey.md",
+        "sha256": "bcc39b963fa4f340c7654204fa0c6c0a248a0b42b1669ebeb2375381d8013a2c",
+        "anchor": "tmp/upstream-types/type-sankey.md:68"
+      },
+      "audit": {
+        "classification": "supported-unverified",
+        "manifest_status": "supported-unverified",
+        "equivalence_note": "The exact semantic fixture renders with SlimGraphR minimal light profile; browser capture and human visual review remain pending."
+      },
+      "local_semantic_fixture": {
+        "path": "examples/parity/sankey_ci_budget.rb",
+        "sha256": "5d5fb3a973f33658e80e4b52bc7de81c90a78578c80d1841bd454174554ec524"
+      },
+      "local_render": {
+        "theme": "light",
+        "style": "minimal",
+        "variant": "minimal-light"
+      }
+    },
+    {
+      "type": "sankey",
+      "baseline_case_id": "sankey:minimal-dark",
+      "upstream_asset": {
+        "name": "example-sankey-dark.html",
+        "local_path": "vendor/diagram-design/assets/v0-baseline/example-sankey-dark.html",
+        "raw_url": "https://raw.githubusercontent.com/cathrynlavery/diagram-design/dcd9317ed9ec7477b20005544f36e3313664d815/skills/diagram-design/assets/example-sankey-dark.html",
+        "sha256": "4c2a4ff17cfba1412aee8b6569e76c1d314d9ce64d6038c99e89505225b9baf1"
+      },
+      "upstream_contract": {
+        "local_path": "tmp/upstream-types/type-sankey.md",
+        "sha256": "bcc39b963fa4f340c7654204fa0c6c0a248a0b42b1669ebeb2375381d8013a2c",
+        "anchor": "tmp/upstream-types/type-sankey.md:68"
+      },
+      "audit": {
+        "classification": "supported-unverified",
+        "manifest_status": "supported-unverified",
+        "equivalence_note": "The exact semantic fixture renders with SlimGraphR minimal dark profile; browser capture and human visual review remain pending."
+      },
+      "local_semantic_fixture": {
+        "path": "examples/parity/sankey_ci_budget.rb",
+        "sha256": "5d5fb3a973f33658e80e4b52bc7de81c90a78578c80d1841bd454174554ec524"
+      },
+      "local_render": {
+        "theme": "dark",
+        "style": "minimal",
+        "variant": "minimal-dark"
+      }
+    },
+    {
+      "type": "sankey",
+      "baseline_case_id": "sankey:full-editorial",
+      "upstream_asset": {
+        "name": "example-sankey-full.html",
+        "local_path": "vendor/diagram-design/assets/v0-baseline/example-sankey-full.html",
+        "raw_url": "https://raw.githubusercontent.com/cathrynlavery/diagram-design/dcd9317ed9ec7477b20005544f36e3313664d815/skills/diagram-design/assets/example-sankey-full.html",
+        "sha256": "52949b4f1bcfba7bf89c49542ddf6937fda80be6c10c806366cd056d94732eeb"
+      },
+      "upstream_contract": {
+        "local_path": "tmp/upstream-types/type-sankey.md",
+        "sha256": "bcc39b963fa4f340c7654204fa0c6c0a248a0b42b1669ebeb2375381d8013a2c",
+        "anchor": "tmp/upstream-types/type-sankey.md:68"
+      },
+      "audit": {
+        "classification": "supported-unverified",
+        "manifest_status": "supported-unverified",
+        "equivalence_note": "The exact semantic fixture renders with its authored focal rerun ribbons; browser capture is complete and human visual review remains pending."
+      },
+      "local_semantic_fixture": {
+        "path": "examples/parity/sankey_ci_budget.rb",
+        "sha256": "5d5fb3a973f33658e80e4b52bc7de81c90a78578c80d1841bd454174554ec524"
+      },
+      "local_render": {
+        "theme": "light",
+        "style": "editorial",
+        "variant": "full-editorial"
+      }
+    }
+  ]
+}

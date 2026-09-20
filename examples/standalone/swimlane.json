@@ -1,0 +1,23 @@
+{
+  "type": "swimlane",
+  "title": "Survey delivery — ownership",
+  "lanes": [
+    { "id": "research", "label": "Research" },
+    { "id": "it", "label": "IT" },
+    { "id": "field", "label": "Field services" }
+  ],
+  "stages": [
+    { "id": "design", "label": "Design" },
+    { "id": "build", "label": "Build" },
+    { "id": "test", "label": "Test" }
+  ],
+  "activities": [
+    { "id": "draft", "label": "Draft survey", "lane": "research", "stage": "design" },
+    { "id": "build_app", "label": "Build app", "lane": "it", "stage": "build" },
+    { "id": "pilot", "label": "Pilot test", "lane": "field", "stage": "test" }
+  ],
+  "handoffs": [
+    { "from": "draft", "to": "build_app", "focal": true },
+    { "from": "build_app", "to": "pilot" }
+  ]
+}

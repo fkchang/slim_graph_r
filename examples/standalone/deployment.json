@@ -1,0 +1,47 @@
+{
+  "type": "deployment",
+  "title": "Production placement",
+  "zones": [
+    {
+      "id": "edge",
+      "label": "Edge",
+      "nodes": [
+        {
+          "id": "front_door",
+          "label": "Global CDN",
+          "kind": "cdn",
+          "replicas": 2,
+          "artifacts": [{"name": "storefront", "version": "2026.09.1"}]
+        }
+      ]
+    },
+    {
+      "id": "prod",
+      "label": "Production / eu-west-1",
+      "nodes": [
+        {
+          "id": "api",
+          "label": "API pods",
+          "kind": "pod",
+          "replicas": 3,
+          "artifacts": [
+            {"name": "api", "version": "v2.4.1"},
+            {"name": "otel sidecar", "version": "0.109.0"}
+          ]
+        },
+        {
+          "id": "primary",
+          "label": "RDS primary",
+          "kind": "managed",
+          "replicas": 1,
+          "emphasis": true,
+          "artifacts": [{"name": "postgres", "version": "16.4"}]
+        }
+      ]
+    }
+  ],
+  "paths": [
+    {"from": "front_door", "to": "api", "protocol": "HTTPS", "port": 443},
+    {"from": "api", "to": "primary", "protocol": "TLS", "port": 5432, "async": true}
+  ]
+}

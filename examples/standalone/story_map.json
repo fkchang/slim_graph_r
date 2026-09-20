@@ -1,0 +1,19 @@
+{
+  "type": "story_map",
+  "title": "Reporting first release",
+  "persona": "Analyst",
+  "activities": [
+    {"id": "find", "label": "Find the data", "steps": [{"id": "search", "label": "Search catalogue"}, {"id": "filter", "label": "Filter results"}]},
+    {"id": "build", "label": "Build the report", "steps": [{"id": "chart", "label": "Create chart"}]},
+    {"id": "share", "label": "Share it", "steps": [{"id": "send", "label": "Send report"}]}
+  ],
+  "releases": [
+    {"id": "mvp", "label": "2026-09-30", "cut": true, "stories": [
+      {"id": "saved_filter", "label": "Save filters", "activity": "find", "ticket": "RPT-114", "estimate": "3pt"},
+      {"id": "templates", "label": "Use templates", "activity": "build"}
+    ]},
+    {"id": "later", "label": "Later", "stories": [
+      {"id": "permissions", "label": "Control report access", "activity": "share", "risk": true}
+    ]}
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "name": "quadrant-v0",
+  "viewport": {
+    "width": 1440,
+    "height": 1000,
+    "device_scale_factor": 1
+  },
+  "browser": "chromium",
+  "cases": [
+    {
+      "baseline_case_id": "quadrant:minimal-light",
+      "local_fixture": "quadrant-publication-priorities",
+      "local_variant": "minimal-light",
+      "local_render": "captured"
+    },
+    {
+      "baseline_case_id": "quadrant:minimal-dark",
+      "local_fixture": "quadrant-publication-priorities",
+      "local_variant": "minimal-dark",
+      "local_render": "captured"
+    },
+    {
+      "baseline_case_id": "quadrant:full-editorial",
+      "local_fixture": "quadrant-publication-priorities",
+      "local_variant": "full-editorial",
+      "local_render": "captured"
+    }
+  ]
+}

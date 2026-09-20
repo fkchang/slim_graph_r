@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "name": "architecture-v0",
+  "viewport": { "width": 1440, "height": 1000, "device_scale_factor": 1 },
+  "browser": "chromium",
+  "cases": [
+    {
+      "baseline_case_id": "architecture:minimal-light",
+      "local_fixture": "architecture-content-site",
+      "local_variant": "minimal-light",
+      "local_render": "captured"
+    },
+    {
+      "baseline_case_id": "architecture:minimal-dark",
+      "local_fixture": "architecture-content-site",
+      "local_variant": "minimal-dark",
+      "local_render": "captured"
+    },
+    {
+      "baseline_case_id": "architecture:full-editorial",
+      "local_fixture": "architecture-content-site",
+      "local_variant": "full-editorial",
+      "local_render": "captured"
+    }
+  ]
+}

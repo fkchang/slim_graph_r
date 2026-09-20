@@ -1,0 +1,13 @@
+{
+  "type": "timeline",
+  "title": "The dates tell the story",
+  "style": "ruby",
+  "scale": "date",
+  "events": [
+    {"date":"2026-04-01","label":"Release","detail":"The public release follows weeks of testing.","emphasis":true},
+    {"date":"2026-01-01","label":"First sketch","detail":"Start with a description of the parts and their relationships."},
+    {"date":"2026-01-16","label":"Working renderer","detail":"The first output makes the design concrete."},
+    {"date":"2026-01-16","label":"First review","detail":"A second event on the same day keeps the same position."},
+    {"date":"2026-02-01","label":"Broader examples","detail":"Out-of-order input never changes what the calendar says."}
+  ]
+}

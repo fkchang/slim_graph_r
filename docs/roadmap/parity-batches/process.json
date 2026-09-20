@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "name": "process-v0",
+  "viewport": {
+    "width": 1440,
+    "height": 1000,
+    "device_scale_factor": 1
+  },
+  "browser": "chromium",
+  "cases": [
+    {
+      "baseline_case_id": "process:minimal-light",
+      "local_fixture": "process-survey-build",
+      "local_variant": "minimal-light",
+      "local_render": "captured"
+    },
+    {
+      "baseline_case_id": "process:minimal-dark",
+      "local_fixture": "process-survey-build",
+      "local_variant": "minimal-dark",
+      "local_render": "captured"
+    },
+    {
+      "baseline_case_id": "process:full-editorial",
+      "local_fixture": "process-survey-build",
+      "local_variant": "full-editorial",
+      "local_render": "captured"
+    }
+  ]
+}

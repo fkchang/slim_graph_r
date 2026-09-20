@@ -1,0 +1,21 @@
+{
+  "type": "dependency",
+  "title": "Runtime dependencies",
+  "nodes": [
+    {"id": "app"},
+    {"id": "core"},
+    {"id": "plugins"},
+    {"id": "adapter"},
+    {"id": "hook"},
+    {"id": "rack", "label": "Rack", "kind": "external", "version": "3.2.1", "registry": "RubyGems"}
+  ],
+  "edges": [
+    {"from": "app", "to": "core"},
+    {"from": "app", "to": "plugins"},
+    {"from": "core", "to": "adapter"},
+    {"from": "plugins", "to": "adapter"},
+    {"from": "plugins", "to": "hook"},
+    {"from": "adapter", "to": "rack"},
+    {"from": "hook", "to": "app", "cycle": true}
+  ]
+}

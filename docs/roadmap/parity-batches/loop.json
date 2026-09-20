@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "name": "loop-v0",
+  "viewport": {
+    "width": 1440,
+    "height": 1000,
+    "device_scale_factor": 1
+  },
+  "browser": "chromium",
+  "cases": [
+    {
+      "baseline_case_id": "loop:minimal-light",
+      "local_fixture": "loop-self-improving",
+      "local_variant": "minimal-light",
+      "local_render": "captured"
+    },
+    {
+      "baseline_case_id": "loop:minimal-dark",
+      "local_fixture": "loop-self-improving",
+      "local_variant": "minimal-dark",
+      "local_render": "captured"
+    },
+    {
+      "baseline_case_id": "loop:full-editorial",
+      "local_fixture": "loop-self-improving",
+      "local_variant": "full-editorial",
+      "local_render": "captured"
+    }
+  ]
+}

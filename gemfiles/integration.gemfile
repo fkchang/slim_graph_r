@@ -1,0 +1,6 @@
+eval_gemfile 'core.gemfile'
+if ENV['STREAM_WEAVER_SOURCE'] == 'git'
+  gem 'stream_weaver', git: 'https://github.com/fkchang/stream_weaver.git', require: false
+else
+  gem 'stream_weaver', ENV.fetch('STREAM_WEAVER_VERSION', '= 0.3.0'), require: false
+end

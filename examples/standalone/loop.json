@@ -1,0 +1,21 @@
+{
+  "type": "loop",
+  "title": "Self-improving loop · 自己改善",
+  "direction": "clockwise",
+  "hub": {"id": "memory", "label": "Shared memory", "sublabel": "one record, every loop"},
+  "stations": [
+    {"id": "capture", "label": "Capture", "sublabel": "signals in"},
+    {"id": "research", "label": "Research", "sublabel": "evidence pulled"},
+    {"id": "decide", "label": "Decide", "sublabel": "human approves", "focal": true},
+    {"id": "act", "label": "Act", "sublabel": "work ships"},
+    {"id": "measure", "label": "Measure", "sublabel": "outcomes logged"}
+  ],
+  "cycle": ["capture", "research", "decide", "act", "measure"],
+  "write_backs": [
+    {"from": "capture", "to": "memory", "label": "SIGNALS"},
+    {"from": "research", "to": "memory"},
+    {"from": "decide", "to": "memory"},
+    {"from": "act", "to": "memory", "label": "OUTCOMES"},
+    {"from": "measure", "to": "memory"}
+  ]
+}

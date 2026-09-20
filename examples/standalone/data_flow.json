@@ -1,0 +1,31 @@
+{
+  "type": "data_flow",
+  "title": "Declared reporting · pipeline",
+  "style": "editorial",
+  "theme": "light",
+  "roles": [
+    {"id": "admins", "label": "Admins", "key": "ADM"},
+    {"id": "engineers", "label": "Engineers", "key": "ENG"},
+    {"id": "scientists", "label": "Scientists", "key": "SCI"},
+    {"id": "consumers", "label": "Consumers", "key": "CON"}
+  ],
+  "steps": [
+    {"id": "collect", "label": "Collect"},
+    {"id": "store", "label": "Store"},
+    {"id": "prepare", "label": "Prepare"},
+    {"id": "analyse", "label": "Analyse", "focal": true},
+    {"id": "publish", "label": "Publish"}
+  ],
+  "transfers": [
+    {"id": "setup", "label": "Setup", "role": "admins", "step": "collect", "tool": "Console"},
+    {"id": "ingest", "label": "Ingest", "role": "engineers", "step": "collect", "tool": "SFTP", "output": "dataset"},
+    {"id": "stage", "label": "Stage", "role": "engineers", "step": "prepare", "tool": "Trino", "detail": "raw → trusted table", "input": "dataset", "output": "table"},
+    {"id": "model", "label": "Model", "role": "scientists", "step": "analyse", "tool": "Notebook", "input": "table", "output": "file", "focal": true},
+    {"id": "query", "label": "Query", "role": "consumers", "step": "publish", "tool": "Read-only SQL", "input": "table"}
+  ],
+  "handoffs": [
+    {"from": "setup", "to": "ingest", "kind": "trigger"},
+    {"from": "stage", "to": "model", "kind": "focal", "label": "ANON DATA"},
+    {"from": "model", "to": "query", "kind": "publish"}
+  ]
+}

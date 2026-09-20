@@ -1,0 +1,4 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+require 'slim_graph_r/cli'
+exit SlimGraphR::CLI.run

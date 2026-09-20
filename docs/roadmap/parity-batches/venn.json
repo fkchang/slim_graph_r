@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "name": "venn-v0",
+  "viewport": {
+    "width": 1440,
+    "height": 1000,
+    "device_scale_factor": 1
+  },
+  "browser": "chromium",
+  "cases": [
+    {
+      "baseline_case_id": "venn:minimal-light",
+      "local_fixture": "venn-product-fit",
+      "local_variant": "minimal-light",
+      "local_render": "captured"
+    },
+    {
+      "baseline_case_id": "venn:minimal-dark",
+      "local_fixture": "venn-product-fit",
+      "local_variant": "minimal-dark",
+      "local_render": "captured"
+    },
+    {
+      "baseline_case_id": "venn:full-editorial",
+      "local_fixture": "venn-product-fit",
+      "local_variant": "full-editorial",
+      "local_render": "captured"
+    }
+  ]
+}

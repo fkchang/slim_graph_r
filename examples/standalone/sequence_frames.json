@@ -1,0 +1,27 @@
+{
+  "type": "sequence",
+  "title": "Fetch a document",
+  "style": "ruby",
+  "nodes": [
+    {"id": "client"},
+    {"id": "api", "label": "API", "emphasis": true},
+    {"id": "store", "label": "Document store", "kind": "store"}
+  ],
+  "steps": [
+    {"message": {"from": "client", "to": "api", "label": "Fetch document"}},
+    {"activate": "api", "steps": [
+      {"alt": [
+        {"guard": "cached", "steps": [
+          {"message": {"from": "api", "to": "client", "label": "Cached document", "kind": "return"}}
+        ]},
+        {"guard": "not cached", "steps": [
+          {"message": {"from": "api", "to": "store", "label": "Read document"}},
+          {"activate": "store", "steps": [
+            {"message": {"from": "store", "to": "api", "label": "Document", "kind": "return"}}
+          ]},
+          {"message": {"from": "api", "to": "client", "label": "Document", "kind": "return"}}
+        ]}
+      ]}
+    ]}
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "type": "org_chart",
+  "title": "Northstar studio ownership",
+  "theme": "light",
+  "style": "editorial",
+  "nodes": [
+    { "id": "lead", "label": "Northstar lead", "invoke": "@northstar", "scope": "Direction and release approval", "emphasis": true },
+    { "id": "intake", "label": "Intake team", "invoke": "#northstar-help", "scope": "Routing and escalation" },
+    { "id": "editor", "label": "Editorial owner", "invoke": "@quill", "scope": "Copy and publication", "detail": "Weekday coverage" },
+    { "id": "archive", "label": "Archive owner", "scope": "Long-term records", "unavailable": true, "detail": "Setup pending" }
+  ],
+  "edges": [
+    { "from": "lead", "to": "intake" },
+    { "from": "lead", "to": "editor" },
+    { "from": "intake", "to": "archive" }
+  ],
+  "escalations": [
+    { "label": "Unowned work", "to": "intake" }
+  ],
+  "approvals": [
+    { "label": "Production release", "by": "lead" }
+  ],
+  "setup_gaps": [
+    { "label": "Archive ownership needs a live invocation route", "for": "archive" }
+  ]
+}

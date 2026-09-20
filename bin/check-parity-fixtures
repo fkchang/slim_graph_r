@@ -1,0 +1,157 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require 'digest'
+require 'json'
+require 'pathname'
+
+ROOT = Pathname.new(__dir__).parent
+INDEX_PATH = ROOT.join('docs/roadmap/parity-fixtures-v0.json')
+MANIFEST_PATH = ROOT.join('docs/roadmap/parity-manifest.json')
+FONT_MANIFEST_PATH = ROOT.join('script/parity-fonts.json')
+SUMMARY_GLOB = ROOT.join('artifacts/parity/v0/*/summary.json').to_s
+EXPECTED_REVISION = 'dcd9317ed9ec7477b20005544f36e3313664d815'
+EXPECTED_CLASSES = {
+  'supported-unverified' => 96,
+  'deliberate-different' => 7,
+  'missing' => 14,
+  'verified' => 0
+}.freeze
+
+errors = []
+fail = ->(message) { errors << message }
+begin
+  index = JSON.parse(INDEX_PATH.read(encoding: Encoding::UTF_8))
+  manifest = JSON.parse(MANIFEST_PATH.read(encoding: Encoding::UTF_8))
+  font_manifest = JSON.parse(FONT_MANIFEST_PATH.read(encoding: Encoding::UTF_8))
+  registry = JSON.parse(ROOT.join('docs/roadmap/parity-harness-fixtures.json').read(encoding: Encoding::UTF_8))
+  summary_paths = Dir[SUMMARY_GLOB].sort
+  summaries = summary_paths.map { |path| JSON.parse(File.read(path, encoding: Encoding::UTF_8)) }
+rescue StandardError => e
+  abort "parity fixture check failed: cannot read JSON: #{e.message}"
+end
+
+fail.call("index revision is #{index['upstream_revision'].inspect}") unless index['upstream_revision'] == EXPECTED_REVISION
+fail.call('index must contain exactly 117 records') unless index['records'].is_a?(Array) && index['records'].length == 117
+types = manifest.fetch('types').map { |entry| entry.fetch('type') }
+fail.call('manifest must contain exactly 39 types') unless types.length == 39 && types.uniq.length == 39
+fixture_ids = registry.fetch('fixtures').map { |fixture| fixture.fetch('id') }
+fail.call('fixture registry IDs are not unique') unless fixture_ids.length == fixture_ids.uniq.length
+fail.call('fixture registry must contain exactly 39 stable IDs') unless fixture_ids.length == 39
+fixtures_by_id = registry.fetch('fixtures').to_h { |fixture| [fixture.fetch('id'), fixture] }
+Dir[ROOT.join('docs/roadmap/parity-batches/*.json').to_s].sort.each do |batch_path|
+  batch = JSON.parse(File.read(batch_path, encoding: Encoding::UTF_8))
+  batch.fetch('cases').each do |entry|
+    fixture = fixtures_by_id[entry.fetch('local_fixture')]
+    unless fixture
+      fail.call("#{entry['baseline_case_id']}: batch references unknown fixture #{entry['local_fixture']}")
+      next
+    end
+    variant = fixture.fetch('variants').fetch(entry.fetch('local_variant'))
+    fail.call("#{entry['baseline_case_id']}: batch/registry status mismatch") unless variant.fetch('status') == entry.fetch('local_render')
+  end
+end
+records = index.fetch('records', [])
+records_by_id = records.to_h { |record| [record['baseline_case_id'], record] }
+keys = records.map { |record| [record['type'], record['baseline_case_id']] }
+fail.call('records are not unique') unless keys.uniq.length == records.length
+fail.call('records do not cover each type and baseline variant exactly once') unless keys.sort == types.flat_map { |type| %w[minimal-light minimal-dark full-editorial].map { |variant| [type, "#{type}:#{variant}"] } }.sort
+
+counts = Hash.new(0)
+records.each do |record|
+  %w[type baseline_case_id upstream_asset upstream_contract audit local_render].each do |key|
+    fail.call("#{record['baseline_case_id']}: missing #{key}") unless record.key?(key)
+  end
+  counts[record['audit']['classification']] += 1
+  asset = record.fetch('upstream_asset', {})
+  url = asset['raw_url'].to_s
+  fail.call("#{record['baseline_case_id']}: unpinned URL") unless url.include?(EXPECTED_REVISION)
+  path = ROOT.join(asset['local_path'].to_s)
+  fail.call("#{record['baseline_case_id']}: missing asset #{path}") unless path.file?
+  if path.file?
+    actual = Digest::SHA256.file(path).hexdigest
+    fail.call("#{record['baseline_case_id']}: asset SHA mismatch") unless actual == asset['sha256']
+  end
+  contract = ROOT.join(record.fetch('upstream_contract', {}).fetch('local_path', ''))
+  fail.call("#{record['baseline_case_id']}: missing contract #{contract}") unless contract.file?
+  if contract.file?
+    actual = Digest::SHA256.file(contract).hexdigest
+    expected = record['upstream_contract']['sha256']
+    fail.call("#{record['baseline_case_id']}: contract SHA mismatch") unless actual == expected
+    anchor = record['upstream_contract']['anchor'].to_s
+    fail.call("#{record['baseline_case_id']}: invalid contract anchor") unless anchor.match?(/:line-?\d+/) || anchor.match?(/:\d+/)
+  end
+  local = record['local_semantic_fixture']
+  if local
+    local_path = ROOT.join(local.fetch('path'))
+    fail.call("#{record['baseline_case_id']}: missing local fixture #{local_path}") unless local_path.file?
+    if local_path.file?
+      fail.call("#{record['baseline_case_id']}: local fixture SHA mismatch") unless Digest::SHA256.file(local_path).hexdigest == local['sha256']
+    end
+  end
+  fail.call("#{record['baseline_case_id']}: verified promotion") if record['audit']['classification'] == 'verified'
+  fail.call("#{record['baseline_case_id']}: audit manifest_status mismatch") unless record.dig('audit', 'manifest_status') == record.dig('audit', 'classification')
+end
+EXPECTED_CLASSES.each { |classification, expected| fail.call("#{classification} count mismatch") unless counts[classification] == expected }
+fail.call('manifest baseline count summary disagrees with index') unless manifest.dig('audit', 'baseline_case_counts') == { 'total' => 117, **EXPECTED_CLASSES }
+manifest.each_value { |value| } # keep parsing strict and deterministic
+records.group_by { |record| record['type'] }.each do |type, rows|
+  manifest_entry = manifest['types'].find { |entry| entry['type'] == type }
+  rows.each do |record|
+    expected = manifest_entry.fetch('baseline_case_status').fetch(record['local_render']['variant']).fetch('classification')
+    fail.call("#{record['baseline_case_id']}: classification disagrees with manifest") unless expected == record['audit']['classification']
+  end
+end
+
+fail.call("expected 39 summary files, found #{summary_paths.length}") unless summary_paths.length == 39
+outcomes = summaries.flat_map { |summary| summary.fetch('outcomes', []) }
+outcome_ids = outcomes.map { |outcome| outcome['baseline_case_id'] }
+fail.call("expected 117 evidence outcomes, found #{outcomes.length}") unless outcomes.length == 117
+fail.call('evidence outcome IDs are not unique') unless outcome_ids.uniq.length == 117
+fail.call('evidence/index IDs differ') unless outcome_ids.sort == records_by_id.keys.sort
+
+font_faces = font_manifest.fetch('faces').map { |face| face.slice('family', 'style', 'weight', 'path', 'sha256') }
+font_faces.each do |face|
+  font_path = ROOT.join(face.fetch('path'))
+  fail.call("missing pinned font #{font_path}") unless font_path.file?
+  fail.call("pinned font SHA mismatch: #{font_path}") if font_path.file? && Digest::SHA256.file(font_path).hexdigest != face['sha256']
+end
+
+outcomes.each do |outcome|
+  id = outcome.fetch('baseline_case_id')
+  record = records_by_id.fetch(id)
+  classification = record.dig('audit', 'classification')
+  local_status = outcome.dig('local', 'status')
+  fail.call("#{id}: evidence classification disagrees with index") unless outcome['classification'] == classification
+  pending_render = outcome['review_status'] == 'rendered-awaiting-browser-gate' && local_status == 'rendered-awaiting-browser-gate'
+  fail.call("#{id}: supported-unverified has unavailable local evidence") if classification == 'supported-unverified' && local_status == 'unavailable'
+  fail.call("#{id}: supported-unverified must have captured or render-only local evidence") if classification == 'supported-unverified' && local_status != 'captured' && !pending_render
+  fail.call("#{id}: missing must have unavailable local evidence") if classification == 'missing' && local_status != 'unavailable'
+  fail.call("#{id}: upstream SHA evidence mismatch") unless outcome.dig('upstream', 'sha256') == outcome.dig('upstream', 'expected_sha256') && outcome.dig('upstream', 'sha256') == record.dig('upstream_asset', 'sha256')
+  fail.call("#{id}: contract SHA evidence mismatch") unless outcome.dig('contract', 'sha256') == outcome.dig('contract', 'expected_sha256') && outcome.dig('contract', 'sha256') == record.dig('upstream_contract', 'sha256')
+
+  %w[console_errors page_errors external_resource_errors].each do |field|
+    fail.call("#{id}: upstream #{field}") unless outcome.dig('upstream', field) == []
+    fail.call("#{id}: local #{field}") if local_status == 'captured' && outcome.dig('local', field) != []
+  end
+
+  upstream = outcome.fetch('upstream')
+  fail.call("#{id}: upstream fonts were not locally intercepted") unless upstream.dig('fonts', 'source') == 'local-intercept'
+  fail.call("#{id}: upstream fonts did not load") unless upstream.dig('fonts', 'status') == 'loaded'
+  fail.call("#{id}: pinned font set differs") unless upstream.dig('fonts', 'assets') == font_faces
+  fail.call("#{id}: upstream font check failed") unless upstream.dig('fonts', 'checks').to_a.all? { |check| check['loaded'] }
+  fail.call("#{id}: non-deterministic font request") unless upstream.fetch('font_requests', []).all? { |request| request['source'] == 'local-intercept' }
+  if local_status == 'captured'
+    fail.call("#{id}: local fonts did not load") unless outcome.dig('local', 'fonts', 'status') == 'loaded'
+    fail.call("#{id}: local capture made font requests") unless outcome.dig('local', 'font_requests') == []
+  end
+end
+
+gemspec = ROOT.join('slim_graph_r.gemspec').read(encoding: Encoding::UTF_8)
+fail.call('V0 fixture directory must be excluded by gemspec') unless gemspec.include?("vendor/diagram-design/assets/v0-baseline/")
+if errors.empty?
+  puts 'parity fixtures V0: OK (117 records/evidence outcomes; 96 supported-unverified, 7 deliberate-different, 14 missing, 0 verified)'
+  exit 0
+end
+warn errors.map { |error| "parity fixture check failed: #{error}" }
+exit 1

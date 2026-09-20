@@ -1,0 +1,1 @@
+{"type":"polar","title":"Demand by UTC window","unit":"% of peak","source_note":"Illustrative workload · 2026-09-13 · common scale 0–100","scale":{"min":0,"max":100},"categories":[{"id":"night","label":"00–06","value":18},{"id":"morning","label":"06–12","value":52},{"id":"midday","label":"12–18","value":100,"focal":true},{"id":"evening","label":"18–24","value":0}]}

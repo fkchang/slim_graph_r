@@ -1,0 +1,200 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+require 'tmpdir'
+require 'open3'
+require 'rbconfig'
+require 'rubygems/package'
+
+root = File.expand_path('..', __dir__)
+Dir.mktmpdir('slimgraph-package-') do |dir|
+  package = File.join(dir, 'slim_graph_r.gem')
+  spec = Gem::Specification.load(File.join(root, 'slim_graph_r.gemspec'))
+  Dir.chdir(root) { Gem::Package.build(spec, false, false, package) }
+  home = File.join(dir, 'gems')
+  env = { 'GEM_HOME' => home, 'GEM_PATH' => home, 'RUBYOPT' => nil, 'RUBYLIB' => nil,
+          'BUNDLE_GEMFILE' => nil, 'BUNDLE_BIN_PATH' => nil, 'BUNDLER_VERSION' => nil, 'LC_ALL' => 'C' }
+  command = lambda do |*argv|
+    out, err, status = Open3.capture3(env, *argv, chdir: dir)
+    abort "Package check failed: #{argv.inspect}\n#{out}\n#{err}" unless status.success?
+    out
+  end
+  command.call(RbConfig.ruby, '-S', 'gem', 'install', package, '--local', '--no-document', '--ignore-dependencies')
+  command.call(RbConfig.ruby, '-e', <<~'RUBY')
+    require 'slim_graph_r'
+    abort 'Unexpected runtime dependencies' unless Gem.loaded_specs.fetch('slim_graph_r').runtime_dependencies.empty?
+    abort 'StreamWeaver should not be installed' unless Gem::Specification.find_all_by_name('stream_weaver').empty?
+    g = SlimGraphR.diagram(title: "Unicode \u2713 \u65e5\u672c\u8a9e") { node :a; node :b; flow :a, :b }
+    abort 'Missing SVG' unless g.to_svg.include?('<svg')
+  RUBY
+  gem_root = File.join(home, 'gems', "slim_graph_r-#{spec.version}")
+  %w[standalone semantic].each do |name|
+    demo = File.join(gem_root, 'lib', 'slim_graph_r', 'university', 'demos', "#{name}.rb")
+    page = command.call(RbConfig.ruby, demo).strip
+    abort "Missing #{name} University demo" unless File.file?(page) && File.read(page, encoding: 'UTF-8').include?('<svg')
+  end
+  cli = File.join(home, 'bin', 'slimgraph')
+  %w[architecture publishing flowchart dependency deployment sequence sequence_frames sequence_loop timeline timeline_cases org_chart org_ownership state_machine tree nested layers pyramid medallion swimlane process gantt kanban journey story_map data_flow dp_integration dp_security_matrix entity_relationships database_schema uml_class quadrant venn loop fishbone wardley bar line scatter treemap sankey].each do |name|
+    source = File.join(gem_root, 'examples', 'standalone', "#{name}.rb")
+    output = File.join(dir, "#{name}.svg")
+    command.call(RbConfig.ruby, cli, 'render', source, '-o', output)
+    abort "Missing #{name} SVG" unless File.read(output, encoding: 'UTF-8').include?('<svg')
+  end
+  { 'tree' => 'trees', 'nested' => 'nested-containment', 'layers' => 'layer-stacks',
+    'pyramid' => 'pyramids', 'medallion' => 'medallions' }.each do |name, guide_name|
+    guide = File.join(gem_root, 'docs', "#{guide_name}.md")
+    abort "Missing #{name} guide" unless File.file?(guide)
+    source = File.join(gem_root, 'examples', 'standalone', "#{name}.json")
+    output = File.join(dir, "#{name}.html")
+    command.call(RbConfig.ruby, cli, 'render', source, '-o', output)
+    abort "Missing #{name} HTML diagram" unless File.read(output, encoding: 'UTF-8').include?(%(data-sgr-#{name}="true"))
+  end
+  command.call(RbConfig.ruby, cli, 'render', File.join(gem_root, 'examples/standalone/publishing.json'), '-o', File.join(dir, 'publishing.html'))
+  command.call(RbConfig.ruby, cli, 'render', File.join(gem_root, 'examples/standalone/sequence_frames.json'), '-o', File.join(dir, 'sequence.html'))
+  command.call(RbConfig.ruby, cli, 'render', File.join(gem_root, 'examples/standalone/timeline_cases.json'), '--scale', 'date', '-o', File.join(dir, 'timeline.html'))
+  command.call(RbConfig.ruby, cli, 'render', File.join(gem_root, 'examples/standalone/org_ownership.json'), '-o', File.join(dir, 'org-ownership.html'))
+  command.call(RbConfig.ruby, cli, 'render', File.join(gem_root, 'examples/standalone/state_machine.json'), '-o', File.join(dir, 'state-machine.html'))
+  command.call(RbConfig.ruby, cli, 'render', File.join(gem_root, 'examples/standalone/dependency.json'), '-o', File.join(dir, 'dependency.html'))
+  command.call(RbConfig.ruby, cli, 'render', File.join(gem_root, 'examples/standalone/deployment.json'), '-o', File.join(dir, 'deployment.html'))
+  %w[swimlane process].each do |name|
+    source = File.join(gem_root, 'examples', 'standalone', "#{name}.json")
+    output = File.join(dir, "#{name}.html")
+    command.call(RbConfig.ruby, cli, 'render', source, '-o', output)
+    abort "Missing #{name} semantics" unless File.read(output, encoding: 'UTF-8').include?(%(data-sgr-#{name}="true"))
+  end
+  %w[gantt kanban].each do |name|
+    source = File.join(gem_root, 'examples', 'standalone', "#{name}.json")
+    output = File.join(dir, "#{name}.html")
+    command.call(RbConfig.ruby, cli, 'render', source, '-o', output)
+    html = File.read(output, encoding: 'UTF-8')
+    abort "Missing #{name} planning semantics" unless html.include?(%(data-sgr-#{name}="true"))
+  end
+  %w[journey story_map].each do |name|
+    source = File.join(gem_root, 'examples', 'standalone', "#{name}.json")
+    output = File.join(dir, "#{name}.html")
+    command.call(RbConfig.ruby, cli, 'render', source, '-o', output)
+    html = File.read(output, encoding: 'UTF-8')
+    marker = name.tr('_', '-')
+    abort "Missing #{name} journey-family semantics" unless html.include?(%(data-sgr-#{marker}="true"))
+  end
+  source = File.join(gem_root, 'examples', 'standalone', 'data_flow.json')
+  output = File.join(dir, 'data_flow.html')
+  command.call(RbConfig.ruby, cli, 'render', source, '-o', output)
+  html = File.read(output, encoding: 'UTF-8')
+  abort 'Missing data_flow semantics' unless html.include?('data-sgr-data-flow="true"') &&
+    html.include?('data-sgr-focal-label-mask="true"') && html.include?('input not declared')
+  source = File.join(gem_root, 'examples', 'standalone', 'dp_integration.json')
+  output = File.join(dir, 'dp_integration.html')
+  command.call(RbConfig.ruby, cli, 'render', source, '-o', output)
+  html = File.read(output, encoding: 'UTF-8')
+  abort 'Missing dp_integration semantics' unless html.include?('data-sgr-dp-integration="true"') &&
+    html.include?('data-sgr-boundary-target="true"') && html.include?('protocol JDBC')
+  source = File.join(gem_root, 'examples', 'standalone', 'dp_security_matrix.json')
+  output = File.join(dir, 'dp_security_matrix.html')
+  command.call(RbConfig.ruby, cli, 'render', source, '-o', output)
+  html = File.read(output, encoding: 'UTF-8')
+  abort 'Missing dp_security_matrix semantics' unless html.include?('data-sgr-dp-security-matrix="true"') &&
+    html.include?('data-security-level="deny"') && html.include?('published aggregate') &&
+    !html.include?('marker-end=')
+  source = File.join(gem_root, 'examples', 'standalone', 'entity_relationships.json')
+  output = File.join(dir, 'entity_relationships.html')
+  command.call(RbConfig.ruby, cli, 'render', source, '-o', output)
+  html = File.read(output, encoding: 'UTF-8')
+  abort 'Missing ER semantics' unless html.include?('data-er="true"') &&
+    html.include?('data-er-cardinality="0..*"') && html.include?('注文') && !html.include?('marker-end=')
+  guide = File.join(gem_root, 'docs', 'entity-relationships.md')
+  abort 'Missing ER guide' unless File.file?(guide) && File.binread(guide) == File.binread(File.join(root, 'docs', 'entity-relationships.md'))
+  source = File.join(gem_root, 'examples', 'standalone', 'database_schema.json')
+  output = File.join(dir, 'database_schema.html')
+  command.call(RbConfig.ruby, cli, 'render', source, '-o', output)
+  html = File.read(output, encoding: 'UTF-8')
+  abort 'Missing database-schema semantics' unless html.include?('data-sgr-db-schema-diagram="true"') &&
+    html.include?('data-sgr-db-column="orders:customer_id"') && html.include?('ON DELETE RESTRICT') && html.include?('注文')
+  guide = File.join(gem_root, 'docs', 'database-schemas.md')
+  abort 'Missing database-schema guide' unless File.file?(guide) && File.binread(guide) == File.binread(File.join(root, 'docs', 'database-schemas.md'))
+  source = File.join(gem_root, 'examples', 'standalone', 'uml_class.json')
+  output = File.join(dir, 'uml_class.html')
+  command.call(RbConfig.ruby, cli, 'render', source, '-o', output)
+  html = File.read(output, encoding: 'UTF-8')
+  abort 'Missing UML-class semantics' unless html.include?('data-sgr-uml-class="true"') &&
+    html.include?('data-sgr-relation-kind="inheritance"') && html.include?('data-sgr-legend-kind="dependency"') &&
+    html.include?('data-sgr-display-scale="1.5"')
+  guide = File.join(gem_root, 'docs', 'uml-classes.md')
+  abort 'Missing UML-class guide' unless File.file?(guide) && File.binread(guide) == File.binread(File.join(root, 'docs', 'uml-classes.md'))
+  source = File.join(gem_root, 'examples', 'standalone', 'quadrant.json')
+  output = File.join(dir, 'quadrant.html')
+  command.call(RbConfig.ruby, cli, 'render', source, '-o', output)
+  html = File.read(output, encoding: 'UTF-8')
+  abort 'Missing quadrant semantics' unless html.include?('data-sgr-quadrant="true"') &&
+    html.include?('data-sgr-quadrant-caption="true"') && html.include?('data-sgr-display-scale="1.5"') &&
+    html.include?('優先順位') && html.include?('not calculated scores')
+  guide = File.join(gem_root, 'docs', 'quadrants.md')
+  abort 'Missing quadrant guide' unless File.file?(guide) && File.binread(guide) == File.binread(File.join(root, 'docs', 'quadrants.md'))
+  source = File.join(gem_root, 'examples', 'standalone', 'venn.json')
+  output = File.join(dir, 'venn.html')
+  command.call(RbConfig.ruby, cli, 'render', source, '-o', output)
+  html = File.read(output, encoding: 'UTF-8')
+  abort 'Missing Venn semantics' unless html.include?('data-sgr-venn="true"') &&
+    html.include?('data-sgr-venn-focal-clip="true"') && html.include?('data-sgr-display-scale="1.143"') &&
+    html.include?('適合') && html.include?('area and population are not quantitative')
+  guide = File.join(gem_root, 'docs', 'venn.md')
+  abort 'Missing Venn guide' unless File.file?(guide) && File.binread(guide) == File.binread(File.join(root, 'docs', 'venn.md'))
+  source = File.join(gem_root, 'examples', 'standalone', 'loop.json')
+  output = File.join(dir, 'loop.html')
+  command.call(RbConfig.ruby, cli, 'render', source, '-o', output)
+  html = File.read(output, encoding: 'UTF-8')
+  abort 'Missing loop semantics' unless html.include?('data-sgr-loop="true"') &&
+    html.include?('data-sgr-loop-closure="true"') && html.include?('data-sgr-loop-hub-gap="6"') &&
+    html.include?('自己改善') && html.include?('author-selected focal station')
+  guide = File.join(gem_root, 'docs', 'loops.md')
+  abort 'Missing loop guide' unless File.file?(guide) && File.binread(guide) == File.binread(File.join(root, 'docs', 'loops.md'))
+  source = File.join(gem_root, 'examples', 'standalone', 'fishbone.json')
+  output = File.join(dir, 'fishbone.html')
+  command.call(RbConfig.ruby, cli, 'render', source, '-o', output)
+  html = File.read(output, encoding: 'UTF-8')
+  abort 'Missing fishbone semantics' unless html.include?('data-sgr-fishbone="true"') &&
+    html.include?('data-sgr-fishbone-angle="60"') && html.include?('data-sgr-fishbone-tick-length="32"') &&
+    html.include?('調査') && html.include?('do not prove causation')
+  guide = File.join(gem_root, 'docs', 'fishbones.md')
+  abort 'Missing fishbone guide' unless File.file?(guide) && File.binread(guide) == File.binread(File.join(root, 'docs', 'fishbones.md'))
+  source = File.join(gem_root, 'examples', 'standalone', 'wardley.json')
+  output = File.join(dir, 'wardley.html')
+  command.call(RbConfig.ruby, cli, 'render', source, '-o', output)
+  html = File.read(output, encoding: 'UTF-8')
+  abort 'Missing Wardley semantics' unless html.include?('data-sgr-wardley="true"') &&
+    html.include?('data-sgr-wardley-dependency=') && html.include?('data-sgr-wardley-movement=') &&
+    html.include?('data-sgr-display-scale="1.143"') && html.include?('not calculated scores')
+  guide = File.join(gem_root, 'docs', 'wardley-maps.md')
+  abort 'Missing Wardley guide' unless File.file?(guide) && File.binread(guide) == File.binread(File.join(root, 'docs', 'wardley-maps.md'))
+  { 'bar' => 'bar-charts', 'line' => 'line-charts', 'scatter' => 'scatter-plots' }.each do |name, guide_name|
+    source = File.join(gem_root, 'examples', 'standalone', "#{name}.json")
+    output = File.join(dir, "#{name}.html")
+    command.call(RbConfig.ruby, cli, 'render', source, '-o', output)
+    html = File.read(output, encoding: 'UTF-8')
+    abort "Missing #{name} quantitative semantics" unless html.include?(%(data-sgr-#{name}="true")) &&
+      html.include?('data-sgr-display-scale="1.143"') && html.include?('data-scale-caption="true"')
+    %W[docs/#{guide_name}.md examples/standalone/#{name}.rb examples/standalone/#{name}.json].each do |relative|
+      packaged = File.join(gem_root, relative)
+      abort "Packaged bytes differ: #{relative}" unless File.file?(packaged) && File.binread(packaged) == File.binread(File.join(root, relative))
+    end
+  end
+  { 'treemap' => 'treemaps', 'sankey' => 'sankeys' }.each do |name, guide_name|
+    source = File.join(gem_root, 'examples', 'standalone', "#{name}.json")
+    output = File.join(dir, "#{name}.html")
+    command.call(RbConfig.ruby, cli, 'render', source, '-o', output)
+    html = File.read(output, encoding: 'UTF-8')
+    marker = name == 'treemap' ? 'data-area-total=' : 'data-conservation="strict-balanced"'
+    abort "Missing #{name} quantitative semantics" unless html.include?(%(data-sgr-#{name}="true")) &&
+      html.include?('data-sgr-display-scale="1.143"') && html.include?(marker)
+    %W[docs/#{guide_name}.md examples/standalone/#{name}.rb examples/standalone/#{name}.json].each do |relative|
+      packaged = File.join(gem_root, relative)
+      abort "Packaged bytes differ: #{relative}" unless File.file?(packaged) && File.binread(packaged) == File.binread(File.join(root, relative))
+    end
+  end
+  manifest = File.join(gem_root, 'docs', 'roadmap', 'parity-manifest.json')
+  abort 'Missing parity manifest' unless File.file?(manifest) && File.binread(manifest) == File.binread(File.join(root, 'docs', 'roadmap', 'parity-manifest.json'))
+  guide = File.join(gem_root, 'docs', 'access-matrices.md')
+  abort 'Missing access-matrix guide' unless File.file?(guide) && File.binread(guide) == File.binread(File.join(root, 'docs', 'access-matrices.md'))
+  roadmap = File.join(gem_root, 'docs', 'roadmap', 'parity-matrix.md')
+  abort 'Packaged parity roadmap differs from source' unless File.binread(roadmap) == File.binread(File.join(root, 'docs', 'roadmap', 'parity-matrix.md'))
+  puts 'Clean install passed: standalone Ruby + JSON + CLI, no StreamWeaver, no source checkout, LC_ALL=C.'
+end

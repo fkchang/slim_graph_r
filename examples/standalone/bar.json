@@ -1,0 +1,1 @@
+{"type":"bar","title":"Net bookings","unit":"USD millions","source_note":"Finance ledger · 2026-08-31 · explicit bounds −10 to 30","scale":{"min":-10,"max":30},"categories":[{"id":"north","label":"North","value":24},{"id":"south","label":"South","value":-6},{"id":"online","label":"Online","value":0,"focal":true}]}

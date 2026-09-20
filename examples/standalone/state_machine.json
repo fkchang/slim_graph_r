@@ -1,0 +1,20 @@
+{
+  "type": "state",
+  "title": "Publish lifecycle",
+  "direction": "right",
+  "theme": "light",
+  "style": "editorial",
+  "states": [
+    { "id": "draft", "label": "Draft", "detail": "unpublished" },
+    { "id": "review", "label": "In review", "detail": "awaiting approval" },
+    { "id": "published", "label": "Published", "detail": "live on site", "emphasis": true }
+  ],
+  "initial": "draft",
+  "finals": ["published"],
+  "transitions": [
+    { "from": "draft", "to": "review", "on": "submit", "guard": "complete?", "action": "queue" },
+    { "from": "review", "to": "draft", "on": "request changes" },
+    { "from": "review", "to": "review", "on": "recheck", "action": "record audit" },
+    { "from": "review", "to": "published", "on": "approve" }
+  ]
+}

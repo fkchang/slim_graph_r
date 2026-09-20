@@ -1,0 +1,15 @@
+{
+  "type": "venn",
+  "title": "Product fit · 適合",
+  "sets": [
+    {"id": "desirable", "label": "Desirable", "subtitle": "PEOPLE WANT IT"},
+    {"id": "feasible", "label": "Feasible"},
+    {"id": "viable", "label": "Viable"}
+  ],
+  "intersections": [
+    {"sets": ["desirable", "feasible"], "label": "Useful"},
+    {"sets": ["desirable", "viable"], "label": "Wanted"},
+    {"sets": ["feasible", "viable"], "label": "Sustainable"},
+    {"sets": ["desirable", "feasible", "viable"], "label": "Product fit", "focal": true}
+  ]
+}

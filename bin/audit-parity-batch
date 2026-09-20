@@ -1,0 +1,67 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+root="$(cd "$(dirname "$0")/.." && pwd)"
+batch_name="architecture"
+output_root=""
+render_only=false
+
+while [[ $# -gt 0 ]]; do
+  case "$1" in
+    --output-root)
+      output_root="$2"
+      shift 2
+      ;;
+    --render-only)
+      render_only=true
+      shift
+      ;;
+    --*)
+      echo "Unknown option: $1" >&2
+      exit 1
+      ;;
+    *)
+      batch_name="$1"
+      shift
+      ;;
+  esac
+done
+
+batch_path="$root/docs/roadmap/parity-batches/$batch_name.json"
+output_root="${output_root:-$root/artifacts/parity/v0/$batch_name}"
+generated_root="$output_root/generated"
+registry_path="$root/docs/roadmap/parity-harness-fixtures.json"
+
+if [[ ! -f "$batch_path" ]]; then
+  echo "Unknown parity batch: $batch_name" >&2
+  exit 1
+fi
+mkdir -p "$generated_root"
+while IFS=$'\t' read -r fixture variant case_id; do
+  output_name="${case_id//:/__}.html"
+  "$root/bin/render-parity-fixture" "$fixture" --registry "$registry_path" --variant "$variant" --output "$generated_root/$output_name"
+done < <(ruby -rjson -e '
+  batch = JSON.parse(File.read(ARGV.fetch(0)))
+  batch.fetch("cases").each do |item|
+    next unless item.fetch("local_render") == "captured"
+    puts [item.fetch("local_fixture"), item.fetch("local_variant"), item.fetch("baseline_case_id")].join("\t")
+  end
+' "$batch_path")
+
+if [[ "$render_only" == true ]]; then
+  echo "rendered configured local fixtures in ${generated_root#$root/}"
+  exit 0
+fi
+
+if ! command -v node >/dev/null || ! command -v npm >/dev/null; then
+  echo "Parity capture needs Node.js and a global Playwright installation." >&2
+  exit 1
+fi
+if ! npm root -g >/dev/null 2>&1; then
+  echo "Parity capture could not locate global Node modules." >&2
+  exit 1
+fi
+
+global_node_modules="$(npm root -g)"
+NODE_PATH="$global_node_modules${NODE_PATH:+:$NODE_PATH}" node "$root/script/capture_parity_batch.js" \
+  --batch "$batch_path" --generated "$generated_root" --output "$output_root" --registry "$registry_path"

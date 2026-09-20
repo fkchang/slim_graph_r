@@ -1,0 +1,39 @@
+{
+  "type": "dp_integration",
+  "title": "Declared platform · surfaces",
+  "sources": [
+    {"id": "warehouse", "label": "Warehouse", "kind": "database", "detail": "SQL"},
+    {"id": "drop", "label": "Partner drop", "kind": "file_drop", "detail": "SFTP"}
+  ],
+  "platform": {
+    "label": "Data platform",
+    "rows": [
+      {"kind": "bar", "items": [
+        {"id": "query", "label": "Query service", "role": "SQL", "focal": true, "serves": true}
+      ]},
+      {"kind": "row", "items": [
+        {"id": "ingest", "label": "Ingest", "role": "INGEST", "detail": "ETL"},
+        {"id": "store", "label": "Object store", "role": "STORE", "detail": "Objects", "focal": true},
+        {"id": "notebook", "label": "Notebook", "role": "ANALYSE"}
+      ]},
+      {"kind": "bar", "items": [
+        {"id": "schedule", "label": "Scheduler", "role": "DAG"}
+      ]}
+    ]
+  },
+  "consumers": [
+    {"id": "reports", "label": "Reports", "kind": "analytics", "detail": "ODBC"},
+    {"id": "portal", "label": "Public portal", "kind": "web", "detail": "HTTPS"}
+  ],
+  "layer_services": [
+    {"id": "identity", "label": "Identity", "kind": "identity", "protocol": "AUTH"}
+  ],
+  "wires": [
+    {"from": "warehouse", "to": "query", "kind": "federated", "protocol": "JDBC"},
+    {"from": "drop", "to": "ingest", "kind": "ordinary", "protocol": "SFTP"},
+    {"from": "ingest", "to": "store", "kind": "ordinary", "protocol": "WRITE"},
+    {"from": "schedule", "to": "ingest", "kind": "trigger"},
+    {"from": "query", "to": "reports", "kind": "serve", "protocol": "ODBC"},
+    {"from": "query", "to": "portal", "kind": "serve", "protocol": "HTTPS"}
+  ]
+}

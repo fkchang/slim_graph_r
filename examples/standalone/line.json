@@ -1,0 +1,1 @@
+{"type":"line","title":"Incidents","unit":"incidents/day","source_note":"Operations log · 2026-01 · display precision 3","x_axis":{"kind":"time","domain":["2026-01-01","2026-01-02","2026-01-11","2026-01-21"]},"scale":{"min":0,"max":12},"series":[{"id":"api","label":"API","focal":true,"points":[{"value":8},{"gap":true,"reason":"telemetry outage"},{"value":3},{"value":5}]}]}

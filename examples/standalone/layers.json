@@ -1,0 +1,12 @@
+{
+  "type": "layers",
+  "title": "Network path",
+  "axis": "Abstraction",
+  "indicator": "up",
+  "layers": [
+    { "id": "transport", "label": "Transport", "index": "L4", "detail": "TCP", "focal": true },
+    { "id": "network", "label": "Network", "index": "L3", "detail": "IP" },
+    { "id": "link", "label": "Data link", "index": "L2", "detail": "Ethernet" },
+    { "id": "physical", "label": "Physical", "index": "L1", "detail": "Fiber" }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "type": "tree",
+  "title": "Service ownership",
+  "root": {
+    "id": "platform",
+    "label": "Platform",
+    "detail": "Shared foundation",
+    "children": [
+      {
+        "id": "experience",
+        "label": "Experience",
+        "children": [
+          { "id": "web", "label": "Web" },
+          { "id": "mobile", "label": "Mobile" }
+        ]
+      },
+      {
+        "id": "product",
+        "label": "Product",
+        "children": [
+          { "id": "api", "label": "API", "focal": true },
+          { "id": "jobs", "label": "Background jobs" }
+        ]
+      },
+      { "id": "operations", "label": "Operations" }
+    ]
+  }
+}

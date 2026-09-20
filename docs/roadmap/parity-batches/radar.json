@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "name": "radar-v0",
+  "viewport": {
+    "width": 1440,
+    "height": 1000,
+    "device_scale_factor": 1
+  },
+  "browser": "chromium",
+  "cases": [
+    {
+      "baseline_case_id": "radar:minimal-light",
+      "local_fixture": "radar-storage-backends",
+      "local_variant": "minimal-light",
+      "local_render": "captured"
+    },
+    {
+      "baseline_case_id": "radar:minimal-dark",
+      "local_fixture": "radar-storage-backends",
+      "local_variant": "minimal-dark",
+      "local_render": "captured"
+    },
+    {
+      "baseline_case_id": "radar:full-editorial",
+      "local_fixture": "radar-storage-backends",
+      "local_variant": "full-editorial",
+      "local_render": "captured"
+    }
+  ]
+}

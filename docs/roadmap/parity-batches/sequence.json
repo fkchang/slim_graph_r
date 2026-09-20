@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "name": "sequence-v0",
+  "viewport": { "width": 1440, "height": 1000, "device_scale_factor": 1 },
+  "browser": "chromium",
+  "cases": [
+    { "baseline_case_id": "sequence:minimal-light", "local_fixture": "sequence-article-request", "local_variant": "minimal-light", "local_render": "captured" },
+    { "baseline_case_id": "sequence:minimal-dark", "local_fixture": "sequence-article-request", "local_variant": "minimal-dark", "local_render": "captured" },
+    { "baseline_case_id": "sequence:full-editorial", "local_fixture": "sequence-article-request", "local_variant": "full-editorial", "local_render": "captured" }
+  ]
+}

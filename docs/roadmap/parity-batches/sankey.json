@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "name": "sankey-v0",
+  "viewport": {
+    "width": 1440,
+    "height": 1000,
+    "device_scale_factor": 1
+  },
+  "browser": "chromium",
+  "cases": [
+    {
+      "baseline_case_id": "sankey:minimal-light",
+      "local_fixture": "sankey-ci-budget",
+      "local_variant": "minimal-light",
+      "local_render": "captured"
+    },
+    {
+      "baseline_case_id": "sankey:minimal-dark",
+      "local_fixture": "sankey-ci-budget",
+      "local_variant": "minimal-dark",
+      "local_render": "captured"
+    },
+    {
+      "baseline_case_id": "sankey:full-editorial",
+      "local_fixture": "sankey-ci-budget",
+      "local_variant": "full-editorial",
+      "local_render": "captured"
+    }
+  ]
+}

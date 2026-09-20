@@ -1,0 +1,15 @@
+# frozen_string_literal: true
+require 'slim_graph_r'
+
+SlimGraphR.diagram(:dependency, title: 'Runtime dependencies') do
+  %i[app core plugins adapter hook].each { |id| dependency id }
+  external_dependency :rack, 'Rack', version: '3.2.1', registry: 'RubyGems'
+
+  depends_on :app, :core
+  depends_on :app, :plugins
+  depends_on :core, :adapter
+  depends_on :plugins, :adapter
+  depends_on :plugins, :hook
+  depends_on :adapter, :rack
+  depends_on :hook, :app, cycle: true
+end

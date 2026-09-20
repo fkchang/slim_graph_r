@@ -1,0 +1,1037 @@
+{
+  "schema": "slim_graph_r/parity-harness-fixtures-v0",
+  "fixtures": [
+    {
+      "id": "process-survey-build",
+      "require": "examples/parity/process_survey_build",
+      "factory": "ParityFixtures::ProcessSurveyBuild.diagram",
+      "variants": {
+        "minimal-light": {
+          "status": "captured",
+          "arguments": {
+            "theme": "light",
+            "style": "minimal"
+          }
+        },
+        "minimal-dark": {
+          "status": "captured",
+          "arguments": {
+            "theme": "dark",
+            "style": "minimal"
+          }
+        },
+        "full-editorial": {
+          "status": "captured",
+          "arguments": {
+            "theme": "light",
+            "style": "editorial"
+          }
+        }
+      }
+    },
+    {
+      "id": "gantt-platform-launch",
+      "require": "examples/parity/gantt_platform_launch",
+      "factory": "ParityFixtures::GanttPlatformLaunch.diagram",
+      "variants": {
+        "minimal-light": {
+          "status": "captured",
+          "arguments": {
+            "theme": "light",
+            "style": "minimal"
+          }
+        },
+        "minimal-dark": {
+          "status": "captured",
+          "arguments": {
+            "theme": "dark",
+            "style": "minimal"
+          }
+        },
+        "full-editorial": {
+          "status": "captured",
+          "arguments": {
+            "theme": "light",
+            "style": "editorial"
+          }
+        }
+      }
+    },
+    {
+      "id": "kanban-platform-team",
+      "require": "examples/parity/kanban_platform_team",
+      "factory": "ParityFixtures::KanbanPlatformTeam.diagram",
+      "variants": {
+        "minimal-light": {
+          "status": "captured",
+          "arguments": {
+            "theme": "light",
+            "style": "minimal"
+          }
+        },
+        "minimal-dark": {
+          "status": "captured",
+          "arguments": {
+            "theme": "dark",
+            "style": "minimal"
+          }
+        },
+        "full-editorial": {
+          "status": "captured",
+          "arguments": {
+            "theme": "light",
+            "style": "editorial"
+          }
+        }
+      }
+    },
+    {
+      "id": "journey-trial-paid",
+      "require": "examples/parity/journey_trial_paid",
+      "factory": "ParityFixtures::JourneyTrialPaid.diagram",
+      "variants": {
+        "minimal-light": {
+          "status": "captured",
+          "arguments": {
+            "theme": "light",
+            "style": "minimal"
+          }
+        },
+        "minimal-dark": {
+          "status": "captured",
+          "arguments": {
+            "theme": "dark",
+            "style": "minimal"
+          }
+        },
+        "full-editorial": {
+          "status": "captured",
+          "arguments": {
+            "theme": "light",
+            "style": "editorial"
+          }
+        }
+      }
+    },
+    {
+      "id": "story-map-reporting",
+      "require": "examples/parity/story_map_reporting",
+      "factory": "ParityFixtures::StoryMapReporting.diagram",
+      "variants": {
+        "minimal-light": {
+          "status": "captured",
+          "arguments": {
+            "theme": "light",
+            "style": "minimal"
+          }
+        },
+        "minimal-dark": {
+          "status": "captured",
+          "arguments": {
+            "theme": "dark",
+            "style": "minimal"
+          }
+        },
+        "full-editorial": {
+          "status": "captured",
+          "arguments": {
+            "theme": "light",
+            "style": "editorial"
+          }
+        }
+      }
+    },
+    {
+      "id": "data-flow-reporting",
+      "require": "examples/parity/data_flow_reporting",
+      "factory": "ParityFixtures::DataFlowReporting.diagram",
+      "variants": {
+        "minimal-light": {
+          "status": "captured",
+          "arguments": {
+            "theme": "light",
+            "style": "minimal"
+          }
+        },
+        "minimal-dark": {
+          "status": "captured",
+          "arguments": {
+            "theme": "dark",
+            "style": "minimal"
+          }
+        },
+        "full-editorial": {
+          "status": "captured",
+          "arguments": {
+            "theme": "light",
+            "style": "editorial"
+          }
+        }
+      }
+    },
+    {
+      "id": "dp-integration-platform",
+      "require": "examples/parity/dp_integration_platform",
+      "factory": "ParityFixtures::DPIntegrationPlatform.diagram",
+      "variants": {
+        "minimal-light": {
+          "status": "captured",
+          "arguments": {
+            "theme": "light",
+            "style": "minimal"
+          }
+        },
+        "minimal-dark": {
+          "status": "captured",
+          "arguments": {
+            "theme": "dark",
+            "style": "minimal"
+          }
+        },
+        "full-editorial": {
+          "status": "captured",
+          "arguments": {
+            "theme": "light",
+            "style": "editorial"
+          }
+        }
+      }
+    },
+    {
+      "id": "dp-security-matrix-platform",
+      "require": "examples/parity/dp_security_matrix_platform",
+      "factory": "ParityFixtures::DPSecurityMatrixPlatform.diagram",
+      "variants": {
+        "minimal-light": {
+          "status": "captured",
+          "arguments": {
+            "theme": "light",
+            "style": "minimal"
+          }
+        },
+        "minimal-dark": {
+          "status": "captured",
+          "arguments": {
+            "theme": "dark",
+            "style": "minimal"
+          }
+        },
+        "full-editorial": {
+          "status": "captured",
+          "arguments": {
+            "theme": "light",
+            "style": "editorial"
+          }
+        }
+      }
+    },
+    {
+      "id": "layers-osi-stack",
+      "require": "examples/parity/layers_osi_stack",
+      "factory": "ParityFixtures::LayersOsiStack.diagram",
+      "variants": {
+        "minimal-light": {
+          "status": "unavailable",
+          "reason": "SlimGraphR has no minimal profile; do not substitute editorial."
+        },
+        "minimal-dark": {
+          "status": "unavailable",
+          "reason": "SlimGraphR has no minimal profile; do not substitute editorial."
+        },
+        "full-editorial": {
+          "status": "unavailable",
+          "reason": "Pinned example requires unsupported direction indicator and editorial row annotations."
+        }
+      }
+    },
+    {
+      "id": "pyramid-conversion-funnel",
+      "require": "examples/parity/pyramid_conversion_funnel",
+      "factory": "ParityFixtures::PyramidConversionFunnel.diagram",
+      "variants": {
+        "minimal-light": {
+          "status": "unavailable",
+          "reason": "SlimGraphR has no minimal profile; do not substitute editorial."
+        },
+        "minimal-dark": {
+          "status": "unavailable",
+          "reason": "SlimGraphR has no minimal profile; do not substitute editorial."
+        },
+        "full-editorial": {
+          "status": "unavailable",
+          "reason": "Pinned example requires unsupported side drop-off annotations and honest funnel counts."
+        }
+      }
+    },
+    {
+      "id": "medallion-survey-architecture",
+      "require": "examples/parity/medallion_survey_architecture",
+      "factory": "ParityFixtures::MedallionSurveyArchitecture.diagram",
+      "variants": {
+        "minimal-light": {
+          "status": "unavailable",
+          "reason": "SlimGraphR has no minimal profile; do not substitute editorial."
+        },
+        "minimal-dark": {
+          "status": "unavailable",
+          "reason": "SlimGraphR has no minimal profile; do not substitute editorial."
+        },
+        "full-editorial": {
+          "status": "unavailable",
+          "reason": "Pinned example requires unsupported field cards, wrapped values, and promotion path semantics."
+        }
+      }
+    },
+    {
+      "id": "swimlane-release-workflow",
+      "require": "examples/parity/swimlane_release_workflow",
+      "factory": "ParityFixtures::SwimlaneReleaseWorkflow.diagram",
+      "variants": {
+        "minimal-light": {
+          "status": "captured",
+          "arguments": {
+            "theme": "light",
+            "style": "minimal"
+          }
+        },
+        "minimal-dark": {
+          "status": "captured",
+          "arguments": {
+            "theme": "dark",
+            "style": "minimal"
+          }
+        },
+        "full-editorial": {
+          "status": "captured",
+          "arguments": {
+            "theme": "light",
+            "style": "editorial"
+          }
+        }
+      }
+    },
+    {
+      "id": "venn-product-fit",
+      "require": "examples/parity/venn_product_fit",
+      "factory": "ParityFixtures::VennProductFit.diagram",
+      "variants": {
+        "minimal-light": {
+          "status": "captured",
+          "arguments": {
+            "theme": "light",
+            "style": "minimal"
+          }
+        },
+        "minimal-dark": {
+          "status": "captured",
+          "arguments": {
+            "theme": "dark",
+            "style": "minimal"
+          }
+        },
+        "full-editorial": {
+          "status": "captured",
+          "arguments": {
+            "theme": "light",
+            "style": "editorial"
+          }
+        }
+      }
+    },
+    {
+      "id": "loop-self-improving",
+      "require": "examples/parity/loop_self_improving",
+      "factory": "ParityFixtures::LoopSelfImproving.diagram",
+      "variants": {
+        "minimal-light": {
+          "status": "captured",
+          "arguments": {
+            "theme": "light",
+            "style": "minimal"
+          }
+        },
+        "minimal-dark": {
+          "status": "captured",
+          "arguments": {
+            "theme": "dark",
+            "style": "minimal"
+          }
+        },
+        "full-editorial": {
+          "status": "captured",
+          "arguments": {
+            "theme": "light",
+            "style": "editorial"
+          }
+        }
+      }
+    },
+    {
+      "id": "fishbone-checkout-latency",
+      "require": "examples/parity/fishbone_checkout_latency",
+      "factory": "ParityFixtures::FishboneCheckoutLatency.diagram",
+      "variants": {
+        "minimal-light": {
+          "status": "captured",
+          "arguments": {
+            "theme": "light",
+            "style": "minimal"
+          }
+        },
+        "minimal-dark": {
+          "status": "captured",
+          "arguments": {
+            "theme": "dark",
+            "style": "minimal"
+          }
+        },
+        "full-editorial": {
+          "status": "captured",
+          "arguments": {
+            "theme": "light",
+            "style": "editorial"
+          }
+        }
+      }
+    },
+    {
+      "id": "wardley-ai-value-chain",
+      "require": "examples/parity/wardley_ai_value_chain",
+      "factory": "ParityFixtures::WardleyAIValueChain.diagram",
+      "variants": {
+        "minimal-light": {
+          "status": "captured",
+          "arguments": {
+            "theme": "light",
+            "style": "minimal"
+          }
+        },
+        "minimal-dark": {
+          "status": "captured",
+          "arguments": {
+            "theme": "dark",
+            "style": "minimal"
+          }
+        },
+        "full-editorial": {
+          "status": "captured",
+          "arguments": {
+            "theme": "light",
+            "style": "editorial"
+          }
+        }
+      }
+    },
+    {
+      "id": "bar-sprint-velocity",
+      "require": "examples/parity/bar_sprint_velocity",
+      "factory": "ParityFixtures::BarSprintVelocity.diagram",
+      "variants": {
+        "minimal-light": {
+          "status": "captured",
+          "arguments": {
+            "theme": "light",
+            "style": "minimal"
+          }
+        },
+        "minimal-dark": {
+          "status": "captured",
+          "arguments": {
+            "theme": "dark",
+            "style": "minimal"
+          }
+        },
+        "full-editorial": {
+          "status": "captured",
+          "arguments": {
+            "theme": "light",
+            "style": "editorial"
+          }
+        }
+      }
+    },
+    {
+      "id": "line-weekly-signups",
+      "require": "examples/parity/line_weekly_signups",
+      "factory": "ParityFixtures::LineWeeklySignups.diagram",
+      "variants": {
+        "minimal-light": {
+          "status": "captured",
+          "arguments": {
+            "theme": "light",
+            "style": "minimal"
+          }
+        },
+        "minimal-dark": {
+          "status": "captured",
+          "arguments": {
+            "theme": "dark",
+            "style": "minimal"
+          }
+        },
+        "full-editorial": {
+          "status": "captured",
+          "arguments": {
+            "theme": "light",
+            "style": "editorial"
+          }
+        }
+      }
+    },
+    {
+      "id": "scatter-deploy-frequency",
+      "require": "examples/parity/scatter_deploy_frequency",
+      "factory": "ParityFixtures::ScatterDeployFrequency.diagram",
+      "variants": {
+        "minimal-light": {
+          "status": "captured",
+          "arguments": {
+            "theme": "light",
+            "style": "minimal"
+          }
+        },
+        "minimal-dark": {
+          "status": "captured",
+          "arguments": {
+            "theme": "dark",
+            "style": "minimal"
+          }
+        },
+        "full-editorial": {
+          "status": "captured",
+          "arguments": {
+            "theme": "light",
+            "style": "editorial"
+          }
+        }
+      }
+    },
+    {
+      "id": "radar-storage-backends",
+      "require": "examples/parity/radar_storage_backends",
+      "factory": "ParityFixtures::RadarStorageBackends.diagram",
+      "variants": {
+        "minimal-light": {
+          "status": "captured",
+          "arguments": {
+            "theme": "light",
+            "style": "minimal"
+          }
+        },
+        "minimal-dark": {
+          "status": "captured",
+          "arguments": {
+            "theme": "dark",
+            "style": "minimal"
+          }
+        },
+        "full-editorial": {
+          "status": "captured",
+          "arguments": {
+            "theme": "light",
+            "style": "editorial"
+          }
+        }
+      }
+    },
+    {
+      "id": "polar-request-demand",
+      "require": "examples/parity/polar_request_demand",
+      "factory": "ParityFixtures::PolarRequestDemand.diagram",
+      "variants": {
+        "minimal-light": {
+          "status": "captured",
+          "arguments": {
+            "theme": "light",
+            "style": "minimal"
+          }
+        },
+        "minimal-dark": {
+          "status": "captured",
+          "arguments": {
+            "theme": "dark",
+            "style": "minimal"
+          }
+        },
+        "full-editorial": {
+          "status": "captured",
+          "arguments": {
+            "theme": "light",
+            "style": "editorial"
+          }
+        }
+      }
+    },
+    {
+      "id": "treemap-world-population",
+      "require": "examples/parity/treemap_world_population",
+      "factory": "ParityFixtures::TreemapWorldPopulation.diagram",
+      "variants": {
+        "minimal-light": {
+          "status": "captured",
+          "arguments": {
+            "theme": "light",
+            "style": "minimal"
+          }
+        },
+        "minimal-dark": {
+          "status": "captured",
+          "arguments": {
+            "theme": "dark",
+            "style": "minimal"
+          }
+        },
+        "full-editorial": {
+          "status": "captured",
+          "arguments": {
+            "theme": "light",
+            "style": "editorial"
+          }
+        }
+      }
+    },
+    {
+      "id": "sankey-ci-budget",
+      "require": "examples/parity/sankey_ci_budget",
+      "factory": "ParityFixtures::SankeyCIBudget.diagram",
+      "variants": {
+        "minimal-light": {
+          "status": "captured",
+          "arguments": {
+            "theme": "light",
+            "style": "minimal"
+          }
+        },
+        "minimal-dark": {
+          "status": "captured",
+          "arguments": {
+            "theme": "dark",
+            "style": "minimal"
+          }
+        },
+        "full-editorial": {
+          "status": "captured",
+          "arguments": {
+            "theme": "light",
+            "style": "editorial"
+          }
+        }
+      }
+    },
+    {
+      "id": "it-state-northwind",
+      "require": "examples/parity/it_state_northwind",
+      "factory": "ParityFixtures::ItStateNorthwind.diagram",
+      "variants": {
+        "minimal-light": {
+          "status": "unavailable",
+          "reason": "SlimGraphR has no minimal profile; do not substitute editorial."
+        },
+        "minimal-dark": {
+          "status": "unavailable",
+          "reason": "SlimGraphR has no minimal profile; do not substitute editorial."
+        },
+        "full-editorial": {
+          "status": "unavailable",
+          "reason": "Pinned composition requires unsupported icons, per-component colors, and complete footer semantics."
+        }
+      }
+    },
+    {
+      "id": "high-level-data-stack",
+      "require": "examples/parity/high_level_data_stack",
+      "factory": "ParityFixtures::HighLevelDataStack.diagram",
+      "variants": {
+        "minimal-light": {
+          "status": "unavailable",
+          "reason": "SlimGraphR has no minimal profile; do not substitute editorial."
+        },
+        "minimal-dark": {
+          "status": "unavailable",
+          "reason": "SlimGraphR has no minimal profile; do not substitute editorial."
+        },
+        "full-editorial": {
+          "status": "unavailable",
+          "reason": "Pinned composition requires unsupported icon catalog, vertical concern chevrons, and source-to-component semantics."
+        }
+      }
+    },
+    {
+      "id": "tree-skill-taxonomy",
+      "require": "examples/parity/tree_skill_taxonomy",
+      "factory": "ParityFixtures::TreeSkillTaxonomy.diagram",
+      "variants": {
+        "minimal-light": {
+          "status": "unavailable",
+          "reason": "SlimGraphR has no minimal profile; do not substitute editorial."
+        },
+        "minimal-dark": {
+          "status": "unavailable",
+          "reason": "SlimGraphR has no minimal profile; do not substitute editorial."
+        },
+        "full-editorial": {
+          "status": "captured",
+          "arguments": {
+            "theme": "light",
+            "style": "editorial"
+          }
+        }
+      }
+    },
+    {
+      "id": "nested-claude-hierarchy",
+      "require": "examples/parity/nested_claude_hierarchy",
+      "factory": "ParityFixtures::NestedClaudeHierarchy.diagram",
+      "variants": {
+        "minimal-light": {
+          "status": "unavailable",
+          "reason": "SlimGraphR has no minimal profile; do not substitute editorial."
+        },
+        "minimal-dark": {
+          "status": "unavailable",
+          "reason": "SlimGraphR has no minimal profile; do not substitute editorial."
+        },
+        "full-editorial": {
+          "status": "unavailable",
+          "reason": "SlimGraphR nested containment has scope rings and labels only; it cannot represent the pinned inner CLAUDE.md document, its inherits-every-level-above statement, or the meaning-bearing callouts without a containment content and annotation model."
+        }
+      }
+    },
+    {
+      "id": "org-chart-agent-team",
+      "require": "examples/parity/org_chart_agent_team",
+      "factory": "ParityFixtures::OrgChartAgentTeam.diagram",
+      "variants": {
+        "minimal-light": {
+          "status": "captured",
+          "arguments": {
+            "theme": "light",
+            "style": "minimal"
+          }
+        },
+        "minimal-dark": {
+          "status": "captured",
+          "arguments": {
+            "theme": "dark",
+            "style": "minimal"
+          }
+        },
+        "full-editorial": {
+          "status": "captured",
+          "arguments": {
+            "theme": "light",
+            "style": "editorial"
+          }
+        }
+      }
+    },
+    {
+      "id": "state-article-lifecycle",
+      "require": "examples/parity/state_article_lifecycle",
+      "factory": "ParityFixtures::StateArticleLifecycle.diagram",
+      "variants": {
+        "minimal-light": {
+          "status": "captured",
+          "arguments": {
+            "theme": "light",
+            "style": "minimal"
+          }
+        },
+        "minimal-dark": {
+          "status": "captured",
+          "arguments": {
+            "theme": "dark",
+            "style": "minimal"
+          }
+        },
+        "full-editorial": {
+          "status": "captured",
+          "arguments": {
+            "theme": "light",
+            "style": "editorial"
+          }
+        }
+      }
+    },
+    {
+      "id": "dependency-typescript-monorepo",
+      "require": "examples/parity/dependency_typescript_monorepo",
+      "factory": "ParityFixtures::DependencyTypescriptMonorepo.diagram",
+      "variants": {
+        "minimal-light": {
+          "status": "captured",
+          "arguments": {
+            "theme": "light",
+            "style": "minimal"
+          }
+        },
+        "minimal-dark": {
+          "status": "captured",
+          "arguments": {
+            "theme": "dark",
+            "style": "minimal"
+          }
+        },
+        "full-editorial": {
+          "status": "captured",
+          "arguments": {
+            "theme": "light",
+            "style": "editorial"
+          }
+        }
+      }
+    },
+    {
+      "id": "deployment-checkout-service",
+      "require": "examples/parity/deployment_checkout_service",
+      "factory": "ParityFixtures::DeploymentCheckoutService.diagram",
+      "variants": {
+        "minimal-light": {
+          "status": "captured",
+          "arguments": {
+            "theme": "light",
+            "style": "minimal"
+          }
+        },
+        "minimal-dark": {
+          "status": "captured",
+          "arguments": {
+            "theme": "dark",
+            "style": "minimal"
+          }
+        },
+        "full-editorial": {
+          "status": "captured",
+          "arguments": {
+            "theme": "light",
+            "style": "editorial"
+          }
+        }
+      }
+    },
+    {
+      "id": "architecture-content-site",
+      "require": "examples/parity/architecture_content_site",
+      "factory": "ParityFixtures::ArchitectureContentSite.diagram",
+      "variants": {
+        "minimal-light": {
+          "status": "captured",
+          "arguments": {
+            "theme": "light",
+            "style": "minimal"
+          }
+        },
+        "minimal-dark": {
+          "status": "captured",
+          "arguments": {
+            "theme": "dark",
+            "style": "minimal"
+          }
+        },
+        "full-editorial": {
+          "status": "captured",
+          "arguments": {
+            "theme": "light",
+            "style": "editorial"
+          }
+        }
+      }
+    },
+    {
+      "id": "flowchart-skill-decision",
+      "require": "examples/parity/flowchart_skill_decision",
+      "factory": "ParityFixtures::FlowchartSkillDecision.diagram",
+      "variants": {
+        "minimal-light": {
+          "status": "captured",
+          "arguments": {
+            "theme": "light",
+            "style": "minimal"
+          }
+        },
+        "minimal-dark": {
+          "status": "captured",
+          "arguments": {
+            "theme": "dark",
+            "style": "minimal"
+          }
+        },
+        "full-editorial": {
+          "status": "captured",
+          "arguments": {
+            "theme": "light",
+            "style": "editorial"
+          }
+        }
+      }
+    },
+    {
+      "id": "sequence-article-request",
+      "require": "examples/parity/sequence_article_request",
+      "factory": "ParityFixtures::SequenceArticleRequest.diagram",
+      "variants": {
+        "minimal-light": {
+          "status": "captured",
+          "arguments": {
+            "theme": "light",
+            "style": "minimal"
+          }
+        },
+        "minimal-dark": {
+          "status": "captured",
+          "arguments": {
+            "theme": "dark",
+            "style": "minimal"
+          }
+        },
+        "full-editorial": {
+          "status": "captured",
+          "arguments": {
+            "theme": "light",
+            "style": "editorial"
+          }
+        }
+      }
+    },
+    {
+      "id": "er-publishing-domain",
+      "require": "examples/parity/er_publishing_domain",
+      "factory": "ParityFixtures::ERPublishingDomain.diagram",
+      "variants": {
+        "minimal-light": {
+          "status": "captured",
+          "arguments": {
+            "theme": "light",
+            "style": "minimal"
+          }
+        },
+        "minimal-dark": {
+          "status": "captured",
+          "arguments": {
+            "theme": "dark",
+            "style": "minimal"
+          }
+        },
+        "full-editorial": {
+          "status": "captured",
+          "arguments": {
+            "theme": "light",
+            "style": "editorial"
+          }
+        }
+      }
+    },
+    {
+      "id": "db-schema-checkout",
+      "require": "examples/parity/db_schema_checkout",
+      "factory": "ParityFixtures::DBSchemaCheckout.diagram",
+      "variants": {
+        "minimal-light": {
+          "status": "captured",
+          "arguments": {
+            "theme": "light",
+            "style": "minimal"
+          }
+        },
+        "minimal-dark": {
+          "status": "captured",
+          "arguments": {
+            "theme": "dark",
+            "style": "minimal"
+          }
+        },
+        "full-editorial": {
+          "status": "captured",
+          "arguments": {
+            "theme": "light",
+            "style": "editorial"
+          }
+        }
+      }
+    },
+    {
+      "id": "uml-class-payments",
+      "require": "examples/parity/uml_class_payments",
+      "factory": "ParityFixtures::UMLClassPayments.diagram",
+      "variants": {
+        "minimal-light": {
+          "status": "captured",
+          "arguments": {
+            "theme": "light",
+            "style": "minimal"
+          }
+        },
+        "minimal-dark": {
+          "status": "captured",
+          "arguments": {
+            "theme": "dark",
+            "style": "minimal"
+          }
+        },
+        "full-editorial": {
+          "status": "captured",
+          "arguments": {
+            "theme": "light",
+            "style": "editorial"
+          }
+        }
+      }
+    },
+    {
+      "id": "quadrant-publication-priorities",
+      "require": "examples/parity/quadrant_publication_priorities",
+      "factory": "ParityFixtures::QuadrantPublicationPriorities.diagram",
+      "variants": {
+        "minimal-light": {
+          "status": "captured",
+          "arguments": {
+            "theme": "light",
+            "style": "minimal"
+          }
+        },
+        "minimal-dark": {
+          "status": "captured",
+          "arguments": {
+            "theme": "dark",
+            "style": "minimal"
+          }
+        },
+        "full-editorial": {
+          "status": "captured",
+          "arguments": {
+            "theme": "light",
+            "style": "editorial"
+          }
+        }
+      }
+    },
+    {
+      "id": "timeline-product-launch",
+      "require": "examples/parity/timeline_product_launch",
+      "factory": "ParityFixtures::TimelineProductLaunch.diagram",
+      "variants": {
+        "minimal-light": {
+          "status": "captured",
+          "arguments": {
+            "theme": "light",
+            "style": "minimal"
+          }
+        },
+        "minimal-dark": {
+          "status": "captured",
+          "arguments": {
+            "theme": "dark",
+            "style": "minimal"
+          }
+        },
+        "full-editorial": {
+          "status": "captured",
+          "arguments": {
+            "theme": "light",
+            "style": "editorial"
+          }
+        }
+      }
+    }
+  ]
+}

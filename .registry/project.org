@@ -1,0 +1,43 @@
+* Project Identity
+:PROPERTIES:
+:UREGISTRY_SCHEMA_VERSION: 1
+:ID: tool:slim_graph_r
+:KIND: tool
+:SCOPE: project
+:END:
+
+Ruby DSL that turns an expressive intent description into a rendered, editorial-quality SVG diagram — deterministic layout/labels/routing so an agent authors intent, not SVG coordinates.
+
+* Purpose
+
+Agent-authored architecture/flow diagrams with a compact authoring surface (fewer tokens spent
+describing the picture) and a real deterministic renderer (not an LLM drawing SVG by hand).
+Not yet published to RubyGems as of 2026-09-08 (checkout-only). Own benchmark
+(docs/benchmark.md, tiktoken o200k_base) shows the Ruby DSL authors ~88% fewer tokens than a
+manually-written SVG for an equivalent diagram (76 vs 619 tokens) — but Mermaid authors the same
+diagram in fewer tokens still (42 vs 76), a real open question for any token-efficiency roadmap:
+the win over hand-written SVG is real, the win over Mermaid is not yet established and needs the
+generated-SVG-quality tradeoff named explicitly, not assumed.
+
+* Default Usage Guidance
+
+* Key Capabilities
+
+* Important Components
+
+* Inputs and Outputs
+** Inputs
+** Outputs
+** Streams / Artifacts
+
+* Conventions
+** Preferred Tools
+** Preferred Formats
+** Logging / Monitoring
+** Storage
+
+* Important Paths
+
+* How To Query This Project
+
+* Relationships

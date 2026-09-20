@@ -1,0 +1,5 @@
+source 'https://rubygems.org'
+gemspec path: File.expand_path('..', __dir__)
+gem 'rspec', '~> 3.13'
+gem 'rake', '~> 13.0'
+gem 'rexml', '~> 3.4', require: false

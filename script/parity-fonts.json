@@ -1,0 +1,34 @@
+{
+  "schema": "slim_graph_r/parity-fonts-v1",
+  "source": "Google Fonts CSS request pinned for Chromium capture; binaries are vendored for development/audit only",
+  "faces": [
+    {
+      "family": "Geist",
+      "style": "normal",
+      "weight": "400 600",
+      "path": "vendor/diagram-design/fonts/geist-latin.woff2",
+      "sha256": "9b6f5ff45b278c744b5f379a2c4ecbaf858a842b8eaf82ac8d21b699ca16c608"
+    },
+    {
+      "family": "Geist Mono",
+      "style": "normal",
+      "weight": "400 600",
+      "path": "vendor/diagram-design/fonts/geist-mono-latin.woff2",
+      "sha256": "5f3d6ad60f29d6cb708414ec6887163d63bf197377ef5417d2483ff31ace6c3b"
+    },
+    {
+      "family": "Instrument Serif",
+      "style": "normal",
+      "weight": "400",
+      "path": "vendor/diagram-design/fonts/instrument-serif-latin.woff2",
+      "sha256": "60c06664b5a95c7de6cc3e00d1f9034d78bd1e40b564016b241674449a067d4d"
+    },
+    {
+      "family": "Instrument Serif",
+      "style": "italic",
+      "weight": "400",
+      "path": "vendor/diagram-design/fonts/instrument-serif-italic-latin.woff2",
+      "sha256": "6ee678c33f388dd7ba59700ebea635deb98821baafd817b09891f7927177f702"
+    }
+  ]
+}

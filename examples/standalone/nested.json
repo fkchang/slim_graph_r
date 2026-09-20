@@ -1,0 +1,17 @@
+{
+  "type": "nested",
+  "title": "Instruction cascade",
+  "scope": {
+    "id": "organization",
+    "label": "Organization",
+    "scope": {
+      "id": "repository",
+      "label": "Repository",
+      "scope": {
+        "id": "workspace",
+        "label": "Workspace",
+        "scope": { "id": "task", "label": "Task" }
+      }
+    }
+  }
+}

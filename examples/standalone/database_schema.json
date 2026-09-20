@@ -1,0 +1,31 @@
+{
+  "type": "db_schema",
+  "title": "Checkout persistence · 注文",
+  "tables": [
+    {
+      "id": "customers",
+      "label": "customers",
+      "schema": "public",
+      "columns": [
+        {"id": "id", "label": "id", "sql_type": "uuid", "constraints": ["pk"]},
+        {"id": "email", "label": "email", "sql_type": "text", "constraints": ["uq", "nn"]}
+      ],
+      "indexes": ["uq_customers_email"]
+    },
+    {
+      "id": "orders",
+      "label": "orders",
+      "schema": "public",
+      "columns": [
+        {"id": "id", "label": "id", "sql_type": "uuid", "constraints": ["pk"]},
+        {"id": "customer_id", "label": "customer_id", "sql_type": "uuid", "constraints": ["fk", "nn"]},
+        {"id": "total_cents", "label": "total_cents", "sql_type": "integer", "constraints": ["nn"]}
+      ],
+      "indexes": ["idx_orders_customer_id"],
+      "overflow_columns": 2
+    }
+  ],
+  "foreign_keys": [
+    {"from_table": "orders", "from_column": "customer_id", "to_table": "customers", "to_column": "id", "on_delete": "restrict"}
+  ]
+}

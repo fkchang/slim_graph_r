@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "name": "flowchart-v0",
+  "viewport": { "width": 1440, "height": 1000, "device_scale_factor": 1 },
+  "browser": "chromium",
+  "cases": [
+    { "baseline_case_id": "flowchart:minimal-light", "local_fixture": "flowchart-skill-decision", "local_variant": "minimal-light", "local_render": "captured" },
+    { "baseline_case_id": "flowchart:minimal-dark", "local_fixture": "flowchart-skill-decision", "local_variant": "minimal-dark", "local_render": "captured" },
+    { "baseline_case_id": "flowchart:full-editorial", "local_fixture": "flowchart-skill-decision", "local_variant": "full-editorial", "local_render": "captured" }
+  ]
+}

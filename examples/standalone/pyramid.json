@@ -1,0 +1,13 @@
+{
+  "type": "pyramid",
+  "title": "Audience qualification",
+  "orientation": "funnel",
+  "mode": "measured",
+  "unit": "accounts",
+  "levels": [
+    {"id":"reach","label":"Reach","from":12000,"to":4800},
+    {"id":"engage","label":"Engage","from":4800,"to":1440},
+    {"id":"qualify","label":"Qualify","from":1440,"to":420,"focal":true},
+    {"id":"convert","label":"Convert","from":420,"to":126}
+  ]
+}
