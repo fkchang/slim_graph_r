@@ -7,7 +7,7 @@ Gem::Specification.new do |s|
   s.authors = ['SlimGraphR contributors']
   s.license = 'MIT'
   s.required_ruby_version = '>= 3.1'
-  s.files = Dir['lib/**/*.rb', 'exe/*', 'skills/**/*', 'docs/for_llms.md', 'docs/benchmark.md', 'docs/usage.md', 'docs/json-input.md', 'docs/dependencies.md', 'docs/deployments.md', 'docs/it-current-state.md', 'docs/org-charts.md', 'docs/state-machines.md', 'docs/sequence.md', 'docs/timeline.md', 'docs/roadmap/*.{md,json}', 'assets/concepts/ruby-press-v1.png', 'examples/**/*', 'vendor/**/*', 'README.md', 'LICENSE']
+  s.files = Dir['lib/**/*.rb', 'exe/*', 'skills/**/*', 'docs/for_llms.md', 'docs/benchmark.md', 'docs/usage.md', 'docs/json-input.md', 'docs/dependencies.md', 'docs/deployments.md', 'docs/it-current-state.md', 'docs/org-charts.md', 'docs/state-machines.md', 'docs/sequence.md', 'docs/timeline.md', 'docs/roadmap/*.{md,json}', 'assets/concepts/ruby-press-v1.jpg', 'examples/**/*', 'vendor/**/*', 'README.md', 'LICENSE']
   s.files += Dir['docs/high-level.md']
   s.files += Dir['docs/trees.md', 'docs/nested-containment.md', 'docs/layer-stacks.md']
   s.files += Dir['docs/pyramids.md', 'docs/medallions.md']

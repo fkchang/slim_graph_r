@@ -1,6 +1,6 @@
 # SlimGraphR
 
-![A small Ruby drafting press turns a compact description into a clear picture](assets/concepts/ruby-press-v1.png)
+![A small Ruby drafting press turns a compact description into a clear picture](assets/concepts/ruby-press-v1.jpg)
 
 **Express intention. Get the picture.**
 
