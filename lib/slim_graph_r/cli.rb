@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 require 'optparse'
 require 'tempfile'
+require 'fileutils'
 require_relative 'document'
 
 module SlimGraphR
@@ -34,6 +35,7 @@ module SlimGraphR
       when '-v', '--version', 'version' then @output.puts("slimgraph #{VERSION}"); 0
       when 'types' then @output.puts(Diagram::TYPES.join("\n")); 0
       when 'styles' then @output.puts(Style.names.join("\n")); 0
+      when 'install-skill' then install_skill(args)
       when 'render' then render(args)
       else raise OptionParser::InvalidArgument, "unknown command #{command.inspect}. Use slimgraph --help."
       end
@@ -58,6 +60,7 @@ module SlimGraphR
         slimgraph render - --input-format json --format svg
         slimgraph types
         slimgraph styles
+        slimgraph install-skill [--global] [--force]
 
         Render options:
           -o, --output PATH        Output file; default stdout (or use -)
@@ -71,6 +74,48 @@ module SlimGraphR
         Ruby documents execute as local Ruby code. JSON is validated data.
         Input limit: 1 MiB. Errors go to stderr; stdout contains only the result.
       TEXT
+    end
+
+    def install_skill(args)
+      options = {}
+      parser = OptionParser.new do |p|
+        p.on('-g', '--global') { options[:global] = true }
+        p.on('--force') { options[:force] = true }
+        p.on('-h', '--help') { @output.puts(help); return 0 }
+      end
+      parser.parse!(args)
+      raise OptionParser::InvalidArgument, "unexpected arguments: #{args.join(' ')}" unless args.empty?
+
+      source = File.expand_path('../../skills/slim-graph-r', __dir__)
+      raise Error, "Packaged skill is missing: #{source}" unless File.file?(File.join(source, 'SKILL.md'))
+
+      roots = if options[:global]
+        [File.expand_path('~/.agents/skills'), File.expand_path('~/.claude/skills')]
+      else
+        [File.join(Dir.pwd, '.agents', 'skills'), File.join(Dir.pwd, '.claude', 'skills')]
+      end
+
+      roots.each do |root|
+        FileUtils.mkdir_p(root)
+        install_skill_link(source, File.join(root, 'slim-graph-r'), force: options[:force])
+      end
+
+      scope = options[:global] ? 'globally' : 'in this project'
+      @output.puts("Installed SlimGraphR diagram chooser #{scope}:")
+      roots.each { |root| @output.puts("  #{File.join(root, 'slim-graph-r')}") }
+      @output.puts('Agents can now choose one diagram family and load its reference on demand.')
+      0
+    end
+
+    def install_skill_link(source, destination, force:)
+      if File.symlink?(destination)
+        return if File.expand_path(File.readlink(destination), File.dirname(destination)) == source
+        File.unlink(destination)
+      elsif File.exist?(destination)
+        raise Error, "Skill destination already exists: #{destination}. Use --force to replace it." unless force
+        FileUtils.rm_rf(destination)
+      end
+      FileUtils.ln_s(source, destination)
     end
 
     def render(args)

@@ -1,0 +1,4 @@
+interface:
+  display_name: "SlimGraphR Diagram Chooser"
+  short_description: "Choose and author the right SlimGraphR diagram"
+  default_prompt: "Choose the most honest diagram for this information and render it with SlimGraphR."

@@ -134,7 +134,7 @@ Dir.mktmpdir('slimgraph-package-') do |dir|
   command.call(RbConfig.ruby, cli, 'render', source, '-o', output)
   html = File.read(output, encoding: 'UTF-8')
   abort 'Missing Venn semantics' unless html.include?('data-sgr-venn="true"') &&
-    html.include?('data-sgr-venn-focal-clip="true"') && html.include?('data-sgr-display-scale="1.143"') &&
+    html.include?('data-sgr-venn-focal-clip="true"') && html.include?('data-sgr-display-scale="1"') &&
     html.include?('適合') && html.include?('area and population are not quantitative')
   guide = File.join(gem_root, 'docs', 'venn.md')
   abort 'Missing Venn guide' unless File.file?(guide) && File.binread(guide) == File.binread(File.join(root, 'docs', 'venn.md'))
@@ -162,7 +162,7 @@ Dir.mktmpdir('slimgraph-package-') do |dir|
   html = File.read(output, encoding: 'UTF-8')
   abort 'Missing Wardley semantics' unless html.include?('data-sgr-wardley="true"') &&
     html.include?('data-sgr-wardley-dependency=') && html.include?('data-sgr-wardley-movement=') &&
-    html.include?('data-sgr-display-scale="1.143"') && html.include?('not calculated scores')
+    html.include?('data-sgr-display-scale="1"') && html.include?('not calculated scores')
   guide = File.join(gem_root, 'docs', 'wardley-maps.md')
   abort 'Missing Wardley guide' unless File.file?(guide) && File.binread(guide) == File.binread(File.join(root, 'docs', 'wardley-maps.md'))
   { 'bar' => 'bar-charts', 'line' => 'line-charts', 'scatter' => 'scatter-plots' }.each do |name, guide_name|

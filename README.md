@@ -53,6 +53,19 @@ Already in a Ruby project? Add a path dependency while developing:
 gem 'slim_graph_r', path: '../slim_graph_r'
 ```
 
+## Give your agent diagram judgment
+
+SlimGraphR ships a progressive-disclosure skill that chooses from the reader's question before it reaches for syntax. The entrypoint routes to one of six families—systems, data, flow, hierarchy, strategy, or quantitative—then loads only that family's type distinctions, evidence gates, and executable Ruby pattern.
+
+```sh
+slimgraph install-skill           # this project
+slimgraph install-skill --global  # your user skill directories
+```
+
+The installer serves Codex, Gemini CLI, GitHub Copilot, and Claude through their standard skill directories. It protects an existing customized skill unless you explicitly pass `--force`.
+
+The chooser is informed by **[Cathryn Lavery's Diagram Design](https://github.com/cathrynlavery/diagram-design)**, [From Data to Viz](https://www.data-to-viz.com/), and the [C4 model](https://c4model.com/diagrams); SlimGraphR's executable examples and limits remain the final contract.
+
 ## A small vocabulary that earns its keep
 
 ```ruby
@@ -68,7 +81,7 @@ edge :review, :revise, 'Needs changes'
 
 `flow` handles a chain. `edge` says something specific about a connection. IDs become readable names, so `node :background_worker` already knows what to put in the box. Give it an explicit label when the wording matters. Typos in references fail loudly.
 
-Thirty-one diagram types ship today:
+Thirty-nine diagram types ship today:
 
 | Type | Tell it about |
 | --- | --- |
