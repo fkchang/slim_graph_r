@@ -30,7 +30,7 @@ RSpec.describe 'the browser-safe StreamWeaver entrypoint' do
     RUBY
 
     stdout, stderr, status = Open3.capture3(
-      { 'BUNDLE_GEMFILE' => nil, 'RUBYOPT' => nil },
+      { 'BUNDLE_GEMFILE' => nil, 'BUNDLE_BIN_PATH' => nil, 'RUBYOPT' => nil, 'RUBYLIB' => nil },
       RbConfig.ruby, '-I', File.expand_path('../../lib', __dir__), '-e', script
     )
 
