@@ -17,7 +17,7 @@ jobs:
         with:
           ruby-version: ${{ matrix.ruby }}
           bundler-cache: true
-      - run: bundle exec rspec --exclude-pattern 'spec/integration/**/*_spec.rb'
+      - run: bundle exec rspec --exclude-pattern 'spec/{integration,local}/**/*_spec.rb'
       - run: ruby bin/check-package
   stream-weaver:
     strategy:

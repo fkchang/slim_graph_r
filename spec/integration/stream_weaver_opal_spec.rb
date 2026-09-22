@@ -2,7 +2,7 @@
 
 require 'open3'
 require 'rbconfig'
-require_relative 'spec_helper'
+require_relative '../spec_helper'
 
 RSpec.describe 'the browser-safe StreamWeaver entrypoint' do
   it 'adds the diagram DSL to an existing StreamWeaver runtime without loading the server entrypoint' do
@@ -31,7 +31,7 @@ RSpec.describe 'the browser-safe StreamWeaver entrypoint' do
 
     stdout, stderr, status = Open3.capture3(
       { 'BUNDLE_GEMFILE' => nil, 'RUBYOPT' => nil },
-      RbConfig.ruby, '-I', File.expand_path('../lib', __dir__), '-e', script
+      RbConfig.ruby, '-I', File.expand_path('../../lib', __dir__), '-e', script
     )
 
     expect(status).to be_success, stderr

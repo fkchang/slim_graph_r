@@ -232,7 +232,7 @@ For a core-only development bundle:
 
 ```sh
 BUNDLE_GEMFILE=gemfiles/core.gemfile bundle install
-BUNDLE_GEMFILE=gemfiles/core.gemfile bundle exec rspec --exclude-pattern 'spec/integration/**/*_spec.rb'
+BUNDLE_GEMFILE=gemfiles/core.gemfile bundle exec rspec --exclude-pattern 'spec/{integration,local}/**/*_spec.rb'
 ```
 
 Contributions that improve the real picture are especially welcome: difficult semantic fixtures, clearer DSL examples, robust routing, accessible output, and carefully implemented new types. Every new type needs its own meaning and evidence, not an alias to a box renderer.

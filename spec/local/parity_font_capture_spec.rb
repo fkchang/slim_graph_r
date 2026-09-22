@@ -3,10 +3,10 @@
 require 'digest'
 require 'json'
 require 'open3'
-require_relative 'spec_helper'
+require_relative '../spec_helper'
 
 RSpec.describe 'Deterministic parity font capture' do
-  ROOT_FONT_CAPTURE = File.expand_path('..', __dir__)
+  ROOT_FONT_CAPTURE = File.expand_path('../..', __dir__)
 
   it 'pins each locally intercepted capture face and excludes it from the gem runtime payload' do
     manifest = JSON.parse(File.read(File.join(ROOT_FONT_CAPTURE, 'script/parity-fonts.json')))

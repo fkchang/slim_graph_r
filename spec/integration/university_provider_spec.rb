@@ -222,6 +222,8 @@ RSpec.describe 'SlimGraphR University provider' do
           dependencies = {}
           collect = lambda do |spec|
             spec.runtime_dependencies.each do |dependency|
+              next if %w[slim_graph_r stream_weaver].include?(dependency.name)
+
               candidate = Gem::Specification.find_all_by_name(dependency.name, dependency.requirement)
                                         .reject(&:default_gem?).max_by(&:version)
               abort "missing cached dependency \#{dependency.name}" unless candidate

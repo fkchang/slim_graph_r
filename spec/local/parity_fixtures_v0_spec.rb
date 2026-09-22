@@ -5,7 +5,7 @@ require 'digest'
 require 'open3'
 
 RSpec.describe 'V0 parity fixtures' do
-  ROOT = File.expand_path('..', __dir__)
+  ROOT = File.expand_path('../..', __dir__)
   INDEX = JSON.parse(File.read(File.join(ROOT, 'docs/roadmap/parity-fixtures-v0.json'), encoding: Encoding::UTF_8))
 
   it 'contains the pinned 39 by 3 baseline without verified promotion' do
