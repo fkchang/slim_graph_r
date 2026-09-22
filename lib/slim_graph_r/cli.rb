@@ -165,8 +165,9 @@ module SlimGraphR
       $stdout = @errors
       context = RubyContext.new
       value = context.evaluate(source, path == '-' ? '(stdin)' : File.expand_path(path), 1)
-      model = context.result || value
-      unless model.is_a?(Diagram) || model.is_a?(Quantitative::Chart) || model.is_a?(AreaConservation::Chart) || model.is_a?(Radial::Chart)
+      supported = [Diagram, Motion::Presentation, Quantitative::Chart, AreaConservation::Chart, Radial::Chart]
+      model = [value, context.result].find { |candidate| supported.any? { |klass| candidate.is_a?(klass) } }
+      unless model
         raise Error, 'Ruby document must declare or return a SlimGraphR diagram'
       end
       model

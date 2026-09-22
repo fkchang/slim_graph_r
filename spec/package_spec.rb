@@ -40,6 +40,13 @@ RSpec.describe 'the 0.30.0 package manifest' do
     expect(specification.runtime_dependencies.fetch(1).requirement).to be_satisfied_by(Gem::Version.new('0.6.3'))
     expect(specification.files).to include(
       'CHANGELOG.md',
+      'lib/slim_graph_r/motion.rb',
+      'lib/slim_graph_r/motion_player.rb',
+      'docs/motion-contract.md',
+      'examples/standalone/fan_in_queue_animated.rb',
+      'examples/standalone/policy_trace_animated.rb',
+      'examples/standalone/secure_paved_road_animated.rb',
+      'examples/stream_weaver/motion.rb',
       'lib/slim_graph_r/radial.rb',
       'lib/slim_graph_r/radial_svg.rb',
       'examples/standalone/polar.rb',

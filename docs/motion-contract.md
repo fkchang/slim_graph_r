@@ -1,22 +1,22 @@
 # Motion contract
 
-> **Status: design proposal.** SlimGraphR 0.30.0 does not ship animation or a `motion:` argument. The APIs and records below define the intended compatibility target for future implementation.
+> **Status: implemented thin motion layer.** Graph-backed diagrams can attach an immutable storyboard and render controllable standalone HTML. Ordinary SVG remains complete and static. Pattern-specific queue, policy, and security calculations remain authored facts rather than inferred behavior.
 
-SlimGraphR may eventually reveal an argument over time, but Ruby must remain the source of semantic truth. Ruby validates the model, computes geometry, renders every SVG element, and supplies ordered step descriptions. A small shared browser player advances already-rendered groups.
+SlimGraphR can reveal an argument over time, while Ruby remains the source of semantic truth. Ruby validates the model, computes geometry, renders every SVG element, and supplies ordered step descriptions. A small shared browser player advances already-rendered groups.
 
-The first target patterns are inspired by Diagram Design's [fan-in queue](https://github.com/cathrynlavery/diagram-design/blob/main/skills/diagram-design/assets/example-queue-animated.html), [paired policy trace](https://github.com/cathrynlavery/diagram-design/blob/main/skills/diagram-design/assets/example-policy-trace-animated.html), and [secure paved road](https://github.com/cathrynlavery/diagram-design/blob/main/skills/diagram-design/assets/example-paved-road-animated.html). SlimGraphR will implement its own model, layout, renderer, and player under the upstream MIT attribution already vendored in this repository.
+The first examples are inspired by Diagram Design's [fan-in queue](https://github.com/cathrynlavery/diagram-design/blob/main/skills/diagram-design/assets/example-queue-animated.html), [paired policy trace](https://github.com/cathrynlavery/diagram-design/blob/main/skills/diagram-design/assets/example-policy-trace-animated.html), and [secure paved road](https://github.com/cathrynlavery/diagram-design/blob/main/skills/diagram-design/assets/example-paved-road-animated.html). SlimGraphR implements its own storyboard, renderer integration, and player under the upstream MIT attribution already vendored in this repository.
 
-## Proposed common envelope
+## Common envelope
 
 Every animated document exposes one stable protocol:
 
-- A focusable `data-motion-root` with mode, step count, current step, and frame state.
+- A focusable `data-sgr-motion-root` with mode, step count, current step, and frame state.
 - One or more SVG groups marked `data-motion-item` and `data-step`.
 - A complete plain-language `aria-label` for each step.
-- Previous, next, play, pause, and replay controls with 44px targets.
+- Previous, next, play/pause, and replay controls with 44px targets.
 - Arrow-key, Home/End, Space, and replay-key operation.
 - An `aria-live` status region that announces user-initiated changes.
-- `motion=static` and exact-step query modes for deterministic output and tests.
+- `motion=static` and `motion=step&step=N` query modes for deterministic output and tests.
 - `prefers-reduced-motion`, print, and no-script fallbacks that show the complete final figure.
 - Visibility pause and one shared timing/easing token set.
 
@@ -32,24 +32,34 @@ The generic player toggles cumulative visibility and current-step state. It cont
 
 Replacement and current-focus behavior are expressed through renderer-owned classes and root data attributes. A pattern may not ship custom JavaScript.
 
-## Proposed Ruby-side records
+## Ruby API
 
-A future implementation should keep the motion layer small:
+The motion layer stays small:
 
-- `Motion::Storyboard`: mode, ordered steps, static-final description.
-- `Motion::Step`: positive number, accessible label, semantic item IDs.
-- Pattern records: sources/rules/zones, supplied values, and validated outcomes.
-- Renderer mapping: semantic item ID to one or more SVG groups and optional replacement/current classes.
+- `Motion::Storyboard`: ordered, contiguous reveal steps.
+- `Motion::Step`: positive number, accessible label, semantic item IDs, and optional replacements.
+- `Motion::Presentation`: immutable pairing of one diagram and one storyboard.
+- Renderer mapping: graph node IDs and explicit `route(:source, :target)` targets to SVG groups.
 
-For the fan-in queue, Ruby must validate compatible rate units, positive finite capacity and service rate, depth not exceeding capacity, and explicitly named overflow/admitted outcomes. Derived values such as `shed_rate = max(total_arrival - service_rate, 0)` are rendered as derived values, never silently authored facts.
+The thin layer does not calculate queue capacity, policy outcomes, or enforcement. Those remain explicit authored facts in the underlying diagram. A future dedicated queue type would need compatible rate units, positive finite capacity and service rate, and explicit admitted and shed outcomes before it could derive values honestly.
 
-## Planned output modes
+## Output modes
 
-- Existing `to_svg` continues to render the complete final static frame with no player dependency.
-- A future `to_html(motion: :steps)` would embed or reference the shared player and start at step zero.
-- A future `to_html(motion: :reveal)` may autoplay once and remain controllable.
-- A future `to_html(motion: :static)` would render the complete final frame with controls unavailable.
-- A future StreamWeaver/extension implementation should use the same data contract and bundle the player under its CSP rather than execute document-authored scripts.
+- `presentation.to_svg` renders the complete final static frame with no player dependency.
+- `presentation.to_html(motion: :steps)` embeds the shared player and starts at step one.
+- `presentation.to_html(motion: :reveal)` autoplays once and remains controllable.
+- `presentation.to_html(motion: :static)` renders the storyboard's complete final frame without controls or script.
+- StreamWeaver uses the same fragment and data contract. Its extension build bundles the SlimGraphR player as local CSP-compatible code rather than executing document-authored scripts.
+
+```ruby
+presentation = diagram.storyboard do
+  reveal 1, :signed_commit, 'Signed commit enters the paved road'
+  reveal 2, :build, route(:signed_commit, :build),
+    'CI builds the artifact and records provenance'
+end
+```
+
+Targets are graph node IDs or explicit `route(:source, :target)` objects. Steps are contiguous, a target is revealed once, and `replaces:` hides an earlier target from that step onward. Unsupported or missing targets raise an actionable error. Explicit route objects prevent collisions when node IDs contain hyphens.
 
 ## Release gates
 

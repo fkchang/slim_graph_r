@@ -79,6 +79,11 @@ Dir.mktmpdir('slimgraph-package-') do |dir|
   command.call(RbConfig.ruby, cli, 'render', File.join(gem_root, 'examples/standalone/state_machine.json'), '-o', File.join(dir, 'state-machine.html'))
   command.call(RbConfig.ruby, cli, 'render', File.join(gem_root, 'examples/standalone/dependency.json'), '-o', File.join(dir, 'dependency.html'))
   command.call(RbConfig.ruby, cli, 'render', File.join(gem_root, 'examples/standalone/deployment.json'), '-o', File.join(dir, 'deployment.html'))
+  motion_output = File.join(dir, 'motion.html')
+  command.call(RbConfig.ruby, cli, 'render', File.join(gem_root, 'examples/standalone/fan_in_queue_animated.rb'), '-o', motion_output)
+  motion_html = File.read(motion_output, encoding: 'UTF-8')
+  motion_contract = ['data-sgr-motion-root', 'data-motion-action="replay"', 'SlimGraphRMotion']
+  abort 'Missing packaged motion player' unless motion_contract.all? { |marker| motion_html.include?(marker) }
   %w[swimlane process].each do |name|
     source = File.join(gem_root, 'examples', 'standalone', "#{name}.json")
     output = File.join(dir, "#{name}.html")

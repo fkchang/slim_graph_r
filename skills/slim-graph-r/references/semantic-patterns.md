@@ -22,6 +22,6 @@ Require labeled trust zones, identities, permitted ingress, a privileged gate, a
 
 ## Motion
 
-These patterns may eventually use ordered reveal, but animation cannot carry unique meaning. The complete final frame, step descriptions, print, no-script, and reduced-motion outputs must remain sufficient. A future shared protocol is proposed in `docs/motion-contract.md`; animation is not shipped in SlimGraphR 0.30.0.
+These patterns may use ordered reveal, but animation cannot carry unique meaning. The complete final frame, step descriptions, print, no-script, and reduced-motion outputs must remain sufficient. Graph-backed diagrams can attach a storyboard of semantic node IDs and explicit `route(:source, :target)` objects; see `docs/motion-contract.md`.
 
 Inspired by [Diagram Design's semantic-pattern research](https://github.com/cathrynlavery/diagram-design/blob/main/skills/diagram-design/references/semantic-patterns.md); this file narrows the patterns to SlimGraphR's supported Ruby contracts.

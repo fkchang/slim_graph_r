@@ -210,6 +210,23 @@ That adds a real `diagram` component to StreamWeaver's shared DSL. It works in a
 
 The [StreamWeaver examples](examples/stream_weaver/) live here alongside the [standalone examples](examples/standalone/). The renderer stays useful on its own. Other components in a StreamWeaver page may request their own assets; the diagram SVG needs none.
 
+## Let the argument unfold
+
+Graph-backed diagrams can attach a small storyboard without changing their static SVG:
+
+```ruby
+animated = diagram.storyboard do
+  reveal 1, :signed_commit, 'Signed commit enters the paved road'
+  reveal 2, :build, route(:signed_commit, :build),
+    'CI builds the artifact and records provenance'
+end
+
+animated.to_svg                    # complete static figure
+animated.to_html(motion: :steps)   # keyboard-accessible reveal
+```
+
+The shared player supports previous, next, play/pause, replay, exact-step URLs, reduced motion, print and no-script output. `replaces:` handles state replacement; the current step receives a separate focus treatment. See the executable [fan-in queue](examples/standalone/fan_in_queue_animated.rb), [policy trace](examples/standalone/policy_trace_animated.rb), and [secure paved road](examples/standalone/secure_paved_road_animated.rb).
+
 ## Honest by construction
 
 SlimGraphR refuses to turn a plausible picture into a false claim. Qualitative positions remain authored judgments. Quantitative marks require compatible units and explicit domains. Missing permissions, relationships, dates, capacity and causality are never inferred.
@@ -237,7 +254,7 @@ BUNDLE_GEMFILE=gemfiles/core.gemfile bundle exec rspec --exclude-pattern 'spec/{
 
 Contributions that improve the real picture are especially welcome: difficult semantic fixtures, clearer DSL examples, robust routing, accessible output, and carefully implemented new types. Every new type needs its own meaning and evidence, not an alias to a box renderer.
 
-[Usage guide](docs/usage.md) · [Agent authoring guide](docs/for_llms.md) · [Motion design proposal](docs/motion-contract.md) · [Bar guide](docs/bar-charts.md) · [Line guide](docs/line-charts.md) · [Scatter guide](docs/scatter-plots.md) · [Wardley guide](docs/wardley-maps.md) · [Fishbone guide](docs/fishbones.md) · [State-machine guide](docs/state-machines.md) · [Dependency guide](docs/dependencies.md) · [Deployment guide](docs/deployments.md) · [IT current-state guide](docs/it-current-state.md) · [High-level guide](docs/high-level.md) · [Tree guide](docs/trees.md) · [Nested containment guide](docs/nested-containment.md) · [Layer-stack guide](docs/layer-stacks.md) · [Pyramid guide](docs/pyramids.md) · [Medallion guide](docs/medallions.md) · [Swimlane guide](docs/swimlanes.md) · [Process guide](docs/processes.md) · [Gantt guide](docs/gantt.md) · [Kanban guide](docs/kanban.md) · [Journey guide](docs/journeys.md) · [Story-map guide](docs/story-maps.md) · [Benchmark method](docs/benchmark.md)
+[Usage guide](docs/usage.md) · [Agent authoring guide](docs/for_llms.md) · [Motion guide](docs/motion-contract.md) · [Bar guide](docs/bar-charts.md) · [Line guide](docs/line-charts.md) · [Scatter guide](docs/scatter-plots.md) · [Wardley guide](docs/wardley-maps.md) · [Fishbone guide](docs/fishbones.md) · [State-machine guide](docs/state-machines.md) · [Dependency guide](docs/dependencies.md) · [Deployment guide](docs/deployments.md) · [IT current-state guide](docs/it-current-state.md) · [High-level guide](docs/high-level.md) · [Tree guide](docs/trees.md) · [Nested containment guide](docs/nested-containment.md) · [Layer-stack guide](docs/layer-stacks.md) · [Pyramid guide](docs/pyramids.md) · [Medallion guide](docs/medallions.md) · [Swimlane guide](docs/swimlanes.md) · [Process guide](docs/processes.md) · [Gantt guide](docs/gantt.md) · [Kanban guide](docs/kanban.md) · [Journey guide](docs/journeys.md) · [Story-map guide](docs/story-maps.md) · [Benchmark method](docs/benchmark.md)
 
 ## Credit where it's due
 

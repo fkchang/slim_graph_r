@@ -40,6 +40,23 @@ RSpec.describe 'slimgraph executable' do
     expect(err).to include('a diagnostic')
   end
 
+  it 'preserves a storyboard chained from the concise Ruby document form' do
+    code = <<~RUBY
+      diagram(:architecture) do
+        node :source
+        node :worker
+        flow :source, :worker
+      end.storyboard do
+        reveal 1, :source, 'Source appears'
+        reveal 2, :worker, route(:source, :worker), 'Worker appears'
+      end
+    RUBY
+    out, err, status = cli('render', '-', '--input-format', 'ruby', '--format', 'html', stdin: code)
+
+    expect(status.exitstatus).to eq(0), err
+    expect(out).to include('data-sgr-motion-root', 'data-motion-key="route:6:source:6:worker"')
+  end
+
   it 'parses bare source declarations inside the high-level DSL' do
     code = <<~RUBY
       diagram :high_level do

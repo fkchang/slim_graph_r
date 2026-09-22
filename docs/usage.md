@@ -24,7 +24,7 @@ Inspired by [Cathryn Lavery’s Diagram Design](https://github.com/cathrynlavery
 
 ## StreamWeaver
 
-Install the gem locally with `gem build slim_graph_r.gemspec` followed by `gem install ./slim_graph_r-0.5.1.gem --no-document`, or add a Bundler path dependency while developing:
+Install the published gem with `gem install slim_graph_r`, or add a Bundler path dependency while developing:
 
 ```ruby
 gem 'slim_graph_r', path: '../slim_graph_r'
@@ -43,7 +43,7 @@ diagram :architecture, title: 'Request handling' do
 end
 ```
 
-The extension adds `diagram` to StreamWeaver's shared DisplayDSL and supplies a component that renders through its existing Phlex interface. It needs no changes to StreamWeaver itself. The gem must be available to the process rendering the document. When developing, remember that a long-running canvas bridge retains Ruby code it has already loaded.
+The extension adds `diagram` to StreamWeaver's shared DisplayDSL and supplies a component that renders through its existing Phlex interface. The gem must be available to the process rendering the document. When developing, remember that a long-running canvas bridge retains Ruby code it has already loaded.
 
 Verified with StreamWeaver 0.3.x: app component rendering, live bridge push/get_dsl, saved-document reader, HTML export, and the packaged Chrome viewer's browser-side Opal runtime. The Chrome viewer bundles the narrow `slim_graph_r/stream_weaver_opal` entrypoint and renders Ruby or Org saved documents as inline SVG without a Ruby server or network asset. The complete 39-type atlas is the compatibility fixture; each SVG retains its accessible title and description.
 
@@ -78,6 +78,23 @@ end
 
 `group(:backend, 'Backend') { node :api; store :database }` adds a non-nested boundary in architecture/flowchart diagrams. Groups occupy separate layout lanes.
 
+## Ordered reveal
+
+Graph-backed diagrams can return an immutable storyboard presentation. Targets are node IDs or explicit route objects:
+
+```ruby
+animated = review.storyboard do
+  reveal 1, :draft, 'A draft enters review'
+  reveal 2, :review, route(:draft, :review), 'The review decision becomes active'
+  reveal 3, :publish, route(:review, :publish), 'The approved path reaches publication'
+end
+
+File.write('review-animated.html', animated.to_html(motion: :steps))
+File.write('review-final.svg', animated.to_svg)
+```
+
+Use `motion: :reveal` to autoplay once or `motion: :static` for the final frame without controls. `replaces:` removes a previously revealed target from that step onward. Storyboards require contiguous steps and fail when a target is missing. The player supports keyboard controls, exact-step query parameters, reduced motion, print and no-script fallbacks. See [the motion contract](motion-contract.md) and the three `*_animated.rb` examples.
+
 ## Appearance and accessibility
 
 Use `theme: :light`, `:dark`, or `:auto`. Auto follows OS dark mode and StreamWeaver's light/dark page selectors. Graph diagrams accept `direction: :right` or `:down`; architecture defaults right, flowcharts and org charts down. Sequence and timeline use their own fixed layouts.
@@ -92,7 +109,7 @@ Treemaps accept 2–12 nonnegative items with at least one positive value and on
 
 This release supports up to 32 nodes/events, 64 edges/messages, and three groups, with at most two emphasized elements. Wardley maps have a dedicated 2–9 component, 1–12 dependency, two-movement budget and require every component to be incident. Graph layout handles branches, merges, cycles, self-loops, repeated edges, and disconnected nodes. Org charts allow one parent per node and reject cycles. Sequences support self-messages, calls/returns/notifications, scoped activation bars and alt/opt/loop frames, with stricter five-participant/twelve-message limits. See [sequence conversations](sequence.md) and [Wardley maps](wardley-maps.md).
 
-This is a bounded layout engine, not a full implementation of diagram-design's 39 diagram types. Dense graphs or long edge annotations may have no clear route/label placement and raise `SlimGraphR::LayoutError`; simplify or split the diagram, or use StreamWeaver's existing `mermaid` method. Routing avoids node interiors and reserves separate parallel paths. Ordinary crossings use an eight-pixel hop on the later/secondary path. Layouts that cannot leave room for distinct paths or hops raise LayoutError. Optimal crossing minimization, nested groups, broken-axis timelines, Mermaid import, animation, and PNG export are not included. Complete calendar dates use a linear elapsed-day axis; see [timeline.md](timeline.md).
+This is a bounded layout engine, not a full implementation of diagram-design's 39 diagram types. Dense graphs or long edge annotations may have no clear route/label placement and raise `SlimGraphR::LayoutError`; simplify or split the diagram, or use StreamWeaver's existing `mermaid` method. Routing avoids node interiors and reserves separate parallel paths. Ordinary crossings use an eight-pixel hop on the later/secondary path. Layouts that cannot leave room for distinct paths or hops raise LayoutError. Optimal crossing minimization, nested groups, broken-axis timelines, Mermaid import, motion for non-graph chart families, and PNG export are not included. Complete calendar dates use a linear elapsed-day axis; see [timeline.md](timeline.md).
 
 Label sizing uses conservative Unicode-aware estimates, not a font shaping engine. Complex script shaping and unusually wide custom fonts may need visual review. Layout is deterministic; generated SVG IDs are unique by default. `to_svg(id: 'example')` makes output reproducible, but the caller must keep explicit IDs unique within a page.
 

@@ -47,7 +47,7 @@ The renderer must budget text width and wrap labels, reserve connector corridors
 - StreamWeaver relevant regression suite and its required story gates.
 
 ## Integration decision
-The registry identifies StreamWeaver at `~/work/rstreamlit/stream_weaver`. DisplayDSL already exposes Mermaid as a component, which provides a suitable additive integration pattern. Its checkout contains unrelated work. The integration is supplied entirely by this gem via its public component interface. No StreamWeaver source or Tyrion state was changed. A future built-in integration can follow StreamWeaver's reviewed story process.
+The registry identifies StreamWeaver at `~/work/rstreamlit/stream_weaver`. DisplayDSL already exposes Mermaid as a component, which provides a suitable additive integration pattern. Its checkout contains unrelated work. The original static integration was supplied entirely by this gem through the public component interface. Accessible motion later added one reviewed extension-build hook: StreamWeaver copies SlimGraphR's player into its local Manifest V3 bundle and boots it after an Opal render; the diagram model and player remain owned here.
 
 ## References
 - User's research summary and its linked full report, dated 2026-09-08.

@@ -729,6 +729,8 @@ module SlimGraphR
     end
 
     def to_svg(id: nil) = SVG.new(self, layout, id: id).render
+    def to_motion_svg(storyboard, id: nil, static: false) = SVG.new(self, layout, id: id, motion: storyboard, motion_static: static).render
+    def storyboard(&block) = Motion::Presentation.build(self, &block)
     def to_html
       light_paper = style_profile.light.fetch(:paper)
       dark_paper = style_profile.dark.fetch(:paper)

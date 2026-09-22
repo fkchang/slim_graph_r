@@ -4,7 +4,7 @@
 
 - Add a question-first progressive diagram chooser skill, six real rendered README examples, and direct Diagram Design attribution so humans and agents can see both the available grammars and the judgment behind choosing one.
 - Complete RubyGems metadata, MFA protection, extracted-standard-library dependency declarations, an isolated installed-gem quickstart check, and CI coverage through Ruby 4.0.
-- Document a future shared motion contract against fan-in queue, paired policy trace, and secure paved-road examples without claiming animation support in this release.
+- Add an immutable graph storyboard, shared accessible browser player, static/reveal/step output modes, replacement and current-step semantics, and executable fan-in queue, paired policy trace, and secure paved-road examples.
 - Add dedicated Polar and Radar models with immutable BigDecimal values, strict type-specific JSON, exact linear radius geometry, accessible descriptions, and visible captions that reject radial-area meaning.
 - Preserve polar category order and equal angles with rays and constant-size markers only; exact zero retains its spoke and labels while drawing no value ray or marker.
 - Require one already-common Radar scale across 2–5 entities and 3–5 criteria; render outline-only polygons with colour-independent stroke patterns and no hidden normalization.

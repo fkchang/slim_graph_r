@@ -14,8 +14,11 @@ module SlimGraphR
       bar: 12, line: 12, scatter: 12, treemap: 12, sankey: 12, polar: 12, radar: 12
     }.freeze
 
-    def initialize(diagram, scene, id: nil)
+    def initialize(diagram, scene, id: nil, motion: nil, motion_static: false)
       @d, @s = diagram, scene
+      @motion = motion
+      @motion_static = motion_static
+      @motion_matches = {}
       @id = id || "sgr-#{SecureRandom.hex(6)}"
       raise Error, 'SVG ID must start with a letter and contain only letters, digits, hyphens, underscores' unless @id.match?(/\A[a-zA-Z][a-zA-Z0-9_-]*\z/)
       @out = []
@@ -55,7 +58,13 @@ module SlimGraphR
       display_width = (@s.width * display_scale).ceil
       display_height = (height * display_scale).ceil
       add %(<svg xmlns="http://www.w3.org/2000/svg" id="#{@id}" class="sgr-diagram" data-sgr-theme="#{@d.theme}" data-sgr-style="#{@d.style}"#{type_attr} data-sgr-display-scale="#{format('%.4g', display_scale)}" role="img" aria-labelledby="#{@id}-title #{@id}-desc" viewBox="0 0 #{@s.width} #{height}" width="#{display_width}" height="#{display_height}" style="display:block;margin:0 auto;width:100%;height:auto;min-width:#{display_width}px">)
-      add %(<title id="#{@id}-title">#{esc(@d.title)}</title><desc id="#{@id}-desc">#{esc(accessible_description)}</desc>)
+      description = if @motion_static
+        steps = @motion.steps.map { |step| "Step #{step.number}: #{step.label}" }.join('. ')
+        "#{@d.title}. Final frame of an ordered reveal. #{steps}."
+      else
+        accessible_description
+      end
+      add %(<title id="#{@id}-title">#{esc(@d.title)}</title><desc id="#{@id}-desc">#{esc(description)}</desc>)
       add "<style>#{styles}</style>"
       add '<defs>' unless %i[dp_security_matrix er].include?(@d.type)
       unless %i[dp_security_matrix er].include?(@d.type)
@@ -147,17 +156,22 @@ module SlimGraphR
           previous_routes << route
         end
         if %i[dependency deployment].include?(@d.type)
-          @s.routes.each { |route| draw_label(route.label_box) if route.label_box }
+          @s.routes.each do |route|
+            motion_route_item(route.edge.from, route.edge.to) { draw_label(route.label_box) } if route.label_box
+          end
           @s.boxes.each { |box| draw_box(box) }
         else
           @s.boxes.each { |box| draw_box(box) }
-          @s.routes.each { |route| draw_label(route.label_box) if route.label_box }
+          @s.routes.each do |route|
+            motion_route_item(route.edge.from, route.edge.to) { draw_label(route.label_box) } if route.label_box
+          end
         end
         draw_org_callouts unless (@s.callouts || []).empty?
         (@s.fragments || []).each { |frame| draw_frame_captions(frame) }
         draw_timeline unless @s.events.empty?
       end
       add '</g></svg>'
+      @motion&.validate_rendered!(@motion_matches.keys)
       @out.join
     end
 
@@ -1092,12 +1106,13 @@ module SlimGraphR
       node = box.node
       return draw_dependency_box(box) if @d.type == :dependency
       return draw_deployment_box(box) if @d.type == :deployment
+      motion_item(node.id) do
       fill = node.emphasis ? 'var(--sgr-tint)' : node.kind == :store ? 'var(--sgr-secondary)' : 'var(--sgr-paper)'
       stroke = node.emphasis ? 'var(--sgr-accent)' : node.kind == :external ? 'var(--sgr-rule)' : 'var(--sgr-ink)'
       shape = box.shape || :rectangle
       if shape == :merge
         add %(<circle data-sgr-shape="merge" cx="#{box.center[0]}" cy="#{box.center[1]}" r="4" fill="var(--sgr-ink)"/>)
-        return
+        next
       elsif shape == :diamond
         points = %i[top right bottom left].map { |side| box.boundary(side).join(',') }.join(' ')
         add %(<polygon data-sgr-shape="decision" points="#{points}" fill="#{fill}" stroke="#{stroke}" stroke-width="1"/>)
@@ -1136,10 +1151,12 @@ module SlimGraphR
         y += box.lines.size * 20 + 6
         box.details.each_with_index { |value, i| text(value, tx, y + i * 16, 'text-anchor': anchor, class: 'sgr-detail') }
       end
+      end
     end
 
     def draw_deployment_box(box)
       node = box.node
+      motion_item(node.id) do
       fill = node.emphasis ? 'var(--sgr-tint)' : 'var(--sgr-paper)'
       stroke = node.emphasis ? 'var(--sgr-accent)' : 'var(--sgr-ink)'
       rect(box.x, box.y, box.width, box.height, rx: 6, fill: fill, stroke: stroke, 'stroke-width': 1,
@@ -1165,10 +1182,12 @@ module SlimGraphR
         text(item.name, chip[:name_x], y + 16, class: 'sgr-artifact-name')
         text(item.version, chip[:version_x], y + 16, class: 'sgr-artifact-version', 'text-anchor': 'end')
       end
+      end
     end
 
     def draw_dependency_box(box)
       node = box.node
+      motion_item(node.id) do
       treatment = if node.kind == :external
         :external
       elsif @d.edges.none? { |edge| edge.from == node.id }
@@ -1192,6 +1211,7 @@ module SlimGraphR
         text(box.metadata.first, box.x + 12, box.y + 43, class: 'sgr-dependency-meta')
       else
         text(node.label, box.x + 12, box.y + 36, class: 'sgr-name')
+      end
       end
     end
 
@@ -1246,7 +1266,40 @@ module SlimGraphR
         ''
       end
       stroke_width = emphasized ? 1.6 : 1.2
-      add %(<path data-sgr-connector="true" data-sgr-hops="#{crossings.size}"#{kind_attr}#{cycle_attr}#{network_attrs} d="#{rounded_path(route.points, crossings)}" fill="none" stroke="#{stroke}" stroke-width="#{stroke_width}"#{dash ? " stroke-dasharray=\"#{dash}\"" : ''} marker-end="url(##{@id}-#{marker})"/> )
+      motion_route_item(route.edge.from, route.edge.to) do
+        add %(<path data-sgr-connector="true" data-sgr-hops="#{crossings.size}"#{kind_attr}#{cycle_attr}#{network_attrs} d="#{rounded_path(route.points, crossings)}" fill="none" stroke="#{stroke}" stroke-width="#{stroke_width}"#{dash ? " stroke-dasharray=\"#{dash}\"" : ''} marker-end="url(##{@id}-#{marker})"/> )
+      end
+    end
+
+    def motion_item(target)
+      return yield unless @motion
+
+      target = Motion::Target.node(target) unless target.is_a?(Motion::Target)
+      step = @motion.step_for(target.key)
+      return yield unless step
+
+      normalized = target.key
+      @motion_matches[normalized] = true
+      return if @motion_static && @motion.replaced_at(normalized)
+      return yield if @motion_static
+
+      attributes = [
+        'data-motion-item="true"',
+        %(data-motion-key="#{esc(normalized)}"),
+        %(data-step="#{step.number}"),
+        %(aria-label="#{esc("Step #{step.number}: #{step.label}")}")
+      ]
+      until_step = @motion.replaced_at(normalized)
+      attributes << %(data-motion-until="#{until_step}") if until_step
+      attributes << %(data-motion-replaces="#{esc(step.replaces.join(' '))}") unless step.replaces.empty?
+      add "<g #{attributes.join(' ')}>"
+      yield
+      add '</g>'
+    end
+
+    def motion_route_item(from, to, &block)
+      return yield unless @motion
+      motion_item(Motion::Target.route(from, to), &block)
     end
 
     def network_scope(edge)

@@ -16,8 +16,17 @@ module SlimGraphR
       @diagram = diagram
     end
 
+    def storyboard(&block)
+      @diagram = diagram.storyboard(&block)
+      self
+    end
+
     def render(view, _state)
-      markup = diagram.to_svg
+      markup = if diagram.is_a?(SlimGraphR::Motion::Presentation)
+        diagram.fragment(include_script: RUBY_ENGINE != 'opal')
+      else
+        diagram.to_svg
+      end
       view.div(style: 'overflow-x:auto;max-width:100%;margin:32px 0', tabindex: '0', role: 'region', 'aria-label': diagram.title) do
         view.raw(view.safe(markup))
       end
