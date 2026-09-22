@@ -5,11 +5,11 @@ require 'open3'
 require 'rbconfig'
 require 'tmpdir'
 require 'fileutils'
-require_relative '../lib/slim_graph_r/university/provider'
+require_relative '../../lib/slim_graph_r/university/provider'
 
 RSpec.describe 'SlimGraphR University provider' do
-  let(:source) { File.expand_path('..', __dir__) }
-  let(:stream_weaver_source) { File.expand_path('../rstreamlit/stream_weaver', source) }
+  let(:source) { File.expand_path('../..', __dir__) }
+  let(:stream_weaver_specification) { Gem::Specification.find_by_name('stream_weaver') }
 
   it 'keeps the canonical course, including its resolver, deeply immutable' do
     course = SlimGraphR::University::Provider::COURSE
@@ -133,6 +133,12 @@ RSpec.describe 'SlimGraphR University provider' do
   end
 
   it 'discovers an installed three-step Diagram Intent course and its packaged demos' do
+    skip 'released StreamWeaver does not yet include external University courses' unless
+      ENV['STREAM_WEAVER_SOURCE'] == 'git'
+    course_catalog = File.join(stream_weaver_specification.full_gem_path,
+                               'lib', 'stream_weaver', 'university', 'course_catalog.rb')
+    expect(File).to exist(course_catalog)
+
     script = <<~'RUBY'
       def activate_installed(name)
         spec = Gem::Specification.find_all_by_name(name).find do |candidate|
@@ -192,7 +198,7 @@ RSpec.describe 'SlimGraphR University provider' do
 
     Dir.mktmpdir('slim-graph-r-university-provider') do |gem_home|
       ruby_default_path = Gem.default_path.last
-      weaver_specification = Gem::Specification.load(File.join(stream_weaver_source, 'stream_weaver.gemspec'))
+      weaver_specification = stream_weaver_specification
       env = {
         'GEM_HOME' => gem_home,
         'GEM_PATH' => [gem_home, ruby_default_path].join(File::PATH_SEPARATOR),
@@ -210,7 +216,7 @@ RSpec.describe 'SlimGraphR University provider' do
           require 'rubygems/package'
           require 'rubygems/installer'
           slim = Gem::Specification.load(#{File.join(source, 'slim_graph_r.gemspec').inspect})
-          weaver = Gem::Specification.load(#{File.join(stream_weaver_source, 'stream_weaver.gemspec').inspect})
+          weaver = Gem::Specification.load(#{stream_weaver_specification.loaded_from.inspect})
           package_dir = File.join(ENV.fetch('GEM_HOME'), 'packages')
           Dir.mkdir(package_dir)
           dependencies = {}
@@ -233,9 +239,16 @@ RSpec.describe 'SlimGraphR University provider' do
                               document: [], ignore_dependencies: true).install
           end
           [slim, weaver].each do |spec|
-            root = File.dirname(spec.loaded_from)
-            package = File.join(package_dir, "\#{spec.full_name}.gem")
-            Dir.chdir(root) { Gem::Package.build(spec, false, false, package) }
+            installed_cache = spec.name == 'stream_weaver' &&
+              spec.full_gem_path.start_with?(File.join(Gem.dir, 'gems')) && File.file?(spec.cache_file)
+            package = if installed_cache
+              spec.cache_file
+            else
+              root = File.dirname(spec.loaded_from)
+              File.join(package_dir, "\#{spec.full_name}.gem").tap do |target|
+                Dir.chdir(root) { Gem::Package.build(spec, false, false, target) }
+              end
+            end
             Gem::Installer.at(package, install_dir: ENV.fetch('GEM_HOME'), wrappers: false, document: []).install
           end
         RUBY

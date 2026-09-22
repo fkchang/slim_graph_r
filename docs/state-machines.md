@@ -107,7 +107,7 @@ gem install --local --no-document ./slim_graph_r-0.7.0.gem
 slimgraph render examples/standalone/state_machine.json -o state-machine.svg
 ```
 
-The core renderer has no runtime dependencies. StreamWeaver is an optional adapter and is not required for the standalone gem or CLI.
+The core renderer depends only on the extracted standard-library `bigdecimal` and `ostruct` gems. StreamWeaver is an optional adapter and is not required for the standalone gem or CLI.
 
 ## Validation and limits
 

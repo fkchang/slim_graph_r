@@ -1,6 +1,6 @@
 # SlimGraphR
 
-Editorial SVG diagrams from a small Ruby vocabulary. Ruby handles layout, wrapped labels, and rounded orthogonal connectors. No browser layout engine or runtime dependencies are needed by the renderer.
+Editorial SVG diagrams from a small Ruby vocabulary. Ruby handles layout, wrapped labels, and rounded orthogonal connectors. The renderer needs no browser layout engine and depends only on the extracted standard-library `bigdecimal` and `ostruct` gems.
 
 ```ruby
 require 'slim_graph_r'
@@ -103,7 +103,7 @@ bundle install
 bundle exec rspec
 ```
 
-The development bundle includes StreamWeaver for integration specs; the core gem has no runtime dependencies. See [StreamWeaver gallery](../examples/stream_weaver/gallery.rb), [Agent guide](for_llms.md), and [Benchmark](benchmark.md).
+The development bundle includes StreamWeaver for integration specs; the core gem depends only on the extracted standard-library `bigdecimal` and `ostruct` gems. See [StreamWeaver gallery](../examples/stream_weaver/gallery.rb), [Agent guide](for_llms.md), and [Benchmark](benchmark.md).
 
 MIT. Design tokens and editorial conventions are adapted from [diagram-design](https://github.com/cathrynlavery/diagram-design), pinned and credited under [vendor/diagram-design](../vendor/diagram-design/README.md).
 

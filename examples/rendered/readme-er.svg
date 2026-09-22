@@ -1,0 +1,200 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="sgr-c118c0c8277e" class="sgr-diagram" data-sgr-theme="light" data-sgr-style="ruby" data-er="true" data-sgr-display-scale="1.5" role="img" aria-labelledby="sgr-c118c0c8277e-title sgr-c118c0c8277e-desc" viewBox="0 0 600 352" width="900" height="528" style="display:block;margin:0 auto;width:100%;height:auto;min-width:900px"><title id="sgr-c118c0c8277e-title">Order domain · 注文</title><desc id="sgr-c118c0c8277e-desc">Entity relationship diagram. Entities in order: Customer, entity, fields: customer_id, declared primary key, type uuid; email, no key classification, type text, qualifier unique. Order, aggregate root, focal, fields: order_id, declared primary key, type uuid; customer_id, declared foreign key, type uuid; placed_at, no key classification, type timestamp. Authored relationships: Customer 1 to 0..* Order, labelled places.</desc><style>#sgr-c118c0c8277e{--sgr-paper:#faf6ee;--sgr-secondary:#f0e9de;--sgr-ink:#241d1d;--sgr-muted:#625353;--sgr-rule:#baaba5;--sgr-link:#356c9c;--sgr-accent:#ad1733;--sgr-tint:#f5e2e4;--sgr-concern-security:#ad1733;--sgr-concern-quality:#526f8a;--sgr-concern-product:#667b38;--sgr-concern-analysis:#94741b;--sgr-payload-ls:#7c8f6f;--sgr-payload-db:#5e7a9b;--sgr-payload-tb:#b8915a;--sgr-payload-fl:#9c6b50;--sgr-payload-wb:#6e6479;--sgr-payload-web:#6e6479;--sgr-payload-dataset:#5e7a9b;--sgr-payload-table:#b8915a;--sgr-payload-file:#9c6b50;--sgr-payload-stream:#497d78;--sgr-high-chevron-a:#241d1d;--sgr-high-chevron-b:#625353;--sgr-high-chevron-label:#faf6ee;--sgr-node-radius:6;--sgr-node-inset:20;--sgr-border-width:1;--sgr-emphasis-width:1.5;color:var(--sgr-ink);font-family:Geist,'Helvetica Neue',Arial,sans-serif}
+
+#sgr-c118c0c8277e text{fill:var(--sgr-ink);font-size:14px}
+#sgr-c118c0c8277e .sgr-title{font-family:Geist,'Helvetica Neue',Arial,sans-serif;font-size:30px;font-weight:700}
+#sgr-c118c0c8277e .sgr-name{font-weight:600}
+#sgr-c118c0c8277e .sgr-detail,#sgr-c118c0c8277e .sgr-label{fill:var(--sgr-muted);font-size:12px}
+#sgr-c118c0c8277e .sgr-invoke{font-family:'Geist Mono',ui-monospace,monospace;fill:var(--sgr-muted);font-size:12px}
+#sgr-c118c0c8277e .sgr-scope{fill:var(--sgr-muted);font-size:12px}
+#sgr-c118c0c8277e .sgr-owner-status{font-family:'Geist Mono',ui-monospace,monospace;fill:var(--sgr-accent);font-size:10px;font-weight:600;letter-spacing:.06em}
+#sgr-c118c0c8277e .sgr-rule-kind{font-family:'Geist Mono',ui-monospace,monospace;fill:var(--sgr-accent);font-size:11px;font-weight:600;letter-spacing:.04em}
+#sgr-c118c0c8277e .sgr-rule-label{font-size:13px;font-weight:600}
+#sgr-c118c0c8277e .sgr-rule-owner{fill:var(--sgr-muted);font-size:12px}
+#sgr-c118c0c8277e .sgr-zone{fill:var(--sgr-muted);font-size:12px;font-weight:600}
+#sgr-c118c0c8277e .sgr-event-title{font-family:Geist,'Helvetica Neue',Arial,sans-serif;font-size:18px}
+#sgr-c118c0c8277e .sgr-event-detail{fill:var(--sgr-muted);font-size:14px}
+#sgr-c118c0c8277e .sgr-date{font-family:'Geist Mono',ui-monospace,monospace;fill:var(--sgr-muted);font-size:12px}
+#sgr-c118c0c8277e .sgr-frame-operator,#sgr-c118c0c8277e .sgr-frame-guard{font-family:'Geist Mono',ui-monospace,monospace;font-size:12px;fill:var(--sgr-muted)}
+#sgr-c118c0c8277e .sgr-frame-operator{font-weight:600}
+#sgr-c118c0c8277e .sgr-state-label,#sgr-c118c0c8277e .sgr-state-detail{font-family:'Geist Mono',ui-monospace,monospace;font-size:12px;fill:var(--sgr-muted)}
+#sgr-c118c0c8277e .sgr-dependency-meta{font-family:'Geist Mono',ui-monospace,monospace;font-size:10px;fill:var(--sgr-muted)}
+#sgr-c118c0c8277e .sgr-fan-in{font-family:'Geist Mono',ui-monospace,monospace;font-size:8px;fill:var(--sgr-muted)}
+#sgr-c118c0c8277e .sgr-cycle-label{font-family:'Geist Mono',ui-monospace,monospace;font-size:8px;font-weight:600;letter-spacing:.06em;fill:var(--sgr-accent)}
+#sgr-c118c0c8277e .sgr-deployment-zone,#sgr-c118c0c8277e .sgr-infrastructure-tag,#sgr-c118c0c8277e .sgr-replicas{font-family:'Geist Mono',ui-monospace,monospace;font-size:8px;fill:var(--sgr-muted)}
+#sgr-c118c0c8277e .sgr-deployment-zone{font-weight:600;letter-spacing:.08em}
+#sgr-c118c0c8277e .sgr-infrastructure-tag{font-weight:600;letter-spacing:.04em}
+#sgr-c118c0c8277e .sgr-artifact-name{font-size:12px}
+#sgr-c118c0c8277e .sgr-artifact-version,#sgr-c118c0c8277e .sgr-network-label{font-family:'Geist Mono',ui-monospace,monospace;fill:var(--sgr-muted)}
+#sgr-c118c0c8277e .sgr-artifact-version{font-size:9px}
+#sgr-c118c0c8277e .sgr-network-label{font-size:8px}
+#sgr-c118c0c8277e .sgr-it-eyebrow,#sgr-c118c0c8277e .sgr-it-phase,#sgr-c118c0c8277e .sgr-it-handoff-label{font-family:'Geist Mono',ui-monospace,monospace;font-weight:600;letter-spacing:.08em}
+#sgr-c118c0c8277e .sgr-it-eyebrow{fill:var(--sgr-muted);font-size:10px;letter-spacing:.12em}
+#sgr-c118c0c8277e .sgr-it-subtitle{fill:var(--sgr-muted);font-size:14px}
+#sgr-c118c0c8277e .sgr-it-phase{fill:var(--sgr-muted);font-size:9px;letter-spacing:.14em}
+#sgr-c118c0c8277e .sgr-it-system-name{font-size:14px;font-weight:600}
+#sgr-c118c0c8277e .sgr-it-system-detail{fill:var(--sgr-muted);font-size:12px}
+#sgr-c118c0c8277e .sgr-it-pain-detail{fill:var(--sgr-accent);font-size:12px}
+#sgr-c118c0c8277e .sgr-it-handoff-label{font-size:9px}
+#sgr-c118c0c8277e .sgr-it-crosscut-name{font-size:14px;font-weight:600}
+#sgr-c118c0c8277e .sgr-it-crosscut-detail{fill:var(--sgr-muted);font-size:12px}
+#sgr-c118c0c8277e .sgr-it-legend-label{fill:var(--sgr-muted);font-size:10px}
+#sgr-c118c0c8277e .sgr-high-phase,#sgr-c118c0c8277e .sgr-high-role,#sgr-c118c0c8277e .sgr-high-detail,#sgr-c118c0c8277e .sgr-high-legend{font-family:'Geist Mono',ui-monospace,monospace}
+#sgr-c118c0c8277e .sgr-high-phase{fill:var(--sgr-high-chevron-label);font-size:12px;font-weight:600;letter-spacing:.14em}
+#sgr-c118c0c8277e .sgr-high-role{fill:var(--sgr-muted);font-size:12px;font-weight:600;letter-spacing:.04em}
+#sgr-c118c0c8277e .sgr-high-name{font-size:14px;font-weight:600}
+#sgr-c118c0c8277e .sgr-high-detail{fill:var(--sgr-muted);font-size:12px}
+#sgr-c118c0c8277e .sgr-high-concern{fill:var(--sgr-high-chevron-label);font-family:'Geist Mono',ui-monospace,monospace;font-size:12px;font-weight:600;letter-spacing:.14em}
+#sgr-c118c0c8277e .sgr-high-cluster{fill:var(--sgr-muted);font-size:12px;font-weight:600}
+#sgr-c118c0c8277e .sgr-high-legend{fill:var(--sgr-muted);font-size:12px}
+#sgr-c118c0c8277e .sgr-tree-name{font-size:12px;font-weight:600}
+#sgr-c118c0c8277e .sgr-tree-detail{font-family:'Geist Mono',ui-monospace,monospace;fill:var(--sgr-muted);font-size:9px}
+#sgr-c118c0c8277e .sgr-nested-label{font-family:'Geist Mono',ui-monospace,monospace;fill:var(--sgr-muted);font-size:8px;font-weight:600;letter-spacing:.14em}
+#sgr-c118c0c8277e .sgr-layer-index,#sgr-c118c0c8277e .sgr-layer-detail,#sgr-c118c0c8277e .sgr-layer-axis{font-family:'Geist Mono',ui-monospace,monospace;fill:var(--sgr-muted)}
+#sgr-c118c0c8277e .sgr-layer-index{font-size:9px;font-weight:600;letter-spacing:.08em}
+#sgr-c118c0c8277e .sgr-layer-name{font-size:15px;font-weight:600}
+#sgr-c118c0c8277e .sgr-layer-detail{font-size:10px}
+#sgr-c118c0c8277e .sgr-layer-axis{font-size:9px;font-weight:600;letter-spacing:.08em}
+#sgr-c118c0c8277e .sgr-pyramid-label{font-size:12px;font-weight:600}
+#sgr-c118c0c8277e .sgr-pyramid-value{font-family:'Geist Mono',ui-monospace,monospace;font-size:10px;fill:var(--sgr-muted)}
+#sgr-c118c0c8277e .sgr-medallion-title{font-size:14px;font-weight:600}
+#sgr-c118c0c8277e .sgr-medallion-field-label,#sgr-c118c0c8277e .sgr-medallion-promotion,#sgr-c118c0c8277e .sgr-medallion-path-tag{font-family:'Geist Mono',ui-monospace,monospace;font-weight:600;letter-spacing:.08em}
+#sgr-c118c0c8277e .sgr-medallion-field-label{font-size:8px;fill:var(--sgr-muted)}
+#sgr-c118c0c8277e .sgr-medallion-field-value{font-size:11px;fill:var(--sgr-muted)}
+#sgr-c118c0c8277e .sgr-medallion-example{font-size:11px}
+#sgr-c118c0c8277e .sgr-medallion-promotion{font-size:10px}
+#sgr-c118c0c8277e .sgr-medallion-path-tag{font-size:8px}
+#sgr-c118c0c8277e .sgr-medallion-path-title{font-size:11px;font-weight:600}
+#sgr-c118c0c8277e .sgr-medallion-path-detail{font-size:10px;fill:var(--sgr-muted)}
+#sgr-c118c0c8277e .sgr-workflow-stage,#sgr-c118c0c8277e .sgr-workflow-lane,#sgr-c118c0c8277e .sgr-workflow-key,#sgr-c118c0c8277e .sgr-workflow-detail,#sgr-c118c0c8277e .sgr-workflow-tool,#sgr-c118c0c8277e .sgr-workflow-trigger-label,#sgr-c118c0c8277e .sgr-workflow-legend{font-family:'Geist Mono',ui-monospace,monospace}
+#sgr-c118c0c8277e .sgr-workflow-stage{fill:var(--sgr-muted);font-size:12px;font-weight:600;letter-spacing:.08em}
+#sgr-c118c0c8277e .sgr-workflow-lane{fill:var(--sgr-muted);font-size:12px;font-weight:600;letter-spacing:.08em}
+#sgr-c118c0c8277e .sgr-workflow-key{font-size:12px;font-weight:700}
+#sgr-c118c0c8277e .sgr-workflow-card-name{font-size:14px;font-weight:600}
+#sgr-c118c0c8277e .sgr-workflow-detail,#sgr-c118c0c8277e .sgr-workflow-tool{fill:var(--sgr-muted);font-size:12px}
+#sgr-c118c0c8277e .sgr-workflow-trigger-label{fill:var(--sgr-muted);font-size:12px;font-weight:600;letter-spacing:.06em}
+#sgr-c118c0c8277e .sgr-workflow-legend{fill:var(--sgr-muted);font-size:12px}
+#sgr-c118c0c8277e .sgr-workflow-payload-text{fill:#fff;font-family:'Geist Mono',ui-monospace,monospace;font-size:12px;font-weight:700}
+#sgr-c118c0c8277e .sgr-data-flow-step,#sgr-c118c0c8277e .sgr-data-flow-role,#sgr-c118c0c8277e .sgr-data-flow-key,#sgr-c118c0c8277e .sgr-data-flow-tool,#sgr-c118c0c8277e .sgr-data-flow-detail,#sgr-c118c0c8277e .sgr-data-flow-payload,#sgr-c118c0c8277e .sgr-data-flow-route-label,#sgr-c118c0c8277e .sgr-data-flow-legend{font-family:'Geist Mono',ui-monospace,monospace}
+#sgr-c118c0c8277e .sgr-data-flow-step{fill:var(--sgr-muted);font-size:12px;font-weight:600}
+#sgr-c118c0c8277e .sgr-data-flow-step.sgr-data-flow-step-focal{fill:var(--sgr-paper)}
+#sgr-c118c0c8277e .sgr-data-flow-role{fill:var(--sgr-muted);font-size:12px;font-weight:600}
+#sgr-c118c0c8277e .sgr-data-flow-key{font-size:12px;font-weight:700}
+#sgr-c118c0c8277e .sgr-data-flow-name{font-size:14px;font-weight:600}
+#sgr-c118c0c8277e .sgr-data-flow-detail-title{font-size:12px;font-weight:600}
+#sgr-c118c0c8277e .sgr-data-flow-tool{fill:var(--sgr-muted);font-size:12px}
+#sgr-c118c0c8277e .sgr-data-flow-detail{fill:var(--sgr-muted);font-size:12px}
+#sgr-c118c0c8277e .sgr-data-flow-payload{fill:#fff;font-size:12px;font-weight:700}
+#sgr-c118c0c8277e .sgr-data-flow-route-label{fill:var(--sgr-accent);font-size:12px;font-weight:700;letter-spacing:.08em}
+#sgr-c118c0c8277e .sgr-data-flow-legend{fill:var(--sgr-muted);font-size:12px}
+#sgr-c118c0c8277e .sgr-integration-zone{fill:var(--sgr-ink);fill-opacity:.025;stroke:var(--sgr-rule);stroke-width:1}
+#sgr-c118c0c8277e .sgr-security-eyebrow,#sgr-c118c0c8277e .sgr-security-subtle,#sgr-c118c0c8277e .sgr-security-role-code,#sgr-c118c0c8277e .sgr-security-hint,#sgr-c118c0c8277e .sgr-security-legend{font-family:'Geist Mono',ui-monospace,monospace}
+#sgr-c118c0c8277e .sgr-security-eyebrow{fill:var(--sgr-muted);font-size:9px;font-weight:700;letter-spacing:.14em}
+#sgr-c118c0c8277e .sgr-security-subtle{fill:var(--sgr-muted);font-size:8px;font-weight:600;letter-spacing:.10em}
+#sgr-c118c0c8277e .sgr-security-role{fill:var(--sgr-paper);font-size:11px;font-weight:600}
+#sgr-c118c0c8277e .sgr-security-role-code{fill:var(--sgr-paper);font-size:9px;opacity:.85}
+#sgr-c118c0c8277e .sgr-security-component{font-size:11px;font-weight:600}
+#sgr-c118c0c8277e .sgr-security-hint{fill:var(--sgr-muted);font-size:8px;font-weight:600;letter-spacing:.08em}
+#sgr-c118c0c8277e .sgr-security-cell{stroke:var(--sgr-rule);stroke-width:1}
+#sgr-c118c0c8277e .sgr-security-admin{fill:var(--sgr-secondary);stroke:var(--sgr-ink)}
+#sgr-c118c0c8277e .sgr-security-write{fill:var(--sgr-paper);stroke:var(--sgr-rule)}
+#sgr-c118c0c8277e .sgr-security-read{fill:var(--sgr-tint);stroke:var(--sgr-muted)}
+#sgr-c118c0c8277e .sgr-security-deny{fill:var(--sgr-paper);stroke:var(--sgr-rule);stroke-dasharray:4 3}
+#sgr-c118c0c8277e .sgr-security-unknown{fill:var(--sgr-secondary);stroke:var(--sgr-muted);stroke-dasharray:1 3}
+#sgr-c118c0c8277e .sgr-security-focal{fill:var(--sgr-tint);stroke:var(--sgr-accent);stroke-width:2;stroke-dasharray:none}
+#sgr-c118c0c8277e .sgr-security-value{font-size:10px;font-weight:600}
+#sgr-c118c0c8277e .sgr-security-focal-value{fill:var(--sgr-accent)}
+#sgr-c118c0c8277e .sgr-security-note{fill:var(--sgr-accent);font-size:8px}
+#sgr-c118c0c8277e .sgr-security-legend{fill:var(--sgr-muted);font-size:9px;font-weight:600;letter-spacing:.08em}
+#sgr-c118c0c8277e .sgr-integration-card{fill:var(--sgr-paper);stroke:var(--sgr-ink);stroke-width:1}
+#sgr-c118c0c8277e .sgr-integration-side{fill:var(--sgr-secondary);fill-opacity:.45;stroke:var(--sgr-rule)}
+#sgr-c118c0c8277e .sgr-integration-focal{fill:var(--sgr-tint);fill-opacity:1;stroke:var(--sgr-accent);stroke-width:1.5}
+#sgr-c118c0c8277e .sgr-integration-layer{fill:var(--sgr-secondary);fill-opacity:.42;stroke:var(--sgr-rule)}
+#sgr-c118c0c8277e .sgr-integration-zone-label,#sgr-c118c0c8277e .sgr-integration-role,#sgr-c118c0c8277e .sgr-integration-kind,#sgr-c118c0c8277e .sgr-integration-protocol,#sgr-c118c0c8277e .sgr-integration-legend{font-family:'Geist Mono',ui-monospace,monospace}
+#sgr-c118c0c8277e .sgr-integration-zone-label{fill:var(--sgr-muted);font-size:12px;font-weight:600;letter-spacing:.12em}
+#sgr-c118c0c8277e .sgr-integration-name{font-size:14px;font-weight:600}
+#sgr-c118c0c8277e .sgr-integration-detail{fill:var(--sgr-muted);font-size:12px}
+#sgr-c118c0c8277e .sgr-integration-role,#sgr-c118c0c8277e .sgr-integration-kind{fill:var(--sgr-muted);font-size:12px;font-weight:600;letter-spacing:.6px}
+#sgr-c118c0c8277e .sgr-integration-protocol{fill:var(--sgr-muted);font-size:12px;font-weight:600;letter-spacing:.7px}
+#sgr-c118c0c8277e .sgr-integration-legend{fill:var(--sgr-muted);font-size:12px}
+#sgr-c118c0c8277e .sgr-gantt-date,#sgr-c118c0c8277e .sgr-gantt-caption,#sgr-c118c0c8277e .sgr-gantt-phase,#sgr-c118c0c8277e .sgr-gantt-marker-label{font-family:'Geist Mono',ui-monospace,monospace;fill:var(--sgr-muted)}
+#sgr-c118c0c8277e .sgr-gantt-date{font-size:8px}
+#sgr-c118c0c8277e .sgr-gantt-caption{font-size:9px}
+#sgr-c118c0c8277e .sgr-gantt-phase{font-size:9px;font-weight:600;letter-spacing:.14em}
+#sgr-c118c0c8277e .sgr-gantt-marker-label{font-size:9px;font-weight:600}
+#sgr-c118c0c8277e .sgr-gantt-task-label{font-size:11px;font-weight:600}
+#sgr-c118c0c8277e .sgr-gantt-bar-label{font-size:10px;font-weight:600}
+#sgr-c118c0c8277e .sgr-gantt-point-label{font-size:10px;font-weight:600;fill:var(--sgr-accent)}
+#sgr-c118c0c8277e .sgr-kanban-column-label{font-size:12px;font-weight:600}
+#sgr-c118c0c8277e .sgr-kanban-count,#sgr-c118c0c8277e .sgr-kanban-card-meta{font-family:'Geist Mono',ui-monospace,monospace;fill:var(--sgr-muted)}
+#sgr-c118c0c8277e .sgr-kanban-count{font-size:8px;font-weight:600}
+#sgr-c118c0c8277e .sgr-kanban-card-title{font-size:12px;font-weight:600}
+#sgr-c118c0c8277e .sgr-kanban-card-meta{font-size:9px}
+#sgr-c118c0c8277e .sgr-journey-eyebrow,#sgr-c118c0c8277e .sgr-journey-persona,#sgr-c118c0c8277e .sgr-journey-level,#sgr-c118c0c8277e .sgr-journey-row-label,#sgr-c118c0c8277e .sgr-journey-touchpoint,#sgr-c118c0c8277e .sgr-journey-pain,#sgr-c118c0c8277e .sgr-journey-caption,#sgr-c118c0c8277e .sgr-journey-legend,#sgr-c118c0c8277e .sgr-story-eyebrow,#sgr-c118c0c8277e .sgr-story-persona,#sgr-c118c0c8277e .sgr-story-release,#sgr-c118c0c8277e .sgr-story-meta,#sgr-c118c0c8277e .sgr-story-tag,#sgr-c118c0c8277e .sgr-story-legend{font-family:'Geist Mono',ui-monospace,monospace}
+#sgr-c118c0c8277e .sgr-journey-eyebrow,#sgr-c118c0c8277e .sgr-story-eyebrow{fill:var(--sgr-muted);font-size:12px;font-weight:600;letter-spacing:.14em}
+#sgr-c118c0c8277e .sgr-journey-persona,#sgr-c118c0c8277e .sgr-story-persona{fill:var(--sgr-muted);font-size:12px;font-weight:600;letter-spacing:.08em}
+#sgr-c118c0c8277e .sgr-journey-stage,#sgr-c118c0c8277e .sgr-story-activity{font-size:14px;font-weight:600}
+#sgr-c118c0c8277e .sgr-journey-level,#sgr-c118c0c8277e .sgr-journey-row-label{fill:var(--sgr-muted);font-size:12px;letter-spacing:.14em}
+#sgr-c118c0c8277e .sgr-journey-action{font-size:14px}
+#sgr-c118c0c8277e .sgr-journey-touchpoint{fill:var(--sgr-muted);font-size:12px}
+#sgr-c118c0c8277e .sgr-journey-pain{fill:var(--sgr-accent);font-size:12px}
+#sgr-c118c0c8277e .sgr-journey-caption,#sgr-c118c0c8277e .sgr-journey-legend,#sgr-c118c0c8277e .sgr-story-legend{fill:var(--sgr-muted);font-size:12px}
+#sgr-c118c0c8277e .sgr-story-release{fill:var(--sgr-muted);font-size:12px;font-weight:600;letter-spacing:.14em}
+#sgr-c118c0c8277e .sgr-story-step{font-size:14px}
+#sgr-c118c0c8277e .sgr-story-title{font-size:14px;font-weight:600}
+#sgr-c118c0c8277e .sgr-story-meta{fill:var(--sgr-muted);font-size:12px}
+#sgr-c118c0c8277e .sgr-story-tag{fill:var(--sgr-accent);font-size:12px;font-weight:700;letter-spacing:.08em}
+#sgr-c118c0c8277e .sgr-er-tag,#sgr-c118c0c8277e .sgr-er-key,#sgr-c118c0c8277e .sgr-er-field,#sgr-c118c0c8277e .sgr-er-cardinality{font-family:'Geist Mono',ui-monospace,monospace}
+#sgr-c118c0c8277e .sgr-db-tag,#sgr-c118c0c8277e .sgr-db-schema-label,#sgr-c118c0c8277e .sgr-db-sql-type,#sgr-c118c0c8277e .sgr-db-constraint,#sgr-c118c0c8277e .sgr-db-index-eyebrow,#sgr-c118c0c8277e .sgr-db-index,#sgr-c118c0c8277e .sgr-db-action{font-family:'Geist Mono',ui-monospace,monospace}
+#sgr-c118c0c8277e .sgr-db-schema-label{fill:var(--sgr-muted);font-size:9px;font-weight:600;letter-spacing:.14em}
+#sgr-c118c0c8277e .sgr-db-tag,#sgr-c118c0c8277e .sgr-db-index-eyebrow{fill:var(--sgr-muted);font-size:9px;font-weight:600;letter-spacing:.08em}
+#sgr-c118c0c8277e .sgr-db-table-name,#sgr-c118c0c8277e .sgr-db-column-name{font-size:12px}
+#sgr-c118c0c8277e .sgr-db-table-name{font-weight:600}
+#sgr-c118c0c8277e .sgr-db-sql-type,#sgr-c118c0c8277e .sgr-db-index{fill:var(--sgr-muted);font-size:9px}
+#sgr-c118c0c8277e .sgr-db-overflow{fill:var(--sgr-muted);font-size:9px}
+#sgr-c118c0c8277e .sgr-db-constraint,#sgr-c118c0c8277e .sgr-db-action{fill:var(--sgr-muted);font-size:9px;font-weight:600}
+#sgr-c118c0c8277e .sgr-db-action-cascade{fill:var(--sgr-accent)}
+#sgr-c118c0c8277e .sgr-uml-stereotype,#sgr-c118c0c8277e .sgr-uml-member,#sgr-c118c0c8277e .sgr-uml-multiplicity,#sgr-c118c0c8277e .sgr-uml-relation-label,#sgr-c118c0c8277e .sgr-uml-legend{font-family:'Geist Mono',ui-monospace,monospace}
+#sgr-c118c0c8277e .sgr-uml-name{font-size:12px;font-weight:600}
+#sgr-c118c0c8277e .sgr-uml-abstract{font-style:italic}
+#sgr-c118c0c8277e .sgr-uml-focal{fill:var(--sgr-accent)}
+#sgr-c118c0c8277e .sgr-quadrant-axis{font-family:'Geist Mono',ui-monospace,monospace;fill:var(--sgr-muted);font-size:8px;font-weight:400;letter-spacing:.18em}
+#sgr-c118c0c8277e .sgr-quadrant-region{font-family:'Geist Mono',ui-monospace,monospace;fill:var(--sgr-muted);font-size:8px;font-weight:600;letter-spacing:.12em}
+#sgr-c118c0c8277e .sgr-quadrant-item{font-size:10px}
+#sgr-c118c0c8277e .sgr-quadrant-focal{fill:var(--sgr-accent);font-weight:600}
+#sgr-c118c0c8277e .sgr-quadrant-caption{fill:var(--sgr-muted);font-size:10px}
+#sgr-c118c0c8277e .sgr-venn-set-label{font-size:16px;font-weight:600}
+#sgr-c118c0c8277e .sgr-venn-set-subtitle{font-family:'Geist Mono',ui-monospace,monospace;fill:var(--sgr-muted);font-size:12px;letter-spacing:.08em}
+#sgr-c118c0c8277e .sgr-venn-region-label{font-size:12px;font-weight:600}
+#sgr-c118c0c8277e .sgr-venn-focal{fill:var(--sgr-accent)}
+#sgr-c118c0c8277e .sgr-venn-caption{fill:var(--sgr-muted);font-size:14px}
+#sgr-c118c0c8277e .sgr-loop-station-name{font-size:14px;font-weight:600}
+#sgr-c118c0c8277e .sgr-loop-station-detail,#sgr-c118c0c8277e .sgr-loop-write-label{fill:var(--sgr-muted);font-size:12px}
+#sgr-c118c0c8277e .sgr-loop-write-label{font-family:'Geist Mono',ui-monospace,monospace;font-weight:600;letter-spacing:.06em}
+#sgr-c118c0c8277e .sgr-loop-focal{fill:var(--sgr-accent)}
+#sgr-c118c0c8277e .sgr-loop-hub-name{fill:var(--sgr-paper);font-size:14px;font-weight:600}
+#sgr-c118c0c8277e .sgr-loop-hub-detail{fill:var(--sgr-paper);font-size:12px;opacity:.82}
+#sgr-c118c0c8277e .sgr-fishbone-effect{font-size:14px;font-weight:600}
+#sgr-c118c0c8277e .sgr-fishbone-category{font-size:12px;font-weight:600}
+#sgr-c118c0c8277e .sgr-fishbone-factor{fill:var(--sgr-muted);font-family:'Geist Mono',ui-monospace,monospace;font-size:12px}
+#sgr-c118c0c8277e .sgr-wardley-component{font-size:12px;font-weight:600}
+#sgr-c118c0c8277e .sgr-wardley-band,#sgr-c118c0c8277e .sgr-wardley-axis-copy,#sgr-c118c0c8277e .sgr-wardley-legend{font-family:'Geist Mono',ui-monospace,monospace;fill:var(--sgr-muted);font-size:12px;letter-spacing:.14em}
+#sgr-c118c0c8277e .sgr-wardley-band{font-weight:600}
+#sgr-c118c0c8277e .sgr-wardley-caption{fill:var(--sgr-muted);font-size:12px}
+#sgr-c118c0c8277e .sgr-uml-member{font-size:9px}
+#sgr-c118c0c8277e .sgr-uml-stereotype,#sgr-c118c0c8277e .sgr-uml-multiplicity,#sgr-c118c0c8277e .sgr-uml-legend{fill:var(--sgr-muted);font-size:8px}
+#sgr-c118c0c8277e .sgr-uml-stereotype,#sgr-c118c0c8277e .sgr-uml-multiplicity{font-weight:600}
+#sgr-c118c0c8277e .sgr-uml-member,#sgr-c118c0c8277e .sgr-uml-stereotype,#sgr-c118c0c8277e .sgr-uml-multiplicity,#sgr-c118c0c8277e .sgr-uml-legend{font-family:'Geist Mono',ui-monospace,monospace}
+#sgr-c118c0c8277e .sgr-uml-name{font-size:12px;font-weight:600}
+#sgr-c118c0c8277e .sgr-uml-abstract{font-style:italic}
+#sgr-c118c0c8277e .sgr-uml-member{font-size:9px}
+#sgr-c118c0c8277e .sgr-uml-stereotype,#sgr-c118c0c8277e .sgr-uml-multiplicity,#sgr-c118c0c8277e .sgr-uml-legend{fill:var(--sgr-muted);font-size:8px}
+#sgr-c118c0c8277e .sgr-uml-focal{fill:var(--sgr-accent)}
+#sgr-c118c0c8277e .sgr-er-tag{fill:var(--sgr-muted);font-size:8px;font-weight:700;letter-spacing:.12em}
+#sgr-c118c0c8277e .sgr-er-name{font-size:12px;font-weight:600}
+#sgr-c118c0c8277e .sgr-er-focal{fill:var(--sgr-accent)}
+#sgr-c118c0c8277e .sgr-er-key{fill:var(--sgr-muted);font-size:10px;font-weight:700}
+#sgr-c118c0c8277e .sgr-er-field{font-size:10px}
+#sgr-c118c0c8277e .sgr-er-cardinality{fill:var(--sgr-muted);font-size:8px;font-weight:600}
+#sgr-c118c0c8277e .sgr-er-label{fill:var(--sgr-muted);font-size:10px}
+#sgr-c118c0c8277e .sgr-emphasis{fill:var(--sgr-accent)}
+</style><rect x="0" y="0" width="600" height="352" fill="var(--sgr-paper)"/><text x="40" y="48" class="sgr-title">Order domain · 注文</text><line x1="40" y1="76" x2="560" y2="76" stroke="var(--sgr-rule)" stroke-width="1"/><g transform="translate(0 84)"><path d="M 216 172.0 L 384 172.0" fill="none" stroke="var(--sgr-muted)" stroke-width="1.2" data-er-relationship="customer:order"/><circle cx="216" cy="172.0" r="0" fill="none" data-er-port="true" data-er-relationship="customer:order" data-er-entity="customer" data-er-side="right" data-er-coordinate="172.0"/><circle cx="384" cy="172.0" r="0" fill="none" data-er-port="true" data-er-relationship="customer:order" data-er-entity="order" data-er-side="left" data-er-coordinate="172.0"/><rect x="48" y="132" width="168" height="80" rx="6" fill="var(--sgr-paper)" stroke="var(--sgr-ink)" stroke-width="1" data-er-entity="customer"/><rect x="48" y="160" width="168" height="1" fill="var(--sgr-rule)"/><text x="58" y="150" class="sgr-er-tag" data-er-entity-kind="entity">ENTITY</text><text x="206" y="151" class="sgr-er-name" text-anchor="end">Customer</text><text x="60" y="184" class="sgr-er-key" data-er-field-key="primary">#</text><text x="78" y="184" class="sgr-er-field" data-er-field="customer_id">customer_id uuid</text><text x="60" y="204" class="sgr-er-field" data-er-field="email">email text · unique</text><rect x="384" y="132" width="168" height="100" rx="6" fill="var(--sgr-tint)" stroke="var(--sgr-accent)" stroke-width="1.5" data-er-entity="order"/><rect x="384" y="160" width="168" height="1" fill="var(--sgr-rule)"/><text x="394" y="150" class="sgr-er-tag" data-er-entity-kind="aggregate_root">AGGREGATE ROOT</text><text x="542" y="151" class="sgr-er-name sgr-er-focal" text-anchor="end">Order</text><text x="396" y="184" class="sgr-er-key" data-er-field-key="primary">#</text><text x="414" y="184" class="sgr-er-field" data-er-field="order_id">order_id uuid</text><text x="396" y="204" class="sgr-er-key" data-er-field-key="foreign">→</text><text x="414" y="204" class="sgr-er-field" data-er-field="customer_id">customer_id uuid</text><text x="396" y="224" class="sgr-er-field" data-er-field="placed_at">placed_at timestamp</text><rect x="224.0" y="165.0" width="13.120000000000001" height="14" rx="2" fill="var(--sgr-paper)" data-er-cardinality-mask="from" data-er-mask-gap="8" data-er-relationship="customer:order" data-er-entity="customer"/><text x="230.56" y="173.0" class="sgr-er-cardinality" text-anchor="middle" data-er-cardinality="1" data-er-endpoint="from" data-er-entity="customer" data-er-relationship="customer:order" data-er-anchor-x="230.56" data-er-anchor-y="172.0">1</text><rect x="347.52" y="165.0" width="28.48" height="14" rx="2" fill="var(--sgr-paper)" data-er-cardinality-mask="to" data-er-mask-gap="8" data-er-relationship="customer:order" data-er-entity="order"/><text x="361.76" y="173.0" class="sgr-er-cardinality" text-anchor="middle" data-er-cardinality="0..*" data-er-endpoint="to" data-er-entity="order" data-er-relationship="customer:order" data-er-anchor-x="361.76" data-er-anchor-y="172.0">0..*</text><rect x="273.4" y="163.0" width="53.2" height="18" rx="3" fill="var(--sgr-paper)" data-er-label-mask="true" data-er-line-gap="8"/><text x="300.0" y="176.0" class="sgr-er-label" text-anchor="middle">places</text></g></svg>

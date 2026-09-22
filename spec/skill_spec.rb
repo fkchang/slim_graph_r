@@ -10,17 +10,18 @@ RSpec.describe 'the packaged SlimGraphR agent skill' do
   let(:skill_dir) { File.join(root, 'skills', 'slim-graph-r') }
   let(:skill) { File.read(File.join(skill_dir, 'SKILL.md'), encoding: 'UTF-8') }
   let(:references) { Dir[File.join(skill_dir, 'references', '*.md')].sort }
+  let(:family_references) { references.reject { |path| path.end_with?('/semantic-patterns.md') } }
 
-  it 'routes progressively to exactly six family references' do
+  it 'routes progressively to semantic patterns and exactly six family references' do
     linked = skill.scan(%r{\(references/([^)]+\.md)\)}).flatten
 
-    expect(linked).to contain_exactly('systems.md', 'data.md', 'flow.md', 'hierarchy.md',
-                                      'strategy.md', 'quantitative.md')
+    expect(linked).to contain_exactly('semantic-patterns.md', 'systems.md', 'data.md', 'flow.md',
+                                      'hierarchy.md', 'strategy.md', 'quantitative.md')
     expect(references.map { |path| File.basename(path) }).to contain_exactly(*linked)
   end
 
   it 'accounts for every supported type exactly once in family inventories' do
-    documented = references.flat_map do |path|
+    documented = family_references.flat_map do |path|
       line = File.readlines(path, encoding: 'UTF-8').find { |entry| entry.start_with?('**Supported:**') }
       line.scan(/`:(\w+)`/).flatten.map(&:to_sym)
     end
@@ -30,7 +31,7 @@ RSpec.describe 'the packaged SlimGraphR agent skill' do
   end
 
   it 'keeps the representative pattern in each family executable' do
-    references.each do |path|
+    family_references.each do |path|
       source = File.read(path, encoding: 'UTF-8').scan(/```ruby\n(.*?)\n```/m).flatten.fetch(0)
       diagram = eval(source, TOPLEVEL_BINDING, path, 1) # rubocop:disable Security/Eval
 
@@ -50,7 +51,7 @@ RSpec.describe 'the packaged SlimGraphR agent skill' do
         installed = File.join(dir, surface, 'skills', 'slim-graph-r')
         expect(File.symlink?(installed)).to be(true)
         expect(File.exist?(File.join(installed, 'SKILL.md'))).to be(true)
-        expect(Dir[File.join(installed, 'references', '*.md')].length).to eq(6)
+        expect(Dir[File.join(installed, 'references', '*.md')].length).to eq(7)
       end
     end
   end
@@ -77,5 +78,6 @@ RSpec.describe 'the packaged SlimGraphR agent skill' do
       references.map { |path| path.delete_prefix("#{root}/") }
 
     expect(specification.files).to include(*expected)
+    expect(specification.files).to include('docs/motion-contract.md')
   end
 end

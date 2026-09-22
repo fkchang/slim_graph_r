@@ -125,7 +125,7 @@ The planned parity examples cover all four styles (`editorial`, `ruby`,
 
 Calendar direction is fixed; `direction:` is not a Gantt option.
 
-The core renderer has no runtime dependencies. StreamWeaver is optional and
+The core renderer depends only on the extracted standard-library `bigdecimal` and `ostruct` gems. StreamWeaver is optional and
 is loaded explicitly with `require 'slim_graph_r/stream_weaver'`; it is not
 required for standalone Ruby or JSON use.
 

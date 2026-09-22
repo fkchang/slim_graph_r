@@ -79,7 +79,7 @@ diagram :layers, title: 'Protocol stack', axis: 'Abstraction', indicator: :up,
 end
 ```
 
-The adapter is optional and loaded with `require 'slim_graph_r/stream_weaver'`; the core renderer has no runtime dependencies. Check a real page at its intended and narrow widths because an SVG string or canvas push does not establish browser-page correctness.
+The adapter is optional and loaded with `require 'slim_graph_r/stream_weaver'`; the core renderer depends only on the extracted standard-library `bigdecimal` and `ostruct` gems. Check a real page at its intended and narrow widths because an SVG string or canvas push does not establish browser-page correctness.
 
 ## Layout, limits, and parity boundary
 

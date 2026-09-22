@@ -18,14 +18,31 @@ Dir.mktmpdir('slimgraph-package-') do |dir|
     abort "Package check failed: #{argv.inspect}\n#{out}\n#{err}" unless status.success?
     out
   end
+  spec.runtime_dependencies.each do |dependency|
+    candidate = Gem::Specification.find_all_by_name(dependency.name, dependency.requirement)
+                                  .reject(&:default_gem?).max_by(&:version)
+    abort "Missing cached runtime dependency: #{dependency.name}" unless candidate && File.file?(candidate.cache_file)
+    command.call(RbConfig.ruby, '-S', 'gem', 'install', candidate.cache_file, '--local', '--no-document', '--ignore-dependencies')
+  end
   command.call(RbConfig.ruby, '-S', 'gem', 'install', package, '--local', '--no-document', '--ignore-dependencies')
   command.call(RbConfig.ruby, '-e', <<~'RUBY')
     require 'slim_graph_r'
-    abort 'Unexpected runtime dependencies' unless Gem.loaded_specs.fetch('slim_graph_r').runtime_dependencies.empty?
+    expected = %w[bigdecimal ostruct]
+    actual = Gem.loaded_specs.fetch('slim_graph_r').runtime_dependencies.map(&:name)
+    abort "Unexpected runtime dependencies: #{actual.inspect}" unless actual == expected
+    expected.each do |name|
+      spec = Gem::Specification.find_by_name(name)
+      abort "Dependency escaped isolated GEM_HOME: #{name}" unless spec.full_gem_path.start_with?(File.realpath(ENV.fetch('GEM_HOME')))
+    end
     abort 'StreamWeaver should not be installed' unless Gem::Specification.find_all_by_name('stream_weaver').empty?
     g = SlimGraphR.diagram(title: "Unicode \u2713 \u65e5\u672c\u8a9e") { node :a; node :b; flow :a, :b }
     abort 'Missing SVG' unless g.to_svg.include?('<svg')
   RUBY
+  command.call(RbConfig.ruby, '-r', 'slim_graph_r', '-e', <<~'RUBY')
+    diagram = SlimGraphR.diagram(:flowchart) { step :draft; step :publish; flow :draft, :publish }
+    File.write('picture.svg', diagram.to_svg)
+  RUBY
+  abort 'Installed-gem quickstart did not create picture.svg' unless File.read(File.join(dir, 'picture.svg'), encoding: 'UTF-8').include?('<svg')
   gem_root = File.join(home, 'gems', "slim_graph_r-#{spec.version}")
   %w[standalone semantic].each do |name|
     demo = File.join(gem_root, 'lib', 'slim_graph_r', 'university', 'demos', "#{name}.rb")
@@ -196,5 +213,5 @@ Dir.mktmpdir('slimgraph-package-') do |dir|
   abort 'Missing access-matrix guide' unless File.file?(guide) && File.binread(guide) == File.binread(File.join(root, 'docs', 'access-matrices.md'))
   roadmap = File.join(gem_root, 'docs', 'roadmap', 'parity-matrix.md')
   abort 'Packaged parity roadmap differs from source' unless File.binread(roadmap) == File.binread(File.join(root, 'docs', 'roadmap', 'parity-matrix.md'))
-  puts 'Clean install passed: standalone Ruby + JSON + CLI, no StreamWeaver, no source checkout, LC_ALL=C.'
+  puts 'Clean install passed: standalone Ruby + JSON + CLI, isolated BigDecimal/OpenStruct, no StreamWeaver, no source checkout, LC_ALL=C.'
 end

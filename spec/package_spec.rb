@@ -2,6 +2,23 @@
 require 'spec_helper'
 
 RSpec.describe 'the 0.30.0 package manifest' do
+  it 'publishes complete, secure RubyGems metadata' do
+    specification = Gem::Specification.load(File.expand_path('../slim_graph_r.gemspec', __dir__))
+
+    expect(specification.authors).to eq(['Forrest Chang'])
+    expect(specification.email).to eq(['fkc_email-ruby@yahoo.com'])
+    expect(specification.description).to include('deterministic', 'accessible SVG')
+    expect(specification.homepage).to eq('https://github.com/fkchang/slim_graph_r')
+    expect(specification.metadata).to include(
+      'allowed_push_host' => 'https://rubygems.org',
+      'source_code_uri' => 'https://github.com/fkchang/slim_graph_r',
+      'changelog_uri' => 'https://github.com/fkchang/slim_graph_r/blob/main/CHANGELOG.md',
+      'documentation_uri' => 'https://github.com/fkchang/slim_graph_r#readme',
+      'bug_tracker_uri' => 'https://github.com/fkchang/slim_graph_r/issues',
+      'rubygems_mfa_required' => 'true'
+    )
+  end
+
   it 'declares its optional StreamWeaver University loader and ships its standalone course artifacts' do
     specification = Gem::Specification.load(File.expand_path('../slim_graph_r.gemspec', __dir__))
 
@@ -15,11 +32,14 @@ RSpec.describe 'the 0.30.0 package manifest' do
     )
   end
 
-  it 'ships Wardley implementation and paired standalone contracts without runtime dependencies' do
+  it 'ships Wardley contracts with only explicit extracted-standard-library dependencies' do
     specification = Gem::Specification.load(File.expand_path('../slim_graph_r.gemspec', __dir__))
     expect(specification.version.to_s).to eq('0.30.0')
-    expect(specification.runtime_dependencies).to be_empty
+    expect(specification.runtime_dependencies.map(&:name)).to eq(%w[bigdecimal ostruct])
+    expect(specification.runtime_dependencies.fetch(0).requirement).to be_satisfied_by(Gem::Version.new('4.1.0'))
+    expect(specification.runtime_dependencies.fetch(1).requirement).to be_satisfied_by(Gem::Version.new('0.6.3'))
     expect(specification.files).to include(
+      'CHANGELOG.md',
       'lib/slim_graph_r/radial.rb',
       'lib/slim_graph_r/radial_svg.rb',
       'examples/standalone/polar.rb',

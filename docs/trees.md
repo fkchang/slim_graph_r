@@ -100,7 +100,7 @@ diagram :tree, title: 'Service ownership', direction: :down, style: :editorial, 
 end
 ```
 
-The core renderer has no runtime dependencies. Verify a real rendered page at its target and narrow widths; an SVG string or canvas push alone does not prove the browser page works.
+The core renderer depends only on the extracted standard-library `bigdecimal` and `ostruct` gems. Verify a real rendered page at its target and narrow widths; an SVG string or canvas push alone does not prove the browser page works.
 
 ## Layout, limits, and parity boundary
 

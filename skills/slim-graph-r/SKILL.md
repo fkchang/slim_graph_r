@@ -14,7 +14,7 @@ Choose the picture from the reader's question, then author the smallest diagram 
 
 1. **Use a diagram only when relationships, position, sequence, containment, or magnitude carry meaning.** Use prose for one conclusion, bullets for a list, and a table for direct lookup or exact row/column comparison.
 2. State the reader's dominant question in one sentence. Do not start from a favorite chart type.
-3. Choose one family below and read only its reference. If two families are equally necessary, produce an overview and a detail rather than mixing two visual grammars.
+3. When behavior, enforcement, capacity, or risk is load-bearing, first check [semantic patterns](references/semantic-patterns.md). Then choose one family below and read only its reference. If two families are equally necessary, produce an overview and a detail rather than mixing two visual grammars.
 4. Within that family, choose the narrowest supported type whose semantics match the evidence.
 5. Author only declared facts. Never invent telemetry, causality, enforcement, precision, provenance, capacity, or confidence.
 6. Render and inspect the real SVG. Split dense inputs or accept an actionable `LayoutError`; do not repair clarity by shrinking meaningful text.

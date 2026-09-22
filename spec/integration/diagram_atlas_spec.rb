@@ -5,7 +5,7 @@ require 'slim_graph_r/stream_weaver'
 require 'stream_weaver/component_renderer'
 
 RSpec.describe 'the packaged diagram atlas' do
-  let(:path) { File.expand_path('../examples/stream_weaver/gallery.rb', __dir__) }
+  let(:path) { File.expand_path('../../examples/stream_weaver/gallery.rb', __dir__) }
   let(:source) { File.read(path, encoding: 'UTF-8') }
   let(:app) do
     StreamWeaver::App.new('Diagram atlas').tap do |atlas|

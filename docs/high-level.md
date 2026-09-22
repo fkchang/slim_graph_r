@@ -102,7 +102,7 @@ slimgraph render high-level.json -o high-level.svg
 cat high-level.json | slimgraph render - -o high-level.svg
 ```
 
-JSON is the stdin default. Use `--input-format ruby` for Ruby source from stdin. `--style` and `--theme` remain presentation overrides; `:light`, `:dark`, and `:auto` modes and all named styles continue to work. Ruby CLI files must return the diagram after any `File.write`, as shown above. The core renderer has no runtime dependencies. StreamWeaver is optional: load `slim_graph_r/stream_weaver` and use the same `diagram :high_level, ... do` body in a StreamWeaver document.
+JSON is the stdin default. Use `--input-format ruby` for Ruby source from stdin. `--style` and `--theme` remain presentation overrides; `:light`, `:dark`, and `:auto` modes and all named styles continue to work. Ruby CLI files must return the diagram after any `File.write`, as shown above. The core renderer depends only on the extracted standard-library `bigdecimal` and `ostruct` gems. StreamWeaver is optional: load `slim_graph_r/stream_weaver` and use the same `diagram :high_level, ... do` body in a StreamWeaver document.
 
 ## Limits and failure behavior
 
@@ -124,4 +124,3 @@ The bounded 0.11 slice allows:
 Data links must advance from an earlier phase to a later phase. Same-phase, backward, query/read-back, and authored edge-label connections fail validation in this release. Reserved concern labels such as `Orchestration`, `Security`, `Observability`, `Governance`, and `Backup` cannot be used as horizontal phase labels. The renderer reserves a 28px right strip when orchestration or crosscut concerns are present; phase centers and 152×80 component boxes remain aligned to the phase chevrons. Phase and vertical concern labels are uppercased for display and rejected when their measured text does not fit. If measured text, ports, routes, or concern pairing cannot fit faithfully, it raises `SlimGraphR::LayoutError` instead of clipping or silently changing meaning.
 
 Icons, custom colors, manually authored vertical concerns, query/backward links, same-phase links, edge labels, side overrides, unclustered layouts, and editorial-card variants are outside this bounded slice. The model keeps light/dark/auto themes, accessible title/description output, and deterministic geometry. A rendered SVG is evidence of serialization, not a claim of full upstream parity; this remains a partial implementation against the pinned [Cathryn Lavery Diagram Design high-level reference](https://github.com/cathrynlavery/diagram-design/blob/dcd9317ed9ec7477b20005544f36e3313664d815/skills/diagram-design/references/type-high-level.md). SlimGraphR is an independent Ruby implementation and retains the upstream MIT notice in `vendor/diagram-design`.
-

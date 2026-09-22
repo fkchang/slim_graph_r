@@ -118,7 +118,7 @@ slimgraph render deployment.json -o deployment.html --format html
 
 JSON is the default for stdin; use `--input-format ruby` for Ruby source from stdin. `--style` and `--theme` override presentation without changing the deployment model. A Ruby document must return its diagram as the final expression, so keep `diagram` after a `File.write` call as shown above. Exit status `0` means success; document, rendering, and I/O failures use status `1`; command-line usage errors use status `2`.
 
-The core renderer has no runtime gem dependencies. StreamWeaver remains optional: a StreamWeaver document loads `require 'slim_graph_r/stream_weaver'` and uses the same `diagram :deployment, ... do` block form. The deployment model and strict validation stay in the core library; no StreamWeaver installation is needed for standalone Ruby or JSON rendering.
+The core renderer depends only on the extracted standard-library `bigdecimal` and `ostruct` gems. StreamWeaver remains optional: a StreamWeaver document loads `require 'slim_graph_r/stream_weaver'` and uses the same `diagram :deployment, ... do` block form. The deployment model and strict validation stay in the core library; no StreamWeaver installation is needed for standalone Ruby or JSON rendering.
 
 ## Layout, limits, and failure behavior
 

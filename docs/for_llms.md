@@ -7,6 +7,8 @@
 
 Use `require 'slim_graph_r/stream_weaver'` in a StreamWeaver document, then `diagram :type, title: '...' do ... end`. Outside StreamWeaver, use `SlimGraphR.diagram` and call `to_svg` or `to_html`.
 
+Install the progressive diagram chooser with `slimgraph install-skill` for the current project or `slimgraph install-skill --global`. The skill first decides whether prose or a table is clearer, then routes diagram work through semantic patterns and one of six on-demand family references. Its executable examples and the renderer's documented limits are the contract.
+
 - Architecture: `node :api, 'API', detail: 'Request handling', emphasis: true`; `store :db`; `external :client`; `flow :client, :api, :db`.
 - Flowchart: `start :request`; `step :draft`; `decision :review, 'Ready?'`; `edge :review, :publish, 'Yes'`. Declare all nodes first or later in the same block. Label every decision exit (max three). `merge :joined` is a visible junction dot with two or three inputs and one output; `finish :done` ends the flow. Start has no inputs; finish has no outputs.
 - Sequence: `participant :client`; `message :client, :server, 'Request'`; `reply :server, :client, 'Result'`; `notify` for async. `activate :server do ... end` scopes control. `alt` contains two `branch 'guard'` blocks; `opt 'guard'` and `loop 'guard'` each take a block. These describe control; loop evaluates once. Five participants/twelve messages, one alt or two opt/loop frames, no nested frames. See [sequence guide](sequence.md).
@@ -53,4 +55,4 @@ Use `require 'slim_graph_r/stream_weaver'` in a StreamWeaver document, then `dia
 - SVG output is static, escaped, accessible, and has unique IDs. Default fonts have local fallbacks; no font or layout downloads.
 - RSpec is the test framework. Public DSL examples are executable acceptance cases.
 
-CLI from the checkout: `ruby -Ilib exe/slimgraph render diagram.rb -o diagram.svg`. JSON uses the same validated renderer; see [JSON input](json-input.md). `--style`/`--theme` override presentation. `ruby -Ilib exe/slimgraph styles` and `ruby -Ilib exe/slimgraph types` list supported choices. Standalone examples live in examples/standalone; StreamWeaver examples in examples/stream_weaver.
+CLI from the checkout: `ruby -Ilib exe/slimgraph render diagram.rb -o diagram.svg`. JSON uses the same validated renderer; see [JSON input](json-input.md). `--style`/`--theme` override presentation. `ruby -Ilib exe/slimgraph styles` and `ruby -Ilib exe/slimgraph types` list supported choices. Standalone examples live in examples/standalone; StreamWeaver examples in examples/stream_weaver. The proposed stepped-animation design for future semantic patterns is documented in [the motion contract](motion-contract.md); animation and `motion:` arguments are not shipped in 0.30.0.
