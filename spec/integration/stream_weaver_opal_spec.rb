@@ -29,10 +29,12 @@ RSpec.describe 'the browser-safe StreamWeaver entrypoint' do
       puts $LOADED_FEATURES.grep(%r{/stream_weaver\.rb$}).empty?
     RUBY
 
-    stdout, stderr, status = Open3.capture3(
-      { 'BUNDLE_GEMFILE' => nil, 'BUNDLE_BIN_PATH' => nil, 'RUBYOPT' => nil, 'RUBYLIB' => nil },
-      RbConfig.ruby, '-I', File.expand_path('../../lib', __dir__), '-e', script
-    )
+    stdout, stderr, status = Bundler.with_unbundled_env do
+      Open3.capture3(
+        { 'BUNDLE_GEMFILE' => nil, 'BUNDLE_BIN_PATH' => nil, 'RUBYOPT' => nil, 'RUBYLIB' => nil },
+        RbConfig.ruby, '-I', File.expand_path('../../lib', __dir__), '-e', script
+      )
+    end
 
     expect(status).to be_success, stderr
     expect(stdout.lines.map(&:strip)).to eq(%w[true true])

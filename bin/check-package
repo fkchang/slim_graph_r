@@ -21,8 +21,15 @@ Dir.mktmpdir('slimgraph-package-') do |dir|
   spec.runtime_dependencies.each do |dependency|
     candidate = Gem::Specification.find_all_by_name(dependency.name, dependency.requirement)
                                   .reject(&:default_gem?).max_by(&:version)
-    abort "Missing cached runtime dependency: #{dependency.name}" unless candidate && File.file?(candidate.cache_file)
-    command.call(RbConfig.ruby, '-S', 'gem', 'install', candidate.cache_file, '--local', '--no-document', '--ignore-dependencies')
+    abort "Missing installed runtime dependency: #{dependency.name}" unless candidate
+    dependency_package = if File.file?(candidate.cache_file)
+      candidate.cache_file
+    else
+      File.join(dir, "#{candidate.full_name}.gem").tap do |target|
+        Dir.chdir(candidate.full_gem_path) { Gem::Package.build(candidate, false, false, target) }
+      end
+    end
+    command.call(RbConfig.ruby, '-S', 'gem', 'install', dependency_package, '--local', '--no-document', '--ignore-dependencies')
   end
   command.call(RbConfig.ruby, '-S', 'gem', 'install', package, '--local', '--no-document', '--ignore-dependencies')
   command.call(RbConfig.ruby, '-e', <<~'RUBY')
