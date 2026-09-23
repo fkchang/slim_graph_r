@@ -6,6 +6,7 @@ require_relative 'slim_graph_r/text'
 require_relative 'slim_graph_r/style'
 require_relative 'slim_graph_r/motion'
 require_relative 'slim_graph_r/motion_player'
+require_relative 'slim_graph_r/motion_patterns'
 require_relative 'slim_graph_r/quantitative'
 require_relative 'slim_graph_r/radial'
 require_relative 'slim_graph_r/area_conservation'
@@ -77,5 +78,9 @@ module SlimGraphR
     return Radial::Chart.new(type, **options, &block) if %i[polar radar].include?(type.to_s.to_sym)
     return AreaConservation::Chart.new(type, **options, &block) if %i[treemap sankey].include?(type.to_s.to_sym)
     Diagram.new(type, **options, &block)
+  end
+
+  def self.motion_pattern(type, **options)
+    Motion::PatternDiagram.new(type, **options).presentation
   end
 end

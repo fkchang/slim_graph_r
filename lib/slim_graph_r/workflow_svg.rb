@@ -5,8 +5,13 @@ module SlimGraphR
 
     def draw_workflow
       draw_workflow_grid
-      @s.routes.each { |route| draw_workflow_route(route) }
-      @s.boxes.each { |box| draw_workflow_card(box) }
+      if @motion
+        @s.routes.each { |route| motion_route_item(route.edge.from, route.edge.to) { draw_workflow_route(route) } }
+        @s.boxes.each { |box| motion_item(box.node.id) { draw_workflow_card(box) } }
+      else
+        @s.routes.each { |route| draw_workflow_route(route) }
+        @s.boxes.each { |box| draw_workflow_card(box) }
+      end
       draw_workflow_legend
     end
 

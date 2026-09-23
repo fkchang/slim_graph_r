@@ -57,7 +57,8 @@ module SlimGraphR
       display_scale = readable_display_scale
       display_width = (@s.width * display_scale).ceil
       display_height = (height * display_scale).ceil
-      add %(<svg xmlns="http://www.w3.org/2000/svg" id="#{@id}" class="sgr-diagram" data-sgr-theme="#{@d.theme}" data-sgr-style="#{@d.style}"#{type_attr} data-sgr-display-scale="#{format('%.4g', display_scale)}" role="img" aria-labelledby="#{@id}-title #{@id}-desc" viewBox="0 0 #{@s.width} #{height}" width="#{display_width}" height="#{display_height}" style="display:block;margin:0 auto;width:100%;height:auto;min-width:#{display_width}px">)
+      motion_max = @motion ? ";max-width:#{display_width}px" : ''
+      add %(<svg xmlns="http://www.w3.org/2000/svg" id="#{@id}" class="sgr-diagram" data-sgr-theme="#{@d.theme}" data-sgr-style="#{@d.style}"#{type_attr} data-sgr-display-scale="#{format('%.4g', display_scale)}" role="img" aria-labelledby="#{@id}-title #{@id}-desc" viewBox="0 0 #{@s.width} #{height}" width="#{display_width}" height="#{display_height}" style="display:block;margin:0 auto;width:100%;height:auto;min-width:#{display_width}px#{motion_max}">)
       description = if @motion_static
         steps = @motion.steps.map { |step| "Step #{step.number}: #{step.label}" }.join('. ')
         "#{@d.title}. Final frame of an ordered reveal. #{steps}."
@@ -157,13 +158,13 @@ module SlimGraphR
         end
         if %i[dependency deployment].include?(@d.type)
           @s.routes.each do |route|
-            motion_route_item(route.edge.from, route.edge.to) { draw_label(route.label_box) } if route.label_box
+            motion_edge_item(route) { draw_label(route.label_box) } if route.label_box
           end
           @s.boxes.each { |box| draw_box(box) }
         else
           @s.boxes.each { |box| draw_box(box) }
           @s.routes.each do |route|
-            motion_route_item(route.edge.from, route.edge.to) { draw_label(route.label_box) } if route.label_box
+            motion_edge_item(route) { draw_label(route.label_box) } if route.label_box
           end
         end
         draw_org_callouts unless (@s.callouts || []).empty?
@@ -997,10 +998,17 @@ module SlimGraphR
     end
 
     def draw_state_machine
-      @s.routes.each { |route| draw_state_transition(route) }
-      draw_state_markers
-      @s.boxes.each { |box| draw_state_box(box) }
-      @s.routes.each { |route| draw_state_transition_label(route.label_box) }
+      if @motion
+        @s.routes.each { |route| motion_route_item(route.transition.from, route.transition.to) { draw_state_transition(route) } }
+        draw_state_markers
+        @s.boxes.each { |box| motion_item(box.node.id) { draw_state_box(box) } }
+        @s.routes.each { |route| motion_route_item(route.transition.from, route.transition.to) { draw_state_transition_label(route.label_box) } }
+      else
+        @s.routes.each { |route| draw_state_transition(route) }
+        draw_state_markers
+        @s.boxes.each { |box| draw_state_box(box) }
+        @s.routes.each { |route| draw_state_transition_label(route.label_box) }
+      end
     end
 
     def draw_state_transition(route)
@@ -1266,7 +1274,7 @@ module SlimGraphR
         ''
       end
       stroke_width = emphasized ? 1.6 : 1.2
-      motion_route_item(route.edge.from, route.edge.to) do
+      motion_edge_item(route) do
         add %(<path data-sgr-connector="true" data-sgr-hops="#{crossings.size}"#{kind_attr}#{cycle_attr}#{network_attrs} d="#{rounded_path(route.points, crossings)}" fill="none" stroke="#{stroke}" stroke-width="#{stroke_width}"#{dash ? " stroke-dasharray=\"#{dash}\"" : ''} marker-end="url(##{@id}-#{marker})"/> )
       end
     end
@@ -1300,6 +1308,17 @@ module SlimGraphR
     def motion_route_item(from, to, &block)
       return yield unless @motion
       motion_item(Motion::Target.route(from, to), &block)
+    end
+
+    def motion_edge_item(route, &block)
+      return yield unless @motion
+      target = if @d.type == :sequence
+        index = @s.routes.index { |candidate| candidate.equal?(route) }
+        Motion::Target.token(:message, index + 1)
+      else
+        Motion::Target.route(route.edge.from, route.edge.to)
+      end
+      motion_item(target, &block)
     end
 
     def network_scope(edge)

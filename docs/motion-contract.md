@@ -61,6 +61,18 @@ end
 
 Targets are graph node IDs or explicit `route(:source, :target)` objects. Steps are contiguous, a target is revealed once, and `replaces:` hides an earlier target from that step onward. Unsupported or missing targets raise an actionable error. Explicit route objects prevent collisions when node IDs contain hyphens.
 
+Sequence diagrams target authored message order with `message(1)`, `message(2)`, and so on. State diagrams expose state IDs and explicit transition routes. Process/swimlane diagrams expose activity or operation IDs and handoff routes. Data-flow diagrams expose transfer IDs and handoff routes. These families require authored storyboards; motion never infers a branch, execution trace, or causal order.
+
+Three compact patterns cover the researched compositions without adding them to the 39-type registry:
+
+```ruby
+SlimGraphR.motion_pattern(:fan_in_queue)
+SlimGraphR.motion_pattern(:paired_policy_trace)
+SlimGraphR.motion_pattern(:secure_paved_road)
+```
+
+They are deliberately fixed semantic compositions, not arbitrary-position canvases or automatic layout families.
+
 ## Release gates
 
 - Every step is understandable in an exact-step screenshot and through its accessible label.

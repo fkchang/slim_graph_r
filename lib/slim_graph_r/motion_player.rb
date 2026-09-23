@@ -141,8 +141,8 @@ module SlimGraphR
       <<~HTML
         <section data-sgr-motion-root data-motion-mode="#{mode}" data-step-count="#{storyboard.steps.size}" data-step-current="1" data-frame="step" tabindex="0" aria-label="#{label}">
           #{include_style ? "<style>#{CSS}</style>" : ''}
-          <div class="sgr-scroll-container" data-sgr-scroll-container="true" role="region" tabindex="0" aria-label="#{label}" style="display:block;box-sizing:border-box;width:100%;max-width:100%;overflow-x:auto;overflow-y:hidden;overscroll-behavior-inline:contain">#{svg}</div>
           #{controls}
+          <div class="sgr-scroll-container" data-sgr-scroll-container="true" role="region" tabindex="0" aria-label="#{label}" style="display:block;box-sizing:border-box;width:100%;max-width:100%;overflow-x:auto;overflow-y:hidden;overscroll-behavior-inline:contain">#{svg}</div>
           <p data-sgr-motion-status role="status" aria-live="polite" aria-atomic="true"></p>
           <noscript><style>[data-sgr-motion-controls]{display:none!important}[data-motion-until]{display:none!important}</style></noscript>
         </section>

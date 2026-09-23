@@ -24,4 +24,6 @@ Require labeled trust zones, identities, permitted ingress, a privileged gate, a
 
 These patterns may use ordered reveal, but animation cannot carry unique meaning. The complete final frame, step descriptions, print, no-script, and reduced-motion outputs must remain sufficient. Graph-backed diagrams can attach a storyboard of semantic node IDs and explicit `route(:source, :target)` objects; see `docs/motion-contract.md`.
 
+SlimGraphR ships bounded `motion_pattern` compositions for fan-in queue, paired policy trace, and secure paved road. Prefer them when those exact semantics fit. Use an authored storyboard for sequence, state, process/swimlane, or data-flow diagrams; never infer an execution branch.
+
 Inspired by [Diagram Design's semantic-pattern research](https://github.com/cathrynlavery/diagram-design/blob/main/skills/diagram-design/references/semantic-patterns.md); this file narrows the patterns to SlimGraphR's supported Ruby contracts.

@@ -13,6 +13,11 @@ module SlimGraphR
         label = "route(#{source}, #{target})"
         new(kind: :route, key: "route:#{source.bytesize}:#{source}:#{target.bytesize}:#{target}", label: label).freeze
       end
+
+      def self.token(kind, value)
+        id = Text.clean(value)
+        new(kind: kind.to_sym, key: "#{kind}:#{id.bytesize}:#{id}", label: "#{kind}(#{id})").freeze
+      end
     end
 
     Step = Struct.new(:number, :targets, :label, :replaces, keyword_init: true)
@@ -34,6 +39,10 @@ module SlimGraphR
       end
 
       def route(from, to) = Target.route(from, to)
+      def message(number)
+        raise Error, 'Motion message number must be a positive Integer' unless number.is_a?(Integer) && number.positive?
+        Target.token(:message, number)
+      end
 
       def reveal(number, *values, replaces: [])
         label = values.pop
@@ -82,7 +91,7 @@ module SlimGraphR
         missing = targets - rendered
         return if missing.empty?
         labels = missing.map { |target| @target_labels.fetch(target, target) }
-        raise Error, "Motion targets were not rendered: #{labels.join(', ')}. Use a node ID or route(:source, :target)."
+        raise Error, "Motion targets were not rendered: #{labels.join(', ')}. Use a node ID, route(:source, :target), or message(n)."
       end
 
       private

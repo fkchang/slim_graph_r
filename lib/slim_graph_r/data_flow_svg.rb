@@ -5,9 +5,15 @@ module SlimGraphR
 
     def draw_data_flow
       draw_data_flow_grid
-      @s.routes.each { |route| draw_data_flow_route(route) }
-      @s.cards.each { |card| draw_data_flow_card(card) }
-      @s.routes.each { |route| draw_data_flow_label(route) if route[:label] }
+      if @motion
+        @s.routes.each { |route| motion_route_item(route[:handoff].from, route[:handoff].to) { draw_data_flow_route(route) } }
+        @s.cards.each { |card| motion_item(card[:transfer].id) { draw_data_flow_card(card) } }
+        @s.routes.each { |route| motion_route_item(route[:handoff].from, route[:handoff].to) { draw_data_flow_label(route) } if route[:label] }
+      else
+        @s.routes.each { |route| draw_data_flow_route(route) }
+        @s.cards.each { |card| draw_data_flow_card(card) }
+        @s.routes.each { |route| draw_data_flow_label(route) if route[:label] }
+      end
       draw_data_flow_legend
     end
 

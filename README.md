@@ -227,6 +227,16 @@ animated.to_html(motion: :steps)   # keyboard-accessible reveal
 
 The shared player supports previous, next, play/pause, replay, exact-step URLs, reduced motion, print and no-script output. `replaces:` handles state replacement; the current step receives a separate focus treatment. See the executable [fan-in queue](examples/standalone/fan_in_queue_animated.rb), [policy trace](examples/standalone/policy_trace_animated.rb), and [secure paved road](examples/standalone/secure_paved_road_animated.rb).
 
+Those three researched compositions also ship as compact bounded patterns:
+
+```ruby
+SlimGraphR.motion_pattern(:fan_in_queue)
+SlimGraphR.motion_pattern(:paired_policy_trace)
+SlimGraphR.motion_pattern(:secure_paved_road)
+```
+
+They keep their semantic geometry fixed: one queue shell with a replaceable depth badge, five shared policy-rule rows with two trace columns, and three persistent security zones. Existing sequence, state, process/swimlane and data-flow diagrams support authored storyboards too. Sequence messages use `message(1)`, `message(2)`, and so on; the other families use semantic item IDs and explicit `route(:from, :to)` targets. SlimGraphR never chooses a branch or execution trace on the author's behalf.
+
 ## Honest by construction
 
 SlimGraphR refuses to turn a plausible picture into a false claim. Qualitative positions remain authored judgments. Quantitative marks require compatible units and explicit domains. Missing permissions, relationships, dates, capacity and causality are never inferred.

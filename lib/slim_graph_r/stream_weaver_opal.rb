@@ -40,6 +40,12 @@ module SlimGraphR
       components << component
       component
     end
+
+    def motion_pattern(type, **options)
+      component = StreamWeaverComponent.new(SlimGraphR.motion_pattern(type, **options))
+      components << component
+      component
+    end
   end
 end
 
